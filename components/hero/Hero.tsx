@@ -126,7 +126,7 @@ export default function Hero({
           {/* Texto + Cards compactos com gaps progressivos */}
           <div className="self-start flex flex-col max-w-full gap-4 md:gap-5 w-full">
             {/* Texto em caixa sutil com clamp */}
-            <div className="rounded-2xl ring-1 ring-cream-50/15 bg-coffee-800/20 p-5 md:p-6 lg:p-6 shadow-2xl w-full">
+            <div className="rounded-2xl ring-1 ring-cream-50/15 bg-coffee-card p-5 md:p-6 lg:p-6 shadow-2xl w-full">
               <p className="text-cream-50/90 text-[clamp(0.98rem,0.35vw+0.95rem,1.125rem)] leading-relaxed text-justify indent-6 hyphens-auto md:max-w-none">
                 Transforme o café do seu evento em uma experiência inesquecível! Levamos café espresso premium, baristas
                 profissionais e personalização de marca para eventos corporativos, feiras, congressos e casamentos.
