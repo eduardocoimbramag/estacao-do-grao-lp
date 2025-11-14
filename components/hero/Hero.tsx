@@ -66,7 +66,7 @@ export default function Hero({
     <section className="relative pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-20 bg-[#452911]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* H1 centralizado com clamp */}
-        <h1 className="font-serif text-cream-50 font-bold tracking-tight text-center mb-8 md:mb-10 lg:mb-12 text-[clamp(2rem,3vw+1rem,3.25rem)] md:text-[clamp(2.5rem,2.2vw+1.2rem,3.5rem)]">
+        <h1 className="font-serif text-cream-50 font-bold tracking-tight text-center mb-8 md:mb-10 lg:mb-12 text-2xl md:text-3xl lg:text-4xl uppercase whitespace-nowrap">
           Café Gourmet e Baristas para Eventos
         </h1>
 
