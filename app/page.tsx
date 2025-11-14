@@ -1,5 +1,6 @@
 import Header from "@/components/header"
 import Hero from "@/components/hero/Hero"
+import OpenMenuIntro from "@/components/OpenMenuIntro"
 import About from "@/components/about"
 import Services from "@/components/services"
 import Audience from "@/components/audience"
@@ -14,6 +15,7 @@ export default function Home() {
     <main className="min-h-screen bg-coffee-900">
       <Header />
       <Hero />
+      <OpenMenuIntro />
       <About />
       <Services />
       <Audience />
