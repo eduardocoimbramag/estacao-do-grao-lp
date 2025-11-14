@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function OpenMenuIntro() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [volume, setVolume] = useState(0.5); // 50% padrão
   const [muted, setMuted] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -27,9 +26,9 @@ export default function OpenMenuIntro() {
     const el = videoRef.current;
     if (!el) return;
     
-    el.volume = volume;
-    el.muted = muted || volume === 0;
-  }, [volume, muted]);
+    el.volume = 0.65; // 65% fixo
+    el.muted = muted;
+  }, [muted]);
 
   return (
     <section id="apresentacao" className="bg-coffee-900 text-white">
@@ -124,51 +123,19 @@ export default function OpenMenuIntro() {
             )}
           </div>
 
-          {/* Controles de volume */}
+          {/* Controle de som simples */}
           {!hasError && (
-            <div className="absolute bottom-3 left-3 right-3 flex items-center gap-2 rounded-full bg-black/55 backdrop-blur px-3 py-2 border border-white/20">
-              {/* Botão Mute/Unmute */}
-              <button
-                onClick={() => {
-                  if (muted || volume === 0) {
-                    setVolume(0.5); // Ativa em 50%
-                    setMuted(false);
-                  } else {
-                    setVolume(0); // Muta
-                    setMuted(true);
-                  }
-                }}
-                className="flex-shrink-0 text-cream-50 hover:text-white transition-colors"
-                aria-pressed={muted || volume === 0}
-                aria-label={muted || volume === 0 ? 'Ativar som' : 'Silenciar'}
-              >
-                {(muted || volume === 0) ? '🔇' : '🔊'}
-              </button>
-
-              {/* Slider de Volume */}
-              <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.1"
-                value={muted ? 0 : volume}
-                onChange={(e) => {
-                  const newVolume = parseFloat(e.target.value);
-                  setVolume(newVolume);
-                  setMuted(newVolume === 0);
-                }}
-                className="flex-1 h-1 bg-coffee-700 rounded-lg appearance-none cursor-pointer accent-coffee-500"
-                aria-label="Controle de volume"
-                aria-valuemin={0}
-                aria-valuemax={100}
-                aria-valuenow={muted ? 0 : volume * 100}
-              />
-              
-              {/* Indicador de volume */}
-              <span className="text-xs text-cream-50/70 flex-shrink-0 min-w-[2.5rem] text-right">
-                {Math.round((muted ? 0 : volume) * 100)}%
+            <button
+              onClick={() => setMuted(!muted)}
+              className="absolute bottom-3 left-3 rounded-full bg-black/55 backdrop-blur px-4 py-2 text-sm border border-white/20 hover:bg-black/70 transition-colors flex items-center gap-2"
+              aria-pressed={!muted}
+              aria-label={muted ? 'Ativar som' : 'Desativar som'}
+            >
+              <span className="text-base">{muted ? '🔇' : '🔊'}</span>
+              <span className="text-cream-50 font-medium">
+                {muted ? 'Som desativado' : 'Som ativado'}
               </span>
-            </div>
+            </button>
           )}
         </div>
       </div>
