@@ -1,7 +1,6 @@
 import Header from "@/components/header"
 import Hero from "@/components/hero/Hero"
 import OpenMenuIntro from "@/components/OpenMenuIntro"
-import About from "@/components/about"
 import Services from "@/components/services"
 import Audience from "@/components/audience"
 import Differentials from "@/components/differentials"
@@ -16,7 +15,6 @@ export default function Home() {
       <Header />
       <Hero />
       <OpenMenuIntro />
-      <About />
       <Services />
       <Audience />
       <Differentials />
