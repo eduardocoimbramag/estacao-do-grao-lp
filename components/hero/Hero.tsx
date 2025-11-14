@@ -139,6 +139,48 @@ export default function Hero({
             <FeatureItemCompact icon={<Coffee className="w-5 h-5" />} title="Alto Fluxo de Atendimento" />
           </div>
         </div>
+
+        {/* Grid de Métricas */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-12 lg:mt-16">
+          {/* Card 1 */}
+          <div className="p-6 md:p-8 bg-coffee-card border border-coffee-500/30 rounded-xl hover:border-coffee-500/60 transition-colors flex flex-col items-center text-center gap-3">
+            <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-coffee-500">
+              +5 mil
+            </div>
+            <div className="text-lg md:text-xl font-semibold text-cream-50 font-serif">
+              cafés servidos
+            </div>
+            <p className="text-sm md:text-base text-cream-50/70 leading-relaxed">
+              Em experiências únicas para pessoas e empresas.
+            </p>
+          </div>
+
+          {/* Card 2 */}
+          <div className="p-6 md:p-8 bg-coffee-card border border-coffee-500/30 rounded-xl hover:border-coffee-500/60 transition-colors flex flex-col items-center text-center gap-3">
+            <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-coffee-500">
+              +100
+            </div>
+            <div className="text-lg md:text-xl font-semibold text-cream-50 font-serif">
+              empresas atendidas
+            </div>
+            <p className="text-sm md:text-base text-cream-50/70 leading-relaxed">
+              Times que confiam na Estação do Grão para eventos e rotina.
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div className="p-6 md:p-8 bg-coffee-card border border-coffee-500/30 rounded-xl hover:border-coffee-500/60 transition-colors flex flex-col items-center text-center gap-3">
+            <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-coffee-500">
+              +300
+            </div>
+            <div className="text-lg md:text-xl font-semibold text-cream-50 font-serif">
+              eventos realizados
+            </div>
+            <p className="text-sm md:text-base text-cream-50/70 leading-relaxed">
+              Presenças em feiras, encontros, ações internas e externas.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -6,6 +6,7 @@ export default function OpenMenuIntro() {
   const [volume, setVolume] = useState(0.5); // 50% padrão
   const [muted, setMuted] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   // Auto play/pause conforme visibilidade (performance)
   useEffect(() => {
@@ -84,7 +85,31 @@ export default function OpenMenuIntro() {
         {/* DIREITA — VÍDEO */}
         <div className="relative w-full">
           <div className="aspect-[9/16] max-h-[70vh] md:max-h-[80vh] overflow-hidden rounded-2xl border border-coffee-700 bg-black/40">
-            {hasError ? (
+            <video
+              ref={videoRef}
+              className="h-full w-full object-contain"
+              poster="/img/poster-estacao.webp"
+              playsInline
+              muted={muted}
+              loop
+              preload="auto"
+              autoPlay
+              onLoadedData={() => {
+                setVideoLoaded(true);
+                setHasError(false);
+              }}
+              onError={(e) => {
+                console.error('Erro ao carregar vídeo:', e);
+                setHasError(true);
+              }}
+              style={{ display: hasError ? 'none' : 'block' }}
+            >
+              <source src="/videos/estacao.mp4" type="video/mp4" />
+              <source src="/videos/estacao.webm" type="video/webm" />
+              Seu navegador não suporta vídeo HTML5.
+            </video>
+
+            {hasError && (
               <div className="h-full w-full flex items-center justify-center bg-coffee-900/60 backdrop-blur">
                 <div className="text-center px-6">
                   <div className="text-5xl mb-4">☕</div>
@@ -96,28 +121,6 @@ export default function OpenMenuIntro() {
                   </p>
                 </div>
               </div>
-            ) : (
-              <video
-                ref={videoRef}
-                className="h-full w-full object-contain"
-                poster="/img/poster-estacao.webp"
-                playsInline
-                muted={muted}
-                loop
-                preload="auto"
-                autoPlay
-                onError={(e) => {
-                  console.error('Erro ao carregar vídeo:', e);
-                  setHasError(true);
-                }}
-                onLoadedData={() => {
-                  setHasError(false);
-                }}
-              >
-                <source src="/videos/estacao.webm" type="video/webm" />
-                <source src="/videos/estacao.mp4" type="video/mp4" />
-                Seu navegador não suporta vídeo HTML5.
-              </video>
             )}
           </div>
 
