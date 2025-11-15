@@ -45,7 +45,7 @@ export default function Header() {
               Sobre
             </button>
             <button
-              onClick={() => scrollToSection("servicos")}
+              onClick={() => scrollToSection("nossos-servicos")}
               className="text-cream-50 hover:text-coffee-500 transition-colors font-sans font-semibold text-base md:text-lg whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/80 focus-visible:rounded-md"
             >
               Serviços
@@ -95,7 +95,7 @@ export default function Header() {
               Sobre
             </button>
             <button
-              onClick={() => scrollToSection("servicos")}
+              onClick={() => scrollToSection("nossos-servicos")}
               className="block w-full text-left px-4 py-2 text-cream-50 hover:text-coffee-500 hover:bg-coffee-700 rounded transition-colors"
             >
               Serviços
