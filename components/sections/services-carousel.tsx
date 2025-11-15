@@ -17,32 +17,47 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
   // Estado para controlar qual slide está ativo/centralizado
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  // Hook do Embla Carousel
+  // Duplicar cards para garantir loop suave (necessário para carrossel com poucos items)
+  const loopedCards = [...cards, ...cards, ...cards];
+
+  // Hook do Embla Carousel com loop infinito
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true, // Permite navegação infinita
-    align: "center", // Alinha cards ao centro
-    skipSnaps: false, // Não pula snaps intermediários
-    dragFree: false, // Snap ao card mais próximo ao soltar
+    loop: true, // Loop infinito ativado
+    align: "center",
+    skipSnaps: false,
+    dragFree: false,
+    startIndex: cards.length, // Começar no segundo set de cards
   });
 
-  // Callback para atualizar o índice selecionado
-  const onSelect = useCallback((api: EmblaCarouselType) => {
-    setSelectedIndex(api.selectedScrollSnap());
-  }, []);
+  // ✅ DETECÇÃO SIMPLES E CONFIÁVEL - Usa API nativa do Embla
+  const updateSelectedIndex = useCallback(() => {
+    if (!emblaApi) return;
+    
+    // Pegar o índice do slide "snapped" pelo Embla
+    const currentSnap = emblaApi.selectedScrollSnap();
+    
+    // Mapear para o card original (0-3)
+    const cardIndex = currentSnap % cards.length;
+    
+    setSelectedIndex(cardIndex);
+  }, [emblaApi, cards]);
 
-  // Registrar listener para mudanças de slide
+  // ✅ REGISTRAR LISTENERS ESSENCIAIS
   useEffect(() => {
     if (!emblaApi) return;
 
-    onSelect(emblaApi);
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
+    // Inicializar
+    updateSelectedIndex();
+
+    // Eventos essenciais (sem "scroll" para evitar race conditions)
+    emblaApi.on("select", updateSelectedIndex);
+    emblaApi.on("reInit", updateSelectedIndex);
 
     return () => {
-      emblaApi.off("select", onSelect);
-      emblaApi.off("reInit", onSelect);
+      emblaApi.off("select", updateSelectedIndex);
+      emblaApi.off("reInit", updateSelectedIndex);
     };
-  }, [emblaApi, onSelect]);
+  }, [emblaApi, updateSelectedIndex]);
 
   // Funções de navegação
   const scrollPrev = useCallback(() => {
@@ -66,21 +81,22 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
       role="region"
       aria-label="Carrossel de serviços"
     >
-      {/* Container do carrossel */}
-      <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
+      {/* Container do carrossel com padding vertical para evitar overflow */}
+      <div className="overflow-hidden cursor-grab active:cursor-grabbing py-8" ref={emblaRef}>
         <div className="flex touch-pan-y">
-          {cards.map((card, index) => {
-            // Verifica se este card está ativo (centralizado)
-            const isActive = index === selectedIndex;
+          {loopedCards.map((card, index) => {
+            // Mapear de volta ao índice original para verificar se está ativo
+            const originalIndex = index % cards.length;
+            const isActive = originalIndex === selectedIndex;
 
             return (
               <article
-                key={card.id}
+                key={`${card.id}-${index}`}
                 className="
                   min-w-[85%] sm:min-w-[70%] md:min-w-[45%] lg:min-w-[33.333%]
                   px-3 sm:px-4
                 "
-                aria-label={`Serviço ${index + 1} de ${cards.length}: ${card.title}`}
+                aria-label={`Serviço ${originalIndex + 1} de ${cards.length}: ${card.title}`}
               >
                 <div
                   className={`
@@ -88,8 +104,8 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
                     shadow-md transition-all duration-300 ease-out
                     ${
                       isActive
-                        ? "scale-100 opacity-100 shadow-lg border-coffee-500/30"
-                        : "scale-95 opacity-75 border-coffee-700"
+                        ? "scale-105 opacity-100 shadow-xl border-coffee-500/40"
+                        : "scale-95 opacity-70 border-coffee-700"
                     }
                   `}
                 >
@@ -192,7 +208,7 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
           {cards.map((_, index) => (
             <button
               key={index}
-              onClick={() => scrollTo(index)}
+              onClick={() => scrollTo(index + cards.length)}
               aria-label={`Ir para serviço ${index + 1}`}
               aria-current={index === selectedIndex ? "true" : "false"}
               className={`
@@ -238,7 +254,7 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
         {cards.map((_, index) => (
           <button
             key={index}
-            onClick={() => scrollTo(index)}
+            onClick={() => scrollTo(index + cards.length)}
             aria-label={`Ir para serviço ${index + 1}`}
             aria-current={index === selectedIndex ? "true" : "false"}
             className={`
