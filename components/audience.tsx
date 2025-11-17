@@ -1,65 +1,62 @@
-import { MapPin, Building2, Heart, Briefcase } from "lucide-react"
+import Image from "next/image"
+import { MapPin, Globe } from "lucide-react"
 
 export default function Audience() {
-  const audiences = [
-    { icon: Building2, text: "Feiras de negócios e exposições" },
-    { icon: Briefcase, text: "Congressos e convenções" },
-    { icon: MapPin, text: "Lançamentos de produtos e stands" },
-    { icon: Heart, text: "Casamentos, formaturas e eventos premium" },
-  ]
-
-  const regions = ["Recife", "Olinda", "Jaboatão", "Paulista", "Aldeia", "João Pessoa"]
-  const localKeywords = [
-    "barista Recife",
-    "barista João Pessoa",
-    "estação de café Recife",
-    "coffee station João Pessoa",
-  ]
-
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-coffee-900">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-center mb-12">Para Quem Atendemos</h2>
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Título Principal Centralizado */}
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-12 sm:mb-16">
+          REGIÕES ATENDIDAS
+        </h2>
 
-        <p className="text-center text-lg text-cream-50 mb-12">
-          Atuamos em eventos de todos os portes, com estrutura completa e montagem rápida:
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          {audiences.map((item, index) => {
-            const Icon = item.icon
-            return (
-              <div key={index} className="flex gap-4 items-start">
-                <Icon className="w-6 h-6 text-coffee-500 flex-shrink-0 mt-1" />
-                <span className="text-cream-50 font-sans">{item.text}</span>
-              </div>
-            )
-          })}
-        </div>
-
-        {/* Regions */}
-        <div className="mb-12">
-          <h3 className="text-center text-xl font-semibold text-cream-50 mb-6">Regiões Atendidas</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {regions.map((region) => (
-              <div
-                key={region}
-                className="px-4 py-2 bg-coffee-700 border border-coffee-500/30 rounded-full text-cream-50 font-sans"
-              >
-                {region}
-              </div>
-            ))}
+        {/* Grid de 2 Colunas */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          
+          {/* Coluna Esquerda: Imagem do Mapa */}
+          <div className="flex justify-center">
+            <div className="relative w-[70%] max-w-md lg:max-w-[70%] aspect-square">
+              <Image
+                src="/mapa-estacao-grao2.png"
+                alt="Mapa de regiões atendidas pela Estação do Grão no Nordeste e Brasil"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 313px, 420px"
+                priority={false}
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Local SEO Keywords */}
-        <div className="pt-8 border-t border-coffee-700">
-          <div className="flex flex-wrap gap-2 justify-center">
-            {localKeywords.map((keyword) => (
-              <span key={keyword} className="text-xs px-2 py-1 bg-coffee-700/50 text-coffee-500 rounded font-sans">
-                {keyword}
-              </span>
-            ))}
+          {/* Coluna Direita: Texto sobre Cobertura */}
+          <div className="space-y-8">
+            
+            {/* Nordeste - 100 doses */}
+            <div className="p-8 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors">
+              <div className="flex items-start gap-4">
+                <MapPin className="w-10 h-10 text-coffee-500 flex-shrink-0 mt-1" />
+                <div>
+                  <p className="text-base sm:text-lg lg:text-xl text-cream-50 leading-relaxed">
+                    Atendemos toda a <strong className="text-coffee-500">região do Nordeste</strong> a partir de{" "}
+                    <strong className="text-coffee-500 font-bold text-xl sm:text-2xl">100 doses</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Brasil - 3.000 doses */}
+            <div className="p-8 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors">
+              <div className="flex items-start gap-4">
+                <Globe className="w-10 h-10 text-coffee-500 flex-shrink-0 mt-1" />
+                <div>
+                  <p className="text-base sm:text-lg lg:text-xl text-cream-50 leading-relaxed">
+                    Atendemos <strong className="text-coffee-500">todo o Brasil</strong> a partir de{" "}
+                    <strong className="text-coffee-500 font-bold text-xl sm:text-2xl">3.000 doses</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

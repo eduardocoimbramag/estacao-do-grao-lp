@@ -456,5 +456,39 @@ import { MapPin, Globe } from "lucide-react"
 
 **Documentação criada em:** 17/11/2025  
 **Seção:** 4 (Audience/Regiões Atendidas)  
-**Status:** 📄 Apenas documentação (implementação pendente)
+**Status:** ✅ Implementado
+
+---
+
+## 🎉 Implementação Concluída
+
+### ✅ O que foi feito:
+
+1. **Componente reformulado** (`components/audience.tsx`)
+   - Layout dividido em 2 colunas (imagem + texto)
+   - Título "REGIÕES ATENDIDAS" em branco
+   - Ícones MapPin e Globe do lucide-react
+   - Cards com hover effect seguindo padrão UX do projeto
+   - Números em destaque (100 doses e 3.000 doses)
+
+2. **Placeholder SVG criado** (`public/mapa-estacao-grao.svg`)
+   - Mapa simplificado do Brasil
+   - Região Nordeste destacada em dourado
+   - Legenda visual incluída
+   - Cores da paleta do projeto
+
+3. **Padrões mantidos**:
+   - ✅ Fundo `bg-coffee-900`
+   - ✅ Bordas `border-coffee-700` com hover `coffee-500/50`
+   - ✅ Transições suaves `transition-colors`
+   - ✅ Cards com `bg-coffee-900/60` e opacidade
+   - ✅ Responsividade mobile-first
+   - ✅ Espaçamentos consistentes com outras seções
+
+### 📝 Próximo passo (opcional):
+
+Substitua o arquivo `public/mapa-estacao-grao.svg` por sua imagem PNG real:
+- Nome: `mapa-estacao-grao.png` (ou mantenha .svg)
+- Dimensões: 800x800 pixels
+- Se usar PNG, atualize a linha 21 em `components/audience.tsx` de `.svg` para `.png`
 
