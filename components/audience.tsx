@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { MapPin, Globe } from "lucide-react"
+import { MapPin, Globe, Navigation } from "lucide-react"
 
 export default function Audience() {
   return (
@@ -39,6 +39,19 @@ export default function Audience() {
                   <p className="text-base sm:text-lg lg:text-xl text-cream-50 leading-relaxed">
                     Atendemos toda a <strong className="text-coffee-500">região do Nordeste</strong> a partir de{" "}
                     <strong className="text-coffee-500 font-bold text-xl sm:text-2xl">100 doses</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Estados Específicos - 50 doses */}
+            <div className="p-8 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors">
+              <div className="flex items-start gap-4">
+                <Navigation className="w-10 h-10 text-coffee-500 flex-shrink-0 mt-1" />
+                <div>
+                  <p className="text-base sm:text-lg lg:text-xl text-cream-50 leading-relaxed">
+                    Atendemos <strong className="text-coffee-500">Pernambuco, Paraíba e Alagoas</strong> a partir de{" "}
+                    <strong className="text-coffee-500 font-bold text-xl sm:text-2xl">50 doses</strong>.
                   </p>
                 </div>
               </div>
