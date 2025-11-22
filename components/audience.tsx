@@ -11,9 +11,9 @@ export default function Audience() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
           {/* Coluna Esquerda: Título + Mapa + Cards */}
-          <div className="flex flex-col justify-center items-center gap-6 lg:gap-8">
+          <div className="flex flex-col justify-center items-center gap-2 lg:gap-3">
             {/* Título */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center">
+            <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white text-center">
               REGIÕES ATENDIDAS
             </h2>
             
@@ -30,39 +30,39 @@ export default function Audience() {
             </div>
 
             {/* Card 1: Nordeste - 100 doses */}
-            <div className="p-8 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors w-full max-w-md">
-              <div className="flex items-start gap-4">
-                <MapPin className="w-10 h-10 text-coffee-500 flex-shrink-0 mt-1" />
+            <div className="px-6 py-2 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors w-full max-w-md">
+              <div className="flex items-center gap-2">
+                <MapPin className="w-6 h-6 text-coffee-500 flex-shrink-0" />
                 <div>
-                  <p className="text-base sm:text-lg lg:text-xl text-cream-50 leading-relaxed">
+                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed">
                     Atendemos toda a <strong className="text-coffee-500">região do Nordeste</strong> a partir de{" "}
-                    <strong className="text-coffee-500 font-bold text-xl sm:text-2xl">100 doses</strong>.
+                    <strong className="text-coffee-500 font-bold text-base sm:text-lg">100 doses</strong>.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Card 2: Estados Específicos - 50 doses */}
-            <div className="p-8 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors w-full max-w-md">
-              <div className="flex items-start gap-4">
-                <Navigation className="w-10 h-10 text-coffee-500 flex-shrink-0 mt-1" />
+            <div className="px-6 py-2 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors w-full max-w-md">
+              <div className="flex items-center gap-2">
+                <Navigation className="w-6 h-6 text-coffee-500 flex-shrink-0" />
                 <div>
-                  <p className="text-base sm:text-lg lg:text-xl text-cream-50 leading-relaxed">
+                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed">
                     Atendemos <strong className="text-coffee-500">Pernambuco, Paraíba e Alagoas</strong> a partir de{" "}
-                    <strong className="text-coffee-500 font-bold text-xl sm:text-2xl">50 doses</strong>.
+                    <strong className="text-coffee-500 font-bold text-base sm:text-lg">50 doses</strong>.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Card 3: Brasil - 3.000 doses */}
-            <div className="p-8 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors w-full max-w-md">
-              <div className="flex items-start gap-4">
-                <Globe className="w-10 h-10 text-coffee-500 flex-shrink-0 mt-1" />
+            <div className="px-6 py-2 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors w-full max-w-md">
+              <div className="flex items-center gap-2">
+                <Globe className="w-6 h-6 text-coffee-500 flex-shrink-0" />
                 <div>
-                  <p className="text-base sm:text-lg lg:text-xl text-cream-50 leading-relaxed">
+                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed">
                     Atendemos <strong className="text-coffee-500">todo o Brasil</strong> a partir de{" "}
-                    <strong className="text-coffee-500 font-bold text-xl sm:text-2xl">3.000 doses</strong>.
+                    <strong className="text-coffee-500 font-bold text-base sm:text-lg">3.000 doses</strong>.
                   </p>
                 </div>
               </div>
