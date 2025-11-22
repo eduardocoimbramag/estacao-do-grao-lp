@@ -115,16 +115,16 @@ export default function FlipCard() {
                       key={item.id}
                       className={`flex flex-col sm:flex-row ${
                         item.imagePosition === 'right' ? 'sm:flex-row-reverse' : ''
-                      } items-center gap-2 sm:gap-2 lg:gap-3 p-[6px] bg-coffee-900/60 rounded-2xl transition-all duration-300`}
+                      } items-center gap-[30px] p-0 bg-coffee-900/60 rounded-2xl transition-all duration-300`}
                     >
                       {/* Imagem */}
-                      <div className="relative w-[371px] h-[202px] sm:w-[424px] sm:h-[230px] lg:w-[530px] lg:h-[288px] flex-shrink-0 rounded-xl overflow-hidden">
+                      <div className="relative w-[388px] h-[162px] sm:w-[443px] sm:h-[184px] lg:w-[554px] lg:h-[230px] flex-shrink-0 rounded-xl overflow-hidden">
                         <Image
                           src={item.image}
                           alt={item.title}
                           fill
                           className="object-cover"
-                          sizes="(max-width: 640px) 371px, (max-width: 1024px) 424px, 530px"
+                          sizes="(max-width: 640px) 388px, (max-width: 1024px) 443px, 554px"
                         />
                       </div>
 
@@ -144,7 +144,7 @@ export default function FlipCard() {
                 {/* Botão para virar */}
                 <button
                   onClick={handleFlip}
-                  className="w-full flex items-center justify-center gap-2 py-4 px-6 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 group mb-3"
+                  className="w-full flex items-center justify-center gap-2 py-4 px-6 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 group mt-[30px] mb-0"
                   aria-label="Virar para Poderes do Café"
                 >
                   <span className="text-base sm:text-lg lg:text-xl font-semibold">
@@ -171,16 +171,16 @@ export default function FlipCard() {
                       key={item.id}
                       className={`flex flex-col sm:flex-row ${
                         item.imagePosition === 'right' ? 'sm:flex-row-reverse' : ''
-                      } items-center gap-2 sm:gap-2 lg:gap-3 p-[6px] bg-coffee-900/60 rounded-2xl transition-all duration-300`}
+                      } items-center gap-[30px] p-0 bg-coffee-900/60 rounded-2xl transition-all duration-300`}
                     >
                       {/* Imagem */}
-                      <div className="relative w-[371px] h-[202px] sm:w-[424px] sm:h-[230px] lg:w-[530px] lg:h-[288px] flex-shrink-0 rounded-xl overflow-hidden">
+                      <div className="relative w-[388px] h-[162px] sm:w-[443px] sm:h-[184px] lg:w-[554px] lg:h-[230px] flex-shrink-0 rounded-xl overflow-hidden">
                         <Image
                           src={item.image}
                           alt={item.title}
                           fill
                           className="object-cover"
-                          sizes="(max-width: 640px) 371px, (max-width: 1024px) 424px, 530px"
+                          sizes="(max-width: 640px) 388px, (max-width: 1024px) 443px, 554px"
                         />
                       </div>
 
@@ -200,7 +200,7 @@ export default function FlipCard() {
                 {/* Botão para virar de volta */}
                 <button
                   onClick={handleFlip}
-                  className="w-full flex items-center justify-center gap-2 py-4 px-6 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 group mb-3"
+                  className="w-full flex items-center justify-center gap-2 py-4 px-6 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 group mt-[30px] mb-0"
                   aria-label="Virar para Personalização"
                 >
                   <RotateCcw className="w-5 h-5 sm:w-6 sm:h-6 group-hover:-rotate-180 transition-transform duration-500" />
