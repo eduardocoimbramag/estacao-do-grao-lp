@@ -90,7 +90,7 @@ export default function FlipCard() {
   ]
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-coffee-500">
+    <section className="py-[18px] sm:py-6 lg:py-[30px] px-4 sm:px-6 lg:px-8 bg-coffee-500">
       <div className="max-w-7xl mx-auto">
         
         {/* Container com perspectiva */}
@@ -101,39 +101,39 @@ export default function FlipCard() {
             
             {/* LADO 1: Personalização para seu evento */}
             <div className="flip-card-front">
-              <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl">
+              <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-[30px] shadow-2xl">
                 
                 {/* Título */}
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-4 lg:mb-6">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-[30px]">
                   PERSONALIZAÇÃO PARA SEU EVENTO
                 </h2>
 
                 {/* Grid de Itens */}
-                <div className="space-y-2 lg:space-y-3 mb-4 lg:mb-6">
+                <div className="space-y-2 mb-2">
                   {side1Items.map((item) => (
                     <div
                       key={item.id}
                       className={`flex flex-col sm:flex-row ${
                         item.imagePosition === 'right' ? 'sm:flex-row-reverse' : ''
-                      } items-center gap-2 sm:gap-2 lg:gap-3 p-4 sm:p-6 bg-coffee-900/60 rounded-2xl transition-all duration-300`}
+                      } items-center gap-2 sm:gap-2 lg:gap-3 p-[6px] bg-coffee-900/60 rounded-2xl transition-all duration-300`}
                     >
                       {/* Imagem */}
-                      <div className="relative w-[309px] h-56 sm:w-[353px] sm:h-64 lg:w-[442px] lg:h-80 flex-shrink-0 rounded-xl overflow-hidden">
+                      <div className="relative w-[371px] h-[202px] sm:w-[424px] sm:h-[230px] lg:w-[530px] lg:h-[288px] flex-shrink-0 rounded-xl overflow-hidden">
                         <Image
                           src={item.image}
                           alt={item.title}
                           fill
                           className="object-cover"
-                          sizes="(max-width: 640px) 309px, (max-width: 1024px) 353px, 442px"
+                          sizes="(max-width: 640px) 371px, (max-width: 1024px) 424px, 530px"
                         />
                       </div>
 
                       {/* Texto */}
-                      <div className="flex-1 text-center sm:text-left">
+                      <div className="flex-1 flex flex-col justify-center text-center">
                         <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-coffee-500 mb-2">
                           {item.title}
                         </h3>
-                        <p className="text-sm sm:text-base lg:text-lg text-cream-50 leading-relaxed">
+                        <p className="text-sm sm:text-base lg:text-lg text-cream-50 leading-relaxed text-justify">
                           {item.description}
                         </p>
                       </div>
@@ -144,7 +144,7 @@ export default function FlipCard() {
                 {/* Botão para virar */}
                 <button
                   onClick={handleFlip}
-                  className="w-full flex items-center justify-center gap-2 py-4 px-6 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 group"
+                  className="w-full flex items-center justify-center gap-2 py-4 px-6 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 group mb-3"
                   aria-label="Virar para Poderes do Café"
                 >
                   <span className="text-base sm:text-lg lg:text-xl font-semibold">
@@ -157,39 +157,39 @@ export default function FlipCard() {
 
             {/* LADO 2: Poderes do Café */}
             <div className="flip-card-back">
-              <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl">
+              <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-[30px] shadow-2xl">
                 
                 {/* Título */}
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-4 lg:mb-6">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-[30px]">
                   PODERES DO CAFÉ
                 </h2>
 
                 {/* Grid de Itens */}
-                <div className="space-y-2 lg:space-y-3 mb-4 lg:mb-6">
+                <div className="space-y-2 mb-2">
                   {side2Items.map((item) => (
                     <div
                       key={item.id}
                       className={`flex flex-col sm:flex-row ${
                         item.imagePosition === 'right' ? 'sm:flex-row-reverse' : ''
-                      } items-center gap-2 sm:gap-2 lg:gap-3 p-4 sm:p-6 bg-coffee-900/60 rounded-2xl transition-all duration-300`}
+                      } items-center gap-2 sm:gap-2 lg:gap-3 p-[6px] bg-coffee-900/60 rounded-2xl transition-all duration-300`}
                     >
                       {/* Imagem */}
-                      <div className="relative w-[309px] h-56 sm:w-[353px] sm:h-64 lg:w-[442px] lg:h-80 flex-shrink-0 rounded-xl overflow-hidden">
+                      <div className="relative w-[371px] h-[202px] sm:w-[424px] sm:h-[230px] lg:w-[530px] lg:h-[288px] flex-shrink-0 rounded-xl overflow-hidden">
                         <Image
                           src={item.image}
                           alt={item.title}
                           fill
                           className="object-cover"
-                          sizes="(max-width: 640px) 309px, (max-width: 1024px) 353px, 442px"
+                          sizes="(max-width: 640px) 371px, (max-width: 1024px) 424px, 530px"
                         />
                       </div>
 
                       {/* Texto */}
-                      <div className="flex-1 text-center sm:text-left">
+                      <div className="flex-1 flex flex-col justify-center text-center">
                         <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-coffee-500 mb-2">
                           {item.title}
                         </h3>
-                        <p className="text-sm sm:text-base lg:text-lg text-cream-50 leading-relaxed">
+                        <p className="text-sm sm:text-base lg:text-lg text-cream-50 leading-relaxed text-justify">
                           {item.description}
                         </p>
                       </div>
@@ -200,7 +200,7 @@ export default function FlipCard() {
                 {/* Botão para virar de volta */}
                 <button
                   onClick={handleFlip}
-                  className="w-full flex items-center justify-center gap-2 py-4 px-6 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 group"
+                  className="w-full flex items-center justify-center gap-2 py-4 px-6 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 group mb-3"
                   aria-label="Virar para Personalização"
                 >
                   <RotateCcw className="w-5 h-5 sm:w-6 sm:h-6 group-hover:-rotate-180 transition-transform duration-500" />
