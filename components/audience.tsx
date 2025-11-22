@@ -75,7 +75,7 @@ export default function Audience() {
             {/* Botão 1: Galeria de experiências */}
             <Link
               href="#galeria"
-              className="group relative py-12 lg:py-16 overflow-hidden rounded-2xl border-2 border-white transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-coffee-900"
+              className="group relative flex-1 py-12 lg:py-16 overflow-hidden rounded-2xl border-2 border-white transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-coffee-900"
             >
               <Image
                 src="/professional-barista-making-latte-art.jpg"
