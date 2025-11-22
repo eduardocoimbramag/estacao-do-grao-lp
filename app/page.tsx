@@ -3,6 +3,7 @@ import Hero from "@/components/hero/Hero"
 import OpenMenuIntro from "@/components/OpenMenuIntro"
 import { ServicesCarousel } from "@/components/sections/services-carousel"
 import { SERVICES_CAROUSEL_CARDS } from "@/lib/data/services-carousel-cards"
+import FlipCard from "@/components/flipcard"
 import Audience from "@/components/audience"
 import Differentials from "@/components/differentials"
 import Gallery from "@/components/gallery"
@@ -39,6 +40,7 @@ export default function Home() {
         </div>
       </section>
 
+      <FlipCard />
       <Audience />
       <Differentials />
       <Gallery />
