@@ -6,16 +6,17 @@ export default function Audience() {
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-coffee-900">
       <div className="max-w-7xl mx-auto">
         
-        {/* Título Principal Centralizado */}
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-12 sm:mb-16">
-          REGIÕES ATENDIDAS
-        </h2>
-
         {/* Grid de 2 Colunas */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
-          {/* Coluna Esquerda: Imagem do Mapa */}
-          <div className="flex justify-center">
+          {/* Coluna Esquerda: Título + Imagem do Mapa */}
+          <div className="flex flex-col justify-center items-center gap-6 lg:gap-8">
+            {/* Título */}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center">
+              REGIÕES ATENDIDAS
+            </h2>
+            
+            {/* Imagem do Mapa */}
             <div className="relative w-[70%] max-w-md lg:max-w-[70%] aspect-square">
               <Image
                 src="/mapa-estacao-grao2.png"
