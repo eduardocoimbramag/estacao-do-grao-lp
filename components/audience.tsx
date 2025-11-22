@@ -8,7 +8,7 @@ export default function Audience() {
       <div className="max-w-7xl mx-auto">
         
         {/* Grid de 2 Colunas */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           
           {/* Coluna Esquerda: Título + Mapa + Cards */}
           <div className="flex flex-col justify-center items-center gap-2 lg:gap-3">
@@ -70,12 +70,12 @@ export default function Audience() {
           </div>
 
           {/* Coluna Direita: Botões de Navegação */}
-          <div className="flex flex-col justify-center items-stretch gap-8">
+          <div className="flex flex-col justify-start items-stretch gap-8 h-full">
             
             {/* Botão 1: Galeria de experiências */}
             <Link
               href="#galeria"
-              className="group relative h-56 overflow-hidden rounded-2xl border-2 border-white transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-coffee-900"
+              className="group relative py-12 lg:py-16 overflow-hidden rounded-2xl border-2 border-white transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-coffee-900"
             >
               <Image
                 src="/professional-barista-making-latte-art.jpg"
@@ -96,7 +96,7 @@ export default function Audience() {
             {/* Botão 2: Blog */}
             <Link
               href="/blog"
-              className="group relative h-56 overflow-hidden rounded-2xl border-2 border-white transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-coffee-900"
+              className="group relative flex-1 py-12 lg:py-16 overflow-hidden rounded-2xl border-2 border-white transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-coffee-900"
             >
               <Image
                 src="/coffee-station-setup-at-wedding-reception.jpg"
