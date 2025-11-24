@@ -144,7 +144,7 @@ export default function Hero({
           {/* Card 1 */}
           <div className="p-4 md:p-5 bg-coffee-card border border-coffee-500/30 rounded-xl hover:border-coffee-500/60 transition-colors flex flex-col items-center text-center gap-2">
             <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-coffee-500">
-              +5 mil
+              + 100 mil
             </div>
             <div className="text-lg md:text-xl font-semibold text-cream-50 font-serif uppercase tracking-wider flex items-center gap-2">
               <span>☕</span>
@@ -166,7 +166,7 @@ export default function Hero({
           {/* Card 3 */}
           <div className="p-4 md:p-5 bg-coffee-card border border-coffee-500/30 rounded-xl hover:border-coffee-500/60 transition-colors flex flex-col items-center text-center gap-2">
             <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-coffee-500">
-              +300
+              + 2 mil
             </div>
             <div className="text-lg md:text-xl font-semibold text-cream-50 font-serif uppercase tracking-wider flex items-center gap-2">
               <span>🤝</span>
