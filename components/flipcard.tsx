@@ -90,7 +90,7 @@ export default function FlipCard() {
   ]
 
   return (
-    <section className="py-[18px] sm:py-6 lg:py-[30px] px-4 sm:px-6 lg:px-8 bg-coffee-500">
+    <section className="py-[18px] sm:py-6 lg:py-[30px] px-4 sm:px-6 lg:px-8 bg-coffee-700">
       <div className="max-w-7xl mx-auto">
         
         {/* Container com perspectiva */}

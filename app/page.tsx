@@ -21,7 +21,7 @@ export default function Home() {
       {/* 3ª Section: Nossos Serviços (CARROSSEL) */}
       <section
         id="nossos-servicos"
-        className="py-16 sm:py-20 lg:py-24 bg-coffee-700/50"
+        className="py-[30px] bg-coffee-700/50"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Cabeçalho da Section */}
@@ -40,8 +40,8 @@ export default function Home() {
         </div>
       </section>
 
-      <FlipCard />
       <Audience />
+      <FlipCard />
       <Differentials />
       <Gallery />
       <Testimonials />
