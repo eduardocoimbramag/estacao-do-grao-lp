@@ -5,9 +5,6 @@ import { ServicesCarousel } from "@/components/sections/services-carousel"
 import { SERVICES_CAROUSEL_CARDS } from "@/lib/data/services-carousel-cards"
 import FlipCard from "@/components/flipcard"
 import Audience from "@/components/audience"
-import Differentials from "@/components/differentials"
-import Gallery from "@/components/gallery"
-import Testimonials from "@/components/testimonials"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 
@@ -42,9 +39,6 @@ export default function Home() {
 
       <Audience />
       <FlipCard />
-      <Differentials />
-      <Gallery />
-      <Testimonials />
       <Contact />
       <Footer />
     </main>
