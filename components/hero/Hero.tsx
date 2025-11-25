@@ -12,9 +12,9 @@ type HeroProps = {
 
 export default function Hero({ 
   images = [
-    "/professional-barista-making-latte-art.jpg",
-    "/coffee-station-setup-at-wedding-reception.jpg",
-    "/barista-serving-espresso-at-corporate-event.jpg",
+    "/slideshow-1.jpg",
+    "/slideshow-2.jpg",
+    "/slideshow-3.jpg",
     "/guests-enjoying-gourmet-coffee-at-premium-event.jpg",
     "/espresso-machine-coffee-station-at-fair.jpg",
     "/coffee-station-with-branded-logo-personalized.jpg"
@@ -100,7 +100,7 @@ export default function Hero({
                         src={src}
                         alt={`Foto ${idx + 1} do serviço de café para eventos`}
                         fill
-                        className="object-cover select-none"
+                        className={`object-cover select-none ${idx === 0 ? 'object-[50%_70%]' : ''}`}
                         sizes="(min-width:1536px) 720px, (min-width:1280px) 640px, (min-width:1024px) 560px, (min-width:768px) 50vw, 100vw"
                         priority={idx === 0}
                       />
