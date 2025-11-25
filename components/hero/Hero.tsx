@@ -15,9 +15,7 @@ export default function Hero({
     "/slideshow-1.jpg",
     "/slideshow-2.jpg",
     "/slideshow-3.jpg",
-    "/guests-enjoying-gourmet-coffee-at-premium-event.jpg",
-    "/espresso-machine-coffee-station-at-fair.jpg",
-    "/coffee-station-with-branded-logo-personalized.jpg"
+    "/slideshow-4.jpg"
   ] 
 }: HeroProps) {
   // Embla options
@@ -108,6 +106,8 @@ export default function Hero({
                               ? 'object-[50%_55%]' 
                               : idx === 2
                               ? 'object-[50%_57.5%]'
+                              : idx === 3
+                              ? 'object-[50%_70%]'
                               : ''
                           }`}
                           sizes="(min-width:1536px) 720px, (min-width:1280px) 640px, (min-width:1024px) 560px, (min-width:768px) 50vw, 100vw"
