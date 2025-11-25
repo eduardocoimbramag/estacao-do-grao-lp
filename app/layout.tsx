@@ -1,12 +1,13 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Playfair_Display, Inter } from "next/font/google"
+import { Montserrat, Inter } from "next/font/google"
 import "./globals.css"
 
-const playfairDisplay = Playfair_Display({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-playfair",
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-montserrat",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
 })
 
 const inter = Inter({
@@ -64,7 +65,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className={`${playfairDisplay.variable} ${inter.variable} scroll-smooth`}>
+    <html lang="pt-BR" className={`${montserrat.variable} ${inter.variable} scroll-smooth`}>
       <head>
         <link rel="canonical" href="https://estacaodograo.com.br" />
         <meta property="og:type" content="website" />

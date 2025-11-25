@@ -172,6 +172,11 @@ h6 {
   @apply font-serif font-semibold tracking-tight;
 }
 
+/* Custom Font: Montserrat */
+.font-montserrat {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+}
+
 h1 {
   @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
 }
