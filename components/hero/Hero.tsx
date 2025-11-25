@@ -95,15 +95,25 @@ export default function Hero({
               <div className="flex">
                 {images.map((src, idx) => (
                   <div className="relative min-w-0 flex-[0_0_100%]" key={idx}>
-                    <div className="relative aspect-[4/3.2] lg:aspect-[16/10.5] w-full">
-                      <Image
-                        src={src}
-                        alt={`Foto ${idx + 1} do serviço de café para eventos`}
-                        fill
-                        className={`object-cover select-none ${idx === 0 ? 'object-[50%_70%]' : ''}`}
-                        sizes="(min-width:1536px) 720px, (min-width:1280px) 640px, (min-width:1024px) 560px, (min-width:768px) 50vw, 100vw"
-                        priority={idx === 0}
-                      />
+                    <div className="relative aspect-[4/3.2] lg:aspect-[16/10.5] w-full overflow-hidden">
+                      <div className={`absolute inset-0 ${idx === 2 ? 'scale-[1.0]' : ''}`}>
+                        <Image
+                          src={src}
+                          alt={`Foto ${idx + 1} do serviço de café para eventos`}
+                          fill
+                          className={`object-cover select-none transition-transform ${
+                            idx === 0 
+                              ? 'object-[50%_70%]' 
+                              : idx === 1 
+                              ? 'object-[50%_55%]' 
+                              : idx === 2
+                              ? 'object-[50%_57.5%]'
+                              : ''
+                          }`}
+                          sizes="(min-width:1536px) 720px, (min-width:1280px) 640px, (min-width:1024px) 560px, (min-width:768px) 50vw, 100vw"
+                          priority={idx === 0}
+                        />
+                      </div>
                     </div>
                   </div>
                 ))}
