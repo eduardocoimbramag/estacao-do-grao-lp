@@ -2,10 +2,10 @@
 
 ## 📋 Objetivo
 
-Ajustar o alinhamento de elementos na primeira seção (Hero) para criar uma hierarquia visual mais organizada e alinhada. As mudanças incluem alinhar o título principal com a borda direita da DIV de texto e alinhar o slideshow com o final da última DIV de serviços.
+Ajustar o alinhamento de elementos na primeira seção (Hero) para criar uma hierarquia visual mais organizada e alinhada. O título permanece fora do grid, mas seu conteúdo deve se alinhar com o início do slideshow (lado esquerdo) e o final da DIV de texto (lado direito), sem ultrapassar esses limites.
 
 **Mudanças**:
-- **Alinhar título à direita**: Alterar o título "Café Gourmet e Baristas para Eventos" de centralizado para alinhado à direita, alinhando com a borda direita da DIV que contém o texto descritivo
+- **Alinhar título com limites do grid**: O título permanece fora do grid, mas seu conteúdo deve se alinhar com o início do slideshow (esquerda) e o final da DIV de texto (direita)
 - **Alinhar slideshow ao bottom**: Fazer com que o slideshow (carrossel de imagens) fique alinhado com o final (bottom) da última DIV de serviços ("Perfeito para feiras e estandes")
 
 ---
@@ -21,7 +21,7 @@ Ajustar o alinhamento de elementos na primeira seção (Hero) para criar uma hie
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
-│        CAFÉ GOURMET E BARISTAS PARA EVENTOS                 │ ← text-center (centralizado)
+│        CAFÉ GOURMET E BARISTAS PARA EVENTOS                 │ ← text-center (centralizado, ultrapassa limites)
 │                    (título)                                 │
 │                                                             │
 │  ┌──────────────────┐  ┌──────────────────────────────┐  │
@@ -41,7 +41,7 @@ Ajustar o alinhamento de elementos na primeira seção (Hero) para criar uma hie
 ```
 
 **Características atuais**:
-- Título H1: `text-center` (centralizado horizontalmente)
+- Título H1: Fora do grid, centralizado (`text-center`), pode ultrapassar os limites do grid
 - Grid principal: `items-start` (alinhamento no topo)
 - Slideshow: Alinhado ao topo da coluna esquerda
 - DIV de texto: Alinhada ao topo da coluna direita
@@ -53,27 +53,29 @@ Ajustar o alinhamento de elementos na primeira seção (Hero) para criar uma hie
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
-│                                    CAFÉ GOURMET E BARISTAS  │ ← text-right (alinhado à direita)
-│                                    PARA EVENTOS             │
+│  ┌──────────────────────────────────────────────────────┐ │
+│  │  CAFÉ GOURMET E BARISTAS PARA EVENTOS                 │ │ ← título alinhado com limites do grid
+│  └──────────────────────────────────────────────────────┘ │
+│  ↑ início slideshow              ↑ final DIV texto        │
 │                                                             │
-│  ┌──────────────────┐  ┌──────────────────────────────┐     │
-│  │                  │  │  ┌──────────────────────────┐ │     │
-│  │                  │  │  │ Transforme o café do seu  │ │     │
-│  │                  │  │  │ evento em uma experiência│ │     │
-│  │   Slideshow     │  │  │ inesquecível...           │ │     │
-│  │   (Carrossel)   │  │  └──────────────────────────┘ │     │
-│  │                  │  │                                │     │
-│  │                  │  │  [Card 1]                     │     │
-│  │                  │  │  [Card 2]                     │     │
-│  │                  │  │  [Card 3]                    │     │
-│  │                  │  │  "Perfeito para feiras..."   │     │
-│  └──────────────────┘  └──────────────────────────────┘     │
+│  ┌──────────────────┐  ┌──────────────────────────────┐  │
+│  │                  │  │  ┌──────────────────────────┐ │  │
+│  │                  │  │  │ Transforme o café do seu  │ │  │
+│  │   Slideshow     │  │  │ evento em uma experiência│ │  │
+│  │   (Carrossel)   │  │  │ inesquecível...           │ │  │
+│  │                  │  │  └──────────────────────────┘ │  │
+│  │                  │  │                                │  │
+│  │                  │  │  [Card 1]                     │  │
+│  │                  │  │  [Card 2]                     │  │
+│  │                  │  │  [Card 3]                    │  │
+│  │                  │  │  "Perfeito para feiras..."   │  │
+│  └──────────────────┘  └──────────────────────────────┘  │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 **Características novas**:
-- Título H1: `text-right` (alinhado à direita, alinhando com a borda direita da DIV de texto)
+- Título H1: Fora do grid, mas com largura e alinhamento que respeitam os limites do grid (início do slideshow até final da DIV de texto)
 - Grid principal: `items-end` (alinhamento no final/bottom)
 - Slideshow: Alinhado ao final da coluna esquerda (bottom)
 - DIV de texto: Mantém alinhamento natural, slideshow se alinha ao final dela
@@ -82,24 +84,22 @@ Ajustar o alinhamento de elementos na primeira seção (Hero) para criar uma hie
 
 ## 📐 Layout Visual Detalhado
 
-### Alinhamento do Título
+### Alinhamento do Título com Limites do Grid
 
 #### ANTES
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
+│  Container (max-w-7xl mx-auto px-4)                         │
 │                                                             │
 │        ┌─────────────────────────────────────┐              │
 │        │  CAFÉ GOURMET E BARISTAS PARA EVENTOS │              │
 │        └─────────────────────────────────────┘              │
-│                    ↑ text-center                            │
+│                    ↑ text-center (ultrapassa limites)       │
 │                                                             │
-│  ┌──────────────┐  ┌──────────────────────────────┐      │
-│  │              │  │  ┌──────────────────────────┐ │      │
-│  │              │  │  │ Texto descritivo...       │ │      │
-│  │  Slideshow   │  │  └──────────────────────────┘ │      │
-│  │              │  │                                │      │
-│  └──────────────┘  └──────────────────────────────┘      │
+│  ┌──────────────────┐  ┌──────────────────────────────┐  │
+│  │  Slideshow      │  │  Texto + Cards                │  │
+│  └──────────────────┘  └──────────────────────────────┘  │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -108,19 +108,16 @@ Ajustar o alinhamento de elementos na primeira seção (Hero) para criar uma hie
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
+│  Container (max-w-7xl mx-auto px-4)                         │
 │                                                             │
-│                                    ┌─────────────────────┐  │
-│                                    │ CAFÉ GOURMET E      │  │
-│                                    │ BARISTAS PARA EVENTOS│  │
-│                                    └─────────────────────┘  │
-│                                    ↑ text-right             │
+│  ┌──────────────────────────────────────────────────────┐  │
+│  │  CAFÉ GOURMET E BARISTAS PARA EVENTOS                 │  │
+│  └──────────────────────────────────────────────────────┘  │
+│  ↑ início slideshow              ↑ final DIV texto         │
 │                                                             │
-│  ┌──────────────┐  ┌──────────────────────────────┐         │
-│  │              │  │  ┌──────────────────────────┐ │         │
-│  │              │  │  │ Texto descritivo...       │ │         │
-│  │  Slideshow   │  │  └──────────────────────────┘ │         │
-│  │              │  │                                │         │
-│  └──────────────┘  └──────────────────────────────┘         │
+│  ┌──────────────────┐  ┌──────────────────────────────┐  │
+│  │  Slideshow       │  │  Texto + Cards                │  │
+│  └──────────────────┘  └──────────────────────────────┘  │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -169,34 +166,66 @@ Ajustar o alinhamento de elementos na primeira seção (Hero) para criar uma hie
 
 ## 🔧 Implementação Técnica
 
-### Passo 1: Alterar Alinhamento do Título
+### Passo 1: Ajustar Título para Alinhar com Limites do Grid
 
 **Arquivo**: `components/hero/Hero.tsx`
 
 **Localização**: Linha 69
 
 **Ação**: 
-1. Substituir `text-center` por `text-right` na className do H1
-2. Manter todas as outras classes (`font-montserrat`, `text-cream-50`, `font-bold`, etc.)
+1. Manter o título fora do grid
+2. Alterar `text-center` para `text-right` no H1
+3. Adicionar um wrapper ou ajustar o container do título para que ele tenha a mesma largura e alinhamento do grid
+4. O título deve começar no mesmo ponto que o slideshow (coluna esquerda) e terminar no mesmo ponto que a DIV de texto (coluna direita)
+
+**Estratégia**: 
+- O título está dentro de `max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`
+- O grid também está dentro do mesmo container
+- Precisamos fazer o título ter a mesma largura efetiva do grid (considerando gaps)
+- Usar `text-right` para alinhar à direita, mas garantir que o container do título tenha a mesma largura do grid
 
 **Código ANTES**:
 
 ```tsx
-<h1 className="font-montserrat text-cream-50 font-bold tracking-tight text-center mb-8 md:mb-10 lg:mb-12 text-2xl md:text-3xl lg:text-4xl uppercase whitespace-nowrap">
-  Café Gourmet e Baristas para Eventos
-</h1>
+<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  {/* H1 centralizado com clamp */}
+  <h1 className="font-montserrat text-cream-50 font-bold tracking-tight text-center mb-8 md:mb-10 lg:mb-12 text-2xl md:text-3xl lg:text-4xl uppercase whitespace-nowrap">
+    Café Gourmet e Baristas para Eventos
+  </h1>
+
+  {/* Grid principal com gaps progressivos */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-14 items-start">
+    {/* ... */}
+  </div>
+</div>
 ```
 
 **Código DEPOIS**:
 
 ```tsx
-<h1 className="font-montserrat text-cream-50 font-bold tracking-tight text-right mb-8 md:mb-10 lg:mb-12 text-2xl md:text-3xl lg:text-4xl uppercase whitespace-nowrap">
-  Café Gourmet e Baristas para Eventos
-</h1>
+<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  {/* H1 alinhado com limites do grid */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-14 mb-8 md:mb-10 lg:mb-12">
+    <div className="hidden md:block"></div> {/* Coluna esquerda vazia para alinhamento */}
+    <h1 className="font-montserrat text-cream-50 font-bold tracking-tight text-right text-2xl md:text-3xl lg:text-4xl uppercase whitespace-nowrap">
+      Café Gourmet e Baristas para Eventos
+    </h1>
+  </div>
+
+  {/* Grid principal com gaps progressivos */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-14 items-end">
+    {/* ... */}
+  </div>
+</div>
 ```
 
-**Mudança específica**:
+**Mudanças específicas**:
+- Criar um grid auxiliar para o título com a mesma estrutura do grid principal
+- Coluna esquerda vazia (visível apenas em `md:` e acima) para alinhamento
+- Coluna direita contém o título com `text-right`
+- Mesmos gaps e breakpoints do grid principal
 - `text-center` → `text-right`
+- Remover `mb-8 md:mb-10 lg:mb-12` do H1 e aplicar no grid auxiliar
 
 ### Passo 2: Alterar Alinhamento do Grid Principal
 
@@ -230,18 +259,22 @@ Ajustar o alinhamento de elementos na primeira seção (Hero) para criar uma hie
 ### Arquivos a Modificar
 
 1. **`components/hero/Hero.tsx`**
-   - **Linha 69**: Alterar `text-center` para `text-right` no H1
+   - **Linhas 68-71**: Substituir o H1 simples por um grid auxiliar que contém o título
    - **Linha 74**: Alterar `items-start` para `items-end` no grid principal
 
 ### Mudanças Detalhadas
 
-#### Mudança 1: Alinhamento do Título
+#### Mudança 1: Alinhamento do Título com Limites do Grid
 
-| Elemento | Propriedade | Valor Antes | Valor Depois |
-|----------|-------------|-------------|--------------|
-| H1 (título) | `text-align` | `text-center` | `text-right` |
+| Elemento | Mudança | Detalhes |
+|----------|---------|----------|
+| Container do título | **Estrutura** | Criar grid auxiliar com mesma estrutura do grid principal |
+| Título | **Alinhamento** | `text-center` → `text-right` |
+| Título | **Posicionamento** | Coluna direita do grid auxiliar |
+| Grid auxiliar | **Coluna esquerda** | Vazia (apenas para alinhamento, visível em `md:` e acima) |
+| Grid auxiliar | **Gaps** | Mesmos gaps do grid principal (`gap-6 md:gap-8 lg:gap-12 xl:gap-14`) |
 
-**Efeito**: O título "Café Gourmet e Baristas para Eventos" será alinhado à direita, alinhando com a borda direita da DIV de texto descritivo.
+**Efeito**: O título "Café Gourmet e Baristas para Eventos" estará alinhado à direita, começando no mesmo ponto que o slideshow (coluna esquerda) e terminando no mesmo ponto que a DIV de texto (coluna direita), sem ultrapassar esses limites.
 
 #### Mudança 2: Alinhamento do Grid
 
@@ -257,31 +290,40 @@ Ajustar o alinhamento de elementos na primeira seção (Hero) para criar uma hie
 
 ### Mobile (< 768px)
 
-- **Título**: Continuará alinhado à direita, mas como o grid é de 1 coluna, o alinhamento será menos perceptível
-- **Grid**: `items-end` ainda funcionará, mas com apenas 1 coluna, o efeito será vertical (slideshow abaixo do texto)
+- **Título**: Ocupará toda a largura disponível (coluna única), alinhado à direita
+- **Grid auxiliar**: `grid-cols-1` faz com que a coluna esquerda vazia não apareça (`hidden md:block`)
+- **Grid principal**: `items-end` funcionará verticalmente, com slideshow abaixo do conteúdo
 
 ### Tablet (≥ 768px)
 
-- **Título**: Alinhado à direita, alinhando com a borda direita da DIV de texto
-- **Grid**: `items-end` fará o slideshow se alinhar ao final da coluna direita
+- **Título**: Grid de 2 colunas, título na coluna direita alinhado à direita
+- **Alinhamento**: Título começa no mesmo ponto que o slideshow e termina no mesmo ponto que a DIV de texto
+- **Grid principal**: `items-end` fará o slideshow se alinhar ao final da coluna direita
 
 ### Desktop (≥ 1024px)
 
-- **Título**: Alinhado à direita, criando uma linha visual clara com a borda direita da DIV de texto
-- **Grid**: `items-end` garantirá que o slideshow termine na mesma altura que a última DIV de serviços
+- **Título**: Grid de 2 colunas, título na coluna direita alinhado à direita
+- **Alinhamento**: Título perfeitamente alinhado com os limites do grid principal
+- **Grid principal**: `items-end` garantirá que o slideshow termine na mesma altura que a última DIV de serviços
 
 ---
 
 ## ✅ Checklist de Implementação
 
-- [ ] Alterar `text-center` para `text-right` no H1 em `components/hero/Hero.tsx` (linha 69)
+- [ ] Criar grid auxiliar para o título com mesma estrutura do grid principal em `components/hero/Hero.tsx`
+- [ ] Adicionar coluna esquerda vazia no grid auxiliar (visível apenas em `md:` e acima)
+- [ ] Colocar título na coluna direita do grid auxiliar
+- [ ] Alterar `text-center` para `text-right` no H1
+- [ ] Aplicar `mb-8 md:mb-10 lg:mb-12` no grid auxiliar (remover do H1)
+- [ ] Manter mesmos gaps no grid auxiliar: `gap-6 md:gap-8 lg:gap-12 xl:gap-14`
 - [ ] Alterar `items-start` para `items-end` no grid principal em `components/hero/Hero.tsx` (linha 74)
-- [ ] Testar visualmente o alinhamento do título com a borda direita da DIV de texto
+- [ ] Testar visualmente o alinhamento do título com o início do slideshow
+- [ ] Testar visualmente o alinhamento do título com o final da DIV de texto
 - [ ] Testar visualmente o alinhamento do slideshow com o final da última DIV de serviços
 - [ ] Verificar responsividade em mobile (< 768px)
 - [ ] Verificar responsividade em tablet (≥ 768px)
 - [ ] Verificar responsividade em desktop (≥ 1024px)
-- [ ] Garantir que o layout não quebra em diferentes tamanhos de tela
+- [ ] Garantir que o título não ultrapassa os limites do grid
 
 ---
 
@@ -290,32 +332,44 @@ Ajustar o alinhamento de elementos na primeira seção (Hero) para criar uma hie
 Após implementar, verificar:
 
 1. **Alinhamento do Título**: 
-   - O título deve estar alinhado à direita
-   - A borda direita do título deve alinhar com a borda direita da DIV de texto descritivo
-   - Em mobile, o alinhamento deve permanecer consistente
+   - O título deve estar dentro de um grid auxiliar com a mesma estrutura do grid principal
+   - O título deve estar alinhado à direita (`text-right`)
+   - O início do título (lado esquerdo) deve alinhar com o início do slideshow
+   - O final do título (lado direito) deve alinhar com o final da DIV de texto
+   - O título não deve ultrapassar esses limites
+   - Em mobile, o título deve ocupar toda a largura disponível
 
 2. **Alinhamento do Slideshow**:
    - O slideshow deve estar alinhado ao final (bottom) da coluna esquerda
    - O final do slideshow deve alinhar com o final da última DIV de serviços ("Perfeito para feiras e estandes")
-   - Em mobile, o slideshow deve aparecer abaixo do texto, mantendo o alinhamento vertical
+   - Em mobile, o slideshow deve aparecer abaixo do conteúdo, mantendo o alinhamento vertical
 
-3. **Responsividade**:
-   - Em mobile: Layout em coluna única, título alinhado à direita, slideshow abaixo do texto
-   - Em tablet: Layout em 2 colunas, título alinhado à direita, slideshow alinhado ao final
-   - Em desktop: Layout em 2 colunas, título alinhado à direita, slideshow alinhado ao final
+3. **Estrutura dos Grids**:
+   - O grid auxiliar do título deve ter os mesmos gaps do grid principal
+   - O grid auxiliar deve ter 2 colunas em tablet/desktop
+   - A coluna esquerda do grid auxiliar deve estar vazia (apenas para alinhamento)
+   - Em mobile, apenas a coluna direita deve aparecer
 
-4. **Consistência Visual**:
+4. **Responsividade**:
+   - Em mobile: Título ocupa toda largura, alinhado à direita, conteúdo abaixo, slideshow no final
+   - Em tablet: Grid de 2 colunas, título alinhado com limites do grid, slideshow alinhado ao final
+   - Em desktop: Grid de 2 colunas, título perfeitamente alinhado com limites do grid, slideshow alinhado ao final
+
+5. **Consistência Visual**:
    - O alinhamento deve criar uma hierarquia visual clara
    - Não deve haver quebras de layout ou sobreposições indesejadas
+   - O título deve criar uma conexão visual clara com o grid principal
 
 ---
 
 ## 💡 Notas Adicionais
 
-- O uso de `items-end` no grid fará com que ambos os elementos (slideshow e DIV de texto) se alinhem pelo final, criando uma base visual comum
-- O alinhamento à direita do título cria uma conexão visual com a coluna direita (DIV de texto)
-- Em telas muito pequenas, o layout em coluna única pode fazer o alinhamento parecer menos relevante, mas ainda manterá a consistência
-- Se no futuro for necessário ajustar o espaçamento entre o título e o grid, pode-se modificar o `mb-8 md:mb-10 lg:mb-12` do H1
+- O uso de um grid auxiliar para o título garante que ele tenha exatamente a mesma largura e alinhamento do grid principal
+- A coluna esquerda vazia no grid auxiliar serve apenas para criar o alinhamento correto, não aparece em mobile
+- O uso de `items-end` no grid principal fará com que ambos os elementos (slideshow e coluna direita) se alinhem pelo final, criando uma base visual comum
+- Em mobile, o título ocupará toda a largura disponível, mas ainda estará alinhado à direita
+- Os gaps do grid auxiliar devem ser exatamente os mesmos do grid principal para garantir alinhamento perfeito
+- Se no futuro for necessário ajustar o espaçamento, pode-se modificar o `mb-8 md:mb-10 lg:mb-12` do grid auxiliar
 
 ---
 
@@ -323,5 +377,5 @@ Após implementar, verificar:
 
 - [Tailwind CSS Text Align](https://tailwindcss.com/docs/text-align)
 - [Tailwind CSS Align Items](https://tailwindcss.com/docs/align-items)
+- [CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
 - [CSS Grid Alignment](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout)
-

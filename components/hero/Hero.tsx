@@ -65,13 +65,21 @@ export default function Hero({
   return (
     <section className="relative pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-20 bg-[#452911]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* H1 centralizado com clamp */}
-        <h1 className="font-montserrat text-cream-50 font-bold tracking-tight text-center mb-8 md:mb-10 lg:mb-12 text-2xl md:text-3xl lg:text-4xl uppercase whitespace-nowrap">
+        {/* H1 centralizado, em linha única, ajustando tamanho com clamp para não ultrapassar os limites laterais */}
+        <h1
+          className="
+            font-montserrat text-cream-50 font-bold
+            tracking-tight text-center
+            mb-8 md:mb-10 lg:mb-12
+            uppercase whitespace-nowrap
+            !text-[clamp(2.5rem,2.5vw,3rem)]
+          "
+        >
           Café Gourmet e Baristas para Eventos
         </h1>
 
         {/* Grid principal com gaps progressivos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-14 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-14 items-end">
           {/* Slideshow com aspect ratios e sizes otimizados */}
           <div
             className="relative min-w-0"
@@ -87,7 +95,7 @@ export default function Hero({
               <div className="flex">
                 {images.map((src, idx) => (
                   <div className="relative min-w-0 flex-[0_0_100%]" key={idx}>
-                    <div className="relative aspect-[4/3] lg:aspect-[16/10] w-full">
+                    <div className="relative aspect-[4/3.2] lg:aspect-[16/10.5] w-full">
                       <Image
                         src={src}
                         alt={`Foto ${idx + 1} do serviço de café para eventos`}
