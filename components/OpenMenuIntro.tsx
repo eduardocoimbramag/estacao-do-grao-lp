@@ -35,16 +35,18 @@ export default function OpenMenuIntro() {
       <div className="mx-auto max-w-6xl px-6 py-16 grid gap-10 md:grid-cols-[1fr_1px_1fr] items-start">
         {/* ESQUERDA — TEXTO */}
         <div>
-          <h2 className="text-3xl md:text-4xl font-serif tracking-tight">
-            O que é a Estação do Grão – estação de café para eventos
+          <h2 className="text-3xl md:text-4xl font-montserrat tracking-tight whitespace-nowrap">
+            O que é a Estação do Grão?
           </h2>
 
-          <p className="mt-5 text-cream-50/90 leading-relaxed">
-            A <strong>Estação do Grão</strong> é uma <strong>estação de café para eventos</strong> que combina
-            {' '}<strong>café gourmet</strong>, <strong>baristas profissionais</strong> e <strong>personalização de marca</strong> para experiências memoráveis em
-            {' '}<strong>Recife</strong> e <strong>João Pessoa</strong>. Operamos com máquinas de <strong>espresso</strong> profissionais, cardápio autoral (quentes e gelados)
-            e estrutura móvel — ideal para <strong>eventos corporativos</strong>, feiras, stands, congressos e casamentos.
-          </p>
+          <div className="mt-5 space-y-4">
+            <p className="text-center text-xl md:text-2xl text-coffee-500 font-semibold leading-relaxed whitespace-nowrap font-montserrat">
+              O café do seu evento precisa ser inesquecível.
+            </p>
+            <p className="text-cream-50/90 leading-relaxed text-justify hyphens-none font-montserrat">
+              A <strong className="text-coffee-500 font-bold">Estação do Grão</strong> é uma <strong className="text-coffee-500 font-bold">estação de café gourmet</strong> pensada para eventos que exigem excelência. <strong className="text-coffee-500 font-bold">Espresso premium</strong>, bebidas especiais, baristas e personalização completa para feiras, congressos, marcas e casamentos em <strong className="text-coffee-500 font-bold">Recife</strong> e <strong className="text-coffee-500 font-bold">João Pessoa</strong>. Café que se vê. Se sente. Se lembra.
+            </p>
+          </div>
 
           <ul className="mt-6 space-y-2">
             {[
@@ -54,7 +56,7 @@ export default function OpenMenuIntro() {
             ].map((t) => (
               <li key={t} className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-coffee-500 flex-shrink-0" />
-                <span className="text-cream-50/90">{t}</span>
+                <span className="text-cream-50/90 font-montserrat">{t}</span>
               </li>
             ))}
           </ul>
@@ -62,13 +64,13 @@ export default function OpenMenuIntro() {
           <div className="mt-8 flex flex-wrap gap-3">
             <a 
               href="#servicos" 
-              className="px-5 py-3 rounded-xl border border-coffee-500 text-cream-50 hover:bg-coffee-700/30 transition-colors"
+              className="px-5 py-3 rounded-xl border border-coffee-500 text-cream-50 hover:bg-coffee-700/30 transition-colors font-montserrat"
             >
               Ver serviços
             </a>
             <a 
               href="#contato" 
-              className="px-5 py-3 rounded-xl bg-coffee-500 text-coffee-900 font-semibold hover:bg-coffee-700 hover:text-white transition-colors"
+              className="px-5 py-3 rounded-xl bg-coffee-500 text-coffee-900 font-semibold hover:bg-coffee-700 hover:text-white transition-colors font-montserrat"
             >
               Solicitar orçamento
             </a>
@@ -132,7 +134,7 @@ export default function OpenMenuIntro() {
               aria-label={muted ? 'Ativar som' : 'Desativar som'}
             >
               <span className="text-base">{muted ? '🔇' : '🔊'}</span>
-              <span className="text-cream-50 font-medium">
+              <span className="text-cream-50 font-medium font-montserrat">
                 {muted ? 'Som desativado' : 'Som ativado'}
               </span>
             </button>

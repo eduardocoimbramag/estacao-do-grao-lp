@@ -104,7 +104,7 @@ export default function FlipCard() {
               <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-[30px] shadow-2xl">
                 
                 {/* Título */}
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-[30px]">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-[30px] font-montserrat">
                   PERSONALIZAÇÃO PARA SEU EVENTO
                 </h2>
 
@@ -130,10 +130,10 @@ export default function FlipCard() {
 
                       {/* Texto */}
                       <div className="flex-1 flex flex-col justify-center text-center">
-                        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-coffee-500 mb-2">
+                        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-coffee-500 mb-2 font-montserrat">
                           {item.title}
                         </h3>
-                        <p className="text-sm sm:text-base lg:text-lg text-cream-50 leading-relaxed text-justify">
+                        <p className="text-sm sm:text-base lg:text-lg text-cream-50 leading-relaxed text-justify font-montserrat">
                           {item.description}
                         </p>
                       </div>
@@ -147,7 +147,7 @@ export default function FlipCard() {
                   className="w-full flex items-center justify-center gap-2 py-4 px-6 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 group mt-[30px] mb-0"
                   aria-label="Virar para Poderes do Café"
                 >
-                  <span className="text-base sm:text-lg lg:text-xl font-semibold">
+                  <span className="text-base sm:text-lg lg:text-xl font-semibold font-montserrat">
                     Poderes do Café
                   </span>
                   <RotateCw className="w-5 h-5 sm:w-6 sm:h-6 group-hover:rotate-180 transition-transform duration-500" />
@@ -160,7 +160,7 @@ export default function FlipCard() {
               <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-[30px] shadow-2xl">
                 
                 {/* Título */}
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-[30px]">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-[30px] font-montserrat">
                   PODERES DO CAFÉ
                 </h2>
 
@@ -186,10 +186,10 @@ export default function FlipCard() {
 
                       {/* Texto */}
                       <div className="flex-1 flex flex-col justify-center text-center">
-                        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-coffee-500 mb-2">
+                        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-coffee-500 mb-2 font-montserrat">
                           {item.title}
                         </h3>
-                        <p className="text-sm sm:text-base lg:text-lg text-cream-50 leading-relaxed text-justify">
+                        <p className="text-sm sm:text-base lg:text-lg text-cream-50 leading-relaxed text-justify font-montserrat">
                           {item.description}
                         </p>
                       </div>
@@ -204,7 +204,7 @@ export default function FlipCard() {
                   aria-label="Virar para Personalização"
                 >
                   <RotateCcw className="w-5 h-5 sm:w-6 sm:h-6 group-hover:-rotate-180 transition-transform duration-500" />
-                  <span className="text-base sm:text-lg lg:text-xl font-semibold">
+                  <span className="text-base sm:text-lg lg:text-xl font-semibold font-montserrat">
                     Personalização para seu evento
                   </span>
                 </button>

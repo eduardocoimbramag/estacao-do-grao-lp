@@ -13,7 +13,7 @@ export default function Audience() {
           {/* Coluna Esquerda: Título + Mapa + Cards */}
           <div className="flex flex-col justify-center items-center gap-2 lg:gap-3">
             {/* Título */}
-            <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white text-center">
+            <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white text-center font-montserrat">
               REGIÕES ATENDIDAS
             </h2>
             
@@ -34,9 +34,9 @@ export default function Audience() {
               <div className="flex items-center gap-2">
                 <MapPin className="w-6 h-6 text-coffee-500 flex-shrink-0" />
                 <div>
-                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed">
-                    Atendemos toda a <strong className="text-coffee-500">região do Nordeste</strong> a partir de{" "}
-                    <strong className="text-coffee-500 font-bold text-base sm:text-lg">100 doses</strong>.
+                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed font-montserrat">
+                    Atendemos toda a <strong className="text-coffee-500 font-montserrat">região do Nordeste</strong> a partir de{" "}
+                    <strong className="text-coffee-500 font-bold text-base sm:text-lg font-montserrat">100 doses</strong>.
                   </p>
                 </div>
               </div>
@@ -47,9 +47,9 @@ export default function Audience() {
               <div className="flex items-center gap-2">
                 <Navigation className="w-6 h-6 text-coffee-500 flex-shrink-0" />
                 <div>
-                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed">
-                    Atendemos <strong className="text-coffee-500">Pernambuco, Paraíba e Alagoas</strong> a partir de{" "}
-                    <strong className="text-coffee-500 font-bold text-base sm:text-lg">50 doses</strong>.
+                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed font-montserrat">
+                    Atendemos <strong className="text-coffee-500 font-montserrat">Pernambuco, Paraíba e Alagoas</strong> a partir de{" "}
+                    <strong className="text-coffee-500 font-bold text-base sm:text-lg font-montserrat">50 doses</strong>.
                   </p>
                 </div>
               </div>
@@ -60,9 +60,9 @@ export default function Audience() {
               <div className="flex items-center gap-2">
                 <Globe className="w-6 h-6 text-coffee-500 flex-shrink-0" />
                 <div>
-                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed">
-                    Atendemos <strong className="text-coffee-500">todo o Brasil</strong> a partir de{" "}
-                    <strong className="text-coffee-500 font-bold text-base sm:text-lg">3.000 doses</strong>.
+                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed font-montserrat">
+                    Atendemos <strong className="text-coffee-500 font-montserrat">todo o Brasil</strong> a partir de{" "}
+                    <strong className="text-coffee-500 font-bold text-base sm:text-lg font-montserrat">3.000 doses</strong>.
                   </p>
                 </div>
               </div>
@@ -87,7 +87,7 @@ export default function Audience() {
               />
               <div className="absolute inset-0 bg-coffee-900/60 group-hover:bg-coffee-900/50 transition-colors" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] text-center px-4">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] text-center px-4 font-montserrat">
                   Galeria de experiências
                 </h3>
               </div>
@@ -108,7 +108,7 @@ export default function Audience() {
               />
               <div className="absolute inset-0 bg-coffee-900/60 group-hover:bg-coffee-900/50 transition-colors" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] text-center px-4">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] text-center px-4 font-montserrat">
                   Blog
                 </h3>
               </div>

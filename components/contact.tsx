@@ -76,9 +76,9 @@ export default function Contact() {
   return (
     <section id="contato" className="py-20 px-4 sm:px-6 lg:px-8 bg-coffee-900">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-center mb-6">Leve a Estação do Grão para seu Evento</h2>
+        <h2 className="text-center mb-6 font-montserrat">Leve a Estação do Grão para seu Evento</h2>
 
-        <p className="text-center text-lg text-cream-50 mb-16">
+        <p className="text-center text-lg text-cream-50 mb-16 font-montserrat">
           Café gourmet, baristas profissionais e personalização para sua marca. Atendimento rápido e sob medida para
           Recife, João Pessoa e região.
         </p>
@@ -86,7 +86,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Methods */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-semibold text-cream-50">Entre em Contato</h3>
+            <h3 className="text-2xl font-semibold text-cream-50 font-montserrat">Entre em Contato</h3>
 
             <a
               href="https://wa.me/55DDDNUMERO?text=Olá! Quero orçamento da estação de café."
@@ -96,8 +96,8 @@ export default function Contact() {
             >
               <Phone className="w-6 h-6 text-coffee-500 flex-shrink-0 group-hover:text-accent mt-1 transition-colors" />
               <div>
-                <p className="font-semibold text-cream-50">WhatsApp</p>
-                <p className="text-coffee-500 hover:text-accent transition-colors">Clique aqui para orçamento rápido</p>
+                <p className="font-semibold text-cream-50 font-montserrat">WhatsApp</p>
+                <p className="text-coffee-500 hover:text-accent transition-colors font-montserrat">Clique aqui para orçamento rápido</p>
               </div>
             </a>
 
@@ -107,21 +107,21 @@ export default function Contact() {
             >
               <Mail className="w-6 h-6 text-coffee-500 flex-shrink-0 group-hover:text-accent mt-1 transition-colors" />
               <div>
-                <p className="font-semibold text-cream-50">E-mail</p>
-                <p className="text-coffee-500 hover:text-accent transition-colors">contato@estacaodograo.com.br</p>
+                <p className="font-semibold text-cream-50 font-montserrat">E-mail</p>
+                <p className="text-coffee-500 hover:text-accent transition-colors font-montserrat">contato@estacaodograo.com.br</p>
               </div>
             </a>
 
             <div className="p-6 bg-coffee-700/40 border border-coffee-500/20 rounded-xl">
-              <p className="font-semibold text-cream-50 mb-3">Atendimento Rápido</p>
-              <p className="text-cream-50 font-sans text-sm">Resposta em até 2 horas durante o horário comercial</p>
+              <p className="font-semibold text-cream-50 mb-3 font-montserrat">Atendimento Rápido</p>
+              <p className="text-cream-50 text-sm font-montserrat">Resposta em até 2 horas durante o horário comercial</p>
             </div>
           </div>
 
           {/* Contact Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
-              <label htmlFor="name" className="block text-sm font-semibold text-cream-50">
+              <label htmlFor="name" className="block text-sm font-semibold text-cream-50 font-montserrat">
                 Nome * <span className="text-coffee-500">(obrigatório)</span>
               </label>
               <Input
@@ -137,7 +137,7 @@ export default function Contact() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="company" className="block text-sm font-semibold text-cream-50">
+              <label htmlFor="company" className="block text-sm font-semibold text-cream-50 font-montserrat">
                 Empresa
               </label>
               <Input
@@ -152,7 +152,7 @@ export default function Contact() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="phone" className="block text-sm font-semibold text-cream-50">
+              <label htmlFor="phone" className="block text-sm font-semibold text-cream-50 font-montserrat">
                 Telefone
               </label>
               <Input
@@ -168,7 +168,7 @@ export default function Contact() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="email" className="block text-sm font-semibold text-cream-50">
+              <label htmlFor="email" className="block text-sm font-semibold text-cream-50 font-montserrat">
                 E-mail * <span className="text-coffee-500">(obrigatório)</span>
               </label>
               <Input
@@ -184,7 +184,7 @@ export default function Contact() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="eventDescription" className="block text-sm font-semibold text-cream-50">
+              <label htmlFor="eventDescription" className="block text-sm font-semibold text-cream-50 font-montserrat">
                 Descreva seu Evento
               </label>
               <Textarea
@@ -204,9 +204,9 @@ export default function Contact() {
                 onCheckedChange={handleCheckboxChange}
                 className="mt-1"
               />
-              <label htmlFor="privacy" className="text-sm text-cream-50 cursor-pointer">
+              <label htmlFor="privacy" className="text-sm text-cream-50 cursor-pointer font-montserrat">
                 Autorizo o contato para fins comerciais conforme a{" "}
-                <a href="#" className="text-coffee-500 hover:text-accent underline">
+                <a href="#" className="text-coffee-500 hover:text-accent underline font-montserrat">
                   Política de Privacidade
                 </a>{" "}
                 *
@@ -214,13 +214,13 @@ export default function Contact() {
             </div>
 
             {submitStatus === "success" && (
-              <div className="p-4 bg-coffee-700/40 border border-coffee-500 rounded-lg text-cream-50 text-sm">
+              <div className="p-4 bg-coffee-700/40 border border-coffee-500 rounded-lg text-cream-50 text-sm font-montserrat">
                 ✓ Mensagem enviada com sucesso! Retornaremos em breve.
               </div>
             )}
 
             {submitStatus === "error" && (
-              <div className="p-4 bg-red-900/40 border border-red-700 rounded-lg text-cream-50 text-sm">
+              <div className="p-4 bg-red-900/40 border border-red-700 rounded-lg text-cream-50 text-sm font-montserrat">
                 ✗ Erro ao enviar. Verifique os campos obrigatórios.
               </div>
             )}
@@ -228,7 +228,7 @@ export default function Contact() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-coffee-500 hover:bg-accent text-coffee-900 font-semibold py-3 rounded-lg transition-colors"
+              className="w-full bg-coffee-500 hover:bg-accent text-coffee-900 font-semibold py-3 rounded-lg transition-colors font-montserrat"
             >
               {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
             </Button>

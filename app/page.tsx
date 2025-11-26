@@ -23,10 +23,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Cabeçalho da Section */}
           <header className="mb-12 sm:mb-16 text-center space-y-4">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cream-50">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cream-50 font-montserrat">
               Nossos Serviços
             </h2>
-            <p className="text-base sm:text-lg text-cream-50/80 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-cream-50/80 max-w-2xl mx-auto font-montserrat">
               Da sua empresa a grandes eventos, a Estação do Grão leva
               experiências completas em café especial para qualquer ocasião.
             </p>

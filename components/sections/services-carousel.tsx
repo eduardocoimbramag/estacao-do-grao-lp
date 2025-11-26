@@ -125,27 +125,27 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
                   {/* Conteúdo de texto */}
                   <div className="space-y-3 px-6 pb-6 text-center">
                     {/* Título */}
-                    <h3 className="text-xl sm:text-2xl font-semibold text-cream-50">
+                    <h3 className="text-xl sm:text-2xl font-semibold text-cream-50 font-montserrat">
                       {card.title}
                     </h3>
 
                     {/* Subtítulo */}
                     {card.subtitle && (
-                      <p className="text-sm sm:text-base font-medium text-coffee-500">
+                      <p className="text-sm sm:text-base font-medium text-coffee-500 font-montserrat">
                         {card.subtitle}
                       </p>
                     )}
 
                     {/* Descrição */}
                     {card.description && (
-                      <p className="text-sm sm:text-base text-cream-50/80 leading-relaxed">
+                      <p className="text-sm sm:text-base text-cream-50/80 leading-relaxed font-montserrat">
                         {card.description}
                       </p>
                     )}
 
                     {/* Preço (se houver) */}
                     {card.priceText && (
-                      <p className="text-base sm:text-lg font-semibold text-cream-50 pt-2">
+                      <p className="text-base sm:text-lg font-semibold text-cream-50 pt-2 font-montserrat">
                         {card.priceText}
                       </p>
                     )}
@@ -162,6 +162,7 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
                             bg-coffee-500 text-coffee-900
                             hover:bg-accent hover:shadow-md
                             focus:outline-none focus:ring-2 focus:ring-coffee-500 focus:ring-offset-2 focus:ring-offset-coffee-900
+                            font-montserrat
                           "
                         >
                           {card.ctaLabel}
