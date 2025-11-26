@@ -151,9 +151,9 @@ export default function Hero({
             </div>
 
             {/* Cards COMPACTOS empilhados */}
-            <FeatureItemCompact icon={<Coffee className="w-5 h-5" />} title="Atendimento para alto fluxo de pessoas" />
+            <FeatureItemCompact icon={<Coffee className="w-5 h-5" />} title="Atendemos alto fluxo de pessoas" />
             <FeatureItemCompact icon={<Sparkles className="w-5 h-5" />} title="Personalização com sua Marca" />
-            <FeatureItemCompact icon={<Store className="w-5 h-5" />} title="Perfeito para feiras e estandes" />
+            <FeatureItemCompact icon={<Store className="w-5 h-5" />} title="Perfeito para feiras, congressos, eventos corporativos e sociais" />
           </div>
         </div>
 
