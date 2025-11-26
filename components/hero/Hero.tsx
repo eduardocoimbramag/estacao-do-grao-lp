@@ -145,8 +145,8 @@ export default function Hero({
           <div className="self-start flex flex-col max-w-full gap-4 md:gap-5 w-full">
             {/* Texto em caixa sutil com clamp */}
             <div className="rounded-2xl ring-1 ring-cream-50/15 bg-coffee-card p-5 md:p-6 lg:p-6 shadow-2xl w-full">
-              <p className="text-cream-50/90 text-[clamp(0.98rem,0.35vw+0.95rem,1.125rem)] leading-relaxed text-justify indent-6 hyphens-auto md:max-w-none">
-                Transforme o café do seu evento em uma experiência inesquecível com a Estação do Grão! Oferecemos estação de café gourmet, baristas profissionais e café espresso premium para eventos corporativos, feiras de negócios, congressos, ativações de marca, lançamentos de produtos e casamentos.
+              <p className="text-cream-50 text-[clamp(0.98rem,0.35vw+0.95rem,1.125rem)] leading-relaxed text-justify indent-6 hyphens-none md:max-w-none">
+                Transforme o café do seu evento em uma <span className="text-coffee-500 font-bold">experiência inesquecível</span> com a <span className="text-coffee-500 font-bold">Estação do Grão</span>! Oferecemos estação de <span className="text-coffee-500 font-bold">café gourmet</span>, <span className="text-coffee-500 font-bold">baristas profissionais</span> e <span className="text-coffee-500 font-bold">café espresso premium</span> para eventos corporativos, feiras de negócios, congressos, ativações de marca, lançamentos de produtos e casamentos.
               </p>
             </div>
 
