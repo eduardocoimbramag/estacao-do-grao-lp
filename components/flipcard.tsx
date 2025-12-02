@@ -16,35 +16,35 @@ export default function FlipCard() {
     {
       id: 1,
       title: 'Logo Personalizado',
-      description: 'Adicione a identidade da sua empresa ou evento em copos, guardanapos e estações de café.',
+      description: 'O Branding no Centro da Experiência. Transforme a coffee station em uma extensão visual da sua marca. Garantimos que seu logo e identidade estejam presentes em copos, guardanapos e no design da estação. Um toque sutil, mas constante, que reforça a lembrança da sua empresa e o profissionalismo do evento.',
       image: '/coffee-station-with-branded-logo-personalized.jpg',
       imagePosition: 'left'
     },
     {
       id: 2,
       title: 'Cardápio Exclusivo',
-      description: 'Crie um menu de cafés especiais sob medida para o perfil e preferências dos seus convidados.',
+      description: 'Um Menu de Cafés Criado Sob Medida. Desenvolvemos um cardápio especial que reflete o perfil do seu público e o tema do evento. Seleção de bebidas premium e acompanhamentos finos. Surpreenda com uma bebida signature, pensada para encantar e tornar a experiência sensorial verdadeiramente exclusiva.',
       image: '/professional-barista-making-latte-art.jpg',
       imagePosition: 'right'
     },
     {
       id: 3,
       title: 'Decoração Temática',
-      description: 'Estação de café decorada e harmonizada com a identidade visual do seu evento.',
+      description: 'Harmonia Visual para um Ambiente Cativante. Nossa estrutura móvel se adapta e se harmoniza com a decoração do seu evento. Garantimos que a estação esteja em sintonia com a identidade visual da sua festa ou stand. Criamos um ponto de encontro sofisticado que complementa o alto padrão estético do seu espaço.',
       image: '/coffee-station-setup-at-wedding-reception.jpg',
       imagePosition: 'left'
     },
     {
       id: 4,
       title: 'Copos Personalizados',
-      description: 'Copos exclusivos com nome do evento, logo ou mensagem especial para cada convidado.',
+      description: 'Detalhes que se Tornam Lembranças Vivas. Personalizamos copos com o nome do evento, logo ou mensagem especial. É um toque de cuidado máximo que agrada o convidado e transforma o copo em uma lembrança de valor. Estenda a ativação da sua marca para além do momento do evento.',
       image: '/guests-enjoying-gourmet-coffee-at-premium-event.jpg',
       imagePosition: 'right'
     },
     {
       id: 5,
       title: 'Atendimento Exclusivo',
-      description: 'Baristas profissionais treinados para proporcionar uma experiência premium e memorável.',
+      description: 'Baristas Certificados: Técnica, Carisma e Padrão Premium. Nossa equipe é treinada para proporcionar uma experiência memorável. Eles garantem a extração perfeita e interagem com profissionalismo. Conte com a expertise de quem atende a eventos corporativos de alto padrão e alto fluxo com agilidade e excelência.',
       image: '/barista-serving-espresso-at-corporate-event.jpg',
       imagePosition: 'left'
     }

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { MapPin, Globe, Navigation } from "lucide-react"
+import { TreePalm, Shell, Flag } from "lucide-react"
 
 export default function Audience() {
   return (
@@ -30,11 +30,11 @@ export default function Audience() {
             </div>
 
             {/* Card 1: Recife e Região Metropolitana - 100 doses */}
-            <div className="px-6 py-2 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors w-full max-w-md">
+            <div className="pl-4 pr-6 py-2 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors w-full max-w-md">
               <div className="flex items-center gap-2">
-                <MapPin className="w-6 h-6 text-coffee-500 flex-shrink-0" />
-                <div>
-                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed font-montserrat">
+                <TreePalm className="w-6 h-6 text-coffee-500 flex-shrink-0 self-center" />
+                <div className="pl-2">
+                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed text-justify hyphens-none font-montserrat">
                     <strong className="text-coffee-500 font-montserrat">Recife</strong> e <strong className="text-coffee-500 font-montserrat">Região Metropolitana</strong> a partir de{" "}
                     <strong className="text-coffee-500 font-bold text-base sm:text-lg font-montserrat">100 doses</strong>.
                   </p>
@@ -43,11 +43,11 @@ export default function Audience() {
             </div>
 
             {/* Card 2: Estados Específicos - 600 doses */}
-            <div className="px-6 py-2 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors w-full max-w-md">
+            <div className="pl-4 pr-6 py-2 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors w-full max-w-md">
               <div className="flex items-center gap-2">
-                <Navigation className="w-6 h-6 text-coffee-500 flex-shrink-0" />
-                <div>
-                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed font-montserrat">
+                <Shell className="w-6 h-6 text-coffee-500 flex-shrink-0 self-center" />
+                <div className="pl-2">
+                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed text-justify hyphens-none font-montserrat">
                     <strong className="text-coffee-500 font-montserrat">Pernambuco, Paraíba</strong> e <strong className="text-coffee-500 font-montserrat">Alagoas</strong> a partir de{" "}
                     <strong className="text-coffee-500 font-bold text-base sm:text-lg font-montserrat">600 doses</strong>.
                   </p>
@@ -56,11 +56,11 @@ export default function Audience() {
             </div>
 
             {/* Card 3: Brasil - Conforme demanda */}
-            <div className="px-6 py-2 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors w-full max-w-md">
+            <div className="pl-4 pr-6 py-2 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors w-full max-w-md">
               <div className="flex items-center gap-2">
-                <Globe className="w-6 h-6 text-coffee-500 flex-shrink-0" />
-                <div>
-                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed font-montserrat">
+                <Flag className="w-6 h-6 text-coffee-500 flex-shrink-0 self-center" />
+                <div className="pl-2">
+                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed text-justify hyphens-none font-montserrat">
                     Atendemos <strong className="text-coffee-500 font-montserrat">todo o Brasil</strong> conforme demanda, favor{" "}
                     <Link href="#contato" className="inline-block px-1.5 py-0.5 rounded-md bg-coffee-500/20 hover:bg-coffee-500/30 transition-colors">
                       <strong className="text-coffee-500 font-montserrat">solicitar orçamento.</strong>
