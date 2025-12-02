@@ -54,36 +54,36 @@ export default function FlipCard() {
   const side2Items = [
     {
       id: 1,
-      title: 'Aumenta o Foco',
-      description: 'A cafeína estimula o sistema nervoso central, melhorando a concentração e produtividade durante seu evento.',
+      title: 'Clima de Confiança para Negócios',
+      description: 'O consumo moderado de café está associado à melhora do humor e à redução da tensão. Em negociações e momentos de fechamento, oferecer um café de qualidade estabelece um clima de acolhimento e respeito, tornando o ambiente mais propício ao diálogo aberto. Essa sensação de bem-estar pode ser o diferencial sutil no sucesso da sua transação.',
       image: '/professional-barista-making-latte-art.jpg',
       imagePosition: 'right'
     },
     {
       id: 2,
-      title: 'Melhora o Humor',
-      description: 'O aroma e sabor do café liberam dopamina, criando momentos de prazer e bem-estar para seus convidados.',
+      title: 'Clima de Confiança para Negócios',
+      description: 'A pausa para um café especial é mais do que um agrado; é o tempo ideal que sua equipe precisa. Enquanto o convidado desfruta do seu espresso (cerca de 3 a 5 minutos), ele permanece engajado no seu estande. Esse momento de consumo torna-se uma âncora de permanência, garantindo a abertura necessária para uma abordagem de vendas ou a apresentação de conteúdo chave.',
       image: '/guests-enjoying-gourmet-coffee-at-premium-event.jpg',
       imagePosition: 'left'
     },
     {
       id: 3,
-      title: 'Energia Natural',
-      description: 'Fonte natural de energia que mantém todos alertas e engajados durante todo o evento.',
+      title: 'O Queridinho do Mundo Corporativo',
+      description: 'O café é a bebida mais consumida no ambiente de trabalho brasileiro, com mais de 90% dos profissionais o consumindo regularmente. Ao oferecer um café especial, você atinge praticamente toda a sua audiência, criando um ponto de interesse comum imediato. Essa aceitação universal facilita a interação, quebra as barreiras hierárquicas e transforma o coffee station no epicentro natural de qualquer networking estratégico.',
       image: '/espresso-machine-coffee-station-at-fair.jpg',
       imagePosition: 'right'
     },
     {
       id: 4,
-      title: 'Rico em Antioxidantes',
-      description: 'O café é uma das maiores fontes de antioxidantes, promovendo saúde e vitalidade.',
+      title: 'Aumento do Poder Cognitivo',
+      description: 'Estudos comprovam: a cafeína melhora o estado de alerta, a atenção focada e o processamento de informações. Ao oferecer um café especial durante palestras ou workshops, você garante que os participantes estejam mais concentrados e receptivos ao conteúdo apresentado. É um investimento direto na eficácia da comunicação e na retenção de conhecimento.',
       image: '/barista-serving-espresso-at-corporate-event.jpg',
       imagePosition: 'left'
     },
     {
       id: 5,
-      title: 'Experiência Social',
-      description: 'O café cria momentos de conexão, conversas significativas e networking entre os participantes.',
+      title: 'Faísca para Ideias e Inovação',
+      description: 'As maiores ideias e as melhores soluções muitas vezes surgem fora da sala de reuniões formal. O momento do café é um respiro que estimula a criatividade e permite que as mentes se conectem de forma lateral. Promover essa pausa revigorante é incentivar um ambiente dinâmico, colaborativo e fértil para a inovação.',
       image: '/coffee-station-setup-at-wedding-reception.jpg',
       imagePosition: 'right'
     }
