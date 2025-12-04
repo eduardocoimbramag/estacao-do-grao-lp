@@ -7,12 +7,14 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Mail, Phone } from "lucide-react"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
-    company: "",
+    eventType: "" as "pessoal" | "empresarial" | "",
+    eventTypeName: "",
     phone: "",
     email: "",
     eventDescription: "",
@@ -24,6 +26,10 @@ export default function Contact() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleEventTypeChange = (value: "pessoal" | "empresarial") => {
+    setFormData((prev) => ({ ...prev, eventType: value, eventTypeName: "" }))
   }
 
   const handleCheckboxChange = (checked: boolean) => {
@@ -55,7 +61,8 @@ export default function Contact() {
         setSubmitStatus("success")
         setFormData({
           name: "",
-          company: "",
+          eventType: "",
+          eventTypeName: "",
           phone: "",
           email: "",
           eventDescription: "",
@@ -76,7 +83,7 @@ export default function Contact() {
   return (
     <section id="contato" className="py-20 px-4 sm:px-6 lg:px-8 bg-coffee-900">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-center mb-6 font-montserrat">Leve a Estação do Grão para seu Evento</h2>
+        <h2 className="text-center mb-6 font-montserrat text-cream-50">Leve a Estação do Grão para seu Evento</h2>
 
         <p className="text-center text-lg text-cream-50 mb-16 font-montserrat">
           Café gourmet, baristas profissionais e personalização para sua marca. Atendimento rápido e sob medida para
@@ -132,24 +139,54 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-700"
+                className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-500"
               />
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="company" className="block text-sm font-semibold text-cream-50 font-montserrat">
-                Empresa
+              <label className="block text-sm font-semibold text-cream-50 font-montserrat mb-3">
+                Tipo de Evento
               </label>
-              <Input
-                id="company"
-                name="company"
-                type="text"
-                placeholder="Nome da sua empresa"
-                value={formData.company}
-                onChange={handleChange}
-                className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-700"
-              />
+              <RadioGroup
+                value={formData.eventType}
+                onValueChange={(value) => handleEventTypeChange(value as "pessoal" | "empresarial")}
+                className="flex gap-6"
+              >
+                <div className="flex items-center gap-2">
+                  <RadioGroupItem value="pessoal" id="eventType-pessoal" className="text-coffee-500 border-coffee-700 data-[state=checked]:bg-coffee-500 data-[state=checked]:border-coffee-500" />
+                  <label htmlFor="eventType-pessoal" className="text-cream-50 cursor-pointer font-montserrat">
+                    Pessoal
+                  </label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <RadioGroupItem value="empresarial" id="eventType-empresarial" className="text-coffee-500 border-coffee-700 data-[state=checked]:bg-coffee-500 data-[state=checked]:border-coffee-500" />
+                  <label htmlFor="eventType-empresarial" className="text-cream-50 cursor-pointer font-montserrat">
+                    Empresarial
+                  </label>
+                </div>
+              </RadioGroup>
             </div>
+
+            {formData.eventType && (
+              <div className="space-y-2">
+                <label htmlFor="eventTypeName" className="block text-sm font-semibold text-cream-50 font-montserrat">
+                  Tipo de Evento
+                </label>
+                <Input
+                  id="eventTypeName"
+                  name="eventTypeName"
+                  type="text"
+                  placeholder={
+                    formData.eventType === "pessoal"
+                      ? "Tipo de evento, exemplo: Casamento, Aniversário, etc."
+                      : "Tipo de evento, exemplo: Congresso, Feira, Coffee break, etc."
+                  }
+                  value={formData.eventTypeName}
+                  onChange={handleChange}
+                  className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-500"
+                />
+              </div>
+            )}
 
             <div className="space-y-2">
               <label htmlFor="phone" className="block text-sm font-semibold text-cream-50 font-montserrat">
@@ -163,7 +200,7 @@ export default function Contact() {
                 placeholder="(81) 98765-4321"
                 value={formData.phone}
                 onChange={handleChange}
-                className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-700"
+                className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-500"
               />
             </div>
 
@@ -179,7 +216,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-700"
+                className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-500"
               />
             </div>
 
@@ -190,10 +227,10 @@ export default function Contact() {
               <Textarea
                 id="eventDescription"
                 name="eventDescription"
-                placeholder="Tipo de evento, data, número de convidados, requisitos especiais..."
+                placeholder="Data, Número de convidados, Requisitos especiais, etc."
                 value={formData.eventDescription}
                 onChange={handleChange}
-                className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-700 resize-none min-h-24"
+                className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-500 resize-none min-h-24"
               />
             </div>
 
