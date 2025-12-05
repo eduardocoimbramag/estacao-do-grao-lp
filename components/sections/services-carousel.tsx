@@ -82,7 +82,7 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
       aria-label="Carrossel de serviços"
     >
       {/* Container do carrossel com padding vertical para evitar overflow */}
-      <div className="overflow-hidden cursor-grab active:cursor-grabbing py-8" ref={emblaRef}>
+      <div className="overflow-hidden cursor-grab active:cursor-grabbing py-5" ref={emblaRef}>
         <div className="flex touch-pan-y">
           {loopedCards.map((card, index) => {
             // Mapear de volta ao índice original para verificar se está ativo
@@ -110,8 +110,8 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
                   `}
                 >
                   {/* Imagem do card */}
-                  <div className="relative flex items-center justify-center p-6 sm:p-8">
-                    <div className="relative h-40 sm:h-48 w-full rounded-lg overflow-hidden">
+                  <div className="relative flex items-center justify-center p-4 sm:p-5">
+                    <div className="relative h-32 sm:h-40 w-full rounded-lg overflow-hidden">
                       <Image
                         src={card.imageSrc}
                         alt={card.imageAlt}
@@ -123,41 +123,41 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
                   </div>
 
                   {/* Conteúdo de texto */}
-                  <div className="space-y-3 px-6 pb-6 text-center">
+                  <div className="space-y-2 px-4 pb-4 text-center">
                     {/* Título */}
-                    <h3 className="text-xl sm:text-2xl font-semibold text-cream-50 font-montserrat">
+                    <h3 className="text-lg sm:text-xl font-semibold text-cream-50 font-montserrat">
                       {card.title}
                     </h3>
 
                     {/* Subtítulo */}
                     {card.subtitle && (
-                      <p className="text-sm sm:text-base font-medium text-coffee-500 font-montserrat">
+                      <p className="text-xs sm:text-sm font-medium text-coffee-500 font-montserrat">
                         {card.subtitle}
                       </p>
                     )}
 
                     {/* Descrição */}
                     {card.description && (
-                      <p className="text-sm sm:text-base text-cream-50/80 leading-relaxed font-montserrat">
+                      <p className="text-xs sm:text-sm text-cream-50/80 leading-relaxed font-montserrat">
                         {card.description}
                       </p>
                     )}
 
                     {/* Preço (se houver) */}
                     {card.priceText && (
-                      <p className="text-base sm:text-lg font-semibold text-cream-50 pt-2 font-montserrat">
+                      <p className="text-sm sm:text-base font-semibold text-cream-50 pt-2 font-montserrat">
                         {card.priceText}
                       </p>
                     )}
 
                     {/* CTA Button */}
                     {card.ctaLabel && card.ctaHref && (
-                      <div className="pt-4">
+                      <div className="pt-3">
                         <a
                           href={card.ctaHref}
                           className="
                             inline-flex items-center justify-center
-                            rounded-full px-6 py-2.5 text-sm font-medium
+                            rounded-full px-5 py-2 text-sm font-medium
                             transition-all duration-200
                             bg-coffee-500 text-coffee-900
                             hover:bg-accent hover:shadow-md
@@ -178,7 +178,7 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
       </div>
 
       {/* Botões de navegação (Desktop) */}
-      <div className="hidden lg:flex justify-center items-center gap-4 mt-8">
+      <div className="hidden lg:flex justify-center items-center gap-4 mt-5">
         <button
           onClick={scrollPrev}
           aria-label="Serviço anterior"

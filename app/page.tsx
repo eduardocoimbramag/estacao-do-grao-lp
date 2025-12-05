@@ -18,15 +18,15 @@ export default function Home() {
       {/* 3ª Section: Nossos Serviços (CARROSSEL) */}
       <section
         id="nossos-servicos"
-        className="py-[30px] bg-coffee-700/50"
+        className="h-screen flex flex-col justify-center bg-coffee-700/50"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
           {/* Cabeçalho da Section */}
-          <header className="mb-12 sm:mb-16 text-center space-y-4">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cream-50 font-montserrat">
+          <header className="mb-8 sm:mb-10 text-center space-y-3">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-cream-50 font-montserrat">
               Nossos Serviços
             </h2>
-            <p className="text-base sm:text-lg text-cream-50/80 max-w-2xl mx-auto font-montserrat">
+            <p className="text-sm sm:text-base text-cream-50/80 max-w-2xl mx-auto font-montserrat">
               Da sua empresa a grandes eventos, a Estação do Grão leva
               experiências completas em café especial para qualquer ocasião.
             </p>

@@ -101,27 +101,27 @@ export default function Contact() {
   }
 
   return (
-    <section id="contato" className="py-20 px-4 sm:px-6 lg:px-8 bg-coffee-900">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-center mb-6 font-montserrat text-cream-50">Leve a Estação do Grão para seu Evento</h2>
+    <section id="contato" className="h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-8 bg-coffee-900">
+      <div className="max-w-4xl mx-auto py-4 sm:py-6 lg:py-8">
+        <h2 className="text-center mb-4 font-montserrat text-cream-50">Leve a Estação do Grão para seu Evento</h2>
 
-        <p className="text-center text-lg text-cream-50 mb-16 font-montserrat">
+        <p className="text-center text-base text-cream-50 mb-10 font-montserrat">
           Café gourmet, baristas profissionais e personalização para sua marca. Atendimento rápido e sob medida para
           Recife, João Pessoa e região.
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact Methods */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-semibold text-cream-50 font-montserrat text-center">Entre em Contato</h3>
+            <h3 className="text-xl font-semibold text-cream-50 font-montserrat text-center">Entre em Contato</h3>
 
             <a
               href="https://wa.me/5581994492277?text=Olá! Quero orçamento da estação de café."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start gap-4 p-6 bg-coffee-700/40 border border-coffee-500/20 rounded-xl hover:border-coffee-500/50 hover:bg-coffee-700/60 transition-all group"
+              className="flex items-start gap-4 p-4 bg-coffee-700/40 border border-coffee-500/20 rounded-xl hover:border-coffee-500/50 hover:bg-coffee-700/60 transition-all group"
             >
-              <Phone className="w-6 h-6 text-coffee-500 flex-shrink-0 group-hover:text-accent mt-1 transition-colors" />
+              <Phone className="w-5 h-5 text-coffee-500 flex-shrink-0 group-hover:text-accent mt-1 transition-colors" />
               <div>
                 <p className="font-semibold text-cream-50 font-montserrat">WhatsApp</p>
                 <p className="text-coffee-500 hover:text-accent transition-colors font-montserrat">Clique aqui para orçamento rápido</p>
@@ -131,9 +131,9 @@ export default function Contact() {
             <button
               type="button"
               onClick={handleEmailCopy}
-              className="flex items-start gap-4 p-6 bg-coffee-700/40 border border-coffee-500/20 rounded-xl hover:border-coffee-500/50 hover:bg-coffee-700/60 transition-all group w-full text-left"
+              className="flex items-start gap-4 p-4 bg-coffee-700/40 border border-coffee-500/20 rounded-xl hover:border-coffee-500/50 hover:bg-coffee-700/60 transition-all group w-full text-left"
             >
-              <Mail className="w-6 h-6 text-coffee-500 flex-shrink-0 group-hover:text-accent mt-1 transition-colors" />
+              <Mail className="w-5 h-5 text-coffee-500 flex-shrink-0 group-hover:text-accent mt-1 transition-colors" />
               <div>
                 <p className="font-semibold text-cream-50 font-montserrat">E-mail</p>
                 <p className={`transition-colors font-montserrat ${emailCopied ? 'text-green-400' : 'text-coffee-500 hover:text-accent'}`}>
@@ -142,14 +142,14 @@ export default function Contact() {
               </div>
             </button>
 
-            <div className="p-6 bg-coffee-700/40 border border-coffee-500/20 rounded-xl space-y-3">
+            <div className="p-4 bg-coffee-700/40 border border-coffee-500/20 rounded-xl space-y-2">
               <div>
-                <p className="font-semibold text-cream-50 mb-1.5 font-montserrat text-center">Atendimento Rápido</p>
-                <p className="text-cream-50 text-sm font-montserrat">Resposta em até 2 horas durante o horário comercial</p>
+                <p className="font-semibold text-cream-50 mb-1 font-montserrat text-center">Atendimento Rápido</p>
+                <p className="text-cream-50 text-xs font-montserrat">Resposta em até 2 horas durante o horário comercial</p>
               </div>
               
               <div>
-                <p className="font-semibold text-cream-50 mb-2 font-montserrat text-center">Conheça nossas redes sociais</p>
+                <p className="font-semibold text-cream-50 mb-1.5 font-montserrat text-center">Conheça nossas redes sociais</p>
                 <div className="space-y-1.5">
                   <a
                     href="https://www.instagram.com/estacaodograo.eventos"
@@ -157,7 +157,7 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center p-4 bg-coffee-700/40 border border-coffee-500/20 rounded-xl hover:border-coffee-500/50 hover:bg-coffee-700/60 transition-all group"
                   >
-                    <Instagram className="w-6 h-6 text-coffee-500 flex-shrink-0 group-hover:text-accent transition-colors" />
+                    <Instagram className="w-5 h-5 text-coffee-500 flex-shrink-0 group-hover:text-accent transition-colors" />
                   </a>
                   
                   <a
@@ -166,7 +166,7 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center p-4 bg-coffee-700/40 border border-coffee-500/20 rounded-xl hover:border-coffee-500/50 hover:bg-coffee-700/60 transition-all group"
                   >
-                    <Facebook className="w-6 h-6 text-coffee-500 flex-shrink-0 group-hover:text-accent transition-colors" />
+                    <Facebook className="w-5 h-5 text-coffee-500 flex-shrink-0 group-hover:text-accent transition-colors" />
                   </a>
                   
                   <a
@@ -175,7 +175,7 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center p-4 bg-coffee-700/40 border border-coffee-500/20 rounded-xl hover:border-coffee-500/50 hover:bg-coffee-700/60 transition-all group"
                   >
-                    <Youtube className="w-6 h-6 text-coffee-500 flex-shrink-0 group-hover:text-accent transition-colors" />
+                    <Youtube className="w-5 h-5 text-coffee-500 flex-shrink-0 group-hover:text-accent transition-colors" />
                   </a>
                 </div>
               </div>
@@ -183,9 +183,9 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-3">
+          <form onSubmit={handleSubmit} className="space-y-2">
             <div className="space-y-1">
-              <label htmlFor="name" className="block text-sm font-semibold text-cream-50 font-montserrat">
+              <label htmlFor="name" className="block text-xs font-semibold text-cream-50 font-montserrat">
                 Nome * <span className="text-coffee-500">(obrigatório)</span>
               </label>
               <Input
@@ -196,12 +196,12 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-500"
+                className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-500 h-8"
               />
             </div>
 
             <div className="space-y-1">
-              <label className="block text-sm font-semibold text-cream-50 font-montserrat mb-1.5">
+              <label className="block text-xs font-semibold text-cream-50 font-montserrat mb-1.5">
                 Tipo de Evento
               </label>
               <RadioGroup
@@ -226,7 +226,7 @@ export default function Contact() {
 
             {formData.eventType && (
               <div className="space-y-1">
-                <label htmlFor="eventTypeName" className="block text-sm font-semibold text-cream-50 font-montserrat">
+                <label htmlFor="eventTypeName" className="block text-xs font-semibold text-cream-50 font-montserrat">
                   Tipo de Evento
                 </label>
                 <Input
@@ -240,13 +240,13 @@ export default function Contact() {
                   }
                   value={formData.eventTypeName}
                   onChange={handleChange}
-                  className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-500"
+                  className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-500 h-8"
                 />
               </div>
             )}
 
             <div className="space-y-1">
-              <label htmlFor="phone" className="block text-sm font-semibold text-cream-50 font-montserrat">
+              <label htmlFor="phone" className="block text-xs font-semibold text-cream-50 font-montserrat">
                 Telefone
               </label>
               <Input
@@ -257,12 +257,12 @@ export default function Contact() {
                 placeholder="(81) 98765-4321"
                 value={formData.phone}
                 onChange={handleChange}
-                className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-500"
+                className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-500 h-8"
               />
             </div>
 
             <div className="space-y-1">
-              <label htmlFor="email" className="block text-sm font-semibold text-cream-50 font-montserrat">
+              <label htmlFor="email" className="block text-xs font-semibold text-cream-50 font-montserrat">
                 E-mail * <span className="text-coffee-500">(obrigatório)</span>
               </label>
               <Input
@@ -273,12 +273,12 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-500"
+                className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-500 h-8"
               />
             </div>
 
             <div className="space-y-1">
-              <label htmlFor="eventDescription" className="block text-sm font-semibold text-cream-50 font-montserrat">
+              <label htmlFor="eventDescription" className="block text-xs font-semibold text-cream-50 font-montserrat">
                 Descreva seu Evento
               </label>
               <Textarea
@@ -287,7 +287,7 @@ export default function Contact() {
                 placeholder="Data, Número de convidados, Requisitos especiais, etc."
                 value={formData.eventDescription}
                 onChange={handleChange}
-                className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-500 resize-none min-h-24"
+                className="bg-coffee-700/40 border-coffee-700 text-cream-50 placeholder:text-coffee-500 resize-none min-h-20"
               />
             </div>
 
@@ -322,7 +322,7 @@ export default function Contact() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-coffee-500 hover:bg-accent text-coffee-900 font-semibold py-3 rounded-lg transition-colors font-montserrat"
+              className="w-full bg-coffee-500 hover:bg-accent text-coffee-900 font-semibold py-2.5 rounded-lg transition-colors font-montserrat"
             >
               {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
             </Button>

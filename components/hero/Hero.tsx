@@ -61,14 +61,14 @@ export default function Hero({
   };
 
   return (
-    <section className="relative pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-20 bg-[#452911]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative h-screen flex flex-col justify-center bg-[#452911]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
         {/* H1 centralizado, em linha única, ajustando tamanho com clamp para não ultrapassar os limites laterais */}
         <h1
           className="
             font-montserrat text-cream-50 font-bold
             tracking-tight text-center
-            mb-8 md:mb-10 lg:mb-12
+            mb-4 md:mb-5 lg:mb-6
             uppercase whitespace-nowrap
             !text-[clamp(2.5rem,2.5vw,3rem)]
           "
@@ -77,7 +77,7 @@ export default function Hero({
         </h1>
 
         {/* Grid principal com gaps progressivos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-14 items-end">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6 xl:gap-7 items-end">
           {/* Slideshow com aspect ratios e sizes otimizados */}
           <div
             className="relative min-w-0"
@@ -93,7 +93,7 @@ export default function Hero({
               <div className="flex">
                 {images.map((src, idx) => (
                   <div className="relative min-w-0 flex-[0_0_100%]" key={idx}>
-                    <div className="relative aspect-[4/3.2] lg:aspect-[16/10.5] w-full overflow-hidden">
+                    <div className="relative aspect-[4/3.5] lg:aspect-[16/11] w-full overflow-hidden">
                       <div className={`absolute inset-0 ${idx === 2 ? 'scale-[1.0]' : ''}`}>
                         <Image
                           src={src}
@@ -144,8 +144,8 @@ export default function Hero({
           {/* Texto + Cards compactos com gaps progressivos */}
           <div className="self-start flex flex-col max-w-full gap-4 md:gap-5 w-full">
             {/* Texto em caixa sutil com clamp */}
-            <div className="rounded-2xl ring-1 ring-cream-50/15 bg-coffee-card p-5 md:p-6 lg:p-6 shadow-2xl w-full">
-              <p className="text-cream-50 text-[clamp(0.98rem,0.35vw+0.95rem,1.125rem)] leading-relaxed text-justify indent-6 hyphens-none md:max-w-none">
+            <div className="rounded-2xl ring-1 ring-cream-50/15 bg-coffee-card p-4 md:p-4 lg:p-5 shadow-2xl w-full">
+              <p className="text-cream-50 text-[clamp(0.875rem,0.3vw+0.85rem,1rem)] leading-relaxed text-justify indent-6 hyphens-none md:max-w-none">
                 Transforme o café do seu evento em uma <span className="text-coffee-500 font-bold">experiência inesquecível</span> com a <span className="text-coffee-500 font-bold">Estação do Grão</span>! Oferecemos estação de <span className="text-coffee-500 font-bold">café gourmet</span>, <span className="text-coffee-500 font-bold">baristas profissionais</span> e <span className="text-coffee-500 font-bold">café espresso premium</span> para eventos corporativos, feiras de negócios, congressos, ativações de marca, lançamentos de produtos e casamentos.
               </p>
             </div>
@@ -158,35 +158,35 @@ export default function Hero({
         </div>
 
         {/* Grid de Métricas */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-12 lg:mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5 mt-8 lg:mt-10">
           {/* Card 1 */}
-          <div className="p-4 md:p-5 bg-coffee-card border border-coffee-500/30 rounded-xl hover:border-coffee-500/60 transition-colors flex flex-col items-center text-center gap-2">
-            <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-coffee-500">
+          <div className="p-3 md:p-4 bg-coffee-card border border-coffee-500/30 rounded-xl hover:border-coffee-500/60 transition-colors flex flex-col items-center text-center gap-2">
+            <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-coffee-500">
               + 100 mil
             </div>
-            <div className="text-lg md:text-xl font-semibold text-cream-50 font-serif uppercase tracking-wider flex items-center gap-2">
+            <div className="text-base md:text-lg font-semibold text-cream-50 font-serif uppercase tracking-wider flex items-center gap-2">
               <span>☕</span>
               <span>cafés servidos</span>
             </div>
           </div>
 
           {/* Card 2 */}
-          <div className="p-4 md:p-5 bg-coffee-card border border-coffee-500/30 rounded-xl hover:border-coffee-500/60 transition-colors flex flex-col items-center text-center gap-2">
-            <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-coffee-500">
+          <div className="p-3 md:p-4 bg-coffee-card border border-coffee-500/30 rounded-xl hover:border-coffee-500/60 transition-colors flex flex-col items-center text-center gap-2">
+            <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-coffee-500">
               +100
             </div>
-            <div className="text-lg md:text-xl font-semibold text-cream-50 font-serif uppercase tracking-wider flex items-center gap-2">
+            <div className="text-base md:text-lg font-semibold text-cream-50 font-serif uppercase tracking-wider flex items-center gap-2">
               <span>🏢</span>
               <span>empresas atendidas</span>
             </div>
           </div>
 
           {/* Card 3 */}
-          <div className="p-4 md:p-5 bg-coffee-card border border-coffee-500/30 rounded-xl hover:border-coffee-500/60 transition-colors flex flex-col items-center text-center gap-2">
-            <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-coffee-500">
+          <div className="p-3 md:p-4 bg-coffee-card border border-coffee-500/30 rounded-xl hover:border-coffee-500/60 transition-colors flex flex-col items-center text-center gap-2">
+            <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-coffee-500">
               + 2 mil
             </div>
-            <div className="text-lg md:text-xl font-semibold text-cream-50 font-serif uppercase tracking-wider flex items-center gap-2">
+            <div className="text-base md:text-lg font-semibold text-cream-50 font-serif uppercase tracking-wider flex items-center gap-2">
               <span>🤝</span>
               <span>eventos realizados</span>
             </div>

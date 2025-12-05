@@ -90,35 +90,35 @@ export default function FlipCard() {
   ]
 
   return (
-    <section className="py-[18px] sm:py-6 lg:py-[30px] px-4 sm:px-6 lg:px-8 bg-coffee-700">
-      <div className="max-w-7xl mx-auto">
+    <section className="h-screen py-10 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-coffee-700">
+      <div className="max-w-7xl mx-auto h-full">
         
         {/* Container com perspectiva */}
-        <div className="flip-container min-h-[600px] lg:min-h-[800px]">
+        <div className="flip-container h-full">
           
           {/* Inner container que rotaciona */}
-          <div className={`flip-card-inner ${isFlipped ? 'flipped' : ''}`}>
+          <div className={`flip-card-inner h-full ${isFlipped ? 'flipped' : ''}`}>
             
             {/* LADO 1: Personalização para seu evento */}
             <div className="flip-card-front">
-              <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-[30px] shadow-2xl">
+              <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-5 sm:p-6 lg:p-7 shadow-2xl h-full flex flex-col">
                 
                 {/* Título */}
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-[30px] font-montserrat">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white text-center mb-4 font-montserrat">
                   PERSONALIZAÇÃO PARA SEU EVENTO
                 </h2>
 
                 {/* Grid de Itens */}
-                <div className="space-y-2 mb-2">
+                <div className="space-y-2 mb-3 flex-1 overflow-y-auto max-h-[calc(100vh-240px)] sm:max-h-[calc(100vh-280px)] lg:max-h-[calc(100vh-320px)]">
                   {side1Items.map((item) => (
                     <div
                       key={item.id}
                       className={`flex flex-col sm:flex-row ${
                         item.imagePosition === 'right' ? 'sm:flex-row-reverse' : ''
-                      } items-center gap-[30px] p-0 bg-coffee-900/60 rounded-2xl transition-all duration-300`}
+                      } items-center gap-[14px] sm:gap-[18px] lg:gap-[22px] p-0 bg-coffee-900/60 rounded-2xl transition-all duration-300`}
                     >
                       {/* Imagem */}
-                      <div className="relative w-[388px] h-[162px] sm:w-[443px] sm:h-[184px] lg:w-[554px] lg:h-[230px] flex-shrink-0 rounded-xl overflow-hidden">
+                      <div className="relative w-[300px] h-[125px] sm:w-[340px] sm:h-[142px] lg:w-[420px] lg:h-[175px] flex-shrink-0 rounded-xl overflow-hidden">
                         <Image
                           src={item.image}
                           alt={item.title}
@@ -130,10 +130,10 @@ export default function FlipCard() {
 
                       {/* Texto */}
                       <div className="flex-1 flex flex-col justify-center text-center">
-                        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-coffee-500 mb-2 font-montserrat">
+                        <h3 className="text-base sm:text-lg lg:text-xl font-bold text-coffee-500 mb-1.5 font-montserrat">
                           {item.title}
                         </h3>
-                        <p className="text-sm sm:text-base lg:text-lg text-cream-50 leading-relaxed text-justify font-montserrat">
+                        <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed text-justify font-montserrat">
                           {item.description}
                         </p>
                       </div>
@@ -144,37 +144,37 @@ export default function FlipCard() {
                 {/* Botão para virar */}
                 <button
                   onClick={handleFlip}
-                  className="w-full flex items-center justify-center gap-2 py-4 px-6 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 group mt-[30px] mb-0"
+                  className="w-full flex items-center justify-center gap-2 py-3 px-5 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 group mt-4 mb-0"
                   aria-label="Virar para Poderes do Café"
                 >
-                  <span className="text-base sm:text-lg lg:text-xl font-semibold font-montserrat">
+                  <span className="text-sm sm:text-base lg:text-lg font-semibold font-montserrat">
                     Poderes do Café
                   </span>
-                  <RotateCw className="w-5 h-5 sm:w-6 sm:h-6 group-hover:rotate-180 transition-transform duration-500" />
+                  <RotateCw className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-180 transition-transform duration-500" />
                 </button>
               </div>
             </div>
 
             {/* LADO 2: Poderes do Café */}
             <div className="flip-card-back">
-              <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-[30px] shadow-2xl">
+              <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-5 sm:p-6 lg:p-7 shadow-2xl h-full flex flex-col">
                 
                 {/* Título */}
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-[30px] font-montserrat">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white text-center mb-4 font-montserrat">
                   PODERES DO CAFÉ
                 </h2>
 
                 {/* Grid de Itens */}
-                <div className="space-y-2 mb-2">
+                <div className="space-y-2 mb-3 flex-1 overflow-y-auto max-h-[calc(100vh-240px)] sm:max-h-[calc(100vh-280px)] lg:max-h-[calc(100vh-320px)]">
                   {side2Items.map((item) => (
                     <div
                       key={item.id}
                       className={`flex flex-col sm:flex-row ${
                         item.imagePosition === 'right' ? 'sm:flex-row-reverse' : ''
-                      } items-center gap-[30px] p-0 bg-coffee-900/60 rounded-2xl transition-all duration-300`}
+                      } items-center gap-[14px] sm:gap-[18px] lg:gap-[22px] p-0 bg-coffee-900/60 rounded-2xl transition-all duration-300`}
                     >
                       {/* Imagem */}
-                      <div className="relative w-[388px] h-[162px] sm:w-[443px] sm:h-[184px] lg:w-[554px] lg:h-[230px] flex-shrink-0 rounded-xl overflow-hidden">
+                      <div className="relative w-[300px] h-[125px] sm:w-[340px] sm:h-[142px] lg:w-[420px] lg:h-[175px] flex-shrink-0 rounded-xl overflow-hidden">
                         <Image
                           src={item.image}
                           alt={item.title}
@@ -186,10 +186,10 @@ export default function FlipCard() {
 
                       {/* Texto */}
                       <div className="flex-1 flex flex-col justify-center text-center">
-                        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-coffee-500 mb-2 font-montserrat">
+                        <h3 className="text-base sm:text-lg lg:text-xl font-bold text-coffee-500 mb-1.5 font-montserrat">
                           {item.title}
                         </h3>
-                        <p className="text-sm sm:text-base lg:text-lg text-cream-50 leading-relaxed text-justify font-montserrat">
+                        <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed text-justify font-montserrat">
                           {item.description}
                         </p>
                       </div>
@@ -200,11 +200,11 @@ export default function FlipCard() {
                 {/* Botão para virar de volta */}
                 <button
                   onClick={handleFlip}
-                  className="w-full flex items-center justify-center gap-2 py-4 px-6 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 group mt-[30px] mb-0"
+                  className="w-full flex items-center justify-center gap-2 py-3 px-5 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 group mt-4 mb-0"
                   aria-label="Virar para Personalização"
                 >
-                  <RotateCcw className="w-5 h-5 sm:w-6 sm:h-6 group-hover:-rotate-180 transition-transform duration-500" />
-                  <span className="text-base sm:text-lg lg:text-xl font-semibold font-montserrat">
+                  <RotateCcw className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-rotate-180 transition-transform duration-500" />
+                  <span className="text-sm sm:text-base lg:text-lg font-semibold font-montserrat">
                     Personalização para seu evento
                   </span>
                 </button>

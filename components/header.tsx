@@ -17,14 +17,14 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-coffee-900/95 backdrop-blur-md border-b border-coffee-700 overflow-visible">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 relative">
+        <div className="flex items-center justify-between h-16 relative">
           {/* Logo */}
           <Link 
             href="/" 
             className="inline-flex items-center relative z-10"
             aria-label="Ir para a página inicial"
           >
-            <span className="relative block h-[88px] w-[240px] sm:h-[96px] sm:w-[264px] md:h-[104px] md:w-[288px]">
+            <span className="relative block h-[70px] w-[190px] sm:h-[76px] sm:w-[210px] md:h-[82px] md:w-[230px]">
               <Image
                 src="/logo.png"
                 alt="Estação do Grão"

@@ -31,16 +31,16 @@ export default function OpenMenuIntro() {
   }, [muted]);
 
   return (
-    <section id="apresentacao" className="bg-coffee-900 text-white">
-      <div className="mx-auto max-w-6xl px-6 py-16 grid gap-10 md:grid-cols-[1fr_1px_1fr] items-start">
+    <section id="apresentacao" className="h-screen py-12 sm:py-16 lg:py-20 bg-coffee-900 text-white">
+      <div className="mx-auto max-w-6xl px-6 grid gap-6 md:gap-8 md:grid-cols-[1fr_1px_1fr] items-start">
         {/* ESQUERDA — TEXTO */}
         <div>
-          <h2 className="text-3xl md:text-4xl font-montserrat tracking-tight whitespace-nowrap">
+          <h2 className="text-2xl md:text-3xl font-montserrat tracking-tight whitespace-nowrap">
             O que é a Estação do Grão?
           </h2>
 
-          <div className="mt-5 space-y-4">
-            <p className="text-center text-xl md:text-2xl text-coffee-500 font-semibold leading-relaxed whitespace-nowrap font-montserrat">
+          <div className="mt-3 space-y-3">
+            <p className="text-center text-lg md:text-xl text-coffee-500 font-semibold leading-relaxed whitespace-nowrap font-montserrat">
               O café do seu evento precisa ser inesquecível.
             </p>
             <p className="text-cream-50/90 leading-relaxed text-justify hyphens-none font-montserrat">
@@ -48,7 +48,7 @@ export default function OpenMenuIntro() {
             </p>
           </div>
 
-          <ul className="mt-6 space-y-2">
+          <ul className="mt-4 space-y-1.5">
             {[
               'Coffee station completa (espresso, cappuccino, latte, gelados)',
               'Branding com café: copos e estação personalizados',
@@ -61,16 +61,16 @@ export default function OpenMenuIntro() {
             ))}
           </ul>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-5 flex flex-wrap gap-2.5">
             <a 
               href="#servicos" 
-              className="px-5 py-3 rounded-xl border border-coffee-500 text-cream-50 hover:bg-coffee-700/30 transition-colors font-montserrat"
+              className="px-4 py-2.5 rounded-xl border border-coffee-500 text-cream-50 hover:bg-coffee-700/30 transition-colors font-montserrat"
             >
               Ver serviços
             </a>
             <a 
               href="#contato" 
-              className="px-5 py-3 rounded-xl bg-coffee-500 text-coffee-900 font-semibold hover:bg-coffee-700 hover:text-white transition-colors font-montserrat"
+              className="px-4 py-2.5 rounded-xl bg-coffee-500 text-coffee-900 font-semibold hover:bg-coffee-700 hover:text-white transition-colors font-montserrat"
             >
               Solicitar orçamento
             </a>
