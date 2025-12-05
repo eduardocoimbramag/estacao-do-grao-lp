@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Mail, Phone } from "lucide-react"
+import { Mail, Phone, Instagram, Facebook, Youtube } from "lucide-react"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -22,6 +22,7 @@ export default function Contact() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [emailCopied, setEmailCopied] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -34,6 +35,17 @@ export default function Contact() {
 
   const handleCheckboxChange = (checked: boolean) => {
     setFormData((prev) => ({ ...prev, privacy: checked }))
+  }
+
+  const handleEmailCopy = async () => {
+    try {
+      await navigator.clipboard.writeText('estacaodograo.brasil@gmail.com')
+      setEmailCopied(true)
+      setTimeout(() => setEmailCopied(false), 2000)
+    } catch (err) {
+      console.error('Erro ao copiar e-mail:', err)
+      alert('Erro ao copiar e-mail. Por favor, copie manualmente: estacaodograo.brasil@gmail.com')
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -100,11 +112,11 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Methods */}
-          <div className="space-y-8">
-            <h3 className="text-2xl font-semibold text-cream-50 font-montserrat">Entre em Contato</h3>
+          <div className="space-y-4">
+            <h3 className="text-2xl font-semibold text-cream-50 font-montserrat text-center">Entre em Contato</h3>
 
             <a
-              href="https://wa.me/55DDDNUMERO?text=Olá! Quero orçamento da estação de café."
+              href="https://wa.me/5581994492277?text=Olá! Quero orçamento da estação de café."
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-start gap-4 p-6 bg-coffee-700/40 border border-coffee-500/20 rounded-xl hover:border-coffee-500/50 hover:bg-coffee-700/60 transition-all group"
@@ -116,26 +128,63 @@ export default function Contact() {
               </div>
             </a>
 
-            <a
-              href="mailto:contato@estacaodograo.com.br"
-              className="flex items-start gap-4 p-6 bg-coffee-700/40 border border-coffee-500/20 rounded-xl hover:border-coffee-500/50 hover:bg-coffee-700/60 transition-all group"
+            <button
+              type="button"
+              onClick={handleEmailCopy}
+              className="flex items-start gap-4 p-6 bg-coffee-700/40 border border-coffee-500/20 rounded-xl hover:border-coffee-500/50 hover:bg-coffee-700/60 transition-all group w-full text-left"
             >
               <Mail className="w-6 h-6 text-coffee-500 flex-shrink-0 group-hover:text-accent mt-1 transition-colors" />
               <div>
                 <p className="font-semibold text-cream-50 font-montserrat">E-mail</p>
-                <p className="text-coffee-500 hover:text-accent transition-colors font-montserrat">contato@estacaodograo.com.br</p>
+                <p className={`transition-colors font-montserrat ${emailCopied ? 'text-green-400' : 'text-coffee-500 hover:text-accent'}`}>
+                  {emailCopied ? '✓ E-mail copiado!' : 'estacaodograo.brasil@gmail.com'}
+                </p>
               </div>
-            </a>
+            </button>
 
-            <div className="p-6 bg-coffee-700/40 border border-coffee-500/20 rounded-xl">
-              <p className="font-semibold text-cream-50 mb-3 font-montserrat">Atendimento Rápido</p>
-              <p className="text-cream-50 text-sm font-montserrat">Resposta em até 2 horas durante o horário comercial</p>
+            <div className="p-6 bg-coffee-700/40 border border-coffee-500/20 rounded-xl space-y-3">
+              <div>
+                <p className="font-semibold text-cream-50 mb-1.5 font-montserrat text-center">Atendimento Rápido</p>
+                <p className="text-cream-50 text-sm font-montserrat">Resposta em até 2 horas durante o horário comercial</p>
+              </div>
+              
+              <div>
+                <p className="font-semibold text-cream-50 mb-2 font-montserrat text-center">Conheça nossas redes sociais</p>
+                <div className="space-y-1.5">
+                  <a
+                    href="https://www.instagram.com/estacaodograo.eventos"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center p-4 bg-coffee-700/40 border border-coffee-500/20 rounded-xl hover:border-coffee-500/50 hover:bg-coffee-700/60 transition-all group"
+                  >
+                    <Instagram className="w-6 h-6 text-coffee-500 flex-shrink-0 group-hover:text-accent transition-colors" />
+                  </a>
+                  
+                  <a
+                    href="https://www.facebook.com/estacaodograo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center p-4 bg-coffee-700/40 border border-coffee-500/20 rounded-xl hover:border-coffee-500/50 hover:bg-coffee-700/60 transition-all group"
+                  >
+                    <Facebook className="w-6 h-6 text-coffee-500 flex-shrink-0 group-hover:text-accent transition-colors" />
+                  </a>
+                  
+                  <a
+                    href="https://www.youtube.com/@estacaodograo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center p-4 bg-coffee-700/40 border border-coffee-500/20 rounded-xl hover:border-coffee-500/50 hover:bg-coffee-700/60 transition-all group"
+                  >
+                    <Youtube className="w-6 h-6 text-coffee-500 flex-shrink-0 group-hover:text-accent transition-colors" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-2">
+          <form onSubmit={handleSubmit} className="space-y-3">
+            <div className="space-y-1">
               <label htmlFor="name" className="block text-sm font-semibold text-cream-50 font-montserrat">
                 Nome * <span className="text-coffee-500">(obrigatório)</span>
               </label>
@@ -151,8 +200,8 @@ export default function Contact() {
               />
             </div>
 
-            <div className="space-y-2">
-              <label className="block text-sm font-semibold text-cream-50 font-montserrat mb-3">
+            <div className="space-y-1">
+              <label className="block text-sm font-semibold text-cream-50 font-montserrat mb-1.5">
                 Tipo de Evento
               </label>
               <RadioGroup
@@ -176,7 +225,7 @@ export default function Contact() {
             </div>
 
             {formData.eventType && (
-              <div className="space-y-2">
+              <div className="space-y-1">
                 <label htmlFor="eventTypeName" className="block text-sm font-semibold text-cream-50 font-montserrat">
                   Tipo de Evento
                 </label>
@@ -196,7 +245,7 @@ export default function Contact() {
               </div>
             )}
 
-            <div className="space-y-2">
+            <div className="space-y-1">
               <label htmlFor="phone" className="block text-sm font-semibold text-cream-50 font-montserrat">
                 Telefone
               </label>
@@ -212,7 +261,7 @@ export default function Contact() {
               />
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-1">
               <label htmlFor="email" className="block text-sm font-semibold text-cream-50 font-montserrat">
                 E-mail * <span className="text-coffee-500">(obrigatório)</span>
               </label>
@@ -228,7 +277,7 @@ export default function Contact() {
               />
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-1">
               <label htmlFor="eventDescription" className="block text-sm font-semibold text-cream-50 font-montserrat">
                 Descreva seu Evento
               </label>
