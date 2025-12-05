@@ -47,31 +47,39 @@ export default function Contact() {
     setIsSubmitting(true)
 
     try {
-      // Placeholder: Replace with your actual form submission endpoint
-      const response = await fetch("/api/submit-form", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      // URL do Google Apps Script
+      const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6JDQQhvyG-phTRfrjh0WLFeQoD_HRoXlEkJnBy5sx-DHcV1bBy48l5JCl_9ZR7WiD/exec'
+      
+      const response = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Importante para Google Apps Script
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({
-          ...formData,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || '',
+          eventType: formData.eventType || '',
+          eventTypeName: formData.eventTypeName || '',
+          eventDescription: formData.eventDescription || '',
           timestamp: new Date().toISOString(),
         }),
       })
 
-      if (response.ok) {
-        setSubmitStatus("success")
-        setFormData({
-          name: "",
-          eventType: "",
-          eventTypeName: "",
-          phone: "",
-          email: "",
-          eventDescription: "",
-          privacy: false,
-        })
-        setTimeout(() => setSubmitStatus("idle"), 5000)
-      } else {
-        setSubmitStatus("error")
-      }
+      // Como usamos 'no-cors', não podemos verificar response.ok
+      // Assumimos sucesso se não houver erro
+      setSubmitStatus("success")
+      setFormData({
+        name: "",
+        eventType: "",
+        eventTypeName: "",
+        phone: "",
+        email: "",
+        eventDescription: "",
+        privacy: false,
+      })
+      setTimeout(() => setSubmitStatus("idle"), 5000)
     } catch (error) {
       console.error("Form submission error:", error)
       setSubmitStatus("error")
