@@ -77,13 +77,13 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
 
   return (
     <section
-      className={`relative ${className}`}
+      className={`relative ${className} w-full max-w-[100vw] overflow-x-hidden`}
       role="region"
       aria-label="Carrossel de serviços"
     >
       {/* Container do carrossel com padding vertical para evitar overflow */}
-      <div className="overflow-hidden cursor-grab active:cursor-grabbing py-5" ref={emblaRef}>
-        <div className="flex touch-pan-y">
+      <div className="overflow-hidden cursor-grab active:cursor-grabbing py-5 w-full max-w-[100vw]" ref={emblaRef}>
+        <div className="flex touch-pan-y min-w-0">
           {loopedCards.map((card, index) => {
             // Mapear de volta ao índice original para verificar se está ativo
             const originalIndex = index % cards.length;
@@ -93,8 +93,10 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
               <article
                 key={`${card.id}-${index}`}
                 className="
-                  min-w-[85%] sm:min-w-[70%] md:min-w-[45%] lg:min-w-[33.333%]
-                  px-3 sm:px-4
+                  min-w-[calc(100vw-1rem)] sm:min-w-[70%] md:min-w-[45%] lg:min-w-[33.333%]
+                  max-w-[calc(100vw-1rem)] sm:max-w-none
+                  px-2 sm:px-3 md:px-4
+                  box-border
                 "
                 aria-label={`Serviço ${originalIndex + 1} de ${cards.length}: ${card.title}`}
               >

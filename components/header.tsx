@@ -15,16 +15,16 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-coffee-900/95 backdrop-blur-md border-b border-coffee-700 overflow-visible">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 relative">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-coffee-900/95 backdrop-blur-md border-b border-coffee-700 overflow-visible w-full">
+      <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 box-border">
+        <div className="flex items-center justify-between h-16 relative min-w-0">
           {/* Logo */}
           <Link 
             href="/" 
             className="inline-flex items-center relative z-10"
             aria-label="Ir para a página inicial"
           >
-            <span className="relative block h-[70px] w-[190px] sm:h-[76px] sm:w-[210px] md:h-[82px] md:w-[230px]">
+            <span className="relative block h-[60px] w-[150px] sm:h-[70px] sm:w-[170px] md:h-[76px] md:w-[190px] lg:h-[82px] lg:w-[210px] xl:w-[230px] shrink-0">
               <Image
                 src="/logo.png"
                 alt="Estação do Grão"
@@ -65,7 +65,7 @@ export default function Header() {
           </nav>
 
           {/* CTA + Mobile Button */}
-          <div className="flex items-center gap-3 relative z-10">
+          <div className="flex items-center gap-2 sm:gap-3 relative z-10 shrink-0">
             <a
               href="https://wa.me/55DDDNUMERO?text=Olá! Quero orçamento da estação de café."
               target="_blank"

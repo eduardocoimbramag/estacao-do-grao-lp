@@ -4,8 +4,8 @@ import { TreePalm, Shell, Flag } from "lucide-react"
 
 export default function Audience() {
   return (
-    <section className="h-screen py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-coffee-900">
-      <div className="max-w-7xl mx-auto">
+    <section className="min-h-screen sm:h-screen py-12 sm:py-16 lg:py-20 bg-coffee-900 overflow-x-hidden w-full">
+      <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 box-border">
         
         {/* Grid de 2 Colunas */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
@@ -18,7 +18,7 @@ export default function Audience() {
             </h2>
             
             {/* Imagem do Mapa */}
-            <div className="relative w-[65%] max-w-sm lg:max-w-[65%] aspect-square">
+            <div className="relative w-full max-w-[280px] sm:max-w-sm lg:max-w-[65%] aspect-square mx-auto sm:mx-0">
               <Image
                 src="/mapa-estacao-grao2.png"
                 alt="Mapa de regiões atendidas pela Estação do Grão no Nordeste e Brasil"

@@ -10,7 +10,7 @@ import Footer from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-coffee-900">
+    <main className="min-h-screen bg-coffee-900 overflow-x-hidden w-full max-w-[100vw]">
       <Header />
       <Hero />
       <OpenMenuIntro />
@@ -18,9 +18,9 @@ export default function Home() {
       {/* 3ª Section: Nossos Serviços (CARROSSEL) */}
       <section
         id="nossos-servicos"
-        className="h-screen flex flex-col justify-center bg-coffee-700/50"
+        className="h-screen flex flex-col justify-center bg-coffee-700/50 overflow-x-hidden w-full"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+        <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 box-border">
           {/* Cabeçalho da Section */}
           <header className="mb-8 sm:mb-10 text-center space-y-3">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-cream-50 font-montserrat">

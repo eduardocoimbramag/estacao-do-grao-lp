@@ -65,7 +65,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className={`${montserrat.variable} ${inter.variable} scroll-smooth`}>
+    <html lang="pt-BR" className={`${montserrat.variable} ${inter.variable} scroll-smooth overflow-x-hidden`}>
       <head>
         <link rel="canonical" href="https://estacaodograo.com.br" />
         <meta property="og:type" content="website" />
@@ -150,7 +150,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans bg-coffee-900 text-white antialiased">{children}</body>
+      <body className="font-sans bg-coffee-900 text-white antialiased overflow-x-hidden">{children}</body>
     </html>
   )
 }

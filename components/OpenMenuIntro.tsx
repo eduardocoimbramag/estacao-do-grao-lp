@@ -31,19 +31,19 @@ export default function OpenMenuIntro() {
   }, [muted]);
 
   return (
-    <section id="apresentacao" className="h-screen py-12 sm:py-16 lg:py-20 bg-coffee-900 text-white">
-      <div className="mx-auto max-w-6xl px-6 grid gap-6 md:gap-8 md:grid-cols-[1fr_1px_1fr] items-start">
+    <section id="apresentacao" className="min-h-screen sm:h-screen py-12 sm:py-16 lg:py-20 bg-coffee-900 text-white overflow-x-hidden w-full">
+      <div className="mx-auto w-full max-w-[100vw] sm:max-w-6xl px-3 sm:px-4 md:px-6 grid gap-4 sm:gap-5 md:gap-6 lg:gap-8 md:grid-cols-[1fr_1px_1fr] items-start box-border">
         {/* ESQUERDA — TEXTO */}
         <div>
-          <h2 className="text-2xl md:text-3xl font-montserrat tracking-tight whitespace-nowrap">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-montserrat tracking-tight sm:whitespace-nowrap break-words">
             O que é a Estação do Grão?
           </h2>
 
           <div className="mt-3 space-y-3">
-            <p className="text-center text-lg md:text-xl text-coffee-500 font-semibold leading-relaxed whitespace-nowrap font-montserrat">
+            <p className="text-center text-base sm:text-lg md:text-xl text-coffee-500 font-semibold leading-relaxed sm:whitespace-nowrap break-words font-montserrat">
               O café do seu evento precisa ser inesquecível.
             </p>
-            <p className="text-cream-50/90 leading-relaxed text-justify hyphens-none font-montserrat">
+            <p className="text-cream-50/90 leading-relaxed text-left sm:text-justify hyphens-auto break-words font-montserrat">
               A <strong className="text-coffee-500 font-bold">Estação do Grão</strong> é uma <strong className="text-coffee-500 font-bold">estação de café gourmet</strong> pensada para eventos que exigem excelência. <strong className="text-coffee-500 font-bold">Espresso premium</strong>, bebidas especiais, baristas e personalização completa para feiras, congressos, marcas e casamentos em <strong className="text-coffee-500 font-bold">Recife</strong> e <strong className="text-coffee-500 font-bold">João Pessoa</strong>. Café que se vê. Se sente. Se lembra.
             </p>
           </div>
@@ -84,8 +84,8 @@ export default function OpenMenuIntro() {
         />
 
         {/* DIREITA — VÍDEO */}
-        <div className="relative w-full">
-          <div className="aspect-[9/16] max-h-[70vh] md:max-h-[80vh] overflow-hidden rounded-2xl border border-coffee-700 bg-black/40">
+        <div className="relative w-full min-w-0">
+          <div className="aspect-[9/16] max-h-[70vh] md:max-h-[80vh] overflow-hidden rounded-2xl border border-coffee-700 bg-black/40 w-full max-w-full">
             <video
               ref={videoRef}
               className="h-full w-full object-contain"

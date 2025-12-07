@@ -155,11 +155,45 @@
 
 html {
   @apply scroll-smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 body {
   @apply bg-background text-foreground;
   background-attachment: fixed;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Correção agressiva para mobile - força todos os elementos a respeitarem 100vw */
+@media (max-width: 639px) {
+  * {
+    max-width: 100vw !important;
+  }
+  
+  body > * {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+  
+  section {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+  
+  div {
+    max-width: 100% !important;
+  }
 }
 
 /* Typography */

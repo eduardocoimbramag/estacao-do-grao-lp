@@ -3,8 +3,8 @@ import { Coffee, Instagram, MessageCircle, Linkedin } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-coffee-900 border-t border-coffee-700">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <footer className="bg-coffee-900 border-t border-coffee-700 overflow-x-hidden w-full">
+      <div className="w-full max-w-[100vw] sm:max-w-6xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 py-16 box-border">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}

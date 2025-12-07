@@ -90,8 +90,8 @@ export default function FlipCard() {
   ]
 
   return (
-    <section className="h-screen py-10 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-coffee-700">
-      <div className="max-w-7xl mx-auto h-full">
+    <section className="h-screen py-10 sm:py-12 lg:py-16 bg-coffee-700 overflow-x-hidden w-full">
+      <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 h-full box-border">
         
         {/* Container com perspectiva */}
         <div className="flip-container h-full">
@@ -115,10 +115,10 @@ export default function FlipCard() {
                       key={item.id}
                       className={`flex flex-col sm:flex-row ${
                         item.imagePosition === 'right' ? 'sm:flex-row-reverse' : ''
-                      } items-center gap-[14px] sm:gap-[18px] lg:gap-[22px] p-0 bg-coffee-900/60 rounded-2xl transition-all duration-300`}
+                      } items-center gap-3 sm:gap-[18px] lg:gap-[22px] p-2 sm:p-0 bg-coffee-900/60 rounded-2xl transition-all duration-300 min-w-0`}
                     >
                       {/* Imagem */}
-                      <div className="relative w-[300px] h-[125px] sm:w-[340px] sm:h-[142px] lg:w-[420px] lg:h-[175px] flex-shrink-0 rounded-xl overflow-hidden">
+                      <div className="relative w-full max-w-[280px] sm:max-w-[340px] sm:h-[142px] lg:max-w-[420px] lg:h-[175px] h-[125px] flex-shrink-0 rounded-xl overflow-hidden mx-auto sm:mx-0">
                         <Image
                           src={item.image}
                           alt={item.title}
@@ -171,10 +171,10 @@ export default function FlipCard() {
                       key={item.id}
                       className={`flex flex-col sm:flex-row ${
                         item.imagePosition === 'right' ? 'sm:flex-row-reverse' : ''
-                      } items-center gap-[14px] sm:gap-[18px] lg:gap-[22px] p-0 bg-coffee-900/60 rounded-2xl transition-all duration-300`}
+                      } items-center gap-3 sm:gap-[18px] lg:gap-[22px] p-2 sm:p-0 bg-coffee-900/60 rounded-2xl transition-all duration-300 min-w-0`}
                     >
                       {/* Imagem */}
-                      <div className="relative w-[300px] h-[125px] sm:w-[340px] sm:h-[142px] lg:w-[420px] lg:h-[175px] flex-shrink-0 rounded-xl overflow-hidden">
+                      <div className="relative w-full max-w-[280px] sm:max-w-[340px] sm:h-[142px] lg:max-w-[420px] lg:h-[175px] h-[125px] flex-shrink-0 rounded-xl overflow-hidden mx-auto sm:mx-0">
                         <Image
                           src={item.image}
                           alt={item.title}
