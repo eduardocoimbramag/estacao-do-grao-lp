@@ -18,7 +18,7 @@ export default function Home() {
       {/* 3ª Section: Nossos Serviços (CARROSSEL) */}
       <section
         id="nossos-servicos"
-        className="h-screen flex flex-col justify-center bg-coffee-700/50 overflow-x-hidden w-full"
+        className="h-[calc(100vh-4rem)] sm:h-screen flex flex-col justify-center bg-coffee-700/50 overflow-x-hidden w-full"
       >
         <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 box-border">
           {/* Cabeçalho da Section */}

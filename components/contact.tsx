@@ -101,7 +101,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contato" className="min-h-screen lg:h-screen flex flex-col justify-center bg-coffee-900 py-8 sm:py-12 lg:py-0 overflow-x-hidden w-full">
+    <section id="contato" className="min-h-[calc(100vh-4rem)] lg:h-screen flex flex-col justify-center bg-coffee-900 py-8 sm:py-12 lg:py-0 overflow-x-hidden w-full">
       <div className="w-full max-w-[100vw] sm:max-w-4xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 box-border">
         <h2 className="text-center mb-4 font-montserrat text-cream-50">Leve a Estação do Grão para seu Evento</h2>
 
