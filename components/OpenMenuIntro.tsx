@@ -147,7 +147,7 @@ export default function OpenMenuIntro() {
               </div>
               
               {/* Lista mobile */}
-              <ul className="space-y-1">
+              <ul className="space-y-5">
                 {[
                   'Coffee station completa (espresso, cappuccino, latte, gelados)',
                   'Branding com café: copos e estação personalizados',
