@@ -91,7 +91,7 @@ export default function FlipCard() {
 
   return (
     <section className="h-[calc(100vh-4rem)] sm:h-screen py-1 sm:py-12 lg:py-16 bg-coffee-700 overflow-x-hidden w-full">
-      <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 h-full box-border">
+      <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-4 sm:px-4 md:px-6 lg:px-8 h-full box-border">
         
         {/* Container com perspectiva */}
         <div className="flip-container h-full">
@@ -100,16 +100,24 @@ export default function FlipCard() {
           <div className={`flip-card-inner h-full ${isFlipped ? 'flipped' : ''}`}>
             
             {/* LADO 1: Personalização para seu evento */}
-            <div className="flip-card-front">
-              <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-2 sm:p-6 lg:p-7 shadow-2xl h-full flex flex-col">
+            <div className="flip-card-front h-full relative">
+              <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-1.5 sm:p-6 lg:p-7 shadow-2xl h-full grid grid-rows-[auto_1fr_auto] sm:flex sm:flex-col overflow-visible sm:overflow-visible">
                 
                 {/* Título */}
-                <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold text-white text-center mb-1.5 sm:mb-4 font-montserrat">
+                <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold text-white text-center mb-1.5 sm:mb-4 font-montserrat">
                   PERSONALIZAÇÃO PARA SEU EVENTO
                 </h2>
 
                 {/* Grid de Itens */}
-                <div className="space-y-1 sm:space-y-2 mb-1.5 sm:mb-3 flex-1 overflow-y-auto max-h-[calc(100vh-240px)] sm:max-h-[calc(100vh-280px)] lg:max-h-[calc(100vh-320px)]">
+                <div 
+                  className="space-y-1 sm:space-y-2 mb-1.5 sm:mb-3 overflow-y-scroll sm:overflow-y-auto sm:flex-1 sm:max-h-[calc(100vh-280px)] lg:max-h-[calc(100vh-320px)] min-h-0 relative scroll-container-lado1"
+                  style={{ 
+                    WebkitOverflowScrolling: 'touch',
+                    touchAction: 'pan-y',
+                    position: 'relative',
+                    zIndex: 1
+                  }}
+                >
                   {side1Items.map((item) => (
                     <div
                       key={item.id}
@@ -157,15 +165,15 @@ export default function FlipCard() {
 
             {/* LADO 2: Poderes do Café */}
             <div className="flip-card-back">
-              <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-2 sm:p-6 lg:p-7 shadow-2xl h-full flex flex-col">
+              <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-1.5 sm:p-6 lg:p-7 shadow-2xl h-full flex flex-col">
                 
                 {/* Título */}
-                <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold text-white text-center mb-1.5 sm:mb-4 font-montserrat">
+                <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold text-white text-center mb-1.5 sm:mb-4 font-montserrat">
                   PODERES DO CAFÉ
                 </h2>
 
                 {/* Grid de Itens */}
-                <div className="space-y-1 sm:space-y-2 mb-1.5 sm:mb-3 flex-1 overflow-y-auto max-h-[calc(100vh-240px)] sm:max-h-[calc(100vh-280px)] lg:max-h-[calc(100vh-320px)]">
+                <div className="space-y-1 sm:space-y-2 mb-1.5 sm:mb-3 flex-1 overflow-y-auto max-h-[calc(100vh-240px)] sm:max-h-[calc(100vh-280px)] lg:max-h-[calc(100vh-320px)] min-h-0">
                   {side2Items.map((item) => (
                     <div
                       key={item.id}
@@ -250,6 +258,17 @@ export default function FlipCard() {
           width: 100%;
           height: 100%;
           transform: rotateY(180deg);
+        }
+
+        /* Mobile: Garantir que scroll container ocupe toda a área e capture eventos */
+        @media (max-width: 639px) {
+          .scroll-container-lado1 {
+            grid-row: 2 !important;
+            width: 100% !important;
+            height: 100% !important;
+            min-height: 0 !important;
+            pointer-events: auto !important;
+          }
         }
       `}</style>
     </section>
