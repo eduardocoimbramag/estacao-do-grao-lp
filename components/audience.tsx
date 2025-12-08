@@ -4,21 +4,21 @@ import { TreePalm, Shell, Flag } from "lucide-react"
 
 export default function Audience() {
   return (
-    <section className="min-h-[calc(100vh-4rem)] sm:h-screen py-12 sm:py-16 lg:py-20 bg-coffee-900 overflow-x-hidden w-full">
+    <section className="h-[calc(100vh-4rem)] sm:h-screen py-4 sm:py-16 lg:py-20 bg-coffee-900 overflow-x-hidden w-full">
       <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 box-border">
         
         {/* Grid de 2 Colunas */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center py-4 sm:py-0 sm:items-start">
           
           {/* Coluna Esquerda: Título + Mapa + Cards */}
-          <div className="flex flex-col justify-center items-center gap-1.5 lg:gap-2">
+          <div className="flex flex-col justify-center items-center gap-1.5 sm:gap-1.5 lg:gap-2">
             {/* Título */}
-            <h2 className="text-base sm:text-lg lg:text-xl font-bold text-white text-center font-montserrat">
+            <h2 className="text-2xl sm:text-lg lg:text-xl font-bold text-white text-center font-montserrat">
               REGIÕES ATENDIDAS
             </h2>
             
             {/* Imagem do Mapa */}
-            <div className="relative w-full max-w-[280px] sm:max-w-sm lg:max-w-[65%] aspect-square mx-auto sm:mx-0">
+            <div className="relative w-full max-w-[120px] sm:max-w-sm lg:max-w-[65%] aspect-square mx-auto sm:mx-0 my-3 sm:my-0">
               <Image
                 src="/mapa-estacao-grao2.png"
                 alt="Mapa de regiões atendidas pela Estação do Grão no Nordeste e Brasil"
@@ -30,7 +30,7 @@ export default function Audience() {
             </div>
 
             {/* Card 1: Recife e Região Metropolitana - 100 doses */}
-            <div className="pl-3 pr-4 py-1.5 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors w-full max-w-md">
+            <div className="pl-2 pr-3 py-0.5 sm:pl-3 sm:pr-4 sm:py-1.5 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors w-full max-w-md">
               <div className="flex items-center gap-2">
                 <TreePalm className="w-5 h-5 text-coffee-500 flex-shrink-0 self-center" />
                 <div className="pl-2">
@@ -43,7 +43,7 @@ export default function Audience() {
             </div>
 
             {/* Card 2: Estados Específicos - 600 doses */}
-            <div className="pl-4 pr-6 py-2 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors w-full max-w-md">
+            <div className="pl-2 pr-3 py-0.5 sm:pl-4 sm:pr-6 sm:py-2 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors w-full max-w-md">
               <div className="flex items-center gap-2">
                 <Shell className="w-6 h-6 text-coffee-500 flex-shrink-0 self-center" />
                 <div className="pl-2">
@@ -56,7 +56,7 @@ export default function Audience() {
             </div>
 
             {/* Card 3: Brasil - Conforme demanda */}
-            <div className="pl-4 pr-6 py-2 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors w-full max-w-md">
+            <div className="pl-2 pr-3 py-0.5 sm:pl-4 sm:pr-6 sm:py-2 bg-coffee-900/60 border border-coffee-700 rounded-2xl hover:border-coffee-500/50 transition-colors w-full max-w-md">
               <div className="flex items-center gap-2">
                 <Flag className="w-6 h-6 text-coffee-500 flex-shrink-0 self-center" />
                 <div className="pl-2">
@@ -72,12 +72,12 @@ export default function Audience() {
           </div>
 
           {/* Coluna Direita: Botões de Navegação */}
-          <div className="flex flex-col justify-start items-stretch gap-6 h-full">
+          <div className="grid grid-cols-2 sm:flex sm:flex-col justify-start items-stretch gap-2 sm:gap-6 h-full">
             
             {/* Botão 1: Galeria de experiências */}
             <Link
               href="#galeria"
-              className="group relative flex-1 py-8 lg:py-10 overflow-hidden rounded-2xl border-2 border-white transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-coffee-900"
+              className="group relative py-12 sm:flex-1 sm:py-8 lg:py-10 overflow-hidden rounded-2xl border-2 border-white transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-coffee-900"
             >
               <Image
                 src="/professional-barista-making-latte-art.jpg"
@@ -98,7 +98,7 @@ export default function Audience() {
             {/* Botão 2: Blog */}
             <Link
               href="/blog"
-              className="group relative flex-1 py-8 lg:py-10 overflow-hidden rounded-2xl border-2 border-white transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-coffee-900"
+              className="group relative py-12 sm:flex-1 sm:py-8 lg:py-10 overflow-hidden rounded-2xl border-2 border-white transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-coffee-900"
             >
               <Image
                 src="/coffee-station-setup-at-wedding-reception.jpg"

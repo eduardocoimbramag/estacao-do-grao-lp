@@ -93,9 +93,9 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
               <article
                 key={`${card.id}-${index}`}
                 className="
-                  min-w-[calc(100vw-1rem)] sm:min-w-[70%] md:min-w-[45%] lg:min-w-[33.333%]
-                  max-w-[calc(100vw-1rem)] sm:max-w-none
-                  px-2 sm:px-3 md:px-4
+                  min-w-[60vw] sm:min-w-[70%] md:min-w-[45%] lg:min-w-[33.333%]
+                  max-w-[60vw] sm:max-w-none
+                  px-3 sm:px-3 md:px-4
                   box-border
                 "
                 aria-label={`Serviço ${originalIndex + 1} de ${cards.length}: ${card.title}`}
@@ -253,7 +253,7 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
       </div>
 
       {/* Indicadores de paginação (Mobile) */}
-      <div className="flex lg:hidden justify-center gap-2 mt-6">
+      <div className="flex lg:hidden justify-center gap-3 mt-6">
         {cards.map((_, index) => (
           <button
             key={index}
@@ -261,11 +261,11 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
             aria-label={`Ir para serviço ${index + 1}`}
             aria-current={index === selectedIndex ? "true" : "false"}
             className={`
-              h-2 rounded-full transition-all duration-300
+              h-2.5 rounded-full transition-all duration-300
               ${
                 index === selectedIndex
-                  ? "w-8 bg-coffee-500"
-                  : "w-2 bg-cream-50/30"
+                  ? "w-10 bg-coffee-500"
+                  : "w-2.5 bg-cream-50/40 hover:bg-cream-50/60"
               }
             `}
           />
