@@ -92,139 +92,212 @@ export default function FlipCard() {
   return (
     <section className="h-[calc(100vh-4rem)] sm:h-screen py-1 sm:py-12 lg:py-16 bg-coffee-700 overflow-x-hidden w-full">
       <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-4 sm:px-4 md:px-6 lg:px-8 h-full box-border">
-        
-        {/* Container com perspectiva */}
-        <div className="flip-container h-full">
-          
-          {/* Inner container que rotaciona */}
-          <div className={`flip-card-inner h-full ${isFlipped ? 'flipped' : ''}`}>
-            
-            {/* LADO 1: Personalização para seu evento */}
-            <div className="flip-card-front h-full relative">
-              <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-1.5 sm:p-6 lg:p-7 shadow-2xl h-full grid grid-rows-[auto_1fr_auto] sm:flex sm:flex-col overflow-visible sm:overflow-visible">
-                
-                {/* Título */}
-                <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold text-white text-center mb-1.5 sm:mb-4 font-montserrat">
-                  PERSONALIZAÇÃO PARA SEU EVENTO
-                </h2>
+        {/* Desktop/Tablet: mantém flip 3D original */}
+        <div className="hidden sm:block h-full">
+          {/* Container com perspectiva */}
+          <div className="flip-container h-full">
+            {/* Inner container que rotaciona */}
+            <div className={`flip-card-inner h-full ${isFlipped ? 'flipped' : ''}`}>
+              {/* LADO 1: Personalização para seu evento */}
+              <div className="flip-card-front h-full relative">
+                <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-1.5 sm:p-6 lg:p-7 shadow-2xl h-full grid grid-rows-[auto_1fr_auto] sm:flex sm:flex-col overflow-visible sm:overflow-visible">
+                  {/* Título */}
+                  <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold text-white text-center mb-1.5 sm:mb-4 font-montserrat">
+                    PERSONALIZAÇÃO PARA SEU EVENTO
+                  </h2>
 
-                {/* Grid de Itens */}
-                <div 
-                  className="space-y-1 sm:space-y-2 mb-1.5 sm:mb-3 overflow-y-scroll sm:overflow-y-auto sm:flex-1 sm:max-h-[calc(100vh-280px)] lg:max-h-[calc(100vh-320px)] min-h-0 relative scroll-container-lado1"
-                  style={{ 
-                    WebkitOverflowScrolling: 'touch',
-                    touchAction: 'pan-y',
-                    position: 'relative',
-                    zIndex: 1
-                  }}
-                >
-                  {side1Items.map((item) => (
-                    <div
-                      key={item.id}
-                      className={`flex flex-col sm:flex-row ${
-                        item.imagePosition === 'right' ? 'sm:flex-row-reverse' : ''
-                      } items-center gap-2 sm:gap-[18px] lg:gap-[22px] p-1 sm:p-0 bg-coffee-900/60 rounded-2xl transition-all duration-300 min-w-0`}
-                    >
-                      {/* Imagem */}
-                      <div className="relative w-full max-w-[280px] sm:max-w-[340px] sm:h-[142px] lg:max-w-[420px] lg:h-[175px] h-[80px] flex-shrink-0 rounded-xl overflow-hidden mx-auto sm:mx-0">
-                        <Image
-                          src={item.image}
-                          alt={item.title}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 640px) 388px, (max-width: 1024px) 443px, 554px"
-                        />
-                      </div>
+                  {/* Grid de Itens */}
+                  <div
+                    className="space-y-1 sm:space-y-2 mb-1.5 sm:mb-3 overflow-y-scroll sm:overflow-y-auto sm:flex-1 sm:max-h-[calc(100vh-280px)] lg:max-h-[calc(100vh-320px)] min-h-0 relative scroll-container-lado1"
+                    style={{
+                      WebkitOverflowScrolling: 'touch',
+                      touchAction: 'pan-y',
+                      position: 'relative',
+                      zIndex: 1
+                    }}
+                  >
+                    {side1Items.map((item) => (
+                      <div
+                        key={item.id}
+                        className={`flex flex-col sm:flex-row ${
+                          item.imagePosition === 'right' ? 'sm:flex-row-reverse' : ''
+                        } items-center gap-2 sm:gap-[18px] lg:gap-[22px] p-1 sm:p-0 bg-coffee-900/60 rounded-2xl transition-all duration-300 min-w-0`}
+                      >
+                        {/* Imagem */}
+                        <div className="relative w-full max-w-[280px] sm:max-w-[340px] sm:h-[142px] lg:max-w-[420px] lg:h-[175px] h-[80px] flex-shrink-0 rounded-xl overflow-hidden mx-auto sm:mx-0">
+                          <Image
+                            src={item.image}
+                            alt={item.title}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 640px) 388px, (max-width: 1024px) 443px, 554px"
+                          />
+                        </div>
 
-                      {/* Texto */}
-                      <div className="flex-1 flex flex-col justify-center text-center">
-                        <h3 className="text-sm sm:text-lg lg:text-xl font-bold text-coffee-500 mb-1 sm:mb-1.5 font-montserrat">
-                          {item.title}
-                        </h3>
-                        <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-normal sm:leading-relaxed text-justify font-montserrat">
-                          {item.description}
-                        </p>
+                        {/* Texto */}
+                        <div className="flex-1 flex flex-col justify-center text-center">
+                          <h3 className="text-sm sm:text-lg lg:text-xl font-bold text-coffee-500 mb-1 sm:mb-1.5 font-montserrat">
+                            {item.title}
+                          </h3>
+                          <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-normal sm:leading-relaxed text-justify font-montserrat">
+                            {item.description}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+
+                  {/* Botão para virar */}
+                  <button
+                    onClick={handleFlip}
+                    className="w-full flex items-center justify-center gap-2 py-2 sm:py-3 px-5 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 group mt-2 sm:mt-4 mb-0"
+                    aria-label="Virar para Poderes do Café"
+                  >
+                    <span className="text-sm sm:text-base lg:text-lg font-semibold font-montserrat">
+                      Poderes do Café
+                    </span>
+                    <RotateCw className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-180 transition-transform duration-500" />
+                  </button>
                 </div>
+              </div>
 
-                {/* Botão para virar */}
-                <button
-                  onClick={handleFlip}
-                  className="w-full flex items-center justify-center gap-2 py-2 sm:py-3 px-5 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 group mt-2 sm:mt-4 mb-0"
-                  aria-label="Virar para Poderes do Café"
-                >
-                  <span className="text-sm sm:text-base lg:text-lg font-semibold font-montserrat">
-                    Poderes do Café
-                  </span>
-                  <RotateCw className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-180 transition-transform duration-500" />
-                </button>
+              {/* LADO 2: Poderes do Café */}
+              <div className="flip-card-back">
+                <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-1.5 sm:p-6 lg:p-7 shadow-2xl h-full grid grid-rows-[auto_1fr_auto] sm:flex sm:flex-col">
+                  {/* Título */}
+                  <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold text-white text-center mb-1.5 sm:mb-4 font-montserrat">
+                    PODERES DO CAFÉ
+                  </h2>
+
+                  {/* Grid de Itens */}
+                  <div
+                    className="space-y-1 sm:space-y-2 mb-1.5 sm:mb-3 overflow-y-auto sm:flex-1 sm:max-h-[calc(100vh-280px)] lg:max-h-[calc(100vh-320px)] min-h-0 relative scroll-container-lado2"
+                    style={{
+                      WebkitOverflowScrolling: 'touch',
+                      touchAction: 'pan-y',
+                      position: 'relative',
+                      zIndex: 1
+                    }}
+                  >
+                    {side2Items.map((item) => (
+                      <div
+                        key={item.id}
+                        className={`flex flex-col sm:flex-row ${
+                          item.imagePosition === 'right' ? 'sm:flex-row-reverse' : ''
+                        } items-center gap-2 sm:gap-[18px] lg:gap-[22px] p-1 sm:p-0 bg-coffee-900/60 rounded-2xl transition-all duration-300 min-w-0`}
+                      >
+                        {/* Imagem */}
+                        <div className="relative w-full max-w-[280px] sm:max-w-[340px] sm:h-[142px] lg:max-w-[420px] lg:h-[175px] h-[80px] flex-shrink-0 rounded-xl overflow-hidden mx-auto sm:mx-0">
+                          <Image
+                            src={item.image}
+                            alt={item.title}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 640px) 388px, (max-width: 1024px) 443px, 554px"
+                          />
+                        </div>
+
+                        {/* Texto */}
+                        <div className="flex-1 flex flex-col justify-center text-center">
+                          <h3 className="text-sm sm:text-lg lg:text-xl font-bold text-coffee-500 mb-1 sm:mb-1.5 font-montserrat">
+                            {item.title}
+                          </h3>
+                          <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-normal sm:leading-relaxed text-justify font-montserrat">
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Botão para virar de volta */}
+                  <button
+                    onClick={handleFlip}
+                    className="w-full flex items-center justify-center gap-2 py-2 sm:py-3 px-5 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 group mt-2 sm:mt-4 mb-0"
+                    aria-label="Virar para Personalização"
+                  >
+                    <RotateCcw className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-rotate-180 transition-transform duration-500" />
+                    <span className="text-sm sm:text-base lg:text-lg font-semibold font-montserrat">
+                      Personalização para seu evento
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
-
-            {/* LADO 2: Poderes do Café */}
-            <div className="flip-card-back">
-              <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-1.5 sm:p-6 lg:p-7 shadow-2xl h-full flex flex-col">
-                
-                {/* Título */}
-                <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold text-white text-center mb-1.5 sm:mb-4 font-montserrat">
-                  PODERES DO CAFÉ
-                </h2>
-
-                {/* Grid de Itens */}
-                <div className="space-y-1 sm:space-y-2 mb-1.5 sm:mb-3 flex-1 overflow-y-auto max-h-[calc(100vh-240px)] sm:max-h-[calc(100vh-280px)] lg:max-h-[calc(100vh-320px)] min-h-0">
-                  {side2Items.map((item) => (
-                    <div
-                      key={item.id}
-                      className={`flex flex-col sm:flex-row ${
-                        item.imagePosition === 'right' ? 'sm:flex-row-reverse' : ''
-                      } items-center gap-2 sm:gap-[18px] lg:gap-[22px] p-1 sm:p-0 bg-coffee-900/60 rounded-2xl transition-all duration-300 min-w-0`}
-                    >
-                      {/* Imagem */}
-                      <div className="relative w-full max-w-[280px] sm:max-w-[340px] sm:h-[142px] lg:max-w-[420px] lg:h-[175px] h-[80px] flex-shrink-0 rounded-xl overflow-hidden mx-auto sm:mx-0">
-                        <Image
-                          src={item.image}
-                          alt={item.title}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 640px) 388px, (max-width: 1024px) 443px, 554px"
-                        />
-                      </div>
-
-                      {/* Texto */}
-                      <div className="flex-1 flex flex-col justify-center text-center">
-                        <h3 className="text-sm sm:text-lg lg:text-xl font-bold text-coffee-500 mb-1 sm:mb-1.5 font-montserrat">
-                          {item.title}
-                        </h3>
-                        <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-normal sm:leading-relaxed text-justify font-montserrat">
-                          {item.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Botão para virar de volta */}
-                <button
-                  onClick={handleFlip}
-                  className="w-full flex items-center justify-center gap-2 py-2 sm:py-3 px-5 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 group mt-2 sm:mt-4 mb-0"
-                  aria-label="Virar para Personalização"
-                >
-                  <RotateCcw className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-rotate-180 transition-transform duration-500" />
-                  <span className="text-sm sm:text-base lg:text-lg font-semibold font-montserrat">
-                    Personalização para seu evento
-                  </span>
-                </button>
-              </div>
-            </div>
-
           </div>
         </div>
 
+        {/* Mobile: fallback sem 3D, com switch simples entre lados */}
+        <div className="block sm:hidden h-full">
+          <div className="bg-coffee-900 border-2 border-coffee-700 rounded-3xl p-1.5 shadow-2xl h-full grid grid-rows-[auto_1fr_auto]">
+            {/* Título dinâmico */}
+            <h2 className="text-2xl font-bold text-white text-center mb-1.5 font-montserrat">
+              {isFlipped ? 'PODERES DO CAFÉ' : 'PERSONALIZAÇÃO PARA SEU EVENTO'}
+            </h2>
+
+            {/* Lista de itens com scroll nativo */}
+            <div
+              className="space-y-1 mb-1.5 overflow-y-auto min-h-0"
+              style={{
+                WebkitOverflowScrolling: 'touch',
+                touchAction: 'pan-y'
+              }}
+            >
+              {(isFlipped ? side2Items : side1Items).map((item) => (
+                <div
+                  key={item.id}
+                  className="flex flex-col items-center gap-2 p-1 bg-coffee-900/60 rounded-2xl transition-all duration-300 min-w-0"
+                >
+                  {/* Imagem */}
+                  <div className="relative w-full max-w-[280px] h-[80px] flex-shrink-0 rounded-xl overflow-hidden mx-auto">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+
+                  {/* Texto */}
+                  <div className="flex-1 flex flex-col justify-center text-center">
+                    <h3 className="text-sm font-bold text-coffee-500 mb-1 font-montserrat">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs text-cream-50 leading-normal text-justify font-montserrat">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Botão de alternância entre lados */}
+            <button
+              onClick={handleFlip}
+              className="w-full flex items-center justify-center gap-2 py-2 px-5 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 group mt-2 mb-0"
+              aria-label={isFlipped ? 'Ver Personalização para seu evento' : 'Ver Poderes do Café'}
+            >
+              {isFlipped ? (
+                <>
+                  <RotateCcw className="w-4 h-4 group-hover:-rotate-180 transition-transform duration-500" />
+                  <span className="text-sm font-semibold font-montserrat">
+                    Personalização para seu evento
+                  </span>
+                </>
+              ) : (
+                <>
+                  <span className="text-sm font-semibold font-montserrat">
+                    Poderes do Café
+                  </span>
+                  <RotateCw className="w-4 h-4 group-hover:rotate-180 transition-transform duration-500" />
+                </>
+              )}
+            </button>
+          </div>
+        </div>
       </div>
 
-      {/* CSS para animação do flip */}
+      {/* CSS para animação do flip (desktop/tablet) */}
       <style jsx>{`
         .flip-container {
           perspective: 1000px;
@@ -260,9 +333,10 @@ export default function FlipCard() {
           transform: rotateY(180deg);
         }
 
-        /* Mobile: Garantir que scroll container ocupe toda a área e capture eventos */
+        /* Mobile: Garantir que scroll containers ocupem toda a área e capturem eventos */
         @media (max-width: 639px) {
-          .scroll-container-lado1 {
+          .scroll-container-lado1,
+          .scroll-container-lado2 {
             grid-row: 2 !important;
             width: 100% !important;
             height: 100% !important;
