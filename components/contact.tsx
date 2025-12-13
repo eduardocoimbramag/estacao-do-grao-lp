@@ -112,7 +112,7 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact Methods */}
-          <div className="space-y-4">
+          <div className="space-y-4 order-2 lg:order-1">
             <h3 className="text-xl font-semibold text-cream-50 font-montserrat text-center">Entre em Contato</h3>
 
             <a
@@ -183,7 +183,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-2">
+          <form onSubmit={handleSubmit} className="space-y-2 order-1 lg:order-2">
             <div className="space-y-1">
               <label htmlFor="name" className="block text-xs font-semibold text-cream-50 font-montserrat">
                 Nome * <span className="text-coffee-500">(obrigatório)</span>
