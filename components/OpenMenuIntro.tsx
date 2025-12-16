@@ -56,7 +56,7 @@ export default function OpenMenuIntro() {
   }, [muted]);
 
   return (
-    <section id="apresentacao" className="h-[calc(100vh-4rem)] sm:h-[calc(100vh-4rem)] py-2 sm:py-4 lg:py-6 bg-coffee-900 text-white overflow-x-hidden w-full flex flex-col justify-start sm:justify-center">
+    <section id="apresentacao" className="h-[calc(100vh-4rem)] sm:h-[calc(100vh-4rem)] py-2 sm:py-4 lg:py-6 bg-coffee-900 text-white overflow-x-hidden w-full flex flex-col justify-center sm:justify-start">
       <div className="mx-auto w-full max-w-[100vw] sm:max-w-6xl px-3 sm:px-4 md:px-6 flex flex-col sm:grid sm:gap-5 md:gap-6 lg:gap-8 md:grid-cols-[1fr_1px_1fr] gap-3 items-center py-4 sm:py-0 sm:items-start box-border">
         {/* CONTEÚDO - Estrutura diferente para mobile e desktop */}
         <div className="order-1 sm:order-1 space-y-2 w-full flex flex-col h-full">
