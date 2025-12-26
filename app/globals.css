@@ -542,6 +542,241 @@ body {
     font-size: 0.8rem !important;
     line-height: 1.2rem !important;
   }
+  
+  /* ============================================
+     SEÇÃO "FORMULÁRIO DE CONTATO" - Correções laydesk2
+     ============================================ */
+
+  /* 1. Section: Altura fixa viewport menos menu */
+  section#contato {
+    height: calc(100vh - 4rem) !important;
+    min-height: calc(100vh - 4rem) !important;
+    max-height: calc(100vh - 4rem) !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  /* 2. Container interno: Reduzir padding */
+  section#contato > div {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  /* 3. Título h2: Reduzir tamanho e margin */
+  section#contato h2 {
+    font-size: 1.25rem !important;
+    line-height: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* 4. Parágrafo descritivo: Reduzir tamanho e margin */
+  section#contato > div > p {
+    font-size: 0.75rem !important;
+    line-height: 1.125rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* 5. Grid: Reduzir gap */
+  section#contato .grid {
+    gap: 0.75rem !important;
+  }
+
+  /* 6. Coluna de Métodos de Contato: Reduzir espaçamento */
+  section#contato .space-y-3,
+  section#contato .space-y-4 {
+    gap: 0.5rem !important;
+  }
+
+  section#contato .space-y-3 > * + *,
+  section#contato .space-y-4 > * + * {
+    margin-top: 0.5rem !important;
+  }
+
+  /* 7. Título "Entre em Contato": Reduzir tamanho */
+  section#contato h3 {
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* 8. Cards de Contato (WhatsApp/E-mail): Reduzir padding */
+  section#contato a[href*="wa.me"],
+  section#contato button[type="button"] {
+    padding: 0.5rem !important;
+  }
+
+  section#contato a[href*="wa.me"] svg,
+  section#contato button[type="button"] svg {
+    width: 0.875rem !important;
+    height: 0.875rem !important;
+  }
+
+  section#contato a[href*="wa.me"] p,
+  section#contato button[type="button"] p {
+    font-size: 0.625rem !important;
+    line-height: 0.875rem !important;
+  }
+
+  /* 9. Container de Atendimento/Redes: Reduzir padding */
+  section#contato .p-2,
+  section#contato .p-4 {
+    padding: 0.5rem !important;
+  }
+
+  section#contato .p-2 > *,
+  section#contato .p-4 > * {
+    gap: 0.375rem !important;
+  }
+
+  /* 10. Textos de Atendimento: Reduzir tamanho */
+  section#contato .p-2 p,
+  section#contato .p-4 p {
+    font-size: 0.625rem !important;
+    line-height: 0.875rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* 11. Redes Sociais: Reduzir padding e tamanho de ícones */
+  section#contato a[href*="instagram"],
+  section#contato a[href*="facebook"],
+  section#contato a[href*="youtube"] {
+    padding: 0.5rem !important;
+  }
+
+  section#contato a[href*="instagram"] svg,
+  section#contato a[href*="facebook"] svg,
+  section#contato a[href*="youtube"] svg {
+    width: 0.875rem !important;
+    height: 0.875rem !important;
+  }
+
+  /* 12. Formulário: Reduzir espaçamento entre campos */
+  section#contato form {
+    gap: 0.5rem !important;
+  }
+
+  section#contato form > * + * {
+    margin-top: 0.5rem !important;
+  }
+
+  /* 13. Labels: Reduzir tamanho e margin */
+  section#contato label {
+    font-size: 0.625rem !important;
+    line-height: 0.875rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* 14. Inputs: Reduzir altura e padding */
+  section#contato input[type="text"],
+  section#contato input[type="tel"],
+  section#contato input[type="email"] {
+    height: 1.75rem !important;
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+  }
+
+  /* 15. Textarea: Reduzir altura mínima e padding */
+  section#contato textarea {
+    min-height: 3rem !important;
+    padding: 0.375rem 0.5rem !important;
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+  }
+
+  /* 16. RadioGroup: Reduzir gap e tamanho */
+  section#contato .flex.gap-6 {
+    gap: 1rem !important;
+  }
+
+  section#contato .flex.gap-2 {
+    gap: 0.375rem !important;
+  }
+
+  section#contato input[type="radio"] {
+    width: 0.875rem !important;
+    height: 0.875rem !important;
+  }
+
+  section#contato label[for*="eventType"] {
+    font-size: 0.625rem !important;
+    line-height: 0.875rem !important;
+  }
+
+  /* 17. Checkbox: Reduzir tamanho */
+  section#contato input[type="checkbox"] {
+    width: 0.875rem !important;
+    height: 0.875rem !important;
+    margin-top: 0.125rem !important;
+  }
+
+  section#contato label[for="privacy"] {
+    font-size: 0.625rem !important;
+    line-height: 0.875rem !important;
+  }
+
+  /* 18. Mensagens de Status: Reduzir padding e font size */
+  section#contato .p-4 {
+    padding: 0.5rem !important;
+    font-size: 0.625rem !important;
+    line-height: 0.875rem !important;
+  }
+
+  section#contato .p-4 p {
+    font-size: 0.625rem !important;
+    line-height: 0.875rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  section#contato .p-4 ul {
+    margin-top: 0.25rem !important;
+    padding-left: 1rem !important;
+  }
+
+  section#contato .p-4 li {
+    font-size: 0.625rem !important;
+    line-height: 0.875rem !important;
+    margin-bottom: 0.125rem !important;
+  }
+
+  /* 19. Button: Reduzir padding e font size */
+  section#contato button[type="submit"] {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+  }
+
+  /* 20. Scrollbar customizada (se necessário) */
+  section#contato::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  section#contato::-webkit-scrollbar-track {
+    background: rgba(42, 34, 30, 0.3);
+    border-radius: 10px;
+  }
+
+  section#contato::-webkit-scrollbar-thumb {
+    background: rgba(196, 142, 84, 0.6);
+    border-radius: 10px;
+  }
+
+  section#contato {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(196, 142, 84, 0.6) rgba(42, 34, 30, 0.3);
+  }
 }
 
 /* laydesk3: Desktop baixo (1280×720 - altura <= 720px) */
