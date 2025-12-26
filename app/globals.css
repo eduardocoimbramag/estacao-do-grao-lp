@@ -369,6 +369,132 @@ body {
   .laydesk2-servicos-indicators {
     margin-top: 1.25rem !important;
   }
+  
+  /* ============================================
+     SEÇÃO "REGIÕES ATENDIDAS" - Correções laydesk2
+     ============================================ */
+  
+  /* 1. Section: Manter altura viewport menos menu, remover padding vertical */
+  .laydesk2-audience-section {
+    height: calc(100vh - 4rem) !important;
+    min-height: calc(100vh - 4rem) !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  /* 2. Container interno: Reduzir padding e usar altura completa */
+  .laydesk2-audience-container {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+  
+  /* 3. Grid: Reduzir gap e padding */
+  .laydesk2-audience-grid {
+    gap: 1rem !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    height: 100% !important;
+    align-items: center !important;
+  }
+  
+  /* 4. Coluna esquerda: Reduzir gap e otimizar */
+  .laydesk2-audience-left-column {
+    gap: 0.25rem !important;
+    height: 100% !important;
+    justify-content: center !important;
+  }
+  
+  /* 5. Título: Reduzir tamanho da fonte */
+  .laydesk2-audience-title {
+    font-size: 2rem !important; /* equivalente a text-lg */
+    line-height: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* 6. Container do mapa: Reduzir tamanho e margin */
+  .laydesk2-audience-map-container {
+    max-width: 55% !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* 7. Cards: Reduzir padding e espaçamento */
+  .laydesk2-audience-card {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* Ícones dos cards: Reduzir tamanho */
+  .laydesk2-audience-card svg {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+  
+  /* Texto dos cards: Reduzir tamanho */
+  .laydesk2-audience-card-text {
+    font-size: 1rem !important; /* equivalente a text-xs */
+    line-height: 1.125rem !important;
+  }
+  
+  /* Texto em negrito dentro dos cards: Reduzir */
+  .laydesk2-audience-card-text strong {
+    font-size: 1rem !important;
+  }
+  
+  /* Link dentro do card: Reduzir padding */
+  .laydesk2-audience-card-link {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.75rem !important;
+  }
+  
+  /* 8. Coluna direita: Reduzir gap */
+  .laydesk2-audience-right-column {
+    gap: 0.75rem !important;
+    height: 100% !important;
+  }
+  
+  /* 9. Botões de navegação: Reduzir tamanho - AJUSTE AQUI */
+  .laydesk2-audience-nav-button {
+    /* Altura e padding - Modifique estes valores conforme necessário */
+    margin-top: 1.125rem !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+    min-height: 0 !important;
+    max-height: 18.5rem !important; /* Altura máxima dos botões - ajuste aqui */
+    flex: 1 !important;
+    height: auto !important;
+  }
+  
+  /* Título dos botões: Reduzir tamanho - AJUSTE AQUI */
+  .laydesk2-audience-nav-button-title {
+    /* Tamanho da fonte - Modifique conforme necessário */
+    font-size: 1.5rem !important; /* reduzido para 1rem (16px) */
+    line-height: 1.25rem !important;
+    padding: 0 0.5rem !important;
+  }
+  
+  /* Container interno dos botões: Ajustar altura */
+  .laydesk2-audience-nav-button > div:last-child {
+    height: 100% !important;
+    min-height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* Imagem de fundo dos botões: Ajustar se necessário */
+  .laydesk2-audience-nav-button img {
+    object-fit: cover !important;
+  }
 }
 
 /* laydesk3: Desktop baixo (1280×720 - altura <= 720px) */
