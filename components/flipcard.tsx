@@ -90,7 +90,7 @@ export default function FlipCard() {
   ]
 
   return (
-    <section className="h-[calc(100vh-4rem)] sm:h-screen py-1 sm:py-12 lg:py-16 bg-coffee-700 overflow-x-hidden w-full">
+    <section className="h-[calc(100vh-4rem)] sm:h-[calc(100vh-4rem)] py-1 sm:py-4 lg:py-6 bg-coffee-700 overflow-x-hidden w-full flex flex-col sm:justify-center">
       <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-4 sm:px-4 md:px-6 lg:px-8 h-full box-border">
         {/* Desktop/Tablet: mantém flip 3D original */}
         <div className="hidden sm:block h-full">
@@ -108,7 +108,7 @@ export default function FlipCard() {
 
                   {/* Grid de Itens */}
                   <div
-                    className="space-y-1 sm:space-y-2 mb-1.5 sm:mb-3 overflow-y-scroll sm:overflow-y-auto sm:flex-1 sm:max-h-[calc(100vh-280px)] lg:max-h-[calc(100vh-320px)] min-h-0 relative scroll-container-lado1"
+                    className="space-y-1 sm:space-y-2 mb-1.5 sm:mb-3 overflow-y-scroll sm:overflow-y-auto sm:flex-1 sm:max-h-[calc(100vh-4rem-200px)] lg:max-h-[calc(100vh-4rem-240px)] min-h-0 relative scroll-container-lado1"
                     style={{
                       WebkitOverflowScrolling: 'touch',
                       touchAction: 'pan-y',
@@ -171,7 +171,7 @@ export default function FlipCard() {
 
                   {/* Grid de Itens */}
                   <div
-                    className="space-y-1 sm:space-y-2 mb-1.5 sm:mb-3 overflow-y-auto sm:flex-1 sm:max-h-[calc(100vh-280px)] lg:max-h-[calc(100vh-320px)] min-h-0 relative scroll-container-lado2"
+                    className="space-y-1 sm:space-y-2 mb-1.5 sm:mb-3 overflow-y-auto sm:flex-1 sm:max-h-[calc(100vh-4rem-200px)] lg:max-h-[calc(100vh-4rem-240px)] min-h-0 relative scroll-container-lado2"
                     style={{
                       WebkitOverflowScrolling: 'touch',
                       touchAction: 'pan-y',
