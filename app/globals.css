@@ -175,8 +175,18 @@ body {
   padding: 0;
 }
 
-/* Correção agressiva para mobile - força todos os elementos a respeitarem 100vw */
+/* ============================================
+   SISTEMA DE LAYOUTS RESPONSIVOS
+   Documentação completa: docs/03-LAYOUTS.md
+   ============================================ */
+
+/* ============================================
+   LAYOUTS MOBILE
+   ============================================ */
+
+/* laymob1: Mobile pequeno (max-width: 639px) */
 @media (max-width: 639px) {
+  /* Correção agressiva para mobile - força todos os elementos a respeitarem 100vw */
   * {
     max-width: 100vw !important;
   }
@@ -194,6 +204,178 @@ body {
   div {
     max-width: 100% !important;
   }
+  
+  /* Adicione aqui estilos específicos para laymob1 */
+}
+
+/* laymob2: Mobile grande / Tablet pequeno (640px - 767px) */
+@media (min-width: 640px) and (max-width: 767px) {
+  /* Adicione aqui estilos específicos para laymob2 */
+}
+
+/* ============================================
+   LAYOUTS DESKTOP
+   ============================================ */
+
+/* laydesk1: Desktop grande (1920×1080, 1600×900 e superiores) */
+/* min-width: 1600px e min-height: 900px */
+@media (min-width: 1600px) and (min-height: 900px) {
+  /* Adicione aqui estilos específicos para laydesk1 */
+  /* Este é o layout padrão confortável - geralmente não precisa de ajustes */
+}
+
+/* laydesk2: Desktop médio (1368×768 - altura entre 768px e 899px) */
+/* min-width: 1024px, min-height: 768px, max-height: 899px */
+@media (min-width: 1024px) and (min-height: 768px) and (max-height: 899px) {
+  /* Adicione aqui estilos específicos para laydesk2 */
+  /* Use para reduzir padding, margens, gaps e ajustar tipografia */
+  
+  /* Hero Title - margin-top de 20px exclusivo para laydesk2 */
+  .laydesk2-hero-title {
+    margin-top: 30px !important;
+  }
+  
+  /* ============================================
+     SEÇÃO "NOSSOS SERVIÇOS" - Correções laydesk2
+     ============================================ */
+  
+  /* 1. Section: Altura viewport menos menu (h-16 = 4rem) */
+  .laydesk2-servicos-section {
+    height: calc(100vh - 4rem) !important;
+    min-height: calc(100vh - 4rem) !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  /* 2. Container interno: Padding otimizado para o espaço disponível */
+  .laydesk2-servicos-container {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+  
+  /* 3. Header: Espaçamento otimizado */
+  .laydesk2-servicos-header {
+    margin-bottom: 1.75rem !important;
+  }
+  
+  .laydesk2-servicos-header > * + * {
+    margin-top: 0.875rem !important;
+  }
+  
+  /* 4. Título: Tamanho otimizado */
+  .laydesk2-servicos-title {
+    font-size: 1.875rem !important; /* equivalente a text-3xl */
+    line-height: 2.25rem !important;
+  }
+  
+  /* 5. Parágrafo: Tamanho otimizado */
+  .laydesk2-servicos-description {
+    font-size: 0.9375rem !important; /* ligeiramente maior que text-sm */
+    line-height: 1.375rem !important;
+  }
+  
+  /* 6. Container do carrossel: Padding otimizado e flex para ocupar espaço */
+  .laydesk2-servicos-carousel-container {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+    flex: 1 !important;
+    min-height: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  /* Garantir que o wrapper interno do carrossel também use o espaço */
+  .laydesk2-servicos-carousel-container > div {
+    width: 100% !important;
+  }
+  
+  /* 7. Cards: Padding otimizado */
+  .laydesk2-servicos-card {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  
+  /* 8. Container da imagem: Padding otimizado */
+  .laydesk2-servicos-image-container {
+    padding: 1rem !important;
+  }
+  
+  /* Imagem: Altura otimizada */
+  .laydesk2-servicos-image {
+    height: 10rem !important; /* equivalente a h-30 (120px) */
+  }
+  
+  /* 9. Container de texto: Padding e espaçamento otimizados */
+  .laydesk2-servicos-card-content {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .laydesk2-servicos-card-content > * + * {
+    margin-top: 0.625rem !important;
+  }
+  
+  /* Título do card: Tamanho otimizado */
+  .laydesk2-servicos-card-title {
+    font-size: 1.125rem !important; /* equivalente a text-lg */
+    line-height: 1.625rem !important;
+  }
+  
+  /* Subtítulo do card: Tamanho otimizado */
+  .laydesk2-servicos-card-subtitle {
+    font-size: 0.8125rem !important; /* entre text-xs e text-sm */
+    line-height: 1.125rem !important;
+  }
+  
+  /* Descrição do card: Tamanho otimizado */
+  .laydesk2-servicos-card-description {
+    font-size: 0.8125rem !important; /* entre text-xs e text-sm */
+    line-height: 1.25rem !important;
+  }
+  
+  /* CTA Button: Padding otimizado */
+  .laydesk2-servicos-card-cta {
+    padding-top: 0.75rem !important;
+  }
+  
+  .laydesk2-servicos-card-cta a {
+    padding: 0.5rem 1.25rem !important;
+    font-size: 0.8125rem !important;
+  }
+  
+  /* 10. Botões de navegação: Espaçamento otimizado */
+  .laydesk2-servicos-nav {
+    margin-top: 0.75rem !important;
+  }
+  
+  /* Botões: Tamanho otimizado */
+  .laydesk2-servicos-nav button {
+    padding: 0.625rem !important;
+  }
+  
+  .laydesk2-servicos-nav svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  
+  /* 11. Indicadores mobile: Espaçamento otimizado */
+  .laydesk2-servicos-indicators {
+    margin-top: 1.25rem !important;
+  }
+}
+
+/* laydesk3: Desktop baixo (1280×720 - altura <= 720px) */
+/* min-width: 1024px e max-height: 720px */
+@media (min-width: 1024px) and (max-height: 720px) {
+  /* Adicione aqui estilos específicos para laydesk3 */
+  /* Use para layouts muito compactos com espaçamentos reduzidos */
 }
 
 /* Typography */

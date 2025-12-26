@@ -72,6 +72,7 @@ export default function Hero({
             uppercase sm:whitespace-nowrap
             !text-[clamp(1.375rem,7vw,1.75rem)] sm:!text-[clamp(1.75rem,2.8vw,2.5rem)] lg:!text-[clamp(2.5rem,2.5vw,3rem)]
             px-1 sm:px-0
+            laydesk2-hero-title
           "
         >
           Café Gourmet e Baristas para Eventos
