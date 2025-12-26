@@ -495,6 +495,53 @@ body {
   .laydesk2-audience-nav-button img {
     object-fit: cover !important;
   }
+  
+  /* ============================================
+     SEÇÃO "SPLIT SCREEN" - Ajustes laydesk2
+     ============================================ */
+  
+  /* Split Screen: Reduzir padding e font sizes para laydesk2 */
+  .custom-scrollbar {
+    scrollbar-width: thin !important;
+  }
+
+  /* Reduzir padding dos lados no split screen */
+  section.h-\[calc\(100vh-4rem\)\] > div > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  /* Títulos menores */
+  section.h-\[calc\(100vh-4rem\)\] h2 {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Cards mais compactos */
+  section.h-\[calc\(100vh-4rem\)\] .space-y-3,
+  section.h-\[calc\(100vh-4rem\)\] .space-y-4 {
+    gap: 0.5rem !important;
+  }
+
+  /* Imagens menores */
+  section.h-\[calc\(100vh-4rem\)\] .max-w-\[280px\] {
+    max-width: 220px !important;
+    height: 100px !important;
+  }
+
+  /* Textos menores */
+  section.h-\[calc\(100vh-4rem\)\] h3 {
+    font-size: 0.95rem !important;
+    line-height: 1.25rem !important;
+  }
+
+  section.h-\[calc\(100vh-4rem\)\] p {
+    font-size: 0.8rem !important;
+    line-height: 1.2rem !important;
+  }
 }
 
 /* laydesk3: Desktop baixo (1280×720 - altura <= 720px) */
@@ -579,4 +626,33 @@ button:hover {
   *::after {
     @apply !animate-none;
   }
+}
+
+/* ============================================
+   SPLIT SCREEN CONTENT - Scrollbar Customizada
+   ============================================ */
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(42, 34, 30, 0.3);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(196, 142, 84, 0.6);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(196, 142, 84, 0.9);
+}
+
+/* Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(196, 142, 84, 0.6) rgba(42, 34, 30, 0.3);
 }

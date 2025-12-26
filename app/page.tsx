@@ -3,7 +3,7 @@ import Hero from "@/components/hero/Hero"
 import OpenMenuIntro from "@/components/OpenMenuIntro"
 import { ServicesCarousel } from "@/components/sections/services-carousel"
 import { SERVICES_CAROUSEL_CARDS } from "@/lib/data/services-carousel-cards"
-import FlipCard from "@/components/flipcard"
+import SplitScreenContent from "@/components/split-screen-content"
 import Audience from "@/components/audience"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
@@ -38,7 +38,7 @@ export default function Home() {
       </section>
 
       <Audience />
-      <FlipCard />
+      <SplitScreenContent />
       <Contact />
       <Footer />
     </main>
