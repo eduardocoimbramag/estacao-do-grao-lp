@@ -4,7 +4,7 @@ import { TreePalm, Shell, Flag } from "lucide-react"
 
 export default function Audience() {
   return (
-    <section className="h-[calc(100vh-4rem)] sm:h-[calc(100vh-4rem)] py-4 sm:py-6 lg:py-8 bg-coffee-900 overflow-x-hidden w-full">
+    <section className="h-[calc(100vh-4rem)] sm:h-[calc(100vh-4rem)] py-4 sm:py-6 lg:py-8 bg-coffee-900 overflow-x-hidden w-full flex flex-col sm:justify-center">
       <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 box-border">
         
         {/* Grid de 2 Colunas */}
