@@ -868,11 +868,41 @@ body {
   }
 }
 
-/* laydesk3: Desktop baixo (1280×720 - altura <= 720px) */
-/* min-width: 1024px e max-height: 720px */
-@media (min-width: 1024px) and (max-height: 720px) {
-  /* Adicione aqui estilos específicos para laydesk3 */
-  /* Use para layouts muito compactos com espaçamentos reduzidos */
+/* laydesk3: Desktop baixo (faixa de altura abaixo de laydesk2) */
+/* min-width: 1024px e max-height: 767px (fica abaixo do laydesk2 que começa em min-height: 768px) */
+@media (min-width: 1024px) and (max-height: 767px) {
+  /* laydesk3 (até 767px de altura):
+     - Header é fixed (fora do fluxo). Para o padrão “1 viewport - menu” funcionar
+       exatamente, fazemos o header participar do fluxo apenas aqui.
+     - E forçamos a HERO a ter exatamente calc(100vh - 4rem). */
+
+  header.fixed {
+    position: sticky !important;
+    top: 0 !important;
+  }
+
+  /* Âncoras (scrollToSection/scrollIntoView) não ficam escondidas sob o menu */
+  section[id] {
+    scroll-margin-top: 4rem;
+  }
+
+  /* Seção 1 (Hero) no mesmo padrão: 1 viewport - menu */
+  .laydesk3-hero-section {
+    height: calc(100vh - 4rem) !important;
+    min-height: calc(100vh - 4rem) !important;
+    max-height: calc(100vh - 4rem) !important;
+    overflow: hidden !important;
+  }
+
+  /* (1) Hero H1: reduzir pela metade o margin-bottom (só laydesk3) */
+  h1.laydesk3-hero-h1 {
+    margin-bottom: 0.75rem !important; /* 1/2 de lg:mb-6 (1.5rem) */
+  }
+
+  /* (2) Métricas: reduzir pela metade o margin-top (só laydesk3) */
+  .laydesk3-hero-metrics {
+    margin-top: 1.25rem !important; /* 1/2 de lg:mt-10 (2.5rem) */
+  }
 }
 
 /* Typography */

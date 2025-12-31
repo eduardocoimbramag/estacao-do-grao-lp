@@ -61,7 +61,7 @@ export default function Hero({
   };
 
   return (
-    <section className="relative min-h-screen lg:h-screen flex flex-col justify-center bg-[#452911] pt-20 sm:pt-24 lg:pt-0 pb-8 sm:pb-12 lg:pb-0 overflow-x-hidden w-full">
+    <section className="relative min-h-screen lg:h-screen flex flex-col justify-center bg-[#452911] pt-20 sm:pt-24 lg:pt-0 pb-8 sm:pb-12 lg:pb-0 overflow-x-hidden w-full laydesk3-hero-section">
       <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 py-3 sm:py-4 lg:py-6 box-border">
         {/* H1 centralizado, em linha única, ajustando tamanho com clamp para não ultrapassar os limites laterais */}
         <h1
@@ -72,7 +72,7 @@ export default function Hero({
             uppercase sm:whitespace-nowrap
             !text-[clamp(1.375rem,7vw,1.75rem)] sm:!text-[clamp(1.75rem,2.8vw,2.5rem)] lg:!text-[clamp(2.5rem,2.5vw,3rem)]
             px-1 sm:px-0
-            laydesk2-hero-title
+            laydesk2-hero-title laydesk3-hero-h1
           "
         >
           Café Gourmet e Baristas para Eventos
@@ -160,7 +160,7 @@ export default function Hero({
         </div>
 
         {/* Grid de Métricas */}
-        <div className="grid grid-cols-3 gap-1.5 sm:gap-2 md:gap-4 lg:gap-5 mt-6 sm:mt-8 lg:mt-10 w-full min-w-0">
+        <div className="grid grid-cols-3 gap-1.5 sm:gap-2 md:gap-4 lg:gap-5 mt-6 sm:mt-8 lg:mt-10 w-full min-w-0 laydesk3-hero-metrics">
           {/* Card 1 */}
           <div className="p-2 sm:p-3 md:p-4 bg-coffee-card border border-coffee-500/30 rounded-xl hover:border-coffee-500/60 transition-colors flex flex-col items-center text-center gap-1.5 sm:gap-2">
             <div className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-coffee-500 whitespace-nowrap">
