@@ -422,3 +422,5 @@ export default function SplitScreenContent() {
 - **Embla Carousel:** https://www.embla-carousel.com/
 - **A11y Guidelines:** https://www.w3.org/WAI/WCAG21/quickref/
 
+
+

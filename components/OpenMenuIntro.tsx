@@ -72,16 +72,16 @@ export default function OpenMenuIntro() {
           </div>
           
           {/* ========== DESKTOP: Título ========== */}
-          <h2 className="hidden sm:block text-2xl md:text-3xl font-montserrat font-bold tracking-tight text-left whitespace-nowrap m-0">
+          <h2 className="hidden sm:block text-2xl md:text-3xl font-montserrat font-bold tracking-tight text-left whitespace-nowrap m-0 laydesk2-sec2-title">
             O que é a Estação do Grão?
           </h2>
           
           {/* ========== DESKTOP: Subtítulo e Parágrafo ========== */}
           <div className="hidden sm:block mt-1 space-y-9 md:space-y-12">
-            <p className="text-lg md:text-xl text-coffee-500 font-semibold leading-relaxed text-center whitespace-nowrap break-words font-montserrat">
+            <p className="text-lg md:text-xl text-coffee-500 font-semibold leading-relaxed text-center whitespace-nowrap break-words font-montserrat laydesk2-sec2-subtitle">
               O café do seu evento precisa ser inesquecível.
             </p>
-            <p className="text-base text-cream-50/90 leading-relaxed text-justify hyphens-auto break-words font-montserrat indent-5">
+            <p className="text-base text-cream-50/90 leading-relaxed text-justify hyphens-auto break-words font-montserrat indent-5 laydesk2-sec2-paragraph">
               A <strong className="text-coffee-500 font-bold">Estação do Grão</strong> é uma <strong className="text-coffee-500 font-bold">estação de café gourmet</strong> pensada para eventos que exigem excelência. <strong className="text-coffee-500 font-bold">Espresso premium</strong>, bebidas especiais, baristas e personalização completa para feiras, congressos, marcas e casamentos em <strong className="text-coffee-500 font-bold">Recife</strong> e <strong className="text-coffee-500 font-bold">João Pessoa</strong>. Café que se vê. Se sente. Se lembra.
             </p>
           </div>
@@ -212,15 +212,15 @@ export default function OpenMenuIntro() {
         {/* "DOBRA" — SPINE VISUAL */}
         <div 
           aria-hidden="true" 
-          className="hidden md:block h-full w-px bg-gradient-to-b from-white/10 via-white/5 to-white/10 rounded-full order-2" 
+          className="hidden md:block h-full w-px bg-gradient-to-b from-white/10 via-white/5 to-white/10 rounded-full order-2 laydesk2-sec2-divider" 
         />
 
         {/* DIREITA — VÍDEO (Desktop) */}
-        <div className="hidden sm:block relative w-full min-w-0 order-3">
-          <div className="aspect-[9/16] max-h-[70vh] md:max-h-[80vh] overflow-hidden rounded-2xl border border-coffee-700 bg-black/40 w-full max-w-full">
+        <div className="hidden sm:block relative w-full min-w-0 order-3 laydesk2-sec2-video-column">
+          <div className="aspect-[9/16] max-h-[70vh] md:max-h-[80vh] overflow-hidden rounded-2xl bg-black/40 w-full max-w-full laydesk2-sec2-video-container">
             <video
               ref={videoRef}
-              className="h-full w-full object-contain"
+              className="h-full w-full object-contain laydesk2-sec2-video"
               poster="/img/poster-estacao.webp"
               playsInline
               muted={muted}
@@ -255,22 +255,22 @@ export default function OpenMenuIntro() {
                 </div>
               </div>
             )}
-          </div>
 
-          {/* Controle de som simples */}
-          {!hasError && (
-            <button
-              onClick={() => setMuted(!muted)}
-              className="absolute bottom-3 left-3 rounded-full bg-black/55 backdrop-blur px-4 py-2 text-sm border border-white/20 hover:bg-black/70 transition-colors flex items-center gap-2"
-              aria-pressed={!muted}
-              aria-label={muted ? 'Ativar som' : 'Desativar som'}
-            >
-              <span className="text-base">{muted ? '🔇' : '🔊'}</span>
-              <span className="text-cream-50 font-medium font-montserrat">
-                {muted ? 'Som desativado' : 'Som ativado'}
-              </span>
-            </button>
-          )}
+            {/* Controle de som simples - dentro do container do vídeo */}
+            {!hasError && (
+              <button
+                onClick={() => setMuted(!muted)}
+                className="absolute bottom-3 left-3 rounded-full bg-black/55 backdrop-blur px-4 py-2 text-sm border border-white/20 hover:bg-black/70 transition-colors flex items-center gap-2 laydesk2-sec2-sound-button"
+                aria-pressed={!muted}
+                aria-label={muted ? 'Ativar som' : 'Desativar som'}
+              >
+                <span className="text-base laydesk2-sec2-sound-icon">{muted ? '🔇' : '🔊'}</span>
+                <span className="text-cream-50 font-medium font-montserrat laydesk2-sec2-sound-text">
+                  {muted ? 'Som desativado' : 'Som ativado'}
+                </span>
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </section>
