@@ -872,16 +872,76 @@ body {
 /* min-width: 1024px e max-height: 767px (fica abaixo do laydesk2 que começa em min-height: 768px) */
 @media (min-width: 1024px) and (max-height: 767px) {
   /* laydesk3 (até 767px de altura):
-     - Header é fixed (fora do fluxo). Para o padrão “1 viewport - menu” funcionar
-       exatamente, fazemos o header participar do fluxo apenas aqui.
-     - E forçamos a HERO a ter exatamente calc(100vh - 4rem). */
+     O header permanece `fixed` para acompanhar durante todo o scroll.
+     As seções ocupam `calc(100vh - 4rem)` (espaço disponível abaixo do header).
+     O `main` recebe `padding-top: 4rem` para compensar o espaço do header fixo. */
 
-  header.fixed {
-    position: sticky !important;
+  body > header,
+  main > header,
+  header.fixed,
+  header[class*="fixed"] {
+    position: fixed !important;
     top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 50 !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    max-height: 4rem !important;
+    height: 4rem !important;
   }
 
-  /* Âncoras (scrollToSection/scrollIntoView) não ficam escondidas sob o menu */
+  /* Garantir que o conteúdo do header não ultrapasse sua altura */
+  body > header > *,
+  main > header > *,
+  header.fixed > *,
+  header[class*="fixed"] > * {
+    max-height: 4rem !important;
+    overflow: hidden !important;
+  }
+
+  /* Garantir que nenhum conteúdo de seções apareça no header */
+  body > header *,
+  main > header *,
+  header.fixed *,
+  header[class*="fixed"] * {
+    max-height: 4rem !important;
+  }
+
+  /* Esconder qualquer conteúdo da seção "Nossos Serviços" que apareça no header */
+  body > header .laydesk2-servicos-header,
+  main > header .laydesk2-servicos-header,
+  header.fixed .laydesk2-servicos-header,
+  header[class*="fixed"] .laydesk2-servicos-header,
+  body > header .laydesk2-servicos-title,
+  main > header .laydesk2-servicos-title,
+  header.fixed .laydesk2-servicos-title,
+  header[class*="fixed"] .laydesk2-servicos-title,
+  body > header .laydesk2-servicos-description,
+  main > header .laydesk2-servicos-description,
+  header.fixed .laydesk2-servicos-description,
+  header[class*="fixed"] .laydesk2-servicos-description {
+    display: none !important;
+  }
+
+  /* Compensar o espaço do header fixo (4rem = 64px) */
+  main {
+    padding-top: 4rem !important;
+    overflow-x: visible !important;
+    position: relative !important;
+  }
+
+  /* Garantir que as seções comecem após o header */
+  main > section {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* Âncoras: com header fixed, precisamos de offset para scroll suave */
+  html {
+    scroll-padding-top: 4rem;
+  }
+
   section[id] {
     scroll-margin-top: 4rem;
   }
@@ -902,6 +962,324 @@ body {
   /* (2) Métricas: reduzir pela metade o margin-top (só laydesk3) */
   .laydesk3-hero-metrics {
     margin-top: 1.25rem !important; /* 1/2 de lg:mt-10 (2.5rem) */
+  }
+
+  /* ============================================
+     SEÇÃO 2 (apresentacao): O que é a Estação do Grão? (laydesk3)
+     Regras:
+     - manter sempre 1 viewport - menu
+     - sem overflow vertical
+     - vídeo no padrão “1080p”: cantos arredondados + outline branco sutil + object-contain + botão dentro
+     ============================================ */
+
+  .laydesk3-sec2-section {
+    height: calc(100vh - 4rem) !important;
+    min-height: calc(100vh - 4rem) !important;
+    max-height: calc(100vh - 4rem) !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .laydesk3-sec2-container {
+    height: 100% !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: grid !important;
+    align-items: center !important;
+  }
+
+  /* Coluna esquerda: centralizar verticalmente */
+  .laydesk3-sec2-left-column {
+    justify-content: center !important;
+    align-items: flex-start !important;
+  }
+
+  /* Texto (esquerda): reduzir espaçamentos verticais para caber certinho */
+  h2.laydesk3-sec2-title {
+    margin-bottom: 0.5rem !important;
+  }
+
+  p.laydesk3-sec2-subtitle {
+    margin-top: 0 !important;
+  }
+
+  /* Spine/divisor: bem discreto */
+  .laydesk3-sec2-divider {
+    width: 0.33px !important;
+    opacity: 0.35 !important;
+  }
+
+  /* Coluna do vídeo: centralizar */
+  .laydesk3-sec2-video-column {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Container do vídeo no “padrão 1080p” */
+  .laydesk3-sec2-video-container {
+    background: rgba(0, 0, 0, 0.35) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important; /* outline branco sutil (padrão 1080p) */
+    box-shadow: 0 0 0 1px rgba(239, 240, 224, 0.06) !important; /* “ring” bem sutil */
+    border-radius: 1.25rem !important; /* rounded-2xl-ish */
+    overflow: hidden !important;
+    max-height: 62vh !important;
+    width: 100% !important;
+    max-width: 420px !important; /* proporção ideal no laydesk3 */
+    margin: 0 auto !important;
+  }
+
+  .laydesk3-sec2-video {
+    object-fit: contain !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    background: transparent !important;
+  }
+
+  .laydesk3-sec2-sound-button {
+    bottom: 0.5rem !important;
+    left: 0.5rem !important;
+    padding: 0.35rem 0.6rem !important;
+    font-size: 0.75rem !important;
+    gap: 0.35rem !important;
+    border-color: rgba(255, 255, 255, 0.18) !important;
+  }
+
+  .laydesk3-sec2-sound-icon {
+    font-size: 0.85rem !important;
+  }
+
+  .laydesk3-sec2-sound-text {
+    font-size: 0.75rem !important;
+  }
+
+  /* ============================================
+     SEÇÃO 3 (nossos-servicos): Ajustes anti-overflow (laydesk3)
+     Mantém a seção com height: calc(100vh - 4rem) e compacta o conteúdo interno.
+     ============================================ */
+
+  .laydesk2-servicos-section {
+    height: calc(100vh - 4rem) !important;
+    min-height: calc(100vh - 4rem) !important;
+    max-height: calc(100vh - 4rem) !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: visible !important;
+    overflow-y: visible !important;
+    position: relative !important;
+    z-index: 1 !important;
+    margin-top: 0 !important;
+  }
+
+  .laydesk2-servicos-container {
+    height: 100% !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    min-height: 0 !important;
+  }
+
+  .laydesk2-servicos-header {
+    margin-bottom: 0.5rem !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* Garantir que o header da seção não apareça no menu */
+  .laydesk2-servicos-header h2,
+  .laydesk2-servicos-header p {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* Garantir que o conteúdo da seção "Nossos Serviços" não apareça no header */
+  section#nossos-servicos {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  section#nossos-servicos .laydesk2-servicos-header,
+  section#nossos-servicos .laydesk2-servicos-container {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  .laydesk2-servicos-header > * + * {
+    margin-top: 0.375rem !important;
+  }
+
+  .laydesk2-servicos-title {
+    font-size: 1.5rem !important;
+    line-height: 1.9rem !important;
+  }
+
+  .laydesk2-servicos-description {
+    font-size: 0.8125rem !important;
+    line-height: 1.125rem !important;
+  }
+
+  .laydesk2-servicos-carousel-container {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    flex: 1 !important;
+    min-height: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow: visible !important;
+  }
+
+  /* Garantir que os cards não sejam cortados */
+  .laydesk2-servicos-carousel-container > div {
+    overflow: visible !important;
+  }
+
+  /* Reduzir escala do card ativo para evitar corte no topo */
+  .laydesk2-servicos-section .laydesk2-servicos-carousel-container article .scale-105 {
+    transform: scale(1.0) !important;
+  }
+
+  /* Garantir que o wrapper do card não corte o conteúdo */
+  .laydesk2-servicos-section .laydesk2-servicos-carousel-container article {
+    overflow: visible !important;
+  }
+
+  .laydesk2-servicos-section .laydesk2-servicos-carousel-container article > div {
+    overflow: visible !important;
+  }
+
+  .laydesk2-servicos-image-container {
+    padding: 0.75rem !important;
+  }
+
+  .laydesk2-servicos-image {
+    height: 12rem !important;
+  }
+
+  .laydesk2-servicos-card-content {
+    padding-bottom: 0.75rem !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  .laydesk2-servicos-card-content > * + * {
+    margin-top: 0.375rem !important;
+  }
+
+  /* Reduzir tamanhos de fonte dos cards */
+  .laydesk2-servicos-card-title {
+    font-size: 1rem !important;
+    line-height: 1.375rem !important;
+  }
+
+  .laydesk2-servicos-card-subtitle {
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+  }
+
+  .laydesk2-servicos-card-description {
+    font-size: 0.75rem !important;
+    line-height: 1.125rem !important;
+  }
+
+  .laydesk2-servicos-card-cta {
+    padding-top: 0.5rem !important;
+  }
+
+  .laydesk2-servicos-card-cta a {
+    padding: 0.375rem 1rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  .laydesk2-servicos-nav {
+    margin-top: 0.375rem !important;
+  }
+
+  .laydesk2-servicos-nav button {
+    padding: 0.5rem !important;
+  }
+
+  .laydesk2-servicos-nav svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  /* ============================================
+     SEÇÃO 4 (Regiões Atendidas): Ajustes anti-overflow (laydesk3)
+     ============================================ */
+
+  .laydesk2-audience-section {
+    height: calc(100vh - 4rem) !important;
+    min-height: calc(100vh - 4rem) !important;
+    max-height: calc(100vh - 4rem) !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .laydesk2-audience-container {
+    height: 100% !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    min-height: 0 !important;
+  }
+
+  .laydesk2-audience-grid {
+    height: 100% !important;
+    gap: 1rem !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    align-items: center !important;
+  }
+
+  .laydesk2-audience-title {
+    font-size: 1.5rem !important;
+    line-height: 1.75rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .laydesk2-audience-map-container {
+    max-width: 55% !important;
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .laydesk2-audience-card {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .laydesk2-audience-card svg {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+
+  .laydesk2-audience-card-text {
+    font-size: 0.875rem !important;
+    line-height: 1.125rem !important;
+  }
+
+  .laydesk2-audience-right-column {
+    gap: 0.75rem !important;
+    height: 100% !important;
+  }
+
+  .laydesk2-audience-nav-button {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+    max-height: 16rem !important;
+  }
+
+  .laydesk2-audience-nav-button-title {
+    font-size: 1.25rem !important;
+    line-height: 1.5rem !important;
   }
 }
 
