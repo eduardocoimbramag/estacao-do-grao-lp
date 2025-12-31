@@ -1250,9 +1250,12 @@ body {
     margin-bottom: 0.25rem !important;
   }
 
+  /* Cards da coluna esquerda: reduzir padding para 1/2 e padronizar */
   .laydesk2-audience-card {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+    padding-left: 0.25rem !important;
+    padding-right: 0.5rem !important;
     margin-bottom: 0.5rem !important;
   }
 
@@ -1262,8 +1265,8 @@ body {
   }
 
   .laydesk2-audience-card-text {
-    font-size: 0.875rem !important;
-    line-height: 1.125rem !important;
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
   }
 
   .laydesk2-audience-right-column {
