@@ -1250,12 +1250,9 @@ body {
     margin-bottom: 0.25rem !important;
   }
 
-  /* Cards da coluna esquerda: reduzir padding para 1/2 e padronizar */
   .laydesk2-audience-card {
-    padding-top: 0.25rem !important;
-    padding-bottom: 0.25rem !important;
-    padding-left: 0.25rem !important;
-    padding-right: 0.5rem !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
     margin-bottom: 0.5rem !important;
   }
 
@@ -1265,8 +1262,8 @@ body {
   }
 
   .laydesk2-audience-card-text {
-    font-size: 0.75rem !important;
-    line-height: 1rem !important;
+    font-size: 0.875rem !important;
+    line-height: 1.125rem !important;
   }
 
   .laydesk2-audience-right-column {
@@ -1283,6 +1280,47 @@ body {
   .laydesk2-audience-nav-button-title {
     font-size: 1.25rem !important;
     line-height: 1.5rem !important;
+  }
+
+  /* ============================================
+     SEÇÃO "FORMULÁRIO DE CONTATO" - Correções laydesk3
+     ============================================ */
+
+  /* 1. Título h2: Reduzir tamanho da fonte para evitar quebra na palavra "Evento" */
+  section#contato h2 {
+    font-size: 1.75rem !important; /* Redução para evitar quebra na palavra "Evento" (em laydesk2 é 2.25rem) */
+    line-height: 1.25rem !important;
+    margin-bottom: 0.5rem !important; /* Reduzir também o margin-bottom para diminuir espaço com o subtítulo */
+  }
+
+  /* 2. Parágrafo descritivo (subtítulo): Reduzir margin-bottom para diminuir espaçamento após o título */
+  section#contato > div > p {
+    margin-bottom: 0.5rem !important; /* Reduzir espaçamento entre título e subtítulo (de mb-4 = 1rem para 0.5rem) */
+  }
+
+  /* 3. Coluna esquerda - Espaçamento entre cards: Reduzir gap do container space-y-3/space-y-4 */
+  section#contato .space-y-3 > * + *,
+  section#contato .space-y-4 > * + * {
+    margin-top: 0.625rem !important; /* Redução do espaçamento entre os cards (de lg:space-y-4 = 1rem para 0.625rem) */
+  }
+
+  /* 4. Coluna esquerda - Cards (WhatsApp/E-mail): Reduzir padding */
+  section#contato a[href*="wa.me"],
+  section#contato button[type="button"] {
+    padding: 0.625rem !important; /* Redução do padding interno dos cards (de lg:p-4 = 1rem para 0.625rem) */
+  }
+
+  /* 5. Coluna esquerda - Card Atendimento/Redes: Reduzir padding */
+  section#contato .p-2,
+  section#contato .p-4 {
+    padding: 0.625rem !important; /* Redução do padding interno do card (de lg:p-4 = 1rem para 0.625rem) */
+  }
+
+  /* 6. Formulário - Labels dos RadioGroup "Pessoal" e "Empresarial": Igualar ao tamanho dos outros labels (text-xs = 0.75rem) */
+  section#contato label[for="eventType-pessoal"],
+  section#contato label[for="eventType-empresarial"] {
+    font-size: 0.75rem !important; /* text-xs = 0.75rem - igual aos outros labels */
+    line-height: 1rem !important;
   }
 }
 

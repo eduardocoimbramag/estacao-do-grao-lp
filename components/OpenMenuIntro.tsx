@@ -62,7 +62,7 @@ export default function OpenMenuIntro() {
     >
       <div className="mx-auto w-full max-w-[100vw] sm:max-w-6xl px-3 sm:px-4 md:px-6 flex flex-col sm:grid sm:gap-5 md:gap-6 lg:gap-8 md:grid-cols-[1fr_1px_1fr] gap-3 items-center py-4 sm:py-0 sm:items-start box-border laydesk3-sec2-container">
         {/* CONTEÚDO - Estrutura diferente para mobile e desktop */}
-        <div className="order-1 sm:order-1 space-y-2 w-full flex flex-col h-full laydesk3-sec2-left-column">
+        <div className="order-1 sm:order-1 space-y-2 w-full flex flex-col h-full">
           
           {/* ========== MOBILE: Título e Subtítulo - Topo ========== */}
           <div className="pt-4 sm:hidden">
