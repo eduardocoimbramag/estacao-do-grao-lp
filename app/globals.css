@@ -990,9 +990,8 @@ body {
   }
 
   /* Coluna esquerda: centralizar verticalmente */
-  .laydesk3-sec2-left-column {
+  .laydesk3-sec2-container > div:first-child {
     justify-content: center !important;
-    align-items: flex-start !important;
   }
 
   /* Texto (esquerda): reduzir espaçamentos verticais para caber certinho */
@@ -1017,11 +1016,11 @@ body {
     justify-content: center !important;
   }
 
-  /* Container do vídeo no “padrão 1080p” */
+  /* Container do vídeo no "padrão 1080p" */
   .laydesk3-sec2-video-container {
-    background: rgba(0, 0, 0, 0.35) !important;
+    background: transparent !important; /* Remover campos marrons escuros */
     border: 1px solid rgba(255, 255, 255, 0.16) !important; /* outline branco sutil (padrão 1080p) */
-    box-shadow: 0 0 0 1px rgba(239, 240, 224, 0.06) !important; /* “ring” bem sutil */
+    box-shadow: 0 0 0 1px rgba(239, 240, 224, 0.06) !important; /* "ring" bem sutil */
     border-radius: 1.25rem !important; /* rounded-2xl-ish */
     overflow: hidden !important;
     max-height: 62vh !important;
