@@ -1023,14 +1023,23 @@ body {
     box-shadow: 0 0 0 1px rgba(239, 240, 224, 0.06) !important; /* "ring" bem sutil */
     border-radius: 1.25rem !important; /* rounded-2xl-ish */
     overflow: hidden !important;
-    max-height: 62vh !important;
-    width: 100% !important;
-    max-width: 420px !important; /* proporção ideal no laydesk3 */
+    
+    /* Garantir proporção 9:16 correta - usar o menor limite (largura ou altura) */
+    aspect-ratio: 9 / 16 !important;
+    
+    /* Calcular largura baseada na altura máxima (68.2vh * 9/16 = 38.3vh ≈ 275px em 720p) */
+    /* Mas respeitar max-width: 462px se for menor */
+    width: min(462px, calc(68.2vh * 9 / 16)) !important;
+    max-width: 462px !important;
+    max-height: 68.2vh !important;
+    height: auto !important; /* Altura calculada automaticamente pelo aspect-ratio */
+    
     margin: 0 auto !important;
+    position: relative !important;
   }
 
   .laydesk3-sec2-video {
-    object-fit: contain !important;
+    object-fit: cover !important; /* Preencher todo o container (com aspect-ratio correto, não corta) */
     width: 100% !important;
     height: 100% !important;
     display: block !important;
@@ -1237,6 +1246,12 @@ body {
     align-items: center !important;
   }
 
+  /* Coluna esquerda: Centralizar verticalmente */
+  .laydesk2-audience-left-column {
+    justify-content: center !important;
+    height: 100% !important;
+  }
+
   .laydesk2-audience-title {
     font-size: 1.5rem !important;
     line-height: 1.75rem !important;
@@ -1244,7 +1259,7 @@ body {
   }
 
   .laydesk2-audience-map-container {
-    max-width: 55% !important;
+    max-width: 49.5% !important; /* Reduzir de 55% para 49.5% (10% de redução) */
     margin-top: 0.25rem !important;
     margin-bottom: 0.25rem !important;
   }
@@ -1252,7 +1267,7 @@ body {
   .laydesk2-audience-card {
     padding-top: 0.5rem !important;
     padding-bottom: 0.5rem !important;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.25rem !important; /* Reduzir de 0.5rem para 0.25rem (metade) */
   }
 
   .laydesk2-audience-card svg {
@@ -1265,9 +1280,19 @@ body {
     line-height: 1.125rem !important;
   }
 
+  /* Cards - Texto "100 doses" e "600 doses": Igualar tamanho da fonte */
+  .laydesk2-audience-card-text strong.text-base,
+  .laydesk2-audience-card-text strong.sm\:text-lg {
+    font-size: inherit !important; /* Herdar tamanho do .laydesk2-audience-card-text */
+    font-weight: bold !important; /* Manter negrito */
+  }
+
   .laydesk2-audience-right-column {
+    justify-content: center !important; /* Centralizar verticalmente os botões */
     gap: 0.75rem !important;
     height: 100% !important;
+    display: flex !important; /* Garantir que seja flex */
+    flex-direction: column !important; /* Garantir direção vertical */
   }
 
   .laydesk2-audience-nav-button {
