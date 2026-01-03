@@ -325,9 +325,17 @@ body {
     align-self: center !important; /* não ficar "colado no topo" (substitui self-start) */
   }
 
-  /* Caixa do texto (primeiro bloco da coluna direita) */
+  /* Caixa do texto (primeiro bloco da coluna direita) - padding geral */
   .laydesk2-hero-section .grid-cols-1.md\:grid-cols-2 > div:last-child > div:first-child {
     padding: 0.75rem !important; /* reduz p-2..p-5 */
+  }
+
+  /* Caixa do texto - aumentar padding vertical (top-bottom) - MODIFICAR AQUI */
+  .laydesk2-hero-section .grid-cols-1.md\:grid-cols-2 > div:last-child > div:first-child {
+    padding-top: 2.75rem !important;    /* padding superior - ajuste aqui */
+    padding-bottom: 2.75rem !important; /* padding inferior - ajuste aqui */
+    padding-left: 0.75rem !important; /* manter padding horizontal */
+    padding-right: 0.75rem !important; /* manter padding horizontal */
   }
 
   /* === CARDS (coluna direita) — controles laydesk2 === */
