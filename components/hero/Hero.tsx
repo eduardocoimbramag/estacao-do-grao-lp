@@ -2,7 +2,8 @@
 
 import * as React from "react";
 import Image from "next/image";
-import useEmblaCarousel, { EmblaOptionsType } from "embla-carousel-react";
+import useEmblaCarousel from "embla-carousel-react";
+import type { EmblaOptionsType } from "embla-carousel";
 import { Sparkles, Coffee, Store } from "lucide-react";
 import FeatureItemCompact from "@/components/hero/FeatureItemCompact";
 
