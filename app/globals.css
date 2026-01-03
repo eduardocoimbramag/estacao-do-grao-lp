@@ -574,9 +574,9 @@ body {
   
   /* 1. Barra divisória - reduzir para 1/3 da largura original (1px) */
   .laydesk2-sec2-divider {
-    width: 0.33px !important; /* 1/3 de 1px (w-px original) */
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.03)) !important;
-    opacity: 0.5 !important;
+    width: 1rem !important; /* 1/3 de 1px (w-px original) */
+    background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255)) !important;
+    opacity: 0.01 !important;
   }
   
   /* 2. Título H2 - centralizado e aumentado */
