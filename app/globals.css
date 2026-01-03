@@ -552,31 +552,39 @@ body {
     overflow: hidden !important;
   }
 
-  /* [SEC2] Container interno — usar 100% da altura da seção (LAYDESK2)
-     Impacto: permite “centralizar” e distribuir melhor o conteúdo; ajuda contra overflow. */
+  /* [SEC2] Container do grid (LAYDESK2) - FORÇAR GRID COM LARGURAS FIXAS */
   .laydesk2-sec2-container {
     height: 100% !important;
     max-height: 100% !important;
-    overflow: hidden !important;
+    display: grid !important;
     align-items: center !important;
+    /* FORÇAR larguras: esquerda flexível, divisor 0, direita FIXA 400px */
+    grid-template-columns: 1fr 0px 400px !important;
+    gap: 0.75rem !important;
+    overflow-x: visible !important;
+    overflow-y: hidden !important;
   }
 
   /* [SEC2] Coluna esquerda — controles gerais (LAYDESK2)
-     Impacto: controla o “respiro” vertical do conteúdo e evita estouro. */
+     Impacto: controla o "respiro" vertical do conteúdo e evita estouro. */
   .laydesk2-sec2-left {
     height: 100% !important;
     min-height: 0 !important;
+    min-width: 0 !important; /* crucial para não estourar grid e cortar a coluna do vídeo */
+    max-width: 100% !important; /* não ultrapassar a coluna do grid */
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important; /* centraliza o bloco inteiro na coluna */
     overflow: hidden !important;
   }
   
-  /* 1. Barra divisória - reduzir para 1/3 da largura original (1px) */
+  /* [SEC2] Divisor do meio (spine) — ocultar no laydesk2
+     Impacto: remove a “listra” e também remove o espaço dela no grid (coluna do meio = 0). */
   .laydesk2-sec2-divider {
-    width: 1rem !important; /* 1/3 de 1px (w-px original) */
-    background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255)) !important;
-    opacity: 0.01 !important;
+    display: none !important;
+    width: 0 !important;
+    opacity: 0 !important;
+    background: transparent !important;
   }
   
   /* 2. Título H2 - centralizado e aumentado */
@@ -598,39 +606,53 @@ body {
      Se você quiser voltar a controlar a distância ENTRE os 2 <p>, a forma correta é aqui,
      mas por enquanto deixamos o espaçamento vir do Tailwind (space-y-* / mt-*). */
   
-  /* 3. Container do vídeo - remover bordas marrons, borda rente ao vídeo, ajustar para vídeo maior */
+  /* [SEC2] Container do vídeo (LAYDESK2) - DIMENSÕES FIXAS FORÇADAS */
   .laydesk2-sec2-video-container {
-    background: transparent !important; /* Remover bg-black/40 que cria as bordas marrons */
-    border: 1px solid rgba(255, 255, 255, 0.15) !important; /* Contorno branco sutil */
-    max-width: 100% !important;
-    margin: 0 auto !important; /* Centralizar */
-    position: relative !important; /* Contexto para botão absoluto */
-    aspect-ratio: unset !important; /* Remover aspect-ratio fixo */
-    width: fit-content !important; /* Ajustar exatamente ao tamanho do vídeo */
-    height: fit-content !important; /* Ajustar exatamente ao tamanho do vídeo */
-    max-height: 77vh !important; /* [SEC2] TETO DO VÍDEO (AJUSTE AQUI) — baixar ajuda a remover overflow */
-    display: inline-block !important; /* Ajustar ao conteúdo */
-    padding: 0 !important; /* Remover qualquer padding */
-    overflow: hidden !important; /* Manter overflow hidden para bordas arredondadas */
-  }
-  
-  /* Vídeo - aumentar tamanho em 10% */
-  .laydesk2-sec2-video {
-    object-fit: contain !important; /* Manter aspect ratio original */
-    max-width: 110% !important; /* Aumentar de 100% para 110% */
-    max-height: 77vh !important; /* Aumentar de 70vh para 77vh (10%) */
-    width: auto !important; /* Tamanho natural do vídeo */
-    height: auto !important; /* Tamanho natural do vídeo */
     display: block !important;
-    margin: 0 !important; /* Remover margens */
-    padding: 0 !important; /* Remover padding */
+    visibility: visible !important;
+    opacity: 1 !important;
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 1rem !important;
+    overflow: hidden !important;
+    
+    /* DIMENSÕES FIXAS - SEM CÁLCULOS */
+    width: 350px !important; /* LARGURA FIXA */
+    height: 622px !important; /* ALTURA FIXA (350 * 16/9 = 622) */
+    min-width: 350px !important;
+    min-height: 400px !important;
+    max-width: 350px !important;
+    max-height: 77vh !important;
+    aspect-ratio: 9 / 16 !important;
+    
+    margin: 0 auto !important;
+    position: relative !important;
   }
   
-  /* Coluna da direita - centralizar conteúdo verticalmente */
+  /* [SEC2] Vídeo (LAYDESK2) - FORÇAR VISIBILIDADE E DIMENSÕES */
+  .laydesk2-sec2-video {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    background: transparent !important;
+  }
+  
+  /* [SEC2] Coluna do vídeo - FORÇAR VISIBILIDADE E DIMENSÕES (LAYDESK2) */
   .laydesk2-sec2-video-column {
-    display: flex !important;
+    display: flex !important; /* FORÇA visibilidade (sobrescreve Tailwind "hidden sm:block") */
+    visibility: visible !important;
+    opacity: 1 !important;
     align-items: center !important;
     justify-content: center !important;
+    width: 400px !important; /* LARGURA FIXA */
+    min-width: 400px !important;
+    max-width: 400px !important;
+    height: 100% !important;
   }
   
   /* =========================
