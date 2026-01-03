@@ -62,7 +62,7 @@ export default function Hero({
   };
 
   return (
-    <section className="relative min-h-screen lg:h-screen flex flex-col justify-center bg-[#452911] pt-20 sm:pt-24 lg:pt-0 pb-8 sm:pb-12 lg:pb-0 overflow-x-hidden w-full laydesk3-hero-section">
+    <section className="relative min-h-screen lg:h-screen flex flex-col justify-center bg-[#452911] pt-20 sm:pt-24 lg:pt-0 pb-8 sm:pb-12 lg:pb-0 overflow-x-hidden w-full laydesk3-hero-section laydesk2-hero-section hero-section">
       <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 py-3 sm:py-4 lg:py-6 box-border">
         {/* H1 centralizado, em linha única, ajustando tamanho com clamp para não ultrapassar os limites laterais */}
         <h1

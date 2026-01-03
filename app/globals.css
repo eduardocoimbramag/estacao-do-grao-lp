@@ -268,7 +268,7 @@ body {
   }
 
   /* 2) Hero = 1 tela - menu */
-  .laydesk3-hero-section {
+  .laydesk2-hero-section {
     height: calc(100svh - 4rem) !important;
     min-height: calc(100svh - 4rem) !important;
     max-height: calc(100svh - 4rem) !important;
@@ -278,7 +278,7 @@ body {
   }
 
   /* Container interno do Hero (1º div dentro da section) */
-  .laydesk3-hero-section > div {
+  .laydesk2-hero-section > div {
     height: 100% !important;
     min-height: 0 !important;
     display: flex !important;
@@ -296,33 +296,79 @@ body {
   }
 
   /* 4) Grid principal (carousel + texto) */
-  .laydesk3-hero-section .grid-cols-1.md\:grid-cols-2 {
+  .laydesk2-hero-section .grid-cols-1.md\:grid-cols-2 {
     flex: 1 1 auto !important;
     min-height: 0 !important;
     align-items: center !important;
-    gap: 0.75rem !important;
-    grid-template-columns: 1.15fr 0.85fr !important;
+    gap: 0.5rem !important; /* aproxima imagem + conteúdo */
+    justify-content: center !important; /* centraliza as colunas no container */
+    justify-items: center !important;   /* centraliza itens do grid */
+
+    /* Evitar “coluna fantasma” larga: deixar a coluna da imagem com largura mais previsível */
+    grid-template-columns: minmax(0, 550px) minmax(0, 1fr) !important;
   }
 
   /* +++ AJUSTE IMAGEM HERO (slideshow à esquerda) — apenas laydesk2 +++
      Objetivo: reduzir o bloco da imagem ~30% e manter o layout “original”. */
 
   /* Reduzir o "card" visual do slideshow do Hero (~30%) sem mexer no object-fit */
-  .laydesk3-hero-section [aria-roledescription="carousel"] > div {
-    max-width: 550px !important; /* 560px * 0.70 ≈ 392px */
-    width: 110% !important;
+  .laydesk2-hero-section [aria-roledescription="carousel"] > div {
+    max-width: 550px !important; /* ajuste de largura do bloco (mantendo o tamanho “perfeito” atual) */
+    width: 110% !important;      /* ajuste fino (se você quiser 100%, use width: 100%) */
     margin-left: auto !important;
     margin-right: auto !important;
   }
 
   /* Coluna direita: reduzir gap (texto + 3 cards) */
-  .laydesk3-hero-section .grid-cols-1.md\:grid-cols-2 > div:last-child {
-    gap: 0.75rem !important;
+  .laydesk2-hero-section .grid-cols-1.md\:grid-cols-2 > div:last-child {
+    gap: 0.75rem !important; /* espaço entre caixa de texto + cards */
+    align-self: center !important; /* não ficar "colado no topo" (substitui self-start) */
   }
 
   /* Caixa do texto (primeiro bloco da coluna direita) */
-  .laydesk3-hero-section .grid-cols-1.md\:grid-cols-2 > div:last-child > div:first-child {
+  .laydesk2-hero-section .grid-cols-1.md\:grid-cols-2 > div:last-child > div:first-child {
     padding: 0.75rem !important; /* reduz p-2..p-5 */
+  }
+
+  /* === CARDS (coluna direita) — controles laydesk2 === */
+
+  /* [Cards] (1) Espaçamento entre cards (distância entre cada card) */
+  .laydesk2-hero-section .grid-cols-1.md\:grid-cols-2 > div:last-child {
+    gap: 0.75rem !important; /* diminuir distância entre os 3 cards */
+  }
+
+  /* [Cards] (2) Padding interno do card (mexe no tamanho do card) */
+  .laydesk2-hero-section
+    .grid-cols-1.md\:grid-cols-2
+    > div:last-child
+    > *:not(:first-child)
+    > div {
+    padding-left: 0.75rem !important;  /* padding horizontal */
+    padding-right: 0.75rem !important; /* padding horizontal */
+    padding-top: 0.75rem !important;    /* padding vertical */
+    padding-bottom: 0.75rem !important; /* padding vertical */
+    gap: 0.5rem !important;            /* espaço entre ícone e texto */
+  }
+
+  /* [Cards] (3) Tamanho da fonte + line-height do texto do card */
+  .laydesk2-hero-section
+    .grid-cols-1.md\:grid-cols-2
+    > div:last-child
+    > *:not(:first-child)
+    > div
+    > span:last-child {
+    font-size: 1rem !important; /* fonte do texto do card */
+    line-height: 1.1 !important;   /* distância entre linhas */
+  }
+
+  /* [Cards] (4) Tamanho do ícone do card */
+  .laydesk2-hero-section
+    .grid-cols-1.md\:grid-cols-2
+    > div:last-child
+    > *:not(:first-child)
+    svg {
+    width: 20px !important;
+    height: 20px !important;
   }
 
   /* 5) Métricas: caber sem cortar */
@@ -337,13 +383,13 @@ body {
   }
 
   .laydesk3-hero-metrics > div > div:first-child {
-    font-size: 1.1rem !important; /* reduz text-lg..text-4xl */
-    line-height: 1.1 !important;
+    font-size: 1.5rem !important; /* reduz text-lg..text-4xl */
+    line-height: 1 !important;
   }
 
   .laydesk3-hero-metrics > div > div:last-child {
-    font-size: 0.65rem !important; /* reduz label */
-    line-height: 1 !important;
+    font-size: 0.75 rem !important; /* reduz label */
+    line-height: 0 !important;
   }
   /* +++FIM SECAO HERO+++ */
   
