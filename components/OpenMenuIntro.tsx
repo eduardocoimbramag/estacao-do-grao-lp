@@ -58,11 +58,11 @@ export default function OpenMenuIntro() {
   return (
     <section
       id="apresentacao"
-      className="h-[calc(100vh-4rem)] sm:h-[calc(100vh-4rem)] py-2 sm:py-4 lg:py-6 bg-coffee-900 text-white overflow-x-hidden w-full flex flex-col justify-center sm:justify-center laydesk3-sec2-section"
+      className="h-[calc(100vh-4rem)] sm:h-[calc(100vh-4rem)] py-2 sm:py-4 lg:py-6 bg-coffee-900 text-white overflow-x-hidden w-full flex flex-col justify-center sm:justify-center laydesk3-sec2-section laydesk2-sec2-section"
     >
-      <div className="mx-auto w-full max-w-[100vw] sm:max-w-6xl px-3 sm:px-4 md:px-6 flex flex-col sm:grid sm:gap-5 md:gap-6 lg:gap-8 md:grid-cols-[1fr_1px_1fr] gap-3 items-center py-4 sm:py-0 sm:items-start box-border laydesk3-sec2-container">
+      <div className="mx-auto w-full max-w-[100vw] sm:max-w-6xl px-3 sm:px-4 md:px-6 flex flex-col sm:grid sm:gap-5 md:gap-6 lg:gap-8 md:grid-cols-[1fr_1px_1fr] gap-3 items-center py-4 sm:py-0 sm:items-start box-border laydesk3-sec2-container laydesk2-sec2-container">
         {/* CONTEÚDO - Estrutura diferente para mobile e desktop */}
-        <div className="order-1 sm:order-1 space-y-2 w-full flex flex-col h-full">
+        <div className="order-1 sm:order-1 space-y-2 w-full flex flex-col h-full laydesk2-sec2-left">
           
           {/* ========== MOBILE: Título e Subtítulo - Topo ========== */}
           <div className="pt-4 sm:hidden">
@@ -80,7 +80,7 @@ export default function OpenMenuIntro() {
           </h2>
           
           {/* ========== DESKTOP: Subtítulo e Parágrafo ========== */}
-          <div className="hidden sm:block mt-1 space-y-9 md:space-y-12">
+          <div className="hidden sm:block mt-1 space-y-9 md:space-y-12 laydesk2-sec2-textstack">
             <p className="text-lg md:text-xl text-coffee-500 font-semibold leading-relaxed text-center whitespace-nowrap break-words font-montserrat laydesk2-sec2-subtitle laydesk3-sec2-subtitle">
               O café do seu evento precisa ser inesquecível.
             </p>
@@ -182,7 +182,7 @@ export default function OpenMenuIntro() {
           </div>
           
           {/* ========== DESKTOP: Lista ========== */}
-          <ul className="hidden sm:block space-y-1.5 mt-9 md:mt-12">
+          <ul className="hidden sm:block space-y-1.5 mt-9 md:mt-12 laydesk2-sec2-bullets">
             {[
               'Coffee station completa (espresso, cappuccino, latte, gelados)',
               'Branding com café: copos e estação personalizados',
@@ -196,7 +196,7 @@ export default function OpenMenuIntro() {
           </ul>
           
           {/* ========== DESKTOP: Botões ========== */}
-          <div className="hidden sm:flex justify-center items-center gap-2.5 mt-9 md:mt-12 w-full max-w-full">
+          <div className="hidden sm:flex justify-center items-center gap-2.5 mt-9 md:mt-12 w-full max-w-full laydesk2-sec2-cta">
             <a 
               href="#servicos" 
               className="flex-none px-4 py-2.5 rounded-xl border border-coffee-500 text-cream-50 hover:bg-coffee-700/30 transition-colors font-montserrat text-center text-base"
