@@ -84,7 +84,7 @@ export default function OpenMenuIntro() {
             <p className="text-lg md:text-xl text-coffee-500 font-semibold leading-relaxed text-center whitespace-nowrap break-words font-montserrat laydesk2-sec2-subtitle laydesk3-sec2-subtitle">
               O café do seu evento precisa ser inesquecível.
             </p>
-            <p className="text-base text-cream-50/90 leading-relaxed text-justify hyphens-auto break-words font-montserrat indent-5 laydesk2-sec2-paragraph laydesk3-sec2-paragraph">
+            <p className="text-base text-cream-50/90 leading-relaxed text-justify hyphens-none break-words font-montserrat indent-5 laydesk2-sec2-paragraph laydesk3-sec2-paragraph">
               A <strong className="text-coffee-500 font-bold">Estação do Grão</strong> é uma <strong className="text-coffee-500 font-bold">estação de café gourmet</strong> pensada para eventos que exigem excelência. <strong className="text-coffee-500 font-bold">Espresso premium</strong>, bebidas especiais, baristas e personalização completa para feiras, congressos, marcas e casamentos em <strong className="text-coffee-500 font-bold">Recife</strong> e <strong className="text-coffee-500 font-bold">João Pessoa</strong>. Café que se vê. Se sente. Se lembra.
             </p>
           </div>

@@ -1407,11 +1407,27 @@ body {
 
   /* Texto (esquerda): reduzir espaçamentos verticais para caber certinho */
   h2.laydesk3-sec2-title {
-    margin-bottom: 0.5rem !important;
+    font-size: 2.25rem !important;
+    margin-bottom: 0.125rem !important;
   }
 
   p.laydesk3-sec2-subtitle {
     margin-top: 0 !important;
+    font-size: 1rem !important;
+    line-height: 1.25rem !important;
+    margin-bottom: 0.5rem !important; /* Reduzido de 3.5rem para 0.5rem (8px) */
+  }
+  
+  /* Parágrafo: Reduzir fonte para ficar menor que o subtítulo */
+  p.laydesk3-sec2-paragraph {
+    font-size: 0.875rem !important; /* text-sm: 14px (menor que subtítulo de 16px) */
+    line-height: 1.375rem !important; /* leading-relaxed proporcionalmente */
+  }
+  
+  /* UL (Bullets): Reduzir fonte para ficar igual ao parágrafo */
+  ul.laydesk2-sec2-bullets span {
+    font-size: 0.875rem !important; /* text-sm: 14px */
+    line-height: 1.375rem !important;
   }
 
   /* [SEC2][LAYDESK3] Aproximar título e subtítulo — AJUSTE AQUI */
@@ -1421,7 +1437,7 @@ body {
 
   /* [SEC2][LAYDESK3] Espaço entre subtítulo e parágrafo — AJUSTE AQUI */
   .laydesk3-sec2-textstack {
-    gap: 1.5rem !important; /* AJUSTE AQUI (controla o "space-y") */
+    gap: 0.5rem !important; /* AJUSTE AQUI (controla o "space-y") */
   }
 
   /* [SEC2][LAYDESK3] Espaçamento entre parágrafo e lista — AJUSTE AQUI */
@@ -1649,45 +1665,425 @@ body {
 
 
   /* ============================================
-     SEÇÃO "FORMULÁRIO DE CONTATO" - Correções laydesk3
+     SEÇÃO "REGIÕES ATENDIDAS" - Configurações laydesk3
+     (Baseado nas otimizações do laydesk2)
      ============================================ */
+  /* +++INICIO SECAO REGIOES ATENDIDAS+++ */
+  
+  /* 1. Section: Altura viewport menos menu + Anti-overflow (LAYDESK3)
+     Impacto: garante que a seção não ultrapasse os limites da tela */
+  .laydesk3-audience-section {
+    height: calc(100vh - 4rem) !important;
+    min-height: calc(100vh - 4rem) !important;
+    max-height: calc(100vh - 4rem) !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden !important; /* FORÇAR - impede overflow vertical/horizontal */
+    overflow-x: hidden !important;
+  }
+  
+  /* 2. Container interno: Padding reduzido + Flex shrink habilitado (LAYDESK3)
+     Impacto: economiza espaço vertical e horizontal */
+  .laydesk3-audience-container {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    min-height: 0 !important; /* permite shrink */
+    overflow: hidden !important; /* impede overflow interno */
+  }
+  
+  /* 3. Grid: Gap reduzido + Altura controlada (LAYDESK3)
+     Impacto: aproxima colunas esquerda e direita, economizando espaço */
+  .laydesk3-audience-grid {
+    gap: 0.75rem !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    height: 100% !important;
+    align-items: center !important;
+    min-height: 0 !important; /* permite shrink */
+  }
+  
+  /* 4. Coluna esquerda: Gap mínimo + Shrink habilitado (LAYDESK3)
+     Impacto: mantém elementos compactos e permite compressão se necessário */
+  .laydesk3-audience-left-column {
+    gap: 0.25rem !important;
+    height: 100% !important;
+    justify-content: center !important;
+    min-height: 0 !important; /* permite shrink */
+  }
+  
+  /* 5. Título: Tamanho e espaçamento reduzidos (LAYDESK3)
+     Impacto: economiza espaço vertical no topo da coluna esquerda */
+  .laydesk3-audience-title {
+    font-size: 1.375rem !important;
+    line-height: 1.5rem !important;
+    margin-bottom: 0.125rem !important;
+    margin-top: 0 !important;
+  }
+  
+  /* 6. Container do mapa: Tamanho e espaçamento reduzidos (LAYDESK3)
+     Impacto: reduz o espaço ocupado pelo mapa na coluna esquerda */
+  .laydesk3-audience-map-container {
+    max-width: 45% !important;
+    margin-top: 0.125rem !important;
+    margin-bottom: 0.125rem !important;
+    flex-shrink: 1 !important; /* permite compressão */
+  }
+  
+  /* 7. Cards: Padding e espaçamento reduzidos (LAYDESK3)
+     Impacto: reduz o espaço ocupado pelos 3 cards na coluna esquerda */
+  .laydesk3-audience-card {
+    padding-left: 0.625rem !important;
+    padding-right: 0.625rem !important;
+    padding-top: 0.375rem !important;
+    padding-bottom: 0.375rem !important;
+    margin-bottom: 0.125rem !important;
+  }
+  
+  /* Último card: remover margin-bottom */
+  .laydesk3-audience-card:last-of-type {
+    margin-bottom: 0 !important;
+  }
+  
+  /* Ícones dos cards: Tamanho otimizado (LAYDESK3) */
+  .laydesk3-audience-card svg {
+    width: 0.875rem !important;
+    height: 0.875rem !important;
+    flex-shrink: 0 !important;
+  }
+  
+  /* Texto dos cards: Tamanho reduzido (LAYDESK3)
+     Impacto: reduz altura ocupada pelo texto em cada card */
+  .laydesk3-audience-card-text {
+    font-size: 0.8125rem !important;
+    line-height: 1.0625rem !important;
+  }
+  
+  /* Texto em negrito dentro dos cards: Herdar tamanho */
+  .laydesk3-audience-card-text strong {
+    font-size: inherit !important;
+    font-weight: bold !important;
+  }
+  
+  /* Cards - Texto "100 doses" e "600 doses": Herdar tamanho */
+  .laydesk3-audience-card-text strong.text-base,
+  .laydesk3-audience-card-text strong.sm\:text-lg {
+    font-size: inherit !important;
+    font-weight: bold !important;
+  }
+  
+  /* Link dentro do card: Reduzir padding */
+  .laydesk3-audience-card-link {
+    padding: 0.1875rem 0.375rem !important;
+    font-size: 0.75rem !important;
+  }
+  
+  /* 8. Coluna direita: Gap reduzido (LAYDESK3)
+     Impacto: aproxima os 2 botões de navegação */
+  .laydesk3-audience-right-column {
+    gap: 0.5rem !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    min-height: 0 !important; /* permite shrink */
+  }
+  
+  /* 9. Botões de navegação: Padding aumentado para alinhamento com altura do conteúdo da esquerda (LAYDESK3)
+     Impacto: aumenta padding para botões ficarem alinhados com início e final do conteúdo da coluna esquerda */
+  .laydesk3-audience-right-column .laydesk3-audience-nav-button {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .laydesk3-audience-grid .laydesk3-audience-nav-button,
+  a.laydesk3-audience-nav-button,
+  .laydesk3-audience-nav-button {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    min-height: 0 !important;
+    max-height: 13rem !important; /* MANTIDO - não alterar altura máxima para evitar overflow */
+    flex: 1 1 auto !important; /* permite crescimento e shrink */
+    height: auto !important;
+    overflow: hidden !important; /* impede overflow do conteúdo interno */
+  }
+  
+  /* Container interno dos botões: Ajustar altura */
+  .laydesk3-audience-nav-button > div:last-child {
+    height: 100% !important;
+    min-height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* Imagem de fundo dos botões: Garantir cobertura */
+  .laydesk3-audience-nav-button img {
+    object-fit: cover !important;
+  }
+  
+  /* Título dos botões: Tamanho aumentado (LAYDESK3)
+     Impacto: aumenta tamanho da fonte dos títulos dos botões para melhor legibilidade */
+  .laydesk3-audience-nav-button h3.laydesk3-audience-nav-button-title {
+    font-size: 2rem !important;
+    line-height: 2.5rem !important;
+  }
+  
+  .laydesk3-audience-nav-button .laydesk3-audience-nav-button-title,
+  h3.laydesk3-audience-nav-button-title,
+  .laydesk3-audience-nav-button-title {
+    font-size: 2rem !important;
+    line-height: 2.5rem !important;
+    padding: 0 0.5rem !important;
+  }
+  
+  /* +++FIM SECAO REGIOES ATENDIDAS+++ */
 
-  /* 1. Título h2: Reduzir tamanho da fonte para evitar quebra na palavra "Evento" */
+
+  /* ============================================
+     SEÇÃO "FORMULÁRIO DE CONTATO" - Laydesk3
+     (Migrado completo do Laydesk2)
+     ============================================ */
+  /* +++INICIO SECAO CONTATO+++ */
+
+  /* 1. Section: Altura fixa viewport menos menu */
+  section#contato {
+    height: calc(100vh - 4rem) !important;
+    min-height: calc(100vh - 4rem) !important;
+    max-height: calc(100vh - 4rem) !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  /* 2. Container interno: Reduzir padding */
+  section#contato > div {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  /* 3. Título h2: Reduzir tamanho e margin */
   section#contato h2 {
-    font-size: 1.75rem !important; /* Redução para evitar quebra na palavra "Evento" (em laydesk2 é 2.25rem) */
-    line-height: 1.25rem !important;
-    margin-bottom: 0.5rem !important; /* Reduzir também o margin-bottom para diminuir espaço com o subtítulo */
+    font-size: 2.25rem !important;
+    line-height: 1.5rem !important;
+    margin-bottom: 1rem !important;
   }
 
-  /* 2. Parágrafo descritivo (subtítulo): Reduzir margin-bottom para diminuir espaçamento após o título */
+  /* 4. Parágrafo descritivo: Reduzir tamanho e margin */
   section#contato > div > p {
-    margin-bottom: 0.5rem !important; /* Reduzir espaçamento entre título e subtítulo (de mb-4 = 1rem para 0.5rem) */
+    font-size: 1rem !important;
+    line-height: 1.125rem !important;
+    margin-bottom: 0.75rem !important;
   }
 
-  /* 3. Coluna esquerda - Espaçamento entre cards: Reduzir gap do container space-y-3/space-y-4 */
+  /* 5. Grid: Reduzir gap */
+  section#contato .grid {
+    gap: 0.75rem !important;
+  }
+
+  /* 6. Coluna de Métodos de Contato: Reduzir espaçamento */
+  section#contato .space-y-3,
+  section#contato .space-y-4 {
+    gap: 0.5rem !important;
+  }
+
   section#contato .space-y-3 > * + *,
   section#contato .space-y-4 > * + * {
-    margin-top: 0.625rem !important; /* Redução do espaçamento entre os cards (de lg:space-y-4 = 1rem para 0.625rem) */
+    margin-top: 0.5rem !important;
   }
 
-  /* 4. Coluna esquerda - Cards (WhatsApp/E-mail): Reduzir padding */
+  /* 7. Título "Entre em Contato": Reduzir tamanho */
+  section#contato h3 {
+    font-size: 1rem !important;
+    line-height: 1.25rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* 8. Cards de Contato (WhatsApp/E-mail): Reduzir padding */
   section#contato a[href*="wa.me"],
   section#contato button[type="button"] {
-    padding: 0.625rem !important; /* Redução do padding interno dos cards (de lg:p-4 = 1rem para 0.625rem) */
+    padding: 0.5rem !important;
+    font-size: 0.9rem !important;
   }
 
-  /* 5. Coluna esquerda - Card Atendimento/Redes: Reduzir padding */
+  section#contato a[href*="wa.me"] svg,
+  section#contato button[type="button"] svg {
+    width: 0.875rem !important;
+    height: 0.875rem !important;
+  }
+
+  section#contato a[href*="wa.me"] p,
+  section#contato button[type="button"] p {
+    font-size: 0.75rem !important;
+    line-height: 0.875rem !important;
+  }
+
+  /* 9. Container de Atendimento/Redes: Reduzir padding */
   section#contato .p-2,
   section#contato .p-4 {
-    padding: 0.625rem !important; /* Redução do padding interno do card (de lg:p-4 = 1rem para 0.625rem) */
+    padding: 0.5rem !important;
   }
 
-  /* 6. Formulário - Labels dos RadioGroup "Pessoal" e "Empresarial": Igualar ao tamanho dos outros labels (text-xs = 0.75rem) */
-  section#contato label[for="eventType-pessoal"],
-  section#contato label[for="eventType-empresarial"] {
-    font-size: 0.75rem !important; /* text-xs = 0.75rem - igual aos outros labels */
+  section#contato .p-2 > *,
+  section#contato .p-4 > * {
+    gap: 0.375rem !important;
+  }
+
+  /* 10. Textos de Atendimento: Reduzir tamanho */
+  section#contato .p-2 p,
+  section#contato .p-4 p {
+    font-size: 0.75rem !important;
+    line-height: 0.875rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* 11. Redes Sociais: Reduzir padding e tamanho de ícones */
+  section#contato a[href*="instagram"],
+  section#contato a[href*="facebook"],
+  section#contato a[href*="youtube"] {
+    padding: 0.5rem !important;
+  }
+
+  section#contato a[href*="instagram"] svg,
+  section#contato a[href*="facebook"] svg,
+  section#contato a[href*="youtube"] svg {
+    width: 0.875rem !important;
+    height: 0.875rem !important;
+  }
+
+  /* 12. Formulário: Reduzir espaçamento entre campos */
+  section#contato form {
+    gap: 0.5rem !important;
+  }
+
+  section#contato form > * + * {
+    margin-top: 0.5rem !important;
+  }
+
+  /* 13. Labels: Reduzir tamanho e margin */
+  section#contato label {
+    font-size: 0.9rem !important;
+    line-height: 0.875rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* 14. Inputs: Reduzir altura e padding */
+  section#contato input[type="text"],
+  section#contato input[type="tel"],
+  section#contato input[type="email"] {
+    height: 1.75rem !important;
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    font-size: 0.75rem !important;
     line-height: 1rem !important;
   }
+
+  /* 15. Textarea: Reduzir altura mínima e padding */
+  section#contato textarea {
+    min-height: 3rem !important;
+    padding: 0.375rem 0.5rem !important;
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+  }
+
+  /* 16. RadioGroup: Reduzir gap e tamanho */
+  section#contato .flex.gap-6 {
+    gap: 1rem !important;
+  }
+
+  section#contato .flex.gap-2 {
+    gap: 0.375rem !important;
+  }
+
+  section#contato input[type="radio"] {
+    width: 0.875rem !important;
+    height: 0.875rem !important;
+  }
+
+  section#contato label[for*="eventType"] {
+    font-size: 0.8rem !important;
+    line-height: 0.875rem !important;
+  }
+
+  /* 17. Checkbox: Reduzir tamanho */
+  section#contato input[type="checkbox"] {
+    width: 0.875rem !important;
+    height: 0.875rem !important;
+    margin-top: 0.125rem !important;
+  }
+
+  section#contato label[for="privacy"] {
+    font-size: 0.625rem !important;
+    line-height: 0.875rem !important;
+  }
+
+  /* 18. Mensagens de Status: Reduzir padding e font size */
+  section#contato .p-4 {
+    padding: 0.5rem !important;
+    font-size: 0.625rem !important;
+    line-height: 0.875rem !important;
+  }
+
+  section#contato .p-4 p {
+    font-size: 0.625rem !important;
+    line-height: 0.875rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  section#contato .p-4 ul {
+    margin-top: 0.25rem !important;
+    padding-left: 1rem !important;
+  }
+
+  section#contato .p-4 li {
+    font-size: 0.625rem !important;
+    line-height: 0.875rem !important;
+    margin-bottom: 0.125rem !important;
+  }
+
+  /* 19. Button: Reduzir padding e font size */
+  section#contato button[type="submit"] {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+  }
+
+  /* 20. Scrollbar customizada (se necessário) */
+  section#contato::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  section#contato::-webkit-scrollbar-track {
+    background: rgba(42, 34, 30, 0.3);
+    border-radius: 10px;
+  }
+
+  section#contato::-webkit-scrollbar-thumb {
+    background: rgba(196, 142, 84, 0.6);
+    border-radius: 10px;
+  }
+
+  section#contato {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(196, 142, 84, 0.6) rgba(42, 34, 30, 0.3);
+  }
+
+  /* +++FIM SECAO CONTATO+++ */
 }
 
 /* Typography */
