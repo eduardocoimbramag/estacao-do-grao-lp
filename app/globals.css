@@ -857,13 +857,20 @@ body {
     min-height: 0 !important; /* permite shrink */
   }
   
-  /* 9. Botões de navegação: Padding e altura reduzidos (LAYDESK2)
-     Impacto: reduz espaço ocupado pelos 2 botões na coluna direita */
+  /* 9. Botões de navegação: Padding aumentado para alinhamento com altura do conteúdo da esquerda (LAYDESK2)
+     Impacto: aumenta padding para botões ficarem alinhados com início e final do conteúdo da coluna esquerda */
+  .laydesk2-audience-right-column .laydesk2-audience-nav-button {
+    padding-top: 2rem !important; /* TESTE - valor muito alto para verificar se funciona */
+    padding-bottom: 2rem !important; /* TESTE - valor muito alto para verificar se funciona */
+  }
+  
+  .laydesk2-audience-grid .laydesk2-audience-nav-button,
+  a.laydesk2-audience-nav-button,
   .laydesk2-audience-nav-button {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
+    padding-top: 2rem !important; /* TESTE - valor muito alto */
+    padding-bottom: 2rem !important; /* TESTE - valor muito alto */
     min-height: 0 !important;
-    max-height: 13rem !important;
+    max-height: 13rem !important; /* MANTIDO - não alterar altura máxima para evitar overflow */
     flex: 1 1 auto !important; /* permite crescimento e shrink */
     height: auto !important;
     overflow: hidden !important; /* impede overflow do conteúdo interno */
@@ -883,11 +890,18 @@ body {
     object-fit: cover !important;
   }
   
-  /* Título dos botões: Tamanho reduzido (LAYDESK2)
-     Impacto: reduz altura ocupada pelo texto dentro dos botões */
+  /* Título dos botões: Tamanho aumentado (LAYDESK2)
+     Impacto: aumenta tamanho da fonte dos títulos dos botões para melhor legibilidade */
+  .laydesk2-audience-nav-button h3.laydesk2-audience-nav-button-title {
+    font-size: 2rem !important; /* TESTE - valor muito alto para verificar */
+    line-height: 2.5rem !important; /* TESTE - valor muito alto */
+  }
+  
+  .laydesk2-audience-nav-button .laydesk2-audience-nav-button-title,
+  h3.laydesk2-audience-nav-button-title,
   .laydesk2-audience-nav-button-title {
-    font-size: 1.125rem !important;
-    line-height: 1.375rem !important;
+    font-size: 2rem !important; /* TESTE - valor muito alto */
+    line-height: 2.5rem !important; /* TESTE - valor muito alto */
     padding: 0 0.5rem !important;
   }
   
