@@ -733,112 +733,140 @@ body {
      ============================================ */
   /* +++INICIO SECAO REGIOES ATENDIDAS+++ */
   
-  /* 1. Section: Manter altura viewport menos menu, remover padding vertical */
+  /* 1. Section: Altura viewport menos menu + Anti-overflow (LAYDESK2)
+     Impacto: garante que a seção não ultrapasse os limites da tela */
   .laydesk2-audience-section {
     height: calc(100vh - 4rem) !important;
     min-height: calc(100vh - 4rem) !important;
+    max-height: calc(100vh - 4rem) !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+    overflow: hidden !important; /* FORÇAR - impede overflow vertical/horizontal */
+    overflow-x: hidden !important;
   }
   
-  /* 2. Container interno: Reduzir padding e usar altura completa */
+  /* 2. Container interno: Padding reduzido + Flex shrink habilitado (LAYDESK2)
+     Impacto: economiza espaço vertical e horizontal */
   .laydesk2-audience-container {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
     height: 100% !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
+    min-height: 0 !important; /* permite shrink */
+    overflow: hidden !important; /* impede overflow interno */
   }
   
-  /* 3. Grid: Reduzir gap e padding */
+  /* 3. Grid: Gap reduzido + Altura controlada (LAYDESK2)
+     Impacto: aproxima colunas esquerda e direita, economizando espaço */
   .laydesk2-audience-grid {
-    gap: 1rem !important;
+    gap: 0.75rem !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     height: 100% !important;
     align-items: center !important;
+    min-height: 0 !important; /* permite shrink */
   }
   
-  /* 4. Coluna esquerda: Reduzir gap e otimizar */
+  /* 4. Coluna esquerda: Gap mínimo + Shrink habilitado (LAYDESK2)
+     Impacto: mantém elementos compactos e permite compressão se necessário */
   .laydesk2-audience-left-column {
     gap: 0.25rem !important;
     height: 100% !important;
     justify-content: center !important;
+    min-height: 0 !important; /* permite shrink */
   }
   
-  /* 5. Título: Reduzir tamanho da fonte */
+  /* 5. Título: Tamanho e espaçamento reduzidos (LAYDESK2)
+     Impacto: economiza espaço vertical no topo da coluna esquerda */
   .laydesk2-audience-title {
-    font-size: 2rem !important; /* equivalente a text-lg */
+    font-size: 1.375rem !important;
     line-height: 1.5rem !important;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.125rem !important;
+    margin-top: 0 !important;
   }
   
-  /* 6. Container do mapa: Reduzir tamanho e margin */
+  /* 6. Container do mapa: Tamanho e espaçamento reduzidos (LAYDESK2)
+     Impacto: reduz o espaço ocupado pelo mapa na coluna esquerda */
   .laydesk2-audience-map-container {
-    max-width: 55% !important;
-    margin-top: 0.5rem !important;
-    margin-bottom: 0.5rem !important;
+    max-width: 45% !important;
+    margin-top: 0.125rem !important;
+    margin-bottom: 0.125rem !important;
+    flex-shrink: 1 !important; /* permite compressão */
   }
   
-  /* 7. Cards: Reduzir padding e espaçamento */
+  /* 7. Cards: Padding e espaçamento reduzidos (LAYDESK2)
+     Impacto: reduz o espaço ocupado pelos 3 cards na coluna esquerda */
   .laydesk2-audience-card {
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
-    margin-bottom: 0.5rem !important;
+    padding-left: 0.625rem !important;
+    padding-right: 0.625rem !important;
+    padding-top: 0.375rem !important;
+    padding-bottom: 0.375rem !important;
+    margin-bottom: 0.125rem !important;
   }
   
-  /* Ícones dos cards: Reduzir tamanho */
+  /* Último card: remover margin-bottom */
+  .laydesk2-audience-card:last-of-type {
+    margin-bottom: 0 !important;
+  }
+  
+  /* Ícones dos cards: Tamanho otimizado (LAYDESK2) */
   .laydesk2-audience-card svg {
-    width: 1rem !important;
-    height: 1rem !important;
+    width: 0.875rem !important;
+    height: 0.875rem !important;
+    flex-shrink: 0 !important;
   }
   
-  /* Texto dos cards: Reduzir tamanho */
+  /* Texto dos cards: Tamanho reduzido (LAYDESK2)
+     Impacto: reduz altura ocupada pelo texto em cada card */
   .laydesk2-audience-card-text {
-    font-size: 1rem !important; /* equivalente a text-xs */
-    line-height: 1.125rem !important;
+    font-size: 0.8125rem !important;
+    line-height: 1.0625rem !important;
   }
   
-  /* Texto em negrito dentro dos cards: Reduzir */
+  /* Texto em negrito dentro dos cards: Herdar tamanho */
   .laydesk2-audience-card-text strong {
-    font-size: 1rem !important;
+    font-size: inherit !important;
+    font-weight: bold !important;
+  }
+  
+  /* Cards - Texto "100 doses" e "600 doses": Herdar tamanho */
+  .laydesk2-audience-card-text strong.text-base,
+  .laydesk2-audience-card-text strong.sm\:text-lg {
+    font-size: inherit !important;
+    font-weight: bold !important;
   }
   
   /* Link dentro do card: Reduzir padding */
   .laydesk2-audience-card-link {
-    padding: 0.25rem 0.5rem !important;
+    padding: 0.1875rem 0.375rem !important;
     font-size: 0.75rem !important;
   }
   
-  /* 8. Coluna direita: Reduzir gap */
+  /* 8. Coluna direita: Gap reduzido (LAYDESK2)
+     Impacto: aproxima os 2 botões de navegação */
   .laydesk2-audience-right-column {
-    gap: 0.75rem !important;
+    gap: 0.5rem !important;
     height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    min-height: 0 !important; /* permite shrink */
   }
   
-  /* 9. Botões de navegação: Reduzir tamanho - AJUSTE AQUI */
+  /* 9. Botões de navegação: Padding e altura reduzidos (LAYDESK2)
+     Impacto: reduz espaço ocupado pelos 2 botões na coluna direita */
   .laydesk2-audience-nav-button {
-    /* Altura e padding - Modifique estes valores conforme necessário */
-    margin-top: 1.125rem !important;
-    padding-top: 0.75rem !important;
-    padding-bottom: 0.75rem !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
     min-height: 0 !important;
-    max-height: 18.5rem !important; /* Altura máxima dos botões - ajuste aqui */
-    flex: 1 !important;
+    max-height: 13rem !important;
+    flex: 1 1 auto !important; /* permite crescimento e shrink */
     height: auto !important;
-  }
-  
-  /* Título dos botões: Reduzir tamanho - AJUSTE AQUI */
-  .laydesk2-audience-nav-button-title {
-    /* Tamanho da fonte - Modifique conforme necessário */
-    font-size: 1.5rem !important; /* reduzido para 1rem (16px) */
-    line-height: 1.25rem !important;
-    padding: 0 0.5rem !important;
+    overflow: hidden !important; /* impede overflow do conteúdo interno */
   }
   
   /* Container interno dos botões: Ajustar altura */
@@ -850,9 +878,17 @@ body {
     justify-content: center !important;
   }
   
-  /* Imagem de fundo dos botões: Ajustar se necessário */
+  /* Imagem de fundo dos botões: Garantir cobertura */
   .laydesk2-audience-nav-button img {
     object-fit: cover !important;
+  }
+  
+  /* Título dos botões: Tamanho reduzido (LAYDESK2)
+     Impacto: reduz altura ocupada pelo texto dentro dos botões */
+  .laydesk2-audience-nav-button-title {
+    font-size: 1.125rem !important;
+    line-height: 1.375rem !important;
+    padding: 0 0.5rem !important;
   }
   
   /* +++FIM SECAO REGIOES ATENDIDAS+++ */
@@ -1568,96 +1604,6 @@ body {
     height: 16px !important;
   }
 
-  /* ============================================
-     SEÇÃO 4 (Regiões Atendidas): Ajustes anti-overflow (laydesk3)
-     ============================================ */
-
-  .laydesk2-audience-section {
-    height: calc(100vh - 4rem) !important;
-    min-height: calc(100vh - 4rem) !important;
-    max-height: calc(100vh - 4rem) !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    overflow: hidden !important;
-  }
-
-  .laydesk2-audience-container {
-    height: 100% !important;
-    padding-top: 0.75rem !important;
-    padding-bottom: 0.75rem !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    min-height: 0 !important;
-  }
-
-  .laydesk2-audience-grid {
-    height: 100% !important;
-    gap: 1rem !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    align-items: center !important;
-  }
-
-  /* Coluna esquerda: Centralizar verticalmente */
-  .laydesk2-audience-left-column {
-    justify-content: center !important;
-    height: 100% !important;
-  }
-
-  .laydesk2-audience-title {
-    font-size: 1.5rem !important;
-    line-height: 1.75rem !important;
-    margin-bottom: 0.25rem !important;
-  }
-
-  .laydesk2-audience-map-container {
-    max-width: 49.5% !important; /* Reduzir de 55% para 49.5% (10% de redução) */
-    margin-top: 0.25rem !important;
-    margin-bottom: 0.25rem !important;
-  }
-
-  .laydesk2-audience-card {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
-    margin-bottom: 0.25rem !important; /* Reduzir de 0.5rem para 0.25rem (metade) */
-  }
-
-  .laydesk2-audience-card svg {
-    width: 1rem !important;
-    height: 1rem !important;
-  }
-
-  .laydesk2-audience-card-text {
-    font-size: 0.875rem !important;
-    line-height: 1.125rem !important;
-  }
-
-  /* Cards - Texto "100 doses" e "600 doses": Igualar tamanho da fonte */
-  .laydesk2-audience-card-text strong.text-base,
-  .laydesk2-audience-card-text strong.sm\:text-lg {
-    font-size: inherit !important; /* Herdar tamanho do .laydesk2-audience-card-text */
-    font-weight: bold !important; /* Manter negrito */
-  }
-
-  .laydesk2-audience-right-column {
-    justify-content: center !important; /* Centralizar verticalmente os botões */
-    gap: 0.75rem !important;
-    height: 100% !important;
-    display: flex !important; /* Garantir que seja flex */
-    flex-direction: column !important; /* Garantir direção vertical */
-  }
-
-  .laydesk2-audience-nav-button {
-    padding-top: 0.75rem !important;
-    padding-bottom: 0.75rem !important;
-    max-height: 16rem !important;
-  }
-
-  .laydesk2-audience-nav-button-title {
-    font-size: 1.25rem !important;
-    line-height: 1.5rem !important;
-  }
 
   /* ============================================
      SEÇÃO "FORMULÁRIO DE CONTATO" - Correções laydesk3
