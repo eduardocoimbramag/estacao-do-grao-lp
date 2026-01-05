@@ -1398,6 +1398,11 @@ body {
     padding-bottom: 1rem !important; /* [SEC2][LAYDESK3] AJUSTE AQUI: balancear com o topo */
     display: grid !important;
     align-items: center !important;
+    justify-content: center !important; /* Centralizar grid na página */
+    gap: 0.75rem !important; /* Reduzido de padrão Tailwind (24px/32px) para 12px */
+    max-width: 90% !important; /* Limitar largura total para melhor centralização */
+    margin-left: auto !important; /* Centralizar horizontalmente */
+    margin-right: auto !important; /* Centralizar horizontalmente */
   }
 
   /* Coluna esquerda: centralizar verticalmente */
@@ -1409,6 +1414,7 @@ body {
   h2.laydesk3-sec2-title {
     font-size: 2.25rem !important;
     margin-bottom: 0.125rem !important;
+    text-align: center !important; /* Centralizar título */
   }
 
   p.laydesk3-sec2-subtitle {
@@ -1416,6 +1422,7 @@ body {
     font-size: 1rem !important;
     line-height: 1.25rem !important;
     margin-bottom: 0.5rem !important; /* Reduzido de 3.5rem para 0.5rem (8px) */
+    text-align: center !important; /* Garantir centralização do subtítulo */
   }
   
   /* Parágrafo: Reduzir fonte para ficar menor que o subtítulo */
