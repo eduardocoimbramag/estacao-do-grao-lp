@@ -249,3 +249,6 @@ window.innerHeight
 - Causa mais provável: conflito entre `hidden sm:block` do Tailwind e `display: flex !important;` do CSS customizado
 - Solução: forçar visibilidade explícita no CSS laydesk2 com `!important`
 
+
+
+

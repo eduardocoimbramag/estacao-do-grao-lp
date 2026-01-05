@@ -253,3 +253,6 @@ Em 1366×768 @ 100% zoom (innerHeight ~599):
 - Solução: usar `width: 100%` para respeitar o grid e deixar o `aspect-ratio` calcular a altura
 - Padrão de referência: `laydesk3-sec2-video-container` (funciona corretamente)
 
+
+
+

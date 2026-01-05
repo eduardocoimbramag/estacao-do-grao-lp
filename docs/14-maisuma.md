@@ -311,3 +311,6 @@ Em 1366×768 @ 100% zoom (innerHeight ~599):
 - **Problema identificado**: seletores duplicados e possíveis conflitos de especificidade
 - **Solução**: copiar estrutura exata do laydesk3 e remover conflitos
 
+
+
+

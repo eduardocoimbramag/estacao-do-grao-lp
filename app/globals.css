@@ -406,33 +406,37 @@ body {
      ============================================ */
   /* +++INICIO SECAO SERVICOS+++ */
   
-  /* 1. Section: Altura viewport menos menu (h-16 = 4rem) */
+  /* 1. Section: Altura viewport menos menu (h-16 = 4rem) + Anti-overflow */
   .laydesk2-servicos-section {
     height: calc(100vh - 4rem) !important;
     min-height: calc(100vh - 4rem) !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+    overflow: hidden !important; /* FORÇAR - impede overflow horizontal/vertical */
+    overflow-x: hidden !important; /* FORÇAR - impede overflow horizontal */
   }
   
-  /* 2. Container interno: Padding otimizado para o espaço disponível */
+  /* 2. Container interno: Padding otimizado + Flex shrink habilitado */
   .laydesk2-servicos-container {
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
+    padding-top: 0.75rem !important; /* REDUZIDO de 1.5rem */
+    padding-bottom: 0.5rem !important; /* REDUZIDO de 0.75rem */
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
     height: 100% !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
+    min-height: 0 !important; /* permite shrink */
+    overflow: hidden !important; /* impede overflow interno */
   }
   
-  /* 3. Header: Espaçamento otimizado */
+  /* 3. Header: Espaçamento otimizado (reduzido) */
   .laydesk2-servicos-header {
-    margin-bottom: 1.75rem !important;
+    margin-bottom: 1rem !important; /* REDUZIDO de 1.75rem */
   }
   
   .laydesk2-servicos-header > * + * {
-    margin-top: 0.875rem !important;
+    margin-top: 0 !important; /* REDUZIDO de 0.25rem (COLA) */
   }
   
   /* 4. Título: Tamanho otimizado */
@@ -441,20 +445,26 @@ body {
     line-height: 2.25rem !important;
   }
   
-  /* 5. Parágrafo: Tamanho otimizado */
+  /* 5. Parágrafo: Margin top negativo aumentado (reduz distância em 1/3) (LAYDESK2)
+     Impacto: reduz a distância entre título e subtítulo em 1/3 */
   .laydesk2-servicos-description {
-    font-size: 0.9375rem !important; /* ligeiramente maior que text-sm */
+    font-size: 0.9375rem !important;
     line-height: 1.375rem !important;
+    margin-top: -0.25rem !important; /* AUMENTADO de -0.1875rem (redução de 1/3) */
   }
   
-  /* 6. Container do carrossel: Padding otimizado e flex para ocupar espaço */
+  /* 6. Container do carrossel: Padding aumentado para acomodar scale-105 do card ativo (LAYDESK2)
+     Impacto: corrige o corte superior/inferior do card central (ativo) */
   .laydesk2-servicos-carousel-container {
-    padding-top: 0.75rem !important;
-    padding-bottom: 0.75rem !important;
+    padding-top: 0.75rem !important; /* AUMENTADO de 0.25rem para acomodar scale-105 */
+    padding-bottom: 0.75rem !important; /* AUMENTADO de 0.375rem para acomodar scale-105 */
     flex: 1 !important;
     min-height: 0 !important;
     display: flex !important;
     align-items: center !important;
+    max-height: 100% !important; /* garante que o carrossel não ultrapasse a altura */
+    overflow: hidden !important; /* impede overflow do carrossel */
+    overflow-x: hidden !important; /* FORÇAR - impede overflow horizontal */
   }
   
   /* Garantir que o wrapper interno do carrossel também use o espaço */
@@ -462,54 +472,56 @@ body {
     width: 100% !important;
   }
   
-  /* 7. Cards: Padding otimizado */
+  /* 7. Cards: Padding otimizado + Largura ajustada para 33.333% (valor original Tailwind) */
   .laydesk2-servicos-card {
     padding-left: 0.75rem !important;
     padding-right: 0.75rem !important;
+    min-width: 33.333% !important; /* AJUSTADO de 32% para 33.333% (valor original Tailwind) */
+    max-width: 33.333% !important; /* limita a largura máxima */
   }
   
-  /* 8. Container da imagem: Padding otimizado */
+  /* 8. Container da imagem: Padding ainda mais reduzido */
   .laydesk2-servicos-image-container {
-    padding: 1rem !important;
+    padding: 0.5rem !important; /* REDUZIDO de 0.75rem */
   }
   
-  /* Imagem: Altura otimizada */
+  /* Imagem: Altura reduzida */
   .laydesk2-servicos-image {
-    height: 10rem !important; /* equivalente a h-30 (120px) */
+    height: 7.5rem !important; /* REDUZIDO de 10rem (120px → 90px) */
   }
   
-  /* 9. Container de texto: Padding e espaçamento otimizados */
+  /* 9. Container de texto: Padding e espaçamento ainda mais reduzidos */
   .laydesk2-servicos-card-content {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    padding-bottom: 2rem !important;
+    padding-left: 0.5rem !important; /* REDUZIDO de 0.75rem */
+    padding-right: 0.5rem !important; /* REDUZIDO de 0.75rem */
+    padding-bottom: 0.625rem !important; /* REDUZIDO de 0.875rem */
   }
   
   .laydesk2-servicos-card-content > * + * {
-    margin-top: 0.625rem !important;
+    margin-top: 0.25rem !important; /* REDUZIDO de 0.375rem */
   }
   
-  /* Título do card: Tamanho otimizado */
+  /* Título do card: Fonte reduzida */
   .laydesk2-servicos-card-title {
-    font-size: 1.125rem !important; /* equivalente a text-lg */
-    line-height: 1.625rem !important;
+    font-size: 1rem !important; /* REDUZIDO de 1.125rem */
+    line-height: 1.5rem !important; /* REDUZIDO de 1.625rem */
   }
   
-  /* Subtítulo do card: Tamanho otimizado */
+  /* Subtítulo do card: Fonte reduzida */
   .laydesk2-servicos-card-subtitle {
-    font-size: 0.8125rem !important; /* entre text-xs e text-sm */
-    line-height: 1.125rem !important;
+    font-size: 0.75rem !important; /* REDUZIDO de 0.8125rem */
+    line-height: 1rem !important; /* REDUZIDO de 1.125rem */
   }
   
-  /* Descrição do card: Tamanho otimizado */
+  /* Descrição do card: Fonte reduzida */
   .laydesk2-servicos-card-description {
-    font-size: 0.8125rem !important; /* entre text-xs e text-sm */
-    line-height: 1.25rem !important;
+    font-size: 0.75rem !important; /* REDUZIDO de 0.8125rem */
+    line-height: 1.125rem !important; /* REDUZIDO de 1.25rem */
   }
   
-  /* CTA Button: Padding otimizado */
+  /* CTA Button: Padding ainda mais reduzido */
   .laydesk2-servicos-card-cta {
-    padding-top: 0.75rem !important;
+    padding-top: 0.25rem !important; /* REDUZIDO de 0.5rem */
   }
   
   .laydesk2-servicos-card-cta a {
@@ -517,19 +529,20 @@ body {
     font-size: 0.8125rem !important;
   }
   
-  /* 10. Botões de navegação: Espaçamento otimizado */
+  /* 10. Botões de navegação: Espaçamento e tamanho reduzidos */
   .laydesk2-servicos-nav {
-    margin-top: 0.75rem !important;
+    margin-top: 0.5rem !important; /* REDUZIDO de 0.75rem */
   }
   
-  /* Botões: Tamanho otimizado */
+  /* Botões: Padding reduzido */
   .laydesk2-servicos-nav button {
-    padding: 0.625rem !important;
+    padding: 0.5rem !important; /* REDUZIDO de 0.625rem */
   }
   
+  /* Ícones: Tamanho reduzido */
   .laydesk2-servicos-nav svg {
-    width: 18px !important;
-    height: 18px !important;
+    width: 16px !important; /* REDUZIDO de 18px */
+    height: 16px !important; /* REDUZIDO de 18px */
   }
   
   /* 11. Indicadores mobile: Espaçamento otimizado */
