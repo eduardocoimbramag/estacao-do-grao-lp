@@ -82,7 +82,7 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
       aria-label="Carrossel de serviços"
     >
       {/* Container do carrossel com padding vertical para evitar overflow */}
-      <div className="overflow-hidden cursor-grab active:cursor-grabbing py-2 sm:py-6 w-full max-w-[100vw] laydesk2-servicos-carousel-container" ref={emblaRef}>
+      <div className="overflow-hidden cursor-grab active:cursor-grabbing py-2 sm:py-6 w-full max-w-[100vw] laydesk2-servicos-carousel-container laydesk3-servicos-carousel-container" ref={emblaRef}>
         <div className="flex touch-pan-y min-w-0">
           {loopedCards.map((card, index) => {
             // Mapear de volta ao índice original para verificar se está ativo
@@ -97,7 +97,7 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
                   max-w-[60vw] sm:max-w-none
                   px-3 sm:px-3 md:px-4
                   box-border
-                  laydesk2-servicos-card
+                  laydesk2-servicos-card laydesk3-servicos-card
                 "
                 aria-label={`Serviço ${originalIndex + 1} de ${cards.length}: ${card.title}`}
               >
@@ -113,8 +113,8 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
                   `}
                 >
                   {/* Imagem do card */}
-                  <div className="relative flex items-center justify-center p-4 sm:p-5 laydesk2-servicos-image-container">
-                    <div className="relative h-32 sm:h-40 w-full rounded-lg overflow-hidden laydesk2-servicos-image">
+                  <div className="relative flex items-center justify-center p-4 sm:p-5 laydesk2-servicos-image-container laydesk3-servicos-image-container">
+                    <div className="relative h-32 sm:h-40 w-full rounded-lg overflow-hidden laydesk2-servicos-image laydesk3-servicos-image">
                       <Image
                         src={card.imageSrc}
                         alt={card.imageAlt}
@@ -126,22 +126,22 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
                   </div>
 
                   {/* Conteúdo de texto */}
-                  <div className="space-y-2 px-4 pb-4 text-center laydesk2-servicos-card-content">
+                  <div className="space-y-2 px-4 pb-4 text-center laydesk2-servicos-card-content laydesk3-servicos-card-content">
                     {/* Título */}
-                    <h3 className="text-lg sm:text-xl font-semibold text-cream-50 font-montserrat laydesk2-servicos-card-title">
+                    <h3 className="text-lg sm:text-xl font-semibold text-cream-50 font-montserrat laydesk2-servicos-card-title laydesk3-servicos-card-title">
                       {card.title}
                     </h3>
 
                     {/* Subtítulo */}
                     {card.subtitle && (
-                      <p className="text-xs sm:text-sm font-medium text-coffee-500 font-montserrat laydesk2-servicos-card-subtitle">
+                      <p className="text-xs sm:text-sm font-medium text-coffee-500 font-montserrat laydesk2-servicos-card-subtitle laydesk3-servicos-card-subtitle">
                         {card.subtitle}
                       </p>
                     )}
 
                     {/* Descrição */}
                     {card.description && (
-                      <p className="text-xs sm:text-sm text-cream-50/80 leading-relaxed font-montserrat laydesk2-servicos-card-description">
+                      <p className="text-xs sm:text-sm text-cream-50/80 leading-relaxed font-montserrat laydesk2-servicos-card-description laydesk3-servicos-card-description">
                         {card.description}
                       </p>
                     )}
@@ -155,7 +155,7 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
 
                     {/* CTA Button */}
                     {card.ctaLabel && card.ctaHref && (
-                      <div className="pt-3 laydesk2-servicos-card-cta">
+                      <div className="pt-3 laydesk2-servicos-card-cta laydesk3-servicos-card-cta">
                         <a
                           href={card.ctaHref}
                           className="
@@ -181,7 +181,7 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
       </div>
 
       {/* Botões de navegação (Desktop) */}
-      <div className="hidden lg:flex justify-center items-center gap-4 mt-3 laydesk2-servicos-nav">
+      <div className="hidden lg:flex justify-center items-center gap-4 mt-3 laydesk2-servicos-nav laydesk3-servicos-nav">
         <button
           onClick={scrollPrev}
           aria-label="Serviço anterior"
@@ -254,7 +254,7 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
       </div>
 
       {/* Indicadores de paginação (Mobile) */}
-      <div className="flex lg:hidden justify-center gap-3 mt-6 laydesk2-servicos-indicators">
+      <div className="flex lg:hidden justify-center gap-3 mt-6 laydesk2-servicos-indicators laydesk3-servicos-indicators">
         {cards.map((_, index) => (
           <button
             key={index}

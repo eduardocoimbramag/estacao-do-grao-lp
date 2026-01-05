@@ -1317,7 +1317,6 @@ body {
     flex: 1 1 auto !important;
     min-height: 0 !important;
     align-items: center !important;
-    gap: 1rem !important;
     grid-template-columns: 1.15fr 0.85fr !important;
   }
 
@@ -1331,10 +1330,17 @@ body {
 
   /* Wrapper do embla (o container com overflow-hidden) */
   .laydesk3-hero-section [aria-roledescription="carousel"] > div {
-    max-width: 560px !important;
+    max-width: 580px !important; /* [SEC1][LAYDESK3] AJUSTE AQUI: tamanho do slideshow (ex.: 560 → 580/590/600) */
     width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+
+  /* [SEC1][LAYDESK3] Slideshow: reduzir altura ajustando aspect-ratio (Alternativa 1)
+     Motivo: em laydesk3 a altura útil é menor; `lg:aspect-[16/11]` fica alto e pode “invadir” a coluna direita.
+     Estratégia: quando existir a classe `lg:aspect-[16/11]` no container do slide, forçar aspect-ratio mais wide. */
+  .laydesk3-hero-section [aria-roledescription="carousel"] div[class*="aspect-"][class*="16/11"] {
+    aspect-ratio: 16 / 9 !important;
   }
 
   /* Coluna direita (texto + cards): reduzir o gap para caber melhor */
@@ -1350,11 +1356,13 @@ body {
   /* Métricas: manter dentro do viewport e mais compactas */
   .laydesk3-hero-metrics {
     margin-top: 1rem !important;
-    gap: 0.75rem !important;
+    gap: 0.5rem !important; /* [SEC1][LAYDESK3] AJUSTE AQUI: espaço ENTRE os 3 cards (ex.: 0.75rem → 0.5rem → 0.35rem) */
+    padding-inline: 0 !important; /* [SEC1][LAYDESK3] AJUSTE AQUI: respiro nas laterais da faixa de métricas */
   }
 
   .laydesk3-hero-metrics > div {
-    padding: 0.2rem !important;
+    padding-block: 0.2rem !important; /* [SEC1][LAYDESK3] AJUSTE AQUI: padding vertical das métricas */
+    padding-inline: 0.5rem !important; /* [SEC1][LAYDESK3] AJUSTE AQUI: padding interno ESQ/DIR de cada card */
     gap: 0.35rem !important;
   }
 
@@ -1386,8 +1394,8 @@ body {
 
   .laydesk3-sec2-container {
     height: 100% !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    padding-top: 1rem !important; /* [SEC2][LAYDESK3] AJUSTE AQUI: respiro no topo (descer o título) */
+    padding-bottom: 1rem !important; /* [SEC2][LAYDESK3] AJUSTE AQUI: balancear com o topo */
     display: grid !important;
     align-items: center !important;
   }
@@ -1404,6 +1412,26 @@ body {
 
   p.laydesk3-sec2-subtitle {
     margin-top: 0 !important;
+  }
+
+  /* [SEC2][LAYDESK3] Aproximar título e subtítulo — AJUSTE AQUI */
+  .laydesk3-sec2-textstack > p:first-child {
+    margin-top: 0.25rem !important; /* AJUSTE AQUI (ex.: 0.25rem → 0.5rem → 0.75rem) */
+  }
+
+  /* [SEC2][LAYDESK3] Espaço entre subtítulo e parágrafo — AJUSTE AQUI */
+  .laydesk3-sec2-textstack {
+    gap: 1.5rem !important; /* AJUSTE AQUI (controla o "space-y") */
+  }
+
+  /* [SEC2][LAYDESK3] Espaçamento entre parágrafo e lista — AJUSTE AQUI */
+  ul.laydesk2-sec2-bullets {
+    margin-top: 1.5rem !important; /* AJUSTE AQUI (ex.: mt-9/12 → 1.5rem → 1rem → 0.75rem) */
+  }
+
+  /* [SEC2][LAYDESK3] Espaçamento entre lista e botões — AJUSTE AQUI */
+  .laydesk2-sec2-cta {
+    margin-top: 1.5rem !important; /* AJUSTE AQUI (ex.: mt-9/12 → 1.5rem → 1rem → 0.75rem) */
   }
 
   /* Spine/divisor: bem discreto */
@@ -1432,9 +1460,9 @@ body {
     
     /* Calcular largura baseada na altura máxima (68.2vh * 9/16 = 38.3vh ≈ 275px em 720p) */
     /* Mas respeitar max-width: 462px se for menor */
-    width: min(462px, calc(68.2vh * 9 / 16)) !important;
-    max-width: 462px !important;
-    max-height: 68.2vh !important;
+    width: min(531px, calc(78.43vh * 9 / 16)) !important;
+    max-width: 531px !important;
+    max-height: 78.43vh !important;
     height: auto !important; /* Altura calculada automaticamente pelo aspect-ratio */
     
     margin: 0 auto !important;
@@ -1467,156 +1495,157 @@ body {
   }
 
   /* ============================================
-     SEÇÃO 3 (nossos-servicos): Ajustes anti-overflow (laydesk3)
-     Mantém a seção com height: calc(100vh - 4rem) e compacta o conteúdo interno.
+     SEÇÃO "NOSSOS SERVIÇOS" - Configurações laydesk3
+     (Baseado nas otimizações do laydesk2)
      ============================================ */
-
-  .laydesk2-servicos-section {
+  /* +++INICIO SECAO SERVICOS+++ */
+  
+  /* 1. Section: Altura viewport menos menu (h-16 = 4rem) + Anti-overflow */
+  .laydesk3-servicos-section {
     height: calc(100vh - 4rem) !important;
     min-height: calc(100vh - 4rem) !important;
-    max-height: calc(100vh - 4rem) !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-    overflow: visible !important;
-    overflow-y: visible !important;
-    position: relative !important;
-    z-index: 1 !important;
-    margin-top: 0 !important;
+    overflow: hidden !important; /* FORÇAR - impede overflow horizontal/vertical */
+    overflow-x: hidden !important; /* FORÇAR - impede overflow horizontal */
   }
-
-  .laydesk2-servicos-container {
+  
+  /* 2. Container interno: Padding otimizado + Flex shrink habilitado */
+  .laydesk3-servicos-container {
+    padding-top: 0.75rem !important; /* REDUZIDO de 1.5rem */
+    padding-bottom: 0.5rem !important; /* REDUZIDO de 0.75rem */
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
     height: 100% !important;
-    padding-top: 0.75rem !important;
-    padding-bottom: 0.75rem !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
-    min-height: 0 !important;
+    min-height: 0 !important; /* permite shrink */
+    overflow: hidden !important; /* impede overflow interno */
   }
-
-  .laydesk2-servicos-header {
-    margin-bottom: 0.5rem !important;
-    position: relative !important;
-    z-index: 1 !important;
+  
+  /* 3. Header: Espaçamento otimizado (reduzido) */
+  .laydesk3-servicos-header {
+    padding-bottom: 0.25rem !important; /* [SEC3][LAYDESK3][T2] AJUSTE AQUI - reduzido de 0.5rem */
+    margin-bottom: 0.125rem !important; /* [SEC3][LAYDESK3][T2] AJUSTE AQUI - REDUZIDO de 1rem */
   }
-
-  /* Garantir que o header da seção não apareça no menu */
-  .laydesk2-servicos-header h2,
-  .laydesk2-servicos-header p {
-    position: relative !important;
-    z-index: 1 !important;
+  
+  .laydesk3-servicos-header > * + * {
+    margin-top: 0 !important; /* REDUZIDO de 0.25rem (COLA) */
   }
-
-  /* Garantir que o conteúdo da seção "Nossos Serviços" não apareça no header */
-  section#nossos-servicos {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+  
+  /* 4. Título: Tamanho otimizado */
+  .laydesk3-servicos-title {
+    font-size: 1.625rem !important; /* equivalente a text-3xl */
+    line-height: 1.25rem !important;
   }
-
-  section#nossos-servicos .laydesk2-servicos-header,
-  section#nossos-servicos .laydesk2-servicos-container {
-    position: relative !important;
-    z-index: 1 !important;
+  
+  /* 5. Parágrafo: Margin top negativo aumentado (reduz distância em 1/3) (LAYDESK3)
+     Impacto: reduz a distância entre título e subtítulo em 1/3 */
+  .laydesk3-servicos-description {
+    font-size: 1rem !important;
+    line-height: 1.25rem !important;
+    margin-top: -0.25rem !important; /* AUMENTADO de -0.1875rem (redução de 1/3) */
   }
-
-  .laydesk2-servicos-header > * + * {
-    margin-top: 0.375rem !important;
-  }
-
-  .laydesk2-servicos-title {
-    font-size: 1.5rem !important;
-    line-height: 1.9rem !important;
-  }
-
-  .laydesk2-servicos-description {
-    font-size: 0.8125rem !important;
-    line-height: 1.125rem !important;
-  }
-
-  .laydesk2-servicos-carousel-container {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
+  
+  /* 6. Container do carrossel: Padding aumentado para acomodar scale-105 do card ativo (LAYDESK3)
+     Impacto: corrige o corte superior/inferior do card central (ativo) */
+  .laydesk3-servicos-carousel-container {
+    padding-top: 0.75rem !important; /* AUMENTADO de 0.25rem para acomodar scale-105 */
+    padding-bottom: 0.75rem !important; /* AUMENTADO de 0.375rem para acomodar scale-105 */
     flex: 1 !important;
     min-height: 0 !important;
     display: flex !important;
     align-items: center !important;
-    overflow: visible !important;
+    max-height: 100% !important; /* garante que o carrossel não ultrapasse a altura */
+    overflow: hidden !important; /* impede overflow do carrossel */
+    overflow-x: hidden !important; /* FORÇAR - impede overflow horizontal */
   }
-
-  /* Garantir que os cards não sejam cortados */
-  .laydesk2-servicos-carousel-container > div {
-    overflow: visible !important;
+  
+  /* Garantir que o wrapper interno do carrossel também use o espaço */
+  .laydesk3-servicos-carousel-container > div {
+    width: 100% !important;
   }
-
-  /* Reduzir escala do card ativo para evitar corte no topo */
-  .laydesk2-servicos-section .laydesk2-servicos-carousel-container article .scale-105 {
-    transform: scale(1.0) !important;
-  }
-
-  /* Garantir que o wrapper do card não corte o conteúdo */
-  .laydesk2-servicos-section .laydesk2-servicos-carousel-container article {
-    overflow: visible !important;
-  }
-
-  .laydesk2-servicos-section .laydesk2-servicos-carousel-container article > div {
-    overflow: visible !important;
-  }
-
-  .laydesk2-servicos-image-container {
-    padding: 0.75rem !important;
-  }
-
-  .laydesk2-servicos-image {
-    height: 12rem !important;
-  }
-
-  .laydesk2-servicos-card-content {
-    padding-bottom: 0.75rem !important;
+  
+  /* 7. Cards: Padding otimizado + Largura ajustada para 33.333% (valor original Tailwind) */
+  .laydesk3-servicos-card {
     padding-left: 0.75rem !important;
     padding-right: 0.75rem !important;
+    min-width: 33.333% !important; /* AJUSTADO de 32% para 33.333% (valor original Tailwind) */
+    max-width: 33.333% !important; /* limita a largura máxima */
   }
-
-  .laydesk2-servicos-card-content > * + * {
-    margin-top: 0.375rem !important;
+  
+  /* 8. Container da imagem: Padding ainda mais reduzido */
+  .laydesk3-servicos-image-container {
+    padding: 0.5rem !important; /* REDUZIDO de 0.75rem */
   }
-
-  /* Reduzir tamanhos de fonte dos cards */
-  .laydesk2-servicos-card-title {
-    font-size: 1rem !important;
-    line-height: 1.375rem !important;
+  
+  /* Imagem: Altura reduzida */
+  .laydesk3-servicos-image {
+    height: 7.5rem !important; /* REDUZIDO de 10rem (120px → 90px) */
   }
-
-  .laydesk2-servicos-card-subtitle {
-    font-size: 0.75rem !important;
-    line-height: 1rem !important;
+  
+  /* 9. Container de texto: Padding e espaçamento ainda mais reduzidos */
+  .laydesk3-servicos-card-content {
+    padding-left: 0.5rem !important; /* REDUZIDO de 0.75rem */
+    padding-right: 0.5rem !important; /* REDUZIDO de 0.75rem */
+    padding-bottom: 0.625rem !important; /* REDUZIDO de 0.875rem */
   }
-
-  .laydesk2-servicos-card-description {
-    font-size: 0.75rem !important;
-    line-height: 1.125rem !important;
+  
+  .laydesk3-servicos-card-content > * + * {
+    margin-top: 0.125rem !important; /* [SEC3][LAYDESK3][T2] AJUSTE AQUI - REDUZIDO de 0.25rem */
   }
-
-  .laydesk2-servicos-card-cta {
-    padding-top: 0.5rem !important;
+  
+  /* Título do card: Fonte reduzida */
+  .laydesk3-servicos-card-title {
+    font-size: 1rem !important; /* REDUZIDO de 1.125rem */
+    line-height: 1rem !important; /* REDUZIDO de 1.625rem */
   }
-
-  .laydesk2-servicos-card-cta a {
-    padding: 0.375rem 1rem !important;
-    font-size: 0.75rem !important;
+  
+  /* Subtítulo do card: Fonte reduzida */
+  .laydesk3-servicos-card-subtitle {
+    font-size: 0.75rem !important; /* REDUZIDO de 0.8125rem */
+    line-height: 0.9rem !important; /* REDUZIDO de 1.125rem */
   }
-
-  .laydesk2-servicos-nav {
-    margin-top: 0.375rem !important;
+  
+  /* Descrição do card: Fonte reduzida */
+  .laydesk3-servicos-card-description {
+    font-size: 0.75rem !important; /* REDUZIDO de 0.8125rem */
+    line-height: 1.125rem !important; /* REDUZIDO de 1.25rem */
   }
-
-  .laydesk2-servicos-nav button {
-    padding: 0.5rem !important;
+  
+  /* CTA Button: Padding ainda mais reduzido */
+  .laydesk3-servicos-card-cta {
+    padding-top: 0.125rem !important; /* [SEC3][LAYDESK3][T2] AJUSTE AQUI - REDUZIDO de 0.25rem */
   }
-
-  .laydesk2-servicos-nav svg {
-    width: 16px !important;
-    height: 16px !important;
+  
+  .laydesk3-servicos-card-cta a {
+    padding: 0.375rem 1rem !important; /* [SEC3][LAYDESK3][T2] AJUSTE AQUI - REDUZIDO de 0.5rem 1.25rem */
+    font-size: 0.8125rem !important;
   }
+  
+  /* 10. Botões de navegação: Espaçamento e tamanho reduzidos */
+  .laydesk3-servicos-nav {
+    margin-top: 0.25rem !important; /* [SEC3][LAYDESK3][T2] AJUSTE AQUI - REDUZIDO de 0.5rem */
+  }
+  
+  /* Botões: Padding reduzido */
+  .laydesk3-servicos-nav button {
+    padding: 0.5rem !important; /* REDUZIDO de 0.625rem */
+  }
+  
+  /* Ícones: Tamanho reduzido */
+  .laydesk3-servicos-nav svg {
+    width: 16px !important; /* REDUZIDO de 18px */
+    height: 16px !important; /* REDUZIDO de 18px */
+  }
+  
+  /* 11. Indicadores mobile: Espaçamento otimizado */
+  .laydesk3-servicos-indicators {
+    margin-top: 1.25rem !important;
+  }
+  
+  /* +++FIM SECAO SERVICOS+++ */
 
 
   /* ============================================
