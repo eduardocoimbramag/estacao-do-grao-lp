@@ -158,15 +158,7 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
                       <div className="pt-3 laydesk2-servicos-card-cta laydesk3-servicos-card-cta">
                         <a
                           href={card.ctaHref}
-                          className="
-                            inline-flex items-center justify-center
-                            rounded-full px-5 py-2 text-sm font-medium
-                            transition-all duration-200
-                            bg-coffee-500 text-coffee-900
-                            hover:bg-accent hover:shadow-md
-                            focus:outline-none focus:ring-2 focus:ring-coffee-500 focus:ring-offset-2 focus:ring-offset-coffee-900
-                            font-montserrat
-                          "
+                          className="inline-flex items-center justify-center px-5 py-2.5 bg-coffee-500 hover:bg-accent text-cream-50 hover:text-coffee-900 font-semibold rounded-lg transition-colors font-montserrat focus:outline-none focus:ring-2 focus:ring-accent/80 focus:ring-offset-2"
                         >
                           {card.ctaLabel}
                         </a>

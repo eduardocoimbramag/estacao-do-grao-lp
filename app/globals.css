@@ -527,6 +527,25 @@ body {
   .laydesk2-servicos-card-cta a {
     padding: 0.5rem 1.25rem !important;
     font-size: 0.8125rem !important;
+    /* Forçar cores do estado normal - BRANCO */
+    background-color: var(--color-coffee-500) !important;
+    color: var(--color-cream-50) !important; /* BRANCO no estado normal */
+  }
+  
+  /* Garantir que o estado normal seja sempre branco */
+  .laydesk2-servicos-card-cta a:not(:hover) {
+    color: var(--color-cream-50) !important; /* BRANCO quando não está em hover */
+  }
+  
+  /* Hover - FORÇAR texto preto - ESPECIFICIDADE MÁXIMA */
+  .laydesk2-servicos-card-cta a:hover {
+    background-color: oklch(0.97 0 0) !important; /* --accent do :root */
+    color: #331b09 !important; /* coffee-900 - PRETO ABSOLUTO */
+  }
+  
+  /* Garantir que qualquer classe hover do Tailwind também funcione */
+  .laydesk2-servicos-card-cta a.hover\:text-coffee-900:hover {
+    color: #331b09 !important;
   }
   
   /* 10. Botões de navegação: Espaçamento e tamanho reduzidos */
@@ -1645,6 +1664,25 @@ body {
   .laydesk3-servicos-card-cta a {
     padding: 0.375rem 1rem !important; /* [SEC3][LAYDESK3][T2] AJUSTE AQUI - REDUZIDO de 0.5rem 1.25rem */
     font-size: 0.8125rem !important;
+    /* Forçar cores do estado normal - BRANCO */
+    background-color: var(--color-coffee-500) !important;
+    color: var(--color-cream-50) !important; /* BRANCO no estado normal */
+  }
+  
+  /* Garantir que o estado normal seja sempre branco */
+  .laydesk3-servicos-card-cta a:not(:hover) {
+    color: var(--color-cream-50) !important; /* BRANCO quando não está em hover */
+  }
+  
+  /* Hover - FORÇAR texto preto - ESPECIFICIDADE MÁXIMA */
+  .laydesk3-servicos-card-cta a:hover {
+    background-color: oklch(0.97 0 0) !important; /* --accent do :root */
+    color: #331b09 !important; /* coffee-900 - PRETO ABSOLUTO */
+  }
+  
+  /* Garantir que qualquer classe hover do Tailwind também funcione */
+  .laydesk3-servicos-card-cta a.hover\:text-coffee-900:hover {
+    color: #331b09 !important;
   }
   
   /* 10. Botões de navegação: Espaçamento e tamanho reduzidos */
@@ -2191,6 +2229,36 @@ button:hover {
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(196, 142, 84, 0.9);
+}
+
+/* ============================================
+   CORREÇÃO FORÇADA - Botão Carrossel Hover
+   ============================================ */
+
+/* FORÇAR texto preto APENAS no hover dos botões do carrossel - PRIORIDADE MÁXIMA */
+section[class*="servicos"] .laydesk2-servicos-card-cta a:hover,
+section[class*="servicos"] .laydesk3-servicos-card-cta a:hover,
+.laydesk2-servicos-card-cta a:hover,
+.laydesk3-servicos-card-cta a:hover {
+  color: #331b09 !important; /* PRETO ABSOLUTO - coffee-900 - APENAS NO HOVER */
+  background-color: oklch(0.97 0 0) !important; /* accent */
+}
+
+/* Garantir que o estado normal seja BRANCO */
+section[class*="servicos"] .laydesk2-servicos-card-cta a:not(:hover),
+section[class*="servicos"] .laydesk3-servicos-card-cta a:not(:hover),
+.laydesk2-servicos-card-cta a:not(:hover),
+.laydesk3-servicos-card-cta a:not(:hover) {
+  color: var(--color-cream-50) !important; /* BRANCO no estado normal */
+}
+
+/* Garantir que funcione mesmo com classes Tailwind - ESPECIFICIDADE EXTREMA */
+.laydesk2-servicos-card-cta a.hover\:text-coffee-900,
+.laydesk3-servicos-card-cta a.hover\:text-coffee-900,
+.laydesk2-servicos-card-cta a.hover\:text-coffee-900:hover,
+.laydesk3-servicos-card-cta a.hover\:text-coffee-900:hover,
+a[href="#contato"].hover\:text-coffee-900:hover {
+  color: #331b09 !important; /* PRETO ABSOLUTO */
 }
 
 /* Firefox */

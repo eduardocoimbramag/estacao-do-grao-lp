@@ -66,14 +66,12 @@ export default function Header() {
 
           {/* CTA + Mobile Button */}
           <div className="flex items-center gap-2 sm:gap-3 relative z-10 shrink-0">
-            <a
-              href="https://wa.me/55DDDNUMERO?text=Olá! Quero orçamento da estação de café."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden md:inline-flex items-center px-6 py-2.5 bg-coffee-500 hover:bg-accent text-coffee-900 font-semibold rounded-lg transition-colors"
+            <button
+              onClick={() => scrollToSection("contato")}
+              className="hidden md:inline-flex items-center px-6 py-2.5 bg-coffee-500 hover:bg-accent text-cream-50 hover:text-coffee-900 font-semibold rounded-lg transition-colors font-montserrat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/80 focus-visible:ring-offset-2"
             >
               Orçamento
-            </a>
+            </button>
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -112,14 +110,12 @@ export default function Header() {
             >
               Contato
             </button>
-            <a
-              href="https://wa.me/55DDDNUMERO?text=Olá! Quero orçamento da estação de café."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full px-4 py-2 mt-4 bg-coffee-500 hover:bg-accent text-coffee-900 font-semibold rounded transition-colors text-center"
+            <button
+              onClick={() => scrollToSection("contato")}
+              className="block w-full px-4 py-2 mt-4 bg-coffee-500 hover:bg-accent text-cream-50 hover:text-coffee-900 font-semibold rounded-lg transition-colors text-center font-montserrat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/80"
             >
               Orçamento
-            </a>
+            </button>
           </nav>
         )}
       </div>
