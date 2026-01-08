@@ -4,12 +4,15 @@ import type { CarouselCard } from "@/lib/types/carousel";
  * Cards de serviços para o carrossel da section "Nossos Serviços"
  * 
  * IMPORTANTE: Manter imagens otimizadas e com dimensões similares
- * Recomendação: 800x600px ou proporção 4:3
+ * Especificações por layout (desktop):
+ * - Laydesk1: 1000×480px (aspect ratio ~2.08:1)
+ * - Laydesk2/3: 1112×360px (aspect ratio ~3.09:1)
+ * Ver documentação: docs/06-rescarrossel.md
  */
 export const SERVICES_CAROUSEL_CARDS: CarouselCard[] = [
   {
     id: "servico-empresas",
-    imageSrc: "/coffee-station-with-branded-logo-personalized.jpg",
+    imageSrc: "/cafe-para-empresas-carrossel.jpg",
     imageAlt: "Estação de café personalizada com logo da marca em ambiente corporativo",
     title: "Café para Empresas",
     subtitle: "Experiências para times e clientes",
@@ -19,7 +22,7 @@ export const SERVICES_CAROUSEL_CARDS: CarouselCard[] = [
   },
   {
     id: "servico-eventos",
-    imageSrc: "/espresso-machine-coffee-station-at-fair.jpg",
+    imageSrc: "/eventos-e-ativacoes-carrossel.jpg",
     imageAlt: "Estação móvel de café com máquina de espresso em evento corporativo",
     title: "Eventos e Ativações",
     subtitle: "Feiras, stands e ações externas",
@@ -29,7 +32,7 @@ export const SERVICES_CAROUSEL_CARDS: CarouselCard[] = [
   },
   {
     id: "servico-casamentos",
-    imageSrc: "/coffee-station-setup-at-wedding-reception.jpg",
+    imageSrc: "/casamento-e-celebracoes-carrossel.jpg",
     imageAlt: "Estação de café elegante montada em recepção de casamento",
     title: "Casamentos e Celebrações",
     subtitle: "Porque o seu grande dia pede sensibilidade e uma experiência que será lembrada para sempre.",
@@ -39,7 +42,7 @@ export const SERVICES_CAROUSEL_CARDS: CarouselCard[] = [
   },
   {
     id: "servico-atendimento",
-    imageSrc: "/professional-barista-making-latte-art.jpg",
+    imageSrc: "/baristas-profissionais-carrossel.jpg",
     imageAlt: "Barista profissional preparando latte art em evento premium",
     title: "Baristas Profissionais",
     subtitle: "Atendimento que encanta",
