@@ -18,9 +18,9 @@ export default function Home() {
       {/* 3ª Section: Nossos Serviços (CARROSSEL) */}
       <section
         id="nossos-servicos"
-        className="h-[calc(100vh-4rem)] sm:h-[calc(100vh-4rem)] flex flex-col justify-center bg-coffee-700/50 overflow-x-hidden w-full laydesk2-servicos-section laydesk3-servicos-section"
+        className="h-[calc(100vh-4rem)] sm:h-[calc(100vh-4rem)] flex flex-col justify-center bg-coffee-700/50 overflow-x-hidden w-full laydesk1-servicos-section laydesk2-servicos-section laydesk3-servicos-section"
       >
-        <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-3 lg:py-4 box-border laydesk2-servicos-container laydesk3-servicos-container">
+        <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-3 lg:py-4 box-border laydesk1-servicos-container laydesk2-servicos-container laydesk3-servicos-container">
           {/* Cabeçalho da Section */}
           <header className="mb-8 sm:mb-6 text-center space-y-3 laydesk2-servicos-header laydesk3-servicos-header">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-cream-50 font-montserrat laydesk2-servicos-title laydesk3-servicos-title">

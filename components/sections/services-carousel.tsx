@@ -82,7 +82,7 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
       aria-label="Carrossel de serviços"
     >
       {/* Container do carrossel com padding vertical para evitar overflow */}
-      <div className="overflow-hidden cursor-grab active:cursor-grabbing py-2 sm:py-6 w-full max-w-[100vw] laydesk2-servicos-carousel-container laydesk3-servicos-carousel-container" ref={emblaRef}>
+      <div className="overflow-hidden cursor-grab active:cursor-grabbing py-2 sm:py-6 w-full max-w-[100vw] laydesk1-servicos-carousel-container laydesk2-servicos-carousel-container laydesk3-servicos-carousel-container" ref={emblaRef}>
         <div className="flex touch-pan-y min-w-0">
           {loopedCards.map((card, index) => {
             // Mapear de volta ao índice original para verificar se está ativo
@@ -173,7 +173,7 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
       </div>
 
       {/* Botões de navegação (Desktop) */}
-      <div className="hidden lg:flex justify-center items-center gap-4 mt-3 laydesk2-servicos-nav laydesk3-servicos-nav">
+      <div className="hidden lg:flex justify-center items-center gap-4 mt-3 laydesk1-servicos-nav laydesk2-servicos-nav laydesk3-servicos-nav">
         <button
           onClick={scrollPrev}
           aria-label="Serviço anterior"

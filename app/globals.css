@@ -225,8 +225,68 @@ body {
 /* min-width: 1600px e min-height: 900px */
 @media (min-width: 1600px) and (min-height: 900px) {
   /* //INICIO LAYDESK1// */
-  /* Adicione aqui estilos específicos para laydesk1 */
-  /* Este é o layout padrão confortável - geralmente não precisa de ajustes */
+  
+  /* ============================================
+     SEÇÃO "NOSSOS SERVIÇOS" - Correções laydesk1
+     ============================================ */
+  
+  /* 1. Section: Altura fixa + Anti-overflow */
+  .laydesk1-servicos-section {
+    height: calc(100vh - 4rem) !important;
+    min-height: calc(100vh - 4rem) !important;
+    max-height: calc(100vh - 4rem) !important;
+    overflow: hidden !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  /* 2. Container interno: Flexbox otimizado */
+  .laydesk1-servicos-container {
+    height: 100% !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    /* Garantir que o conteúdo seja distribuído corretamente sem ultrapassar */
+    align-content: center !important;
+  }
+  
+  /* 3. Botões de navegação: Prevenir overflow no hover/focus */
+  /* O problema: focus:ring-offset-2 adiciona espaço via box-shadow que pode ultrapassar limites */
+  /* Solução: Container com contain:layout e overflow hidden para isolar e cortar o ring-offset */
+  .laydesk1-servicos-nav {
+    margin-top: 0.75rem !important;
+    flex-shrink: 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
+    /* Contain layout para isolar os botões e evitar que afetem outros elementos */
+    contain: layout !important;
+    /* Overflow hidden para cortar qualquer overflow do ring-offset */
+    overflow: hidden !important;
+    /* Padding vertical para dar espaço para o ring-offset sem causar overflow */
+    padding: 4px 0 !important;
+    /* Altura mínima para garantir espaço suficiente */
+    min-height: 52px !important; /* Botão (~44px) + padding (8px) */
+  }
+  
+  /* Garantir que o ring-offset dos botões seja cortado sem afetar o layout */
+  .laydesk1-servicos-nav button {
+    /* O ring-offset usa box-shadow, que será cortado pelo overflow:hidden do pai */
+    /* Não modificamos o botão, apenas garantimos que o container o contenha */
+  }
+  
+  /* Garantir que o container do carrossel não ultrapasse */
+  .laydesk1-servicos-carousel-container {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  
   /* //FIM LAYDESK1// */
 }
 
