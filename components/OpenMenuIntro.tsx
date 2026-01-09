@@ -66,33 +66,33 @@ export default function OpenMenuIntro() {
           
           {/* ========== MOBILE: Título e Subtítulo - Topo ========== */}
           <div className="pt-4 sm:hidden">
-            <h2 className="!text-[clamp(1.375rem,7vw,1.75rem)] font-montserrat font-bold tracking-tight text-center whitespace-nowrap px-2">
+            <h2 className="!text-[clamp(1.375rem,7vw,1.75rem)] font-satoshi font-bold tracking-tight text-center whitespace-nowrap px-2">
               O que é a Estação do Grão?
             </h2>
-            <p className="text-sm text-coffee-500 font-semibold leading-relaxed text-center whitespace-nowrap break-words font-montserrat -mt-1">
+            <p className="text-sm text-coffee-500 font-inter font-normal tracking-wide leading-relaxed text-center whitespace-nowrap break-words -mt-1">
               O café do seu evento precisa ser inesquecível.
             </p>
           </div>
           
           {/* ========== DESKTOP: Título ========== */}
-          <h2 className="hidden sm:block text-2xl md:text-3xl font-montserrat font-bold tracking-tight text-left whitespace-nowrap m-0 laydesk2-sec2-title laydesk3-sec2-title">
+          <h2 className="hidden sm:block text-2xl md:text-3xl font-satoshi font-bold tracking-tight text-left whitespace-nowrap m-0 laydesk2-sec2-title laydesk3-sec2-title">
             O que é a Estação do Grão?
           </h2>
           
           {/* ========== DESKTOP: Subtítulo e Parágrafo ========== */}
           <div className="hidden sm:block mt-1 space-y-9 md:space-y-12 laydesk2-sec2-textstack">
-            <p className="text-lg md:text-xl text-coffee-500 font-semibold leading-relaxed text-center whitespace-nowrap break-words font-montserrat laydesk2-sec2-subtitle laydesk3-sec2-subtitle">
+            <p className="text-lg md:text-xl text-coffee-500 font-inter font-normal tracking-wide leading-relaxed text-center whitespace-nowrap break-words laydesk2-sec2-subtitle laydesk3-sec2-subtitle">
               O café do seu evento precisa ser inesquecível.
             </p>
-            <p className="text-base text-cream-50/90 leading-relaxed text-justify hyphens-none break-words font-montserrat indent-5 laydesk2-sec2-paragraph laydesk3-sec2-paragraph">
-              A <strong className="text-coffee-500 font-bold">Estação do Grão</strong> é uma <strong className="text-coffee-500 font-bold">estação de café gourmet</strong> pensada para eventos que exigem excelência. <strong className="text-coffee-500 font-bold">Espresso premium</strong>, bebidas especiais, baristas e personalização completa para feiras, congressos, marcas e casamentos em <strong className="text-coffee-500 font-bold">Recife</strong> e <strong className="text-coffee-500 font-bold">João Pessoa</strong>. Café que se vê. Se sente. Se lembra.
+            <p style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="text-base font-normal text-cream-50/90 leading-relaxed text-justify hyphens-none break-words indent-5 laydesk2-sec2-paragraph laydesk3-sec2-paragraph">
+              A <strong style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="text-coffee-500 font-bold">Estação do Grão</strong> é uma <strong style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="text-coffee-500 font-bold">estação de café gourmet</strong> pensada para eventos que exigem excelência. <strong style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="text-coffee-500 font-bold">Espresso premium</strong>, bebidas especiais, baristas e personalização completa para feiras, congressos, marcas e casamentos em <strong style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="text-coffee-500 font-bold">Recife</strong> e <strong style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="text-coffee-500 font-bold">João Pessoa</strong>. Café que se vê. Se sente. Se lembra.
             </p>
           </div>
           
           {/* ========== MOBILE: Restante do Conteúdo - Centralizado ========== */}
           <div className="flex-1 flex flex-col justify-center space-y-2 mt-4 sm:hidden">
-            <p className="text-xs text-cream-50/90 leading-relaxed text-justify indent-5 hyphens-none break-words font-montserrat">
-              A <strong className="text-coffee-500 font-bold">Estação do Grão</strong> é uma <strong className="text-coffee-500 font-bold">estação de café gourmet</strong> pensada para eventos que exigem excelência. <strong className="text-coffee-500 font-bold">Espresso premium</strong>, bebidas especiais, baristas e personalização completa para feiras, congressos, marcas e casamentos em <strong className="text-coffee-500 font-bold">Recife</strong> e <strong className="text-coffee-500 font-bold">João Pessoa</strong>. Café que se vê. Se sente. Se lembra.
+            <p style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="text-xs font-normal text-cream-50/90 leading-relaxed text-justify indent-5 hyphens-none break-words">
+              A <strong style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="text-coffee-500 font-bold">Estação do Grão</strong> é uma <strong style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="text-coffee-500 font-bold">estação de café gourmet</strong> pensada para eventos que exigem excelência. <strong style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="text-coffee-500 font-bold">Espresso premium</strong>, bebidas especiais, baristas e personalização completa para feiras, congressos, marcas e casamentos em <strong style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="text-coffee-500 font-bold">Recife</strong> e <strong style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="text-coffee-500 font-bold">João Pessoa</strong>. Café que se vê. Se sente. Se lembra.
             </p>
 
             {/* Layout híbrido: Vídeo + Lista lado a lado em mobile */}
@@ -158,7 +158,7 @@ export default function OpenMenuIntro() {
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-1.5">
                     <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-coffee-500 flex-shrink-0" />
-                    <span className="text-[0.8125rem] text-cream-50/90 font-montserrat leading-tight">{t}</span>
+                    <span style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="text-[0.8125rem] font-normal text-cream-50/90 leading-tight">{t}</span>
                   </li>
                 ))}
               </ul>
@@ -168,13 +168,13 @@ export default function OpenMenuIntro() {
             <div className="flex justify-between items-center gap-2 mt-4 w-full max-w-full">
               <a 
                 href="#servicos" 
-                className="flex-1 px-4 py-2.5 rounded-xl border border-coffee-500 text-cream-50 hover:bg-coffee-700/30 transition-colors font-montserrat text-center text-sm"
+                className="flex-1 px-4 py-2.5 rounded-xl border border-coffee-500 text-cream-50 hover:bg-coffee-700/30 transition-colors font-inter font-normal uppercase tracking-[0.08em] text-center text-sm"
               >
                 Ver serviços
               </a>
               <a 
                 href="#contato" 
-                className="flex-1 px-4 py-2.5 rounded-xl bg-coffee-500 text-coffee-900 font-semibold hover:bg-coffee-700 hover:text-white transition-colors font-montserrat text-center text-sm"
+                className="flex-1 px-4 py-2.5 rounded-xl bg-coffee-500 text-coffee-900 hover:bg-coffee-700 hover:text-white transition-colors font-inter font-light uppercase tracking-[0.16em] text-center text-sm"
               >
                 Solicitar orçamento
               </a>
@@ -190,7 +190,7 @@ export default function OpenMenuIntro() {
             ].map((t) => (
               <li key={t} className="flex items-start gap-1.5">
                 <span className="mt-2 h-2 w-2 rounded-full bg-coffee-500 flex-shrink-0" />
-                <span className="text-base text-cream-50/90 font-montserrat leading-tight">{t}</span>
+                <span style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="text-base font-normal text-cream-50/90 leading-tight">{t}</span>
               </li>
             ))}
           </ul>
@@ -199,13 +199,13 @@ export default function OpenMenuIntro() {
           <div className="hidden sm:flex justify-center items-center gap-2.5 mt-9 md:mt-12 w-full max-w-full laydesk2-sec2-cta">
             <a 
               href="#servicos" 
-              className="flex-none px-4 py-2.5 rounded-xl border border-coffee-500 text-cream-50 hover:bg-coffee-700/30 transition-colors font-montserrat text-center text-base"
+              className="flex-none px-4 py-2.5 rounded-xl border border-coffee-500 text-cream-50 hover:bg-coffee-700/30 transition-colors font-inter font-normal uppercase tracking-[0.08em] text-center text-base"
             >
               Ver serviços
             </a>
             <a 
               href="#contato" 
-              className="flex-none px-4 py-2.5 rounded-xl bg-coffee-500 text-coffee-900 font-semibold hover:bg-coffee-700 hover:text-white transition-colors font-montserrat text-center text-base"
+              className="flex-none px-4 py-2.5 rounded-xl bg-coffee-500 text-coffee-900 hover:bg-coffee-700 hover:text-white transition-colors font-inter font-light uppercase tracking-[0.16em] text-center text-base"
             >
               Solicitar orçamento
             </a>
@@ -220,10 +220,10 @@ export default function OpenMenuIntro() {
 
         {/* DIREITA — VÍDEO (Desktop) */}
         <div className="hidden sm:block relative w-full min-w-0 order-3 laydesk2-sec2-video-column laydesk3-sec2-video-column">
-          <div className="aspect-[9/16] max-h-[70vh] md:max-h-[80vh] overflow-hidden rounded-2xl bg-black/40 w-full max-w-full laydesk2-sec2-video-container laydesk3-sec2-video-container">
+          <div className="aspect-[9/16] max-h-[70vh] md:max-h-[80vh] overflow-hidden rounded-2xl w-full max-w-full laydesk2-sec2-video-container laydesk3-sec2-video-container">
             <video
               ref={videoRef}
-              className="h-full w-full object-contain laydesk2-sec2-video laydesk3-sec2-video"
+              className="h-full w-full object-cover laydesk2-sec2-video laydesk3-sec2-video"
               poster="/img/poster-estacao.webp"
               playsInline
               muted={muted}

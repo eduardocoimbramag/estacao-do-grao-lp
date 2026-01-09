@@ -40,25 +40,25 @@ export default function Header() {
           <nav className="hidden md:flex absolute left-[52.25%] top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-9 lg:gap-8">
             <button
               onClick={() => scrollToSection("sobre")}
-              className="text-cream-50 hover:text-coffee-500 transition-colors font-sans font-semibold text-base md:text-lg whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/80 focus-visible:rounded-md"
+              className="text-cream-50 hover:text-coffee-500 transition-colors font-inter font-normal uppercase tracking-[0.08em] text-sm whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/80 focus-visible:rounded-md"
             >
               Sobre
             </button>
             <button
               onClick={() => scrollToSection("nossos-servicos")}
-              className="text-cream-50 hover:text-coffee-500 transition-colors font-sans font-semibold text-base md:text-lg whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/80 focus-visible:rounded-md"
+              className="text-cream-50 hover:text-coffee-500 transition-colors font-inter font-normal uppercase tracking-[0.08em] text-sm whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/80 focus-visible:rounded-md"
             >
               Serviços
             </button>
             <button
               onClick={() => scrollToSection("diferencias")}
-              className="text-cream-50 hover:text-coffee-500 transition-colors font-sans font-semibold text-base md:text-lg whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/80 focus-visible:rounded-md"
+              className="text-cream-50 hover:text-coffee-500 transition-colors font-inter font-normal uppercase tracking-[0.08em] text-sm whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/80 focus-visible:rounded-md"
             >
               Diferenciais
             </button>
             <button
               onClick={() => scrollToSection("contato")}
-              className="text-cream-50 hover:text-coffee-500 transition-colors font-sans font-semibold text-base md:text-lg whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/80 focus-visible:rounded-md"
+              className="text-cream-50 hover:text-coffee-500 transition-colors font-inter font-normal uppercase tracking-[0.08em] text-sm whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/80 focus-visible:rounded-md"
             >
               Contato
             </button>
@@ -68,7 +68,7 @@ export default function Header() {
           <div className="flex items-center gap-2 sm:gap-3 relative z-10 shrink-0">
             <button
               onClick={() => scrollToSection("contato")}
-              className="hidden md:inline-flex items-center px-6 py-2.5 bg-coffee-500 hover:bg-accent text-cream-50 hover:text-coffee-900 font-semibold rounded-lg transition-colors font-montserrat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/80 focus-visible:ring-offset-2"
+              className="hidden md:inline-flex items-center px-6 py-2.5 bg-coffee-500 hover:bg-accent text-cream-50 hover:text-coffee-900 font-inter font-light uppercase tracking-[0.16em] text-sm rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/80 focus-visible:ring-offset-2"
             >
               Orçamento
             </button>
@@ -88,31 +88,31 @@ export default function Header() {
           <nav className="md:hidden pb-4 space-y-2 border-t border-coffee-700 pt-4">
             <button
               onClick={() => scrollToSection("sobre")}
-              className="block w-full text-left px-4 py-2 text-cream-50 hover:text-coffee-500 hover:bg-coffee-700 rounded transition-colors"
+              className="block w-full text-left px-4 py-2 text-cream-50 hover:text-coffee-500 hover:bg-coffee-700 rounded transition-colors font-inter font-normal text-base"
             >
               Sobre
             </button>
             <button
               onClick={() => scrollToSection("nossos-servicos")}
-              className="block w-full text-left px-4 py-2 text-cream-50 hover:text-coffee-500 hover:bg-coffee-700 rounded transition-colors"
+              className="block w-full text-left px-4 py-2 text-cream-50 hover:text-coffee-500 hover:bg-coffee-700 rounded transition-colors font-inter font-normal text-base"
             >
               Serviços
             </button>
             <button
               onClick={() => scrollToSection("diferencias")}
-              className="block w-full text-left px-4 py-2 text-cream-50 hover:text-coffee-500 hover:bg-coffee-700 rounded transition-colors"
+              className="block w-full text-left px-4 py-2 text-cream-50 hover:text-coffee-500 hover:bg-coffee-700 rounded transition-colors font-inter font-normal text-base"
             >
               Diferenciais
             </button>
             <button
               onClick={() => scrollToSection("contato")}
-              className="block w-full text-left px-4 py-2 text-cream-50 hover:text-coffee-500 hover:bg-coffee-700 rounded transition-colors"
+              className="block w-full text-left px-4 py-2 text-cream-50 hover:text-coffee-500 hover:bg-coffee-700 rounded transition-colors font-inter font-normal text-base"
             >
               Contato
             </button>
             <button
               onClick={() => scrollToSection("contato")}
-              className="block w-full px-4 py-2 mt-4 bg-coffee-500 hover:bg-accent text-cream-50 hover:text-coffee-900 font-semibold rounded-lg transition-colors text-center font-montserrat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/80"
+              className="block w-full px-4 py-2 mt-4 bg-coffee-500 hover:bg-accent text-cream-50 hover:text-coffee-900 font-inter font-light uppercase tracking-[0.16em] text-sm rounded-lg transition-colors text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/80"
             >
               Orçamento
             </button>

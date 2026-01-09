@@ -155,9 +155,9 @@ export default function Contact() {
   return (
     <section id="contato" className="min-h-[calc(100vh-4rem)] sm:h-[calc(100vh-4rem)] flex flex-col justify-center bg-coffee-900 py-8 sm:py-4 lg:py-6 overflow-hidden w-full">
       <div className="w-full max-w-[100vw] sm:max-w-4xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-0 lg:py-0 box-border">
-        <h2 className="text-center mb-4 sm:mb-3 font-montserrat text-cream-50">Leve a Estação do Grão para seu Evento</h2>
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-4 sm:mb-3 font-satoshi text-cream-50">Leve a Estação do Grão para seu Evento</h2>
 
-        <p className="text-center text-xs sm:text-base text-cream-50 mb-10 sm:mb-4 font-montserrat">
+        <p className="text-center text-xs sm:text-base text-cream-50 mb-10 sm:mb-4 font-inter font-normal">
           Café gourmet, baristas profissionais e personalização para sua marca. Atendimento rápido e sob medida para
           Recife, João Pessoa e região.
         </p>
@@ -165,7 +165,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-4">
           {/* Contact Methods */}
           <div className="space-y-3 lg:space-y-4 order-2 lg:order-1">
-            <h3 className="text-lg lg:text-xl font-semibold text-cream-50 font-montserrat text-center">Entre em Contato</h3>
+            <h3 className="text-lg lg:text-xl font-bold text-cream-50 font-satoshi text-center">Entre em Contato</h3>
 
             {/* WhatsApp e E-mail lado a lado no mobile */}
             <div className="grid grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-4">
@@ -177,8 +177,8 @@ export default function Contact() {
               >
                 <Phone className="w-4 h-4 lg:w-5 lg:h-5 text-coffee-500 group-hover:text-accent transition-colors" />
                 <div className="flex-1">
-                  <p className="font-semibold text-cream-50 font-montserrat text-xs lg:text-base">WhatsApp</p>
-                  <p className="text-coffee-500 hover:text-accent transition-colors font-montserrat text-[10px] lg:text-sm">
+                  <p className="font-bold text-cream-50 font-inter text-xs lg:text-base">WhatsApp</p>
+                  <p className="text-coffee-500 hover:text-accent transition-colors font-inter font-normal text-[10px] lg:text-sm">
                     <span className="hidden lg:inline">Clique aqui para orçamento rápido</span>
                   </p>
                 </div>
@@ -191,8 +191,8 @@ export default function Contact() {
               >
                 <Mail className="w-4 h-4 lg:w-5 lg:h-5 text-coffee-500 group-hover:text-accent transition-colors" />
                 <div className="flex-1 min-w-0">
-                  <p className="font-semibold text-cream-50 font-montserrat text-xs lg:text-base">E-mail</p>
-                  <p className={`transition-colors font-montserrat text-[10px] lg:text-sm truncate lg:truncate-none ${emailCopied ? 'text-green-400' : 'text-coffee-500 hover:text-accent'}`}>
+                  <p className="font-bold text-cream-50 font-inter text-xs lg:text-base">E-mail</p>
+                  <p className={`transition-colors font-inter font-normal text-[10px] lg:text-sm truncate lg:truncate-none ${emailCopied ? 'text-green-400' : 'text-coffee-500 hover:text-accent'}`}>
                     {emailCopied ? (
                       <>
                         <span className="lg:hidden">✓ Copiado!</span>
@@ -213,12 +213,12 @@ export default function Contact() {
             <div className="p-2 lg:p-4 bg-coffee-700/40 border border-coffee-500/20 rounded-xl space-y-2">
               {/* Mobile: texto completo e redes sociais */}
               <div className="lg:hidden space-y-2">
-                <p className="text-cream-50 text-xs font-montserrat text-center">
+                <p className="text-cream-50 text-xs font-inter font-normal text-center">
                   Resposta em até 2 horas durante o horário comercial
                 </p>
                 
                 <div>
-                  <p className="font-semibold text-cream-50 mb-1.5 font-montserrat text-center text-sm">
+                  <p className="font-bold text-cream-50 mb-1.5 font-inter text-center text-sm">
                     Conheça nossas redes sociais
                   </p>
                   <div className="flex flex-row gap-2">
@@ -255,12 +255,12 @@ export default function Contact() {
               {/* Desktop: estrutura original completa */}
               <div className="hidden lg:block">
                 <div>
-                  <p className="font-semibold text-cream-50 mb-1 font-montserrat text-center">Atendimento Rápido</p>
-                  <p className="text-cream-50 text-xs font-montserrat">Resposta em até 2 horas durante o horário comercial</p>
+                  <p className="font-bold text-cream-50 mb-1 font-inter text-center">Atendimento Rápido</p>
+                  <p className="text-cream-50 text-xs font-inter font-normal">Resposta em até 2 horas durante o horário comercial</p>
                 </div>
                 
                 <div>
-                  <p className="font-semibold text-cream-50 mb-1.5 font-montserrat text-center">Conheça nossas redes sociais</p>
+                  <p className="font-bold text-cream-50 mb-1.5 font-inter text-center">Conheça nossas redes sociais</p>
                   <div className="space-y-1.5">
                     <a
                       href="https://www.instagram.com/estacaodograo.eventos"
@@ -297,7 +297,7 @@ export default function Contact() {
           {/* Contact Form */}
           <form onSubmit={handleSubmit} className="space-y-2 order-1 lg:order-2">
             <div className="space-y-1">
-              <label htmlFor="name" className="block text-xs font-semibold text-cream-50 font-montserrat">
+              <label htmlFor="name" className="block text-xs font-bold text-cream-50 font-inter">
                 Nome
               </label>
               <Input
@@ -313,7 +313,7 @@ export default function Contact() {
             </div>
 
             <div className="space-y-1">
-              <label className="block text-xs font-semibold text-cream-50 font-montserrat mb-1.5">
+              <label className="block text-xs font-bold text-cream-50 font-inter mb-1.5">
                 Tipo de Evento
               </label>
               <RadioGroup
@@ -324,13 +324,13 @@ export default function Contact() {
               >
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="pessoal" id="eventType-pessoal" className="text-coffee-500 border-coffee-700 data-[state=checked]:bg-coffee-500 data-[state=checked]:border-coffee-500" />
-                  <label htmlFor="eventType-pessoal" className="text-cream-50 cursor-pointer font-montserrat">
+                  <label htmlFor="eventType-pessoal" className="text-cream-50 cursor-pointer font-inter font-normal">
                     Pessoal
                   </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="empresarial" id="eventType-empresarial" className="text-coffee-500 border-coffee-700 data-[state=checked]:bg-coffee-500 data-[state=checked]:border-coffee-500" />
-                  <label htmlFor="eventType-empresarial" className="text-cream-50 cursor-pointer font-montserrat">
+                  <label htmlFor="eventType-empresarial" className="text-cream-50 cursor-pointer font-inter font-normal">
                     Empresarial
                   </label>
                 </div>
@@ -339,7 +339,7 @@ export default function Contact() {
 
             {formData.eventType && (
               <div className="space-y-1">
-                <label htmlFor="eventTypeName" className="block text-xs font-semibold text-cream-50 font-montserrat">
+                <label htmlFor="eventTypeName" className="block text-xs font-bold text-cream-50 font-inter">
                   Tipo de Evento
                 </label>
                 <Input
@@ -359,7 +359,7 @@ export default function Contact() {
             )}
 
             <div className="space-y-1">
-              <label htmlFor="phone" className="block text-xs font-semibold text-cream-50 font-montserrat">
+              <label htmlFor="phone" className="block text-xs font-bold text-cream-50 font-inter">
                 Telefone
               </label>
               <Input
@@ -376,7 +376,7 @@ export default function Contact() {
             </div>
 
             <div className="space-y-1">
-              <label htmlFor="email" className="block text-xs font-semibold text-cream-50 font-montserrat">
+              <label htmlFor="email" className="block text-xs font-bold text-cream-50 font-inter">
                 E-mail
               </label>
               <Input
@@ -392,7 +392,7 @@ export default function Contact() {
             </div>
 
             <div className="space-y-1">
-              <label htmlFor="eventDescription" className="block text-xs font-semibold text-cream-50 font-montserrat">
+              <label htmlFor="eventDescription" className="block text-xs font-bold text-cream-50 font-inter">
                 Descreva seu Evento
               </label>
               <Textarea
@@ -414,39 +414,39 @@ export default function Contact() {
                 className="mt-1"
                 required
               />
-              <label htmlFor="privacy" className="text-sm text-cream-50 cursor-pointer font-montserrat">
+              <label htmlFor="privacy" className="text-sm text-cream-50 cursor-pointer font-inter font-normal">
                 Autorizo o contato para fins comerciais conforme a{" "}
-                <a href="#" className="text-coffee-500 hover:text-accent underline font-montserrat">
+                <a href="#" className="text-coffee-500 hover:text-accent underline font-inter">
                   Política de Privacidade
                 </a>
               </label>
             </div>
 
             {submitStatus === "success" && (
-              <div className="p-4 bg-coffee-700/40 border border-coffee-500 rounded-lg text-cream-50 text-sm font-montserrat">
+              <div className="p-4 bg-coffee-700/40 border border-coffee-500 rounded-lg text-cream-50 text-sm font-inter font-normal">
                 ✓ Mensagem enviada com sucesso! Retornaremos em breve.
               </div>
             )}
 
             {submitStatus === "error" && (
-              <div className="p-4 bg-red-900/40 border border-red-700 rounded-lg text-cream-50 text-sm font-montserrat">
+              <div className="p-4 bg-red-900/40 border border-red-700 rounded-lg text-cream-50 text-sm font-inter font-normal">
                 ✗ Erro ao enviar. Verifique os campos obrigatórios.
               </div>
             )}
 
             {submitStatus === "rate_limit" && (
-              <div className="p-4 bg-orange-900/40 border border-orange-700 rounded-lg text-cream-50 text-sm font-montserrat space-y-1">
+              <div className="p-4 bg-orange-900/40 border border-orange-700 rounded-lg text-cream-50 text-sm font-inter space-y-1">
                 <p className="font-semibold">⏱️ Solicitação já registrada</p>
-                <p>
+                <p className="font-normal">
                   Recebemos seu pedido recentemente. Para evitar duplicidade, você poderá enviar um novo orçamento em até{" "}
                   <strong>{Math.max(1, getRemainingHours())} hora(s)</strong>.
                 </p>
-                <p className="text-cream-50/90">Se for urgente, fale com a gente pelo WhatsApp.</p>
+                <p className="text-cream-50/90 font-normal">Se for urgente, fale com a gente pelo WhatsApp.</p>
               </div>
             )}
 
             {submitStatus === "validation_error" && (
-              <div className="p-4 bg-yellow-900/40 border-2 border-yellow-600 rounded-lg text-cream-50 text-sm font-montserrat space-y-2">
+              <div className="p-4 bg-yellow-900/40 border-2 border-yellow-600 rounded-lg text-cream-50 text-sm font-inter space-y-2">
                 <div className="flex items-start gap-2">
                   <span className="text-yellow-400 text-lg flex-shrink-0">⚠️</span>
                   <div className="flex-1">
@@ -464,7 +464,7 @@ export default function Contact() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-coffee-500 hover:bg-accent text-coffee-900 font-semibold py-2.5 rounded-lg transition-colors font-montserrat"
+              className="w-full bg-coffee-500 hover:bg-accent text-coffee-900 font-light uppercase tracking-[0.16em] py-2.5 rounded-lg transition-colors font-inter text-sm"
             >
               {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
             </Button>

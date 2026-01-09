@@ -13,8 +13,8 @@ export default function Audience() {
           {/* Coluna Esquerda: Título + Mapa + Cards */}
           <div className="flex flex-col justify-center items-center gap-1.5 sm:gap-1.5 lg:gap-2 laydesk2-audience-left-column laydesk3-audience-left-column">
             {/* Título */}
-            <h2 className="text-2xl sm:text-lg lg:text-xl font-bold text-white text-center font-montserrat laydesk2-audience-title laydesk3-audience-title">
-              REGIÕES ATENDIDAS
+            <h2 className="text-2xl sm:text-lg lg:text-xl font-bold text-white text-center font-satoshi uppercase tracking-[0.08em] laydesk2-audience-title laydesk3-audience-title">
+              Regiões Atendidas
             </h2>
             
             {/* Imagem do Mapa */}
@@ -34,9 +34,9 @@ export default function Audience() {
               <div className="flex items-center gap-2">
                 <TreePalm className="w-5 h-5 text-coffee-500 flex-shrink-0 self-center" />
                 <div className="pl-2">
-                  <p className="text-xs sm:text-xs lg:text-sm text-cream-50 leading-relaxed text-justify hyphens-none font-montserrat laydesk2-audience-card-text laydesk3-audience-card-text">
-                    <strong className="text-coffee-500 font-montserrat">Recife</strong> e <strong className="text-coffee-500 font-montserrat">Região Metropolitana</strong> a partir de{" "}
-                    <strong className="text-coffee-500 font-bold text-base sm:text-lg font-montserrat">100 doses</strong>.
+                  <p className="text-xs sm:text-xs lg:text-sm text-cream-50 leading-relaxed text-justify hyphens-none font-inter font-normal laydesk2-audience-card-text laydesk3-audience-card-text">
+                    <strong className="text-coffee-500 font-inter font-bold">Recife</strong> e <strong className="text-coffee-500 font-inter font-bold">Região Metropolitana</strong> a partir de{" "}
+                    <strong className="text-coffee-500 font-inter font-bold text-base sm:text-lg">100 doses</strong>.
                   </p>
                 </div>
               </div>
@@ -47,9 +47,9 @@ export default function Audience() {
               <div className="flex items-center gap-2">
                 <Shell className="w-6 h-6 text-coffee-500 flex-shrink-0 self-center" />
                 <div className="pl-2">
-                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed text-justify hyphens-none font-montserrat laydesk2-audience-card-text laydesk3-audience-card-text">
-                    <strong className="text-coffee-500 font-montserrat">Pernambuco, Paraíba</strong> e <strong className="text-coffee-500 font-montserrat">Alagoas</strong> a partir de{" "}
-                    <strong className="text-coffee-500 font-bold text-base sm:text-lg font-montserrat">600 doses</strong>.
+                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed text-justify hyphens-none font-inter font-normal laydesk2-audience-card-text laydesk3-audience-card-text">
+                    <strong className="text-coffee-500 font-inter font-bold">Pernambuco, Paraíba</strong> e <strong className="text-coffee-500 font-inter font-bold">Alagoas</strong> a partir de{" "}
+                    <strong className="text-coffee-500 font-inter font-bold text-base sm:text-lg">600 doses</strong>.
                   </p>
                 </div>
               </div>
@@ -60,10 +60,10 @@ export default function Audience() {
               <div className="flex items-center gap-2">
                 <Flag className="w-6 h-6 text-coffee-500 flex-shrink-0 self-center" />
                 <div className="pl-2">
-                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed text-justify hyphens-none font-montserrat laydesk2-audience-card-text laydesk3-audience-card-text">
-                    Atendemos <strong className="text-coffee-500 font-montserrat">todo o Brasil</strong> conforme demanda, favor{" "}
-                    <Link href="#contato" className="inline-block px-1.5 py-0.5 rounded-md bg-coffee-500/20 hover:bg-coffee-500/30 transition-colors laydesk2-audience-card-link laydesk3-audience-card-link">
-                      <strong className="text-coffee-500 font-montserrat">solicitar orçamento.</strong>
+                  <p className="text-xs sm:text-sm lg:text-base text-cream-50 leading-relaxed text-justify hyphens-none font-inter font-normal laydesk2-audience-card-text laydesk3-audience-card-text">
+                    Atendemos <strong className="text-coffee-500 font-inter font-bold">todo o Brasil</strong> conforme demanda, favor{" "}
+                    <Link href="#contato" className="inline-block px-1.5 py-0.5 rounded-md bg-coffee-500/20 hover:bg-coffee-500/30 transition-colors font-inter laydesk2-audience-card-link laydesk3-audience-card-link">
+                      <strong className="text-coffee-500 font-inter font-bold">solicitar orçamento.</strong>
                     </Link>
                   </p>
                 </div>
@@ -89,7 +89,7 @@ export default function Audience() {
               />
               <div className="absolute inset-0 bg-coffee-900/60 group-hover:bg-coffee-900/50 transition-colors" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] text-center px-4 font-montserrat laydesk2-audience-nav-button-title laydesk3-audience-nav-button-title">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] text-center px-4 font-satoshi laydesk2-audience-nav-button-title laydesk3-audience-nav-button-title">
                   Galeria de experiências
                 </h3>
               </div>
@@ -110,7 +110,7 @@ export default function Audience() {
               />
               <div className="absolute inset-0 bg-coffee-900/60 group-hover:bg-coffee-900/50 transition-colors" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] text-center px-4 font-montserrat laydesk2-audience-nav-button-title laydesk3-audience-nav-button-title">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] text-center px-4 font-satoshi laydesk2-audience-nav-button-title laydesk3-audience-nav-button-title">
                   Blog
                 </h3>
               </div>

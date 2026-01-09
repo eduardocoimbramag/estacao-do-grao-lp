@@ -14,7 +14,7 @@ export default function FeatureItemCompact({ icon, title }: FeatureItemCompactPr
         <span className="text-coffee-500 flex-shrink-0 leading-none" aria-hidden="true">
           {icon}
         </span>
-        <span className="text-cream-50 font-semibold text-[0.65rem] sm:text-xs md:text-sm leading-tight sm:leading-none whitespace-nowrap min-w-0 flex-1 overflow-hidden text-ellipsis">
+        <span className="font-inter font-normal tracking-wide text-cream-50 text-[0.65rem] sm:text-xs md:text-sm leading-tight sm:leading-none whitespace-nowrap min-w-0 flex-1 overflow-hidden text-ellipsis">
           {title}
         </span>
       </div>

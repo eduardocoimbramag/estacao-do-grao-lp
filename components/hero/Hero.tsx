@@ -67,7 +67,7 @@ export default function Hero({
         {/* H1 centralizado, em linha única, ajustando tamanho com clamp para não ultrapassar os limites laterais */}
         <h1
           className="
-            font-montserrat text-cream-50 font-extrabold sm:font-bold
+            font-satoshi text-cream-50 font-bold
             tracking-tight text-center
             mb-3 sm:mb-4 md:mb-5 lg:mb-6
             uppercase sm:whitespace-nowrap
@@ -148,8 +148,8 @@ export default function Hero({
           <div className="self-start flex flex-col gap-2.5 sm:gap-3 md:gap-4 lg:gap-5 w-full min-w-0">
             {/* Texto em caixa sutil com clamp */}
             <div className="rounded-2xl ring-1 ring-cream-50/15 bg-coffee-card p-2 sm:p-3 md:p-4 lg:p-5 shadow-2xl w-full min-w-0">
-              <p className="text-cream-50 text-xs sm:text-[clamp(0.875rem,0.3vw+0.85rem,1rem)] leading-relaxed text-justify indent-5 sm:indent-2 md:indent-3 lg:indent-6 hyphens-none break-words">
-                Transforme o café do seu evento em uma <span className="text-coffee-500 font-bold">experiência inesquecível</span> com a <span className="text-coffee-500 font-bold">Estação do Grão</span>! Oferecemos estação de <span className="text-coffee-500 font-bold">café gourmet</span>, <span className="text-coffee-500 font-bold">baristas profissionais</span> e <span className="text-coffee-500 font-bold">café espresso premium</span> para eventos corporativos, feiras de negócios, congressos, ativações de marca, lançamentos de produtos e casamentos.
+              <p style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="font-normal text-cream-50 text-xs sm:text-[clamp(0.875rem,0.3vw+0.85rem,1rem)] leading-relaxed text-justify indent-5 sm:indent-2 md:indent-3 lg:indent-6 hyphens-none break-words">
+                Transforme o café do seu evento em uma <span style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="font-bold text-coffee-500">experiência inesquecível</span> com a <span style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="font-bold text-coffee-500">Estação do Grão</span>! Oferecemos estação de <span style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="font-bold text-coffee-500">café gourmet</span>, <span style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="font-bold text-coffee-500">baristas profissionais</span> e <span style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }} className="font-bold text-coffee-500">café espresso premium</span> para eventos corporativos, feiras de negócios, congressos, ativações de marca, lançamentos de produtos e casamentos.
               </p>
             </div>
 
@@ -164,10 +164,10 @@ export default function Hero({
         <div className="grid grid-cols-3 gap-1.5 sm:gap-2 md:gap-4 lg:gap-5 mt-6 sm:mt-8 lg:mt-10 w-full min-w-0 laydesk3-hero-metrics">
           {/* Card 1 */}
           <div className="p-2 sm:p-3 md:p-4 bg-coffee-card border border-coffee-500/30 rounded-xl hover:border-coffee-500/60 transition-colors flex flex-col items-center text-center gap-1.5 sm:gap-2">
-            <div className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-coffee-500 whitespace-nowrap">
+            <div className="font-satoshi font-bold tracking-tight text-lg sm:text-2xl md:text-3xl lg:text-4xl text-coffee-500 whitespace-nowrap">
               + 100 mil
             </div>
-            <div className="text-[0.6rem] sm:text-base md:text-lg font-semibold text-cream-50 font-serif uppercase tracking-wider flex items-center gap-1 sm:gap-2">
+            <div className="font-inter font-normal text-[0.6rem] sm:text-base md:text-lg text-cream-50 uppercase tracking-[0.08em] flex items-center gap-1 sm:gap-2">
               <span className="text-xs sm:text-base">☕</span>
               <span className="leading-tight">cafés servidos</span>
             </div>
@@ -175,10 +175,10 @@ export default function Hero({
 
           {/* Card 2 */}
           <div className="p-2 sm:p-3 md:p-4 bg-coffee-card border border-coffee-500/30 rounded-xl hover:border-coffee-500/60 transition-colors flex flex-col items-center text-center gap-1.5 sm:gap-2">
-            <div className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-coffee-500 whitespace-nowrap">
+            <div className="font-satoshi font-bold tracking-tight text-lg sm:text-2xl md:text-3xl lg:text-4xl text-coffee-500 whitespace-nowrap">
               +100
             </div>
-            <div className="text-[0.6rem] sm:text-base md:text-lg font-semibold text-cream-50 font-serif uppercase tracking-wider flex items-center gap-1 sm:gap-2">
+            <div className="font-inter font-normal text-[0.6rem] sm:text-base md:text-lg text-cream-50 uppercase tracking-[0.08em] flex items-center gap-1 sm:gap-2">
               <span className="text-xs sm:text-base">🏢</span>
               <span className="leading-tight">empresas atendidas</span>
             </div>
@@ -186,10 +186,10 @@ export default function Hero({
 
           {/* Card 3 */}
           <div className="p-2 sm:p-3 md:p-4 bg-coffee-card border border-coffee-500/30 rounded-xl hover:border-coffee-500/60 transition-colors flex flex-col items-center text-center gap-1.5 sm:gap-2">
-            <div className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-coffee-500 whitespace-nowrap">
+            <div className="font-satoshi font-bold tracking-tight text-lg sm:text-2xl md:text-3xl lg:text-4xl text-coffee-500 whitespace-nowrap">
               + 2 mil
             </div>
-            <div className="text-[0.6rem] sm:text-base md:text-lg font-semibold text-cream-50 font-serif uppercase tracking-wider flex items-center gap-1 sm:gap-2">
+            <div className="font-inter font-normal text-[0.6rem] sm:text-base md:text-lg text-cream-50 uppercase tracking-[0.08em] flex items-center gap-1 sm:gap-2">
               <span className="text-xs sm:text-base">🤝</span>
               <span className="leading-tight">eventos realizados</span>
             </div>

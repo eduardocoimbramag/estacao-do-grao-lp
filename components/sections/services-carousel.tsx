@@ -128,27 +128,27 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
                   {/* Conteúdo de texto */}
                   <div className="space-y-2 px-4 pb-4 text-center laydesk2-servicos-card-content laydesk3-servicos-card-content">
                     {/* Título */}
-                    <h3 className="text-lg sm:text-xl font-semibold text-cream-50 font-montserrat laydesk2-servicos-card-title laydesk3-servicos-card-title">
+                    <h3 className="text-lg sm:text-xl font-medium text-cream-50 font-satoshi laydesk2-servicos-card-title laydesk3-servicos-card-title">
                       {card.title}
                     </h3>
 
                     {/* Subtítulo */}
                     {card.subtitle && (
-                      <p className="text-xs sm:text-sm font-medium text-coffee-500 font-montserrat laydesk2-servicos-card-subtitle laydesk3-servicos-card-subtitle">
+                      <p className="text-xs sm:text-sm font-normal text-coffee-500 font-inter tracking-wide laydesk2-servicos-card-subtitle laydesk3-servicos-card-subtitle">
                         {card.subtitle}
                       </p>
                     )}
 
                     {/* Descrição */}
                     {card.description && (
-                      <p className="text-xs sm:text-sm text-cream-50/80 leading-relaxed font-montserrat laydesk2-servicos-card-description laydesk3-servicos-card-description">
+                      <p className="text-xs sm:text-sm text-cream-50/80 leading-relaxed font-inter font-normal laydesk2-servicos-card-description laydesk3-servicos-card-description">
                         {card.description}
                       </p>
                     )}
 
                     {/* Preço (se houver) */}
                     {card.priceText && (
-                      <p className="text-sm sm:text-base font-semibold text-cream-50 pt-2 font-montserrat">
+                      <p className="text-sm sm:text-base font-bold text-cream-50 pt-2 font-inter">
                         {card.priceText}
                       </p>
                     )}
@@ -158,7 +158,7 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
                       <div className="pt-3 laydesk2-servicos-card-cta laydesk3-servicos-card-cta">
                         <a
                           href={card.ctaHref}
-                          className="inline-flex items-center justify-center px-5 py-2.5 bg-coffee-500 hover:bg-accent text-cream-50 hover:text-coffee-900 font-semibold rounded-lg transition-colors font-montserrat focus:outline-none focus:ring-2 focus:ring-accent/80 focus:ring-offset-2"
+                          className="inline-flex items-center justify-center px-5 py-2.5 bg-coffee-500 hover:bg-accent text-cream-50 hover:text-coffee-900 font-light uppercase tracking-[0.16em] rounded-lg transition-colors font-inter focus:outline-none focus:ring-2 focus:ring-accent/80 focus:ring-offset-2 text-sm"
                         >
                           {card.ctaLabel}
                         </a>

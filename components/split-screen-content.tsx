@@ -165,10 +165,10 @@ export default function SplitScreenContent() {
           item.imagePosition === 'right' ? 'sm:order-1' : 'sm:order-2'
         }`}
       >
-        <h3 className="text-lg sm:text-xl font-bold text-coffee-500 mb-2 font-montserrat">
+        <h3 className="text-lg sm:text-xl font-bold text-coffee-500 mb-2 font-satoshi">
           {item.title}
         </h3>
-        <p className="text-sm sm:text-base text-cream-50 leading-relaxed text-justify font-montserrat">
+        <p className="text-sm sm:text-base text-cream-50 leading-relaxed text-justify font-inter font-normal">
           {item.description}
         </p>
       </motion.div>
@@ -215,8 +215,8 @@ export default function SplitScreenContent() {
               }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white text-center font-montserrat">
-                PERSONALIZAÇÃO PARA SEU EVENTO
+              <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white text-center font-satoshi uppercase tracking-[0.08em]">
+                Personalização para seu Evento
               </h2>
             </motion.div>
 
@@ -236,7 +236,7 @@ export default function SplitScreenContent() {
                     className="flex items-center gap-3 px-8 py-4 bg-coffee-500/20 border-2 border-coffee-400 rounded-2xl backdrop-blur-sm hover:bg-coffee-500/30 transition-all duration-300"
                   >
                     <ChevronRight className="w-8 h-8 text-coffee-400 animate-pulse" />
-                    <span className="text-lg font-semibold text-white font-montserrat">
+                    <span className="text-lg font-normal text-white font-inter tracking-wide">
                       Clique para expandir
                     </span>
                   </motion.button>
@@ -319,8 +319,8 @@ export default function SplitScreenContent() {
               }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white text-center font-montserrat">
-                PODERES DO CAFÉ
+              <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white text-center font-satoshi uppercase tracking-[0.08em]">
+                Poderes do Café
               </h2>
             </motion.div>
 
@@ -339,7 +339,7 @@ export default function SplitScreenContent() {
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center gap-3 px-8 py-4 bg-coffee-500/20 border-2 border-coffee-400 rounded-2xl backdrop-blur-sm hover:bg-coffee-500/30 transition-all duration-300"
                   >
-                    <span className="text-lg font-semibold text-white font-montserrat">
+                    <span className="text-lg font-normal text-white font-inter tracking-wide">
                       Clique para expandir
                     </span>
                     <ChevronLeft className="w-8 h-8 text-coffee-400 animate-pulse" />
@@ -387,7 +387,7 @@ export default function SplitScreenContent() {
         <div className="flex border-b-2 border-coffee-500">
           <button
             onClick={() => setActiveTab('personalizacao')}
-            className={`flex-1 py-4 px-3 text-center font-bold font-montserrat transition-all duration-300 relative ${
+            className={`flex-1 py-4 px-3 text-center font-bold font-inter transition-all duration-300 relative ${
               activeTab === 'personalizacao'
                 ? 'text-white bg-coffee-800'
                 : 'text-cream-50/60 bg-coffee-900'
@@ -405,7 +405,7 @@ export default function SplitScreenContent() {
           
           <button
             onClick={() => setActiveTab('poderes')}
-            className={`flex-1 py-4 px-3 text-center font-bold font-montserrat transition-all duration-300 relative ${
+            className={`flex-1 py-4 px-3 text-center font-bold font-inter transition-all duration-300 relative ${
               activeTab === 'poderes'
                 ? 'text-white bg-coffee-800'
                 : 'text-cream-50/60 bg-coffee-900'
@@ -455,10 +455,10 @@ export default function SplitScreenContent() {
 
                   {/* Texto */}
                   <div className="flex-1 flex flex-col justify-center text-center w-full">
-                    <h3 className="text-base font-bold text-coffee-500 mb-2 font-montserrat">
+                    <h3 className="text-base font-bold text-coffee-500 mb-2 font-satoshi">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-cream-50 leading-relaxed text-justify font-montserrat">
+                    <p className="text-sm text-cream-50 leading-relaxed text-justify font-inter font-normal">
                       {item.description}
                     </p>
                   </div>
