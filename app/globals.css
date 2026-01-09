@@ -557,8 +557,33 @@ body {
     padding-bottom: 0.625rem !important; /* REDUZIDO de 0.875rem */
   }
   
+  /* Desabilitar space-y-2 do Tailwind - sobrescrever com especificidade máxima */
+  /* O Tailwind space-y-2 gera: .space-y-2 > * + * { margin-top: 0.5rem } */
+  /* Precisamos sobrescrever com especificidade igual ou maior */
+  .laydesk2-servicos-card-content.space-y-2 > * + * {
+    margin-top: 0 !important; /* Desabilitar space-y-2 completamente */
+  }
+  
+  /* Fallback: se o container não tiver space-y-2 na classe, ainda desabilitar */
   .laydesk2-servicos-card-content > * + * {
-    margin-top: 0.25rem !important; /* REDUZIDO de 0.375rem */
+    margin-top: 0 !important; /* Resetar todos os espaçamentos primeiro */
+  }
+  
+  /* Controlar espaçamento manualmente - aplicar apenas onde necessário */
+  .laydesk2-servicos-card-content > h3.laydesk2-servicos-card-title + p.laydesk2-servicos-card-subtitle {
+    margin-top: 0 !important; /* Título → Subtítulo: SEM espaço */
+  }
+  
+  .laydesk2-servicos-card-content > p.laydesk2-servicos-card-subtitle + p.laydesk2-servicos-card-description {
+    margin-top: 0.25rem !important; /* Subtítulo → Descrição: manter espaço reduzido */
+  }
+  
+  .laydesk2-servicos-card-content > p.laydesk2-servicos-card-description + p {
+    margin-top: 0.25rem !important; /* Descrição → Próximo elemento (preço, CTA, etc) */
+  }
+  
+  .laydesk2-servicos-card-content > p + div.laydesk2-servicos-card-cta {
+    margin-top: 0.25rem !important; /* Elemento anterior → CTA */
   }
   
   /* Título do card: Fonte reduzida */
@@ -567,25 +592,25 @@ body {
     line-height: 1.5rem !important; /* REDUZIDO de 1.625rem */
   }
   
-  /* Subtítulo do card: Fonte reduzida */
+  /* Subtítulo do card: Fonte e line-height reduzidos */
   .laydesk2-servicos-card-subtitle {
     font-size: 0.75rem !important; /* REDUZIDO de 0.8125rem */
-    line-height: 1rem !important; /* REDUZIDO de 1.125rem */
+    line-height: 0.875rem !important; /* REDUZIDO de 1rem (16px → 14px) */
   }
   
-  /* Descrição do card: Fonte reduzida */
+  /* Descrição do card: Fonte e line-height reduzidos */
   .laydesk2-servicos-card-description {
     font-size: 0.75rem !important; /* REDUZIDO de 0.8125rem */
-    line-height: 1.125rem !important; /* REDUZIDO de 1.25rem */
+    line-height: 1rem !important; /* REDUZIDO de 1.125rem (18px → 16px) - sobrescreve leading-relaxed */
   }
   
-  /* CTA Button: Padding ainda mais reduzido */
+  /* CTA Button: Padding reduzido */
   .laydesk2-servicos-card-cta {
-    padding-top: 0.25rem !important; /* REDUZIDO de 0.5rem */
+    padding-top: 0.125rem !important; /* REDUZIDO de 0.25rem (4px → 2px) */
   }
   
   .laydesk2-servicos-card-cta a {
-    padding: 0.5rem 1.25rem !important;
+    padding: 0.375rem 1rem !important; /* REDUZIDO de 0.5rem 1.25rem (8px 20px → 6px 16px) */
     font-size: 0.8125rem !important;
     /* Forçar cores do estado normal - BRANCO */
     background-color: var(--color-coffee-500) !important;
@@ -608,20 +633,34 @@ body {
     color: #331b09 !important;
   }
   
-  /* 10. Botões de navegação: Espaçamento e tamanho reduzidos */
+  /* 10. Botões de navegação: Tamanho muito reduzido (compacto como no print) + Prevenir overflow */
+  /* O problema: focus:ring-offset-2 adiciona espaço via box-shadow que pode ultrapassar limites */
+  /* Solução: Container com contain:layout e overflow hidden para isolar e cortar o ring-offset */
   .laydesk2-servicos-nav {
     margin-top: 0.5rem !important; /* REDUZIDO de 0.75rem */
+    flex-shrink: 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
+    /* Contain layout para isolar os botões e evitar que afetem outros elementos */
+    contain: layout !important;
+    /* Overflow hidden para cortar qualquer overflow do ring-offset */
+    overflow: hidden !important;
+    /* Padding vertical para dar espaço para o ring-offset sem causar overflow */
+    padding: 3px 0 !important; /* REDUZIDO de 4px para 3px */
+    /* Altura mínima ajustada para botões muito menores */
+    min-height: 36px !important; /* REDUZIDO de 44px (botão menor ~32px + padding 6px) */
   }
   
-  /* Botões: Padding reduzido */
+  /* Botões: Tamanho muito reduzido (compacto como no print) */
   .laydesk2-servicos-nav button {
-    padding: 0.5rem !important; /* REDUZIDO de 0.625rem */
+    padding: 0.375rem !important; /* REDUZIDO de 0.5rem (8px → 6px) - mais compacto */
+    /* O ring-offset será cortado pelo overflow:hidden do pai */
   }
   
-  /* Ícones: Tamanho reduzido */
+  /* Ícones: Tamanho muito reduzido (compacto como no print) */
   .laydesk2-servicos-nav svg {
-    width: 16px !important; /* REDUZIDO de 18px */
-    height: 16px !important; /* REDUZIDO de 18px */
+    width: 14px !important; /* REDUZIDO de 16px para 14px - mais compacto */
+    height: 14px !important; /* REDUZIDO de 16px para 14px - mais compacto */
   }
   
   /* 11. Indicadores mobile: Espaçamento otimizado */
@@ -1606,10 +1645,12 @@ body {
   .laydesk3-servicos-section {
     height: calc(100vh - 4rem) !important;
     min-height: calc(100vh - 4rem) !important;
+    max-height: calc(100vh - 4rem) !important; /* ADICIONADO: garantir altura máxima */
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     overflow: hidden !important; /* FORÇAR - impede overflow horizontal/vertical */
     overflow-x: hidden !important; /* FORÇAR - impede overflow horizontal */
+    overflow-y: hidden !important; /* FORÇAR - impede overflow vertical */
   }
   
   /* 2. Container interno: Padding otimizado + Flex shrink habilitado */
@@ -1624,6 +1665,7 @@ body {
     justify-content: center !important;
     min-height: 0 !important; /* permite shrink */
     overflow: hidden !important; /* impede overflow interno */
+    align-content: center !important; /* ADICIONADO: garantir alinhamento */
   }
   
   /* 3. Header: Espaçamento otimizado (reduzido) */
@@ -1745,20 +1787,39 @@ body {
     color: #331b09 !important;
   }
   
-  /* 10. Botões de navegação: Espaçamento e tamanho reduzidos */
+  /* 10. Botões de navegação: Mesmo tamanho da laydesk2 + Prevenir overflow */
+  /* O problema: focus:ring-offset-2 adiciona espaço via box-shadow que pode ultrapassar limites */
+  /* Solução: Container com contain:layout e overflow hidden para isolar e cortar o ring-offset */
   .laydesk3-servicos-nav {
     margin-top: 0.25rem !important; /* [SEC3][LAYDESK3][T2] AJUSTE AQUI - REDUZIDO de 0.5rem */
+    flex-shrink: 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
+    /* Contain layout para isolar os botões e evitar que afetem outros elementos */
+    contain: layout !important;
+    /* Overflow hidden para cortar qualquer overflow do ring-offset */
+    overflow: hidden !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    /* Padding vertical reduzido - mais agressivo para garantir corte do ring-offset */
+    padding: 2px 0 !important; /* REDUZIDO para 2px - mínimo necessário */
+    /* Altura máxima para garantir que não ultrapasse */
+    max-height: 40px !important; /* Limitar altura máxima */
+    /* Altura mínima ajustada para botões compactos (igual laydesk2) */
+    min-height: 36px !important; /* REDUZIDO para 36px (botão ~32px + padding 6px) */
   }
   
-  /* Botões: Padding reduzido */
+  /* Botões: Mesmo tamanho da laydesk2 (compacto) */
   .laydesk3-servicos-nav button {
-    padding: 0.5rem !important; /* REDUZIDO de 0.625rem */
+    padding: 0.375rem !important; /* IGUAL laydesk2 (6px) - REDUZIDO de 0.5rem */
+    /* O ring-offset será cortado pelo overflow:hidden do pai */
+    box-sizing: border-box !important; /* Garantir que border seja incluído no tamanho */
   }
   
-  /* Ícones: Tamanho reduzido */
+  /* Ícones: Mesmo tamanho da laydesk2 (compacto) */
   .laydesk3-servicos-nav svg {
-    width: 16px !important; /* REDUZIDO de 18px */
-    height: 16px !important; /* REDUZIDO de 18px */
+    width: 14px !important; /* IGUAL laydesk2 - REDUZIDO de 16px para 14px */
+    height: 14px !important; /* IGUAL laydesk2 - REDUZIDO de 16px para 14px */
   }
   
   /* 11. Indicadores mobile: Espaçamento otimizado */

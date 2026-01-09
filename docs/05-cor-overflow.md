@@ -217,3 +217,4 @@ Após implementação, verificar:
 - [MDN: CSS Outline](https://developer.mozilla.org/en-US/docs/Web/CSS/outline)
 - [Tailwind CSS: Ring Utilities](https://tailwindcss.com/docs/ring-width)
 - [MDN: CSS Box Model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+
