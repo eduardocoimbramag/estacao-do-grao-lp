@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     images: ["/og/estacao-do-grao.jpg"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/Favicon.png",
   },
   generator: 'v0.app'
 }
