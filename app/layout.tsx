@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Montserrat, Inter } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
 
 const montserrat = Montserrat({
@@ -66,6 +67,17 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${montserrat.variable} ${inter.variable} scroll-smooth overflow-x-hidden`}>
       <head>
+        {/* Google Tag Manager */}
+<Script id="gtm-script" strategy="afterInteractive">
+  {`
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZCGBGFL');
+  `}
+</Script>
+{/* End Google Tag Manager */}
         <link rel="canonical" href="https://estacaodograo.com.br" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="pt_BR" />
@@ -149,7 +161,19 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans bg-coffee-900 text-white antialiased overflow-x-hidden">{children}</body>
+      <body className="font-sans bg-coffee-900 text-white antialiased overflow-x-hidden">
+        {/* Google Tag Manager (noscript) */}
+<noscript>
+  <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-TZCGBGFL"
+    height="0"
+    width="0"
+    style={{ display: "none", visibility: "hidden" }}
+  />
+</noscript>
+{/* End Google Tag Manager (noscript) */}
+
+        {children}</body>
     </html>
   )
 }
