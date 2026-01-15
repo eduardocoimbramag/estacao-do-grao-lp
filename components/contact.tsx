@@ -134,6 +134,10 @@ export default function Contact() {
       // Assumimos sucesso se não houver erro
       markFormSubmittedNow()
       setSubmitStatus("success")
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push({
+        event: "envio_formulario_lead",
+      })
       setFormData({
         name: "",
         eventType: "",
