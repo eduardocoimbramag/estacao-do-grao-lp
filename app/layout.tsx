@@ -47,7 +47,16 @@ export const metadata: Metadata = {
     images: ["/og/estacao-do-grao.jpg"],
   },
   icons: {
-    icon: "/Favicon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/icon-dark-32x32.png", sizes: "32x32", type: "image/png", media: "(prefers-color-scheme: dark)" },
+      { url: "/icon-light-32x32.png", sizes: "32x32", type: "image/png", media: "(prefers-color-scheme: light)" },
+      { url: "/Favicon.png", sizes: "64x64", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   generator: 'v0.app'
 }
@@ -67,6 +76,13 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${montserrat.variable} ${inter.variable} scroll-smooth overflow-x-hidden`}>
       <head>
+        {/* Favicon links explícitos para o Google Search */}
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="32x32" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/icon-dark-32x32.png" type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" href="/icon-light-32x32.png" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" sizes="180x180" />
+        
         {/* Google Tag Manager */}
 <Script id="gtm-script" strategy="afterInteractive">
   {`
