@@ -176,7 +176,7 @@ export default function SplitScreenContent() {
   )
 
   return (
-    <section className="h-[calc(100vh-4rem)] bg-coffee-700 overflow-hidden w-full">
+    <section id="diferencias" className="h-[calc(100vh-4rem)] bg-coffee-700 overflow-hidden w-full">
       {/* ============================================
           DESKTOP: Split Screen com Conteúdo Oculto
           ============================================ */}

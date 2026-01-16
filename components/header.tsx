@@ -9,9 +9,26 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   const scrollToSection = (id: string) => {
+    // Fechar menu mobile
     setIsOpen(false)
-    const element = document.getElementById(id)
-    element?.scrollIntoView({ behavior: "smooth" })
+    
+    // Pequeno delay para garantir que o menu feche antes do scroll
+    setTimeout(() => {
+      const element = document.getElementById(id)
+      
+      if (element) {
+        const headerOffset = 64 // Altura do header fixo
+        const elementPosition = element.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        })
+      } else {
+        console.warn(`Seção com id "${id}" não encontrada`)
+      }
+    }, isOpen ? 300 : 0) // Delay apenas se menu estiver aberto
   }
 
   return (
@@ -39,7 +56,7 @@ export default function Header() {
           {/* Desktop Navigation - Centralizado absolutamente */}
           <nav className="hidden md:flex absolute left-[52.25%] top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-9 lg:gap-8">
             <button
-              onClick={() => scrollToSection("sobre")}
+              onClick={() => scrollToSection("apresentacao")}
               className="text-cream-50 hover:text-coffee-500 transition-colors font-inter font-normal uppercase tracking-[0.08em] text-sm whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/80 focus-visible:rounded-md"
             >
               Sobre
@@ -87,7 +104,7 @@ export default function Header() {
         {isOpen && (
           <nav className="md:hidden pb-4 space-y-2 border-t border-coffee-700 pt-4">
             <button
-              onClick={() => scrollToSection("sobre")}
+              onClick={() => scrollToSection("apresentacao")}
               className="block w-full text-left px-4 py-2 text-cream-50 hover:text-coffee-500 hover:bg-coffee-700 rounded transition-colors font-inter font-normal text-base"
             >
               Sobre
