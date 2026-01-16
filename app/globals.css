@@ -405,13 +405,13 @@ body {
   /* 3) Título: garantir visibilidade + economizar altura */
   h1.laydesk2-hero-title {
     margin-top: 0 !important;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.75rem !important;
     line-height: 1.08 !important;
   }
 
   /* 4) Grid principal (carousel + texto) */
   .laydesk2-hero-section .grid-cols-1.md\:grid-cols-2 {
-    flex: 1 1 auto !important;
+    flex: 0 0 auto !important;
     min-height: 0 !important;
     align-items: center !important;
     gap: 0.5rem !important; /* aproxima imagem + conteúdo */
