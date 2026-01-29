@@ -134,10 +134,16 @@ export default function Contact() {
       // Assumimos sucesso se não houver erro
       markFormSubmittedNow()
       setSubmitStatus("success")
-      window.dataLayer = window.dataLayer || []
-      window.dataLayer.push({
-        event: "envio_formulario_lead",
-      })
+      setTimeout(() => {
+        if (typeof window !== 'undefined') {
+          window.dataLayer = window.dataLayer || []
+          window.dataLayer.push({
+            event: "envio_formulario_lead",
+            send_to: 'AW-17822505887/CBJHCJnGwElbEJ-3t7JC'
+          })
+          console.log("Evento enviado para Google Ads")
+        }
+      }, 500)
       setFormData({
         name: "",
         eventType: "",

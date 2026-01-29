@@ -188,6 +188,15 @@ export default function RootLayout({
   />
 </noscript>
 {/* End Google Tag Manager (noscript) */}
+// No seu layout.tsx, adicione ESTA tag também:
+<Script id="google-ads-conversion" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17822505887');
+  `}
+</Script>
 
         {children}</body>
     </html>
