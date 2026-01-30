@@ -81,8 +81,8 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
       role="region"
       aria-label="Carrossel de serviços"
     >
-      {/* Container do carrossel com padding vertical ajustado */}
-      <div className="overflow-visible cursor-grab active:cursor-grabbing py-8 sm:py-6 w-full max-w-[100vw] laydesk1-servicos-carousel-container laydesk2-servicos-carousel-container laydesk3-servicos-carousel-container" ref={emblaRef}>
+      {/* Container do carrossel com padding vertical mínimo no mobile */}
+      <div className="overflow-visible cursor-grab active:cursor-grabbing py-2 sm:py-6 w-full max-w-[100vw] laydesk1-servicos-carousel-container laydesk2-servicos-carousel-container laydesk3-servicos-carousel-container" ref={emblaRef}>
         <div className="flex touch-pan-y min-w-0">
           {loopedCards.map((card, index) => {
             // Mapear de volta ao índice original para verificar se está ativo
