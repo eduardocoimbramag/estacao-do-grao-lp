@@ -176,7 +176,7 @@ export default function SplitScreenContent() {
   )
 
   return (
-    <section id="diferencias" className="h-[calc(100vh-4rem)] bg-coffee-700 overflow-hidden w-full">
+    <section id="diferencias" className="h-[calc(100vh-4rem)] bg-coffee-700 overflow-hidden w-full laymob1-split-section laymob2-split-section">
       {/* ============================================
           DESKTOP: Split Screen com Conteúdo Oculto
           ============================================ */}
@@ -382,7 +382,7 @@ export default function SplitScreenContent() {
       {/* ============================================
           MOBILE: Tabs com Transição (sem mudanças)
           ============================================ */}
-      <div className="block sm:hidden h-full flex flex-col">
+      <div className="block sm:hidden h-full flex flex-col laymob1-split-mobile-wrapper laymob2-split-mobile-wrapper">
         {/* Tabs Header */}
         <div className="flex border-b-2 border-coffee-500">
           <button

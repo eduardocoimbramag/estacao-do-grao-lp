@@ -239,36 +239,497 @@ body {
    ============================================ */
 
 /* laymob1: Mobile pequeno (max-width: 639px) */
+/* Plano: docs/09-planocel.md — overflow e enquadramento apenas em laymob */
 @media (max-width: 639px) {
   /* //INICIO LAYMOB1// */
-  /* Correção agressiva para mobile - força todos os elementos a respeitarem 100vw */
-  * {
-    max-width: 100vw !important;
-  }
-  
-  body > * {
-    max-width: 100vw !important;
+  /* Base: contenção sem * { max-width } para não quebrar flex/grid */
+  html {
     overflow-x: hidden !important;
+    max-width: 100vw !important;
   }
-  
+  body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+  /* main (classe aplicada em page.tsx) */
+  .laymob1-main {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
   section {
     max-width: 100vw !important;
     overflow-x: hidden !important;
+    box-sizing: border-box !important;
   }
-  
-  div {
+
+  /* Header */
+  .laymob1-header,
+  .laymob1-header-container {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Hero */
+  .laymob1-hero-section {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+  .laymob1-hero-container {
+    max-width: 100% !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    box-sizing: border-box !important;
+  }
+  .laymob1-hero-section h1 {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
     max-width: 100% !important;
   }
-  
-  /* Adicione aqui estilos específicos para laymob1 */
+  .laymob1-hero-section [aria-roledescription="carousel"] {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  .laymob1-hero-section [aria-roledescription="carousel"] img {
+    max-width: 100% !important;
+  }
+  /* Plano 10-planocel2: botões do slideshow dentro da imagem */
+  .laymob1-hero-carousel-wrap {
+    position: relative !important;
+  }
+  .laymob1-hero-carousel-wrap .absolute.inset-x-0 {
+    left: 0.5rem !important;
+    right: 0.5rem !important;
+  }
+
+  /* OpenMenuIntro (#apresentacao) */
+  .laymob1-sec2-section {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+  .laymob1-sec2-container {
+    max-width: 100% !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    box-sizing: border-box !important;
+  }
+  .laymob1-sec2-section video {
+    max-width: 100% !important;
+  }
+  .laymob1-sec2-section [class*="aspect-"] {
+    max-width: 100% !important;
+  }
+  /* Plano 11-planomob3: botões ABSOLUTAMENTE IDÊNTICOS */
+  .laymob1-sec2-cta {
+    display: flex !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+  }
+  .laymob1-sec2-cta a {
+    flex: 1 1 0% !important;
+    min-width: 0 !important;
+    max-width: calc(50% - 0.25rem) !important;
+    width: calc(50% - 0.25rem) !important;
+    padding: 0.625rem 1rem !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.16em !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    min-height: 44px !important;
+    height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Nossos Serviços — Plano 12: espaçamentos reduzidos */
+  .laymob1-servicos-section {
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  .laymob1-servicos-container {
+    max-width: 100% !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+    box-sizing: border-box !important;
+  }
+  .laymob1-servicos-carousel {
+    max-width: 100% !important;
+    overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+  }
+  .laymob1-servicos-carousel > div {
+    overflow: visible !important;
+  }
+  .laymob1-servicos-carousel [role="region"] {
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+  /* Desabilitar scale e margin nos cards */
+  .laymob1-servicos-carousel article {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .laymob1-servicos-carousel article > div {
+    transform: scale(1) !important;
+  }
+
+  /* Audience — Plano 11-planomob3: seção e mapa AINDA MAIORES */
+  .laymob1-audience-section {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+    min-height: 90vh !important;
+    height: auto !important;
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  .laymob1-audience-container {
+    max-width: 100% !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    box-sizing: border-box !important;
+  }
+  .laymob1-audience-section img {
+    max-width: 100% !important;
+  }
+  .laymob1-audience-map {
+    max-width: 300px !important;
+    width: 100% !important;
+  }
+
+  /* SplitScreenContent (#diferencias) — Plano 11-planomob3: scroll definitivo REFORÇADO */
+  .laymob1-split-section {
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+  .laymob1-split-section img {
+    max-width: 100% !important;
+  }
+  .laymob1-split-mobile-wrapper {
+    height: auto !important;
+    min-height: 80vh !important;
+  }
+  .laymob1-split-mobile-wrapper > div {
+    max-height: none !important;
+    overflow-y: auto !important;
+  }
+
+  /* Contact */
+  .laymob1-contact-section {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+  .laymob1-contact-container {
+    max-width: 100% !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    box-sizing: border-box !important;
+  }
+  .laymob1-contact-section form,
+  .laymob1-contact-section input,
+  .laymob1-contact-section textarea {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Footer */
+  .laymob1-footer {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+  .laymob1-footer-container {
+    max-width: 100% !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    box-sizing: border-box !important;
+  }
+  .laymob1-footer p,
+  .laymob1-footer a {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
   /* //FIM LAYMOB1// */
 }
 
 /* laymob2: Mobile grande / Tablet pequeno (640px - 767px) */
 @media (min-width: 640px) and (max-width: 767px) {
   /* //INICIO LAYMOB2// */
-  /* Adicione aqui estilos específicos para laymob2 */
+  html {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+  body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+  .laymob2-main {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  section {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .laymob2-header,
+  .laymob2-header-container {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .laymob2-hero-section {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+  .laymob2-hero-container {
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    box-sizing: border-box !important;
+  }
+  .laymob2-hero-section h1 {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
+  }
+  .laymob2-hero-section [aria-roledescription="carousel"] {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  .laymob2-hero-carousel-wrap .absolute.inset-x-0 {
+    left: 0.75rem !important;
+    right: 0.75rem !important;
+  }
+
+  .laymob2-sec2-section {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+  .laymob2-sec2-container {
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    box-sizing: border-box !important;
+  }
+  .laymob2-sec2-cta {
+    display: flex !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+  }
+  .laymob2-sec2-cta a {
+    flex: 1 1 0% !important;
+    min-width: 0 !important;
+    max-width: calc(50% - 0.25rem) !important;
+    width: calc(50% - 0.25rem) !important;
+    padding: 0.625rem 1rem !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.16em !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    min-height: 44px !important;
+    height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .laymob2-servicos-section {
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  .laymob2-servicos-container {
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+    box-sizing: border-box !important;
+  }
+  .laymob2-servicos-carousel {
+    max-width: 100% !important;
+    overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+  }
+  .laymob2-servicos-carousel > div {
+    overflow: visible !important;
+  }
+  .laymob2-servicos-carousel article {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .laymob2-servicos-carousel article > div {
+    transform: scale(1) !important;
+  }
+
+  .laymob2-audience-section {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+    min-height: 85vh !important;
+    height: auto !important;
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  .laymob2-audience-container {
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    box-sizing: border-box !important;
+  }
+  .laymob2-audience-map {
+    max-width: 350px !important;
+    width: 100% !important;
+  }
+
+  .laymob2-split-section {
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+  .laymob2-split-mobile-wrapper {
+    height: auto !important;
+    min-height: 80vh !important;
+  }
+  .laymob2-split-mobile-wrapper > div {
+    max-height: none !important;
+    overflow-y: auto !important;
+  }
+  .laymob2-contact-section {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+  .laymob2-contact-container {
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    box-sizing: border-box !important;
+  }
+  .laymob2-contact-section form,
+  .laymob2-contact-section input,
+  .laymob2-contact-section textarea {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .laymob2-footer {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+  .laymob2-footer-container {
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    box-sizing: border-box !important;
+  }
+  .laymob2-footer p,
+  .laymob2-footer a {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
   /* //FIM LAYMOB2// */
+}
+
+/* Plano 11-planomob3: overflow iPhone SE REFORÇADO (max-width 375px) */
+@media (max-width: 375px) {
+  #apresentacao.laymob1-sec2-section.laymob1-sec2-iphone-se {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+    overflow-x: hidden !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  
+  #apresentacao.laymob1-sec2-iphone-se .laymob1-sec2-container {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  
+  /* Título mobile menor */
+  #apresentacao.laymob1-sec2-iphone-se h2 {
+    font-size: 1.25rem !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  
+  /* Subtítulo mobile menor */
+  #apresentacao.laymob1-sec2-iphone-se p.text-sm {
+    font-size: 0.75rem !important;
+  }
+  
+  /* Vídeo mobile menor */
+  #apresentacao.laymob1-sec2-iphone-se div[class*="aspect-"] {
+    max-height: 220px !important;
+  }
+  
+  /* Grid gap menor */
+  #apresentacao.laymob1-sec2-iphone-se div[class*="grid"] {
+    gap: 1rem !important;
+  }
+  
+  /* Lista bullets compacta */
+  #apresentacao.laymob1-sec2-iphone-se ul {
+    row-gap: 0.75rem !important;
+  }
+  
+  /* Parágrafo compacto */
+  #apresentacao.laymob1-sec2-iphone-se p.text-xs {
+    font-size: 0.75rem !important;
+    line-height: 1.25rem !important;
+  }
 }
 
 /* ============================================

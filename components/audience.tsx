@@ -4,8 +4,8 @@ import { TreePalm, Shell, Flag } from "lucide-react"
 
 export default function Audience() {
   return (
-    <section className="h-[calc(100vh-4rem)] sm:h-[calc(100vh-4rem)] py-4 sm:py-6 lg:py-8 bg-coffee-900 overflow-x-hidden w-full flex flex-col sm:justify-center laydesk2-audience-section laydesk3-audience-section">
-      <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 box-border laydesk2-audience-container laydesk3-audience-container">
+    <section className="h-[calc(100vh-4rem)] sm:h-[calc(100vh-4rem)] py-4 sm:py-6 lg:py-8 bg-coffee-900 overflow-x-hidden w-full flex flex-col sm:justify-center laydesk2-audience-section laydesk3-audience-section laymob1-audience-section laymob2-audience-section">
+      <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 box-border laydesk2-audience-container laydesk3-audience-container laymob1-audience-container laymob2-audience-container">
         
         {/* Grid de 2 Colunas */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center py-4 sm:py-0 sm:items-start laydesk2-audience-grid laydesk3-audience-grid">
@@ -17,8 +17,8 @@ export default function Audience() {
               Regiões Atendidas
             </h2>
             
-            {/* Imagem do Mapa */}
-            <div className="relative w-full max-w-[120px] sm:max-w-sm lg:max-w-[65%] aspect-square mx-auto sm:mx-0 my-3 sm:my-0 laydesk2-audience-map-container laydesk3-audience-map-container">
+            {/* Imagem do Mapa — Plano 10-planocel2: maior em laymob */}
+            <div className="relative w-full max-w-[120px] sm:max-w-sm lg:max-w-[65%] aspect-square mx-auto sm:mx-0 my-3 sm:my-0 laydesk2-audience-map-container laydesk3-audience-map-container laymob1-audience-map laymob2-audience-map">
               <Image
                 src="/mapa-estacao-grao2.png"
                 alt="Mapa de regiões atendidas pela Estação do Grão no Nordeste e Brasil"

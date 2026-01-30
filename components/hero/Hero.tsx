@@ -62,8 +62,8 @@ export default function Hero({
   };
 
   return (
-    <section className="relative min-h-screen lg:h-screen flex flex-col justify-center bg-[#452911] pt-20 sm:pt-24 lg:pt-0 pb-8 sm:pb-12 lg:pb-0 overflow-x-hidden w-full laydesk3-hero-section laydesk2-hero-section hero-section">
-      <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 py-3 sm:py-4 lg:py-6 box-border">
+    <section className="relative min-h-screen lg:h-screen flex flex-col justify-center bg-[#452911] pt-20 sm:pt-24 lg:pt-0 pb-8 sm:pb-12 lg:pb-0 overflow-x-hidden w-full laydesk3-hero-section laydesk2-hero-section hero-section laymob1-hero-section laymob2-hero-section">
+      <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 py-3 sm:py-4 lg:py-6 box-border laymob1-hero-container laymob2-hero-container">
         {/* H1 centralizado, em linha única, ajustando tamanho com clamp para não ultrapassar os limites laterais */}
         <h1
           className="
@@ -92,55 +92,58 @@ export default function Hero({
             onMouseEnter={() => (hoverRef.current = true)}
             onMouseLeave={() => (hoverRef.current = false)}
           >
-            <div className="overflow-hidden rounded-2xl ring-1 ring-cream-50/15 shadow-2xl w-full min-w-0" ref={emblaRef}>
-              <div className="flex min-w-0">
-                {images.map((src, idx) => (
-                  <div className="relative min-w-0 flex-[0_0_100%] w-full shrink-0" key={idx}>
-                    <div className="relative aspect-[3/2.5] sm:aspect-[4/3.5] lg:aspect-[16/11] w-full overflow-hidden max-w-[95%] sm:max-w-none mx-auto sm:mx-0">
-                      <div className={`absolute inset-0 ${idx === 2 ? 'scale-[1.0]' : ''}`}>
-                        <Image
-                          src={src}
-                          alt={`Foto ${idx + 1} do serviço de café para eventos`}
-                          fill
-                          className={`object-cover select-none transition-transform ${
-                            idx === 0 
-                              ? 'object-[50%_70%]' 
-                              : idx === 1 
-                              ? 'object-[50%_55%]' 
-                              : idx === 2
-                              ? 'object-[50%_57.5%]'
-                              : idx === 3
-                              ? 'object-[50%_70%]'
-                              : ''
-                          }`}
-                          sizes="(min-width:1536px) 720px, (min-width:1280px) 640px, (min-width:1024px) 560px, (min-width:768px) 50vw, 100vw"
-                          priority={idx === 0}
-                        />
+            {/* Wrapper para laymob: botões ficam dentro da área da imagem (rounded-2xl) */}
+            <div className="relative overflow-hidden rounded-2xl ring-1 ring-cream-50/15 shadow-2xl w-full min-w-0 laymob1-hero-carousel-wrap laymob2-hero-carousel-wrap">
+              <div className="overflow-hidden w-full min-w-0" ref={emblaRef}>
+                <div className="flex min-w-0">
+                  {images.map((src, idx) => (
+                    <div className="relative min-w-0 flex-[0_0_100%] w-full shrink-0" key={idx}>
+                      <div className="relative aspect-[3/2.5] sm:aspect-[4/3.5] lg:aspect-[16/11] w-full overflow-hidden max-w-[95%] sm:max-w-none mx-auto sm:mx-0">
+                        <div className={`absolute inset-0 ${idx === 2 ? 'scale-[1.0]' : ''}`}>
+                          <Image
+                            src={src}
+                            alt={`Foto ${idx + 1} do serviço de café para eventos`}
+                            fill
+                            className={`object-cover select-none transition-transform ${
+                              idx === 0 
+                                ? 'object-[50%_70%]' 
+                                : idx === 1 
+                                ? 'object-[50%_55%]' 
+                                : idx === 2
+                                ? 'object-[50%_57.5%]'
+                                : idx === 3
+                                ? 'object-[50%_70%]'
+                                : ''
+                            }`}
+                            sizes="(min-width:1536px) 720px, (min-width:1280px) 640px, (min-width:1024px) 560px, (min-width:768px) 50vw, 100vw"
+                            priority={idx === 0}
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* Controles responsivos */}
-            <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-between px-1.5 sm:px-2 md:px-3 pointer-events-none">
-              <button
-                type="button"
-                onClick={() => emblaApi?.scrollPrev()}
-                className="inline-flex items-center justify-center h-9 w-9 sm:h-10 sm:w-10 md:h-11 md:w-11 rounded-full bg-coffee-700/90 hover:bg-coffee-500 text-cream-50 text-xl sm:text-2xl ring-1 ring-cream-50/20 transition-colors shadow-lg pointer-events-auto"
-                aria-label="Imagem anterior"
-              >
-                ‹
-              </button>
-              <button
-                type="button"
-                onClick={() => emblaApi?.scrollNext()}
-                className="inline-flex items-center justify-center h-9 w-9 sm:h-10 sm:w-10 md:h-11 md:w-11 rounded-full bg-coffee-700/90 hover:bg-coffee-500 text-cream-50 text-xl sm:text-2xl ring-1 ring-cream-50/20 transition-colors shadow-lg pointer-events-auto"
-                aria-label="Próxima imagem"
-              >
-                ›
-              </button>
+              {/* Controles responsivos — dentro da área da imagem em laymob */}
+              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-between px-1.5 sm:px-2 md:px-3 pointer-events-none">
+                <button
+                  type="button"
+                  onClick={() => emblaApi?.scrollPrev()}
+                  className="inline-flex items-center justify-center h-9 w-9 sm:h-10 sm:w-10 md:h-11 md:w-11 rounded-full bg-coffee-700/90 hover:bg-coffee-500 text-cream-50 text-xl sm:text-2xl ring-1 ring-cream-50/20 transition-colors shadow-lg pointer-events-auto"
+                  aria-label="Imagem anterior"
+                >
+                  ‹
+                </button>
+                <button
+                  type="button"
+                  onClick={() => emblaApi?.scrollNext()}
+                  className="inline-flex items-center justify-center h-9 w-9 sm:h-10 sm:w-10 md:h-11 md:w-11 rounded-full bg-coffee-700/90 hover:bg-coffee-500 text-cream-50 text-xl sm:text-2xl ring-1 ring-cream-50/20 transition-colors shadow-lg pointer-events-auto"
+                  aria-label="Próxima imagem"
+                >
+                  ›
+                </button>
+              </div>
             </div>
           </div>
 

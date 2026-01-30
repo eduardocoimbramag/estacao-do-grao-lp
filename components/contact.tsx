@@ -163,8 +163,8 @@ export default function Contact() {
   }
 
   return (
-    <section id="contato" className="min-h-[calc(100vh-4rem)] sm:h-[calc(100vh-4rem)] flex flex-col justify-center bg-coffee-900 py-8 sm:py-4 lg:py-6 overflow-hidden w-full">
-      <div className="w-full max-w-[100vw] sm:max-w-4xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-0 lg:py-0 box-border">
+    <section id="contato" className="min-h-[calc(100vh-4rem)] sm:h-[calc(100vh-4rem)] flex flex-col justify-center bg-coffee-900 py-8 sm:py-4 lg:py-6 overflow-hidden w-full laymob1-contact-section laymob2-contact-section">
+      <div className="w-full max-w-[100vw] sm:max-w-4xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-0 lg:py-0 box-border laymob1-contact-container laymob2-contact-container">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-4 sm:mb-3 font-satoshi text-cream-50">Leve a Estação do Grão para seu Evento</h2>
 
         <p className="text-center text-xs sm:text-base text-cream-50 mb-10 sm:mb-4 font-inter font-normal">

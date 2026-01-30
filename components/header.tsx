@@ -32,8 +32,8 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-coffee-900/95 backdrop-blur-md border-b border-coffee-700 overflow-visible w-full">
-      <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 box-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-coffee-900/95 backdrop-blur-md border-b border-coffee-700 overflow-visible w-full laymob1-header laymob2-header">
+      <div className="w-full max-w-[100vw] sm:max-w-7xl mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 box-border laymob1-header-container laymob2-header-container">
         <div className="flex items-center justify-between h-16 relative min-w-0">
           {/* Logo */}
           <Link 

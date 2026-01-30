@@ -77,12 +77,12 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
 
   return (
     <section
-      className={`relative ${className} w-full max-w-[100vw] overflow-x-hidden`}
+      className={`relative ${className} w-full max-w-[100vw] overflow-x-hidden laymob1-servicos-carousel laymob2-servicos-carousel`}
       role="region"
       aria-label="Carrossel de serviços"
     >
-      {/* Container do carrossel com padding vertical para evitar overflow */}
-      <div className="overflow-hidden cursor-grab active:cursor-grabbing py-2 sm:py-6 w-full max-w-[100vw] laydesk1-servicos-carousel-container laydesk2-servicos-carousel-container laydesk3-servicos-carousel-container" ref={emblaRef}>
+      {/* Container do carrossel com padding vertical ajustado */}
+      <div className="overflow-visible cursor-grab active:cursor-grabbing py-8 sm:py-6 w-full max-w-[100vw] laydesk1-servicos-carousel-container laydesk2-servicos-carousel-container laydesk3-servicos-carousel-container" ref={emblaRef}>
         <div className="flex touch-pan-y min-w-0">
           {loopedCards.map((card, index) => {
             // Mapear de volta ao índice original para verificar se está ativo
@@ -107,8 +107,8 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
                     shadow-md transition-all duration-300 ease-out
                     ${
                       isActive
-                        ? "scale-105 opacity-100 shadow-xl border-coffee-500/40"
-                        : "scale-95 opacity-70 border-coffee-700"
+                        ? "sm:scale-105 opacity-100 shadow-xl border-coffee-500/40"
+                        : "sm:scale-95 opacity-70 border-coffee-700"
                     }
                   `}
                 >
@@ -128,7 +128,7 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
                   {/* Conteúdo de texto */}
                   <div className="space-y-2 px-4 pb-4 text-center laydesk2-servicos-card-content laydesk3-servicos-card-content">
                     {/* Título */}
-                    <h3 className="text-lg sm:text-xl font-medium text-cream-50 font-satoshi laydesk2-servicos-card-title laydesk3-servicos-card-title">
+                    <h3 className="text-lg sm:text-xl font-medium text-cream-50 font-satoshi leading-tight laydesk2-servicos-card-title laydesk3-servicos-card-title">
                       {card.title}
                     </h3>
 
@@ -246,7 +246,7 @@ export function ServicesCarousel({ cards, className = "" }: ServicesCarouselProp
       </div>
 
       {/* Indicadores de paginação (Mobile) */}
-      <div className="flex lg:hidden justify-center gap-3 mt-6 laydesk2-servicos-indicators laydesk3-servicos-indicators">
+      <div className="flex lg:hidden justify-center gap-3 mt-0 laydesk2-servicos-indicators laydesk3-servicos-indicators">
         {cards.map((_, index) => (
           <button
             key={index}

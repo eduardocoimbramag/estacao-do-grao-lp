@@ -58,9 +58,9 @@ export default function OpenMenuIntro() {
   return (
     <section
       id="apresentacao"
-      className="h-[calc(100vh-4rem)] sm:h-[calc(100vh-4rem)] py-2 sm:py-4 lg:py-6 bg-coffee-900 text-white overflow-x-hidden w-full flex flex-col justify-center sm:justify-center laydesk3-sec2-section laydesk2-sec2-section"
+      className="h-[calc(100vh-4rem)] sm:h-[calc(100vh-4rem)] py-2 sm:py-4 lg:py-6 bg-coffee-900 text-white overflow-x-hidden w-full flex flex-col justify-center sm:justify-center laydesk3-sec2-section laydesk2-sec2-section laymob1-sec2-section laymob2-sec2-section laymob1-sec2-iphone-se"
     >
-      <div className="mx-auto w-full max-w-[100vw] sm:max-w-6xl px-3 sm:px-4 md:px-6 flex flex-col sm:grid sm:gap-5 md:gap-6 lg:gap-8 md:grid-cols-[1fr_1px_1fr] gap-3 items-center py-4 sm:py-0 sm:items-start box-border laydesk3-sec2-container laydesk2-sec2-container">
+      <div className="mx-auto w-full max-w-[100vw] sm:max-w-6xl px-3 sm:px-4 md:px-6 flex flex-col sm:grid sm:gap-5 md:gap-6 lg:gap-8 md:grid-cols-[1fr_1px_1fr] gap-3 items-center py-4 sm:py-0 sm:items-start box-border laydesk3-sec2-container laydesk2-sec2-container laymob1-sec2-container laymob2-sec2-container">
         {/* CONTEÚDO - Estrutura diferente para mobile e desktop */}
         <div className="order-1 sm:order-1 space-y-2 w-full flex flex-col h-full laydesk2-sec2-left">
           
@@ -164,11 +164,11 @@ export default function OpenMenuIntro() {
               </ul>
             </div>
 
-            {/* Botões mobile */}
-            <div className="flex justify-between items-center gap-2 mt-4 w-full max-w-full">
+            {/* Botões mobile — Plano 11-planomob3: EXATAMENTE IDÊNTICOS */}
+            <div className="flex justify-between items-center gap-2 mt-4 w-full max-w-full laymob1-sec2-cta laymob2-sec2-cta">
               <a 
-                href="#servicos" 
-                className="flex-1 px-4 py-2.5 rounded-xl border border-coffee-500 text-cream-50 hover:bg-coffee-700/30 transition-colors font-inter font-normal uppercase tracking-[0.08em] text-center text-sm"
+                href="#nossos-servicos" 
+                className="flex-1 px-4 py-2.5 rounded-xl border border-coffee-500 text-cream-50 hover:bg-coffee-700/30 transition-colors font-inter font-light uppercase tracking-[0.16em] text-center text-sm"
               >
                 Ver serviços
               </a>
